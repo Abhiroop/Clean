@@ -1,0 +1,8 @@
+CC=gcc
+CFLAGS=-pedantic -Wall -W
+CPPFLAGS=-DGNU_C -D_WINDOWS_ -DI486 
+
+clm: clm.o 
+	gcc clm.o -o clm
+
+clm.o: clm.c cachingcompiler.h

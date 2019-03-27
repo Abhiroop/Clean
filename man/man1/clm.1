@@ -1,0 +1,193 @@
+.TH CLM 1 "April 2005" "Version 2.1.1"
+.SH NAME
+clm \- Clean compiler (make)
+.SH SYNOPSIS
+clm -V
+clm [options] main_module_name [-o application_name]
+.SH DESCRIPTION
+Makes an application from clean (.icl and .dcl) file(s). The main_module_name
+should be specified without (.icl) extension.
+  
+If '-o application_name' is not used, the name of the application is 'a.out'.
+(and is stored in the working directory)
+.SH CONFIGURATION OPTIONS
+.IP -V
+print configuration information
+.IP -I\ path
+append `path` to the search path.
+.IP -P\ pathlist
+search path is `pathlist`.
+.SH PROJECT OPTIONS
+.IP -mv
+make verbose.
+.IP -ms
+make silent.
+.IP -O
+only generate object (.o) file of main module.
+.IP -S
+only generate assembly (.s) file of main module.
+.IP -ABC
+only generate abc (.abc) file of main module.
+.IP -PO
+only generate object (.o) files of modules in the project.
+.IP -PS
+only generate assembly (.s) files of modules in the project.
+.IP -PABC
+only generate abc (.abc) files of modules in the project.
+.IP -c
+only syntax check main module.
+.IP -lt
+list types.
+.IP -lat
+list all types.
+.IP -lset
+show types of functions for which not all strictness information has been exported.
+.IP -ns
+don't strip the application.
+.IP -l object_file
+include the object_file.
+.IP -sl link_options_file
+use link_options_file (SEE LINK OPTIONS FILES)
+.SH  APPLICATION OPTIONS
+.IP -h\ size
+heapsize is 'size' bytes. (default 2m)
+.IP -s\ size
+stack size is 'size' bytes. (default 512k)
+.IP -b
+basic only.
+.IP -nt
+don't show execution times.
+.IP -gc
+show heap size after garbage collection.
+.IP -st
+show stack sizes before garbage collection.
+.IP -gcm
+use marking/compacting collection instead of copying/compacting collection.
+(not on sparc)
+.IP -gci\ size
+initial heap size is `size` bytes. (not on sparc)
+.IP -gcf\ n
+n times heap use after garbage collection is the new heap size. (not on sparc)
+.LP
+The generated application also recognizes these application options, and also:
+.IP -sc
+show constructors. (default)
+.IP -t
+show execution times. (default)
+.IP -ngc
+don't show heap size after garbage collection. (default)
+.IP -nst
+don't show stack sizes before garbage collection. (default)
+.IP -nr
+don't show the result of the program.
+.IP -gcm
+use copying/compacting collection. (not on sparc)
+.SH MAIN MODULE OPTIONS
+.IP -w
+warnings. (default)
+.IP -ou
+compile time garbage collection for certain unique nodes.
+.IP -d
+generate readable code.
+.IP -sa
+strictness analysis. (default)
+.IP -v
+verbose.
+.LP    
+And the opposite main module options:
+.IP -nw
+no warnings.
+.IP -nou
+no compile time garbage collection for unique nodes. (default)
+.IP -nd
+don't generate readable code. (default)
+.IP -nsa
+no strictness analysis.
+.IP -nv
+not verbose. (default)
+.SH CODE GENERATOR OPTIONS
+.IP -ci
+check for index out of bounds errors at runtime.
+.SH MAKING A PROJECT
+Clm makes a project in the following way:
+.IP 1.
+All .icl files in the project which are no longer up to date are 
+compiled. The .icl files in the project are the main module and all 
+modules imported (directly and indirectly) by this module, except 
+system modules. A .icl file is considered not up to date if:
+.RS
+.IP \-
+no corresponding .abc file exists for this module.
+.IP \-
+the .abc file contains parallel code, does not contain stack lay
+out information or is generated with an other compiler version.
+.IP \-
+the .abc file is older than a corresponding .icl or .dcl file.
+.IP \-
+the .icl file is the main module and the .abc file is compiled
+with different compiler options (except for (not)verbose).
+.IP \-
+the .abc file is older than any of the .dcl files which are imported
+by this module.
+.LP
+If a module has to be compiled the following compiler options are used:
+.IP \-
+for the main module: the options specified to clm.
+.IP \-
+for other modules: if a corresponding .abc file exists, the options
+which were use to generate this .abc file, otherwise the default
+options. So the compiler options are remembered (in the abc file)
+after the first successfull compilation. If you want to change
+the options for such modules, compile the module with -ABC, -S or -O
+and the required options. Then, if the compilation succeeds, the
+options are remembered.
+.RE
+.IP 2.
+Code is generated for all .abc files in the project which are no longer
+up to date. The .abc files in the project are all .abc files for which a
+corresponding clean module exists which is the main module, or is 
+imported (directly or indirectly) by the main module. A .abc file is
+considered not up to date if:
+.RS
+.IP \-
+no corresponding .o file exists.
+.IP \-
+the corresponding .o file is older than the .abc file.
+.LP
+After generating code for a module, the assembler is called.
+.RE
+.IP 3.
+An application is build using the linker.
+.SH FINDING FILES
+.LP
+Clm searches files in the directories specified by the CLEANPATH 
+environment variable. If the file is not found in any of these directories,
+it searches the clean library directory, then the working directory. 
+CLEANPATH should contains a list of directories seperated by ':'.
+.LP
+The .abc,.s and .o files are normally generated in the same directory as
+the directory which contains the .icl file.
+.LP
+But it is possible to generate these files in an other directory by defining
+the environment variable CLEANABCPATH. clm will then search this directory
+first for .abc, .s and .o files.
+.LP
+It is also possible to generate .o files in an other directory by
+defining the environment variable CLEANOPATH. clm will then search .o files
+first in this directory. If CLEANABCPATH is also defined, it will not 
+search the directory specified by CLEANABCPATH for .o files.
+
+.SH LINK OPTION FILES
+Link option files consist of two parts separated by an
+= sign.
+.LP
+The first section consists of options that are passed on
+to the linker by clm.
+.LP
+The second section lists all the modules that clm should *not*
+pass to the linker, because they are already combined in
+one of the libraries mentioned in the first section.
+clm does not check if these modules are up-to-date.
+.LP
+The names between parentheses are the modules on which the
+the first module depends.

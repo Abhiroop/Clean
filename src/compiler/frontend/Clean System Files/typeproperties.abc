@@ -1,0 +1,1346 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "compare_types"
+.depend "compare_constructor"
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "typeproperties"
+.endinfo
+.module m_typeproperties "typeproperties"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod compare_types
+.impdesc e_compare_types_d=<;1
+.implab e_compare_types_s=<;5
+.impdesc e_compare_types_r=<;
+.impmod general
+.impdesc e_general_kYes
+.impdesc e_general_dNo
+.impmod StdFile
+.implab e_StdFile_s<<<;38
+.impmod StdInt
+.implab e_StdInt_sbitand
+.implab e_StdInt_s<<
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.impmod StdBool
+.implab e_StdBool_snot
+.export e_typeproperties_rTypeClassification
+.record e_typeproperties_rTypeClassification aa 2 0 "TypeClassification"
+.export e_typeproperties_rSignClassification
+.record e_typeproperties_rSignClassification ii 0 2 "SignClassification"
+.descexp e_typeproperties_tSignClassification e_typeproperties_cSignClassification _hnf 2 1 "SignClassification"
+.n 2 e_typeproperties_tSignClassification
+.o 1 0
+e_typeproperties_cSignClassification
+	push_node _cycle_in_spine 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.impmod typeproperties
+.impdesc e_typeproperties_rSignClassification
+	fill_r e_typeproperties_rSignClassification 0 2 0 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_typeproperties_dSignClassification.sc_pos_vect
+.export e_typeproperties_nSignClassification.sc_pos_vect
+.descs e_typeproperties_dSignClassification.sc_pos_vect e_typeproperties_nSignClassification.sc_pos_vect INT 1 0 "SignClassification.sc_pos_vect"
+.n -3 e_typeproperties_dSignClassification.sc_pos_vect
+.o 1 0
+e_typeproperties_nSignClassification.sc_pos_vect
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 2 1 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_dSignClassification.sc_neg_vect
+.export e_typeproperties_nSignClassification.sc_neg_vect
+.descs e_typeproperties_dSignClassification.sc_neg_vect e_typeproperties_nSignClassification.sc_neg_vect INT 2 0 "SignClassification.sc_neg_vect"
+.n -3 e_typeproperties_dSignClassification.sc_neg_vect
+.o 1 0
+e_typeproperties_nSignClassification.sc_neg_vect
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 2 2 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_rSign
+.record e_typeproperties_rSign bb 0 2 "Sign"
+.descexp e_typeproperties_tSign e_typeproperties_cSign _hnf 2 1 "Sign"
+.n 2 e_typeproperties_tSign
+.o 1 0
+e_typeproperties_cSign
+	push_node _cycle_in_spine 2
+	jsr_eval 1
+	jsr_eval 0
+	pushB_a 1
+	pushB_a 0
+	pop_a 2
+.impdesc e_typeproperties_rSign
+	fill_r e_typeproperties_rSign 0 2 0 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_typeproperties_dSign.pos_sign
+.export e_typeproperties_nSign.pos_sign
+.descs e_typeproperties_dSign.pos_sign e_typeproperties_nSign.pos_sign BOOL 1 0 "Sign.pos_sign"
+.n -3 e_typeproperties_dSign.pos_sign
+.o 1 0
+e_typeproperties_nSign.pos_sign
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 2 1 1
+	pop_a 1
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_dSign.neg_sign
+.export e_typeproperties_nSign.neg_sign
+.descs e_typeproperties_dSign.neg_sign e_typeproperties_nSign.neg_sign BOOL 2 0 "Sign.neg_sign"
+.n -3 e_typeproperties_dSign.neg_sign
+.o 1 0
+e_typeproperties_nSign.neg_sign
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 2 2 1
+	pop_a 1
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_rTypeSign
+.record e_typeproperties_rTypeSign aa 2 0 "TypeSign"
+.descexp e_typeproperties_tTypeSign e_typeproperties_cTypeSign _hnf 2 1 "TypeSign"
+.n 2 e_typeproperties_tTypeSign
+.o 1 0
+e_typeproperties_cTypeSign
+	push_node _cycle_in_spine 2
+	jsr_eval 1
+	jsr_eval 0
+.impdesc e_typeproperties_rTypeSign
+	fill_r e_typeproperties_rTypeSign 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.export e_typeproperties_dTypeSign.ts_cons_var_signs
+.export e_typeproperties_nTypeSign.ts_cons_var_signs
+.export e_typeproperties_eaTypeSign.ts_cons_var_signs
+.descs e_typeproperties_dTypeSign.ts_cons_var_signs e_typeproperties_nTypeSign.ts_cons_var_signs _ 1 0 "TypeSign.ts_cons_var_signs"
+.n -4 e_typeproperties_dTypeSign.ts_cons_var_signs e_typeproperties_eaTypeSign.ts_cons_var_signs
+.o 1 0
+e_typeproperties_nTypeSign.ts_cons_var_signs
+	push_node _cycle_in_spine 1
+.o 2 0
+e_typeproperties_eaTypeSign.ts_cons_var_signs
+	jsr_eval 0
+	repl_r_args_a 2 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_typeproperties_dTypeSign.ts_type_sign
+.export e_typeproperties_nTypeSign.ts_type_sign
+.descs e_typeproperties_dTypeSign.ts_type_sign e_typeproperties_nTypeSign.ts_type_sign _ 2 0 "TypeSign.ts_type_sign"
+.n -4 e_typeproperties_dTypeSign.ts_type_sign
+.o 1 0
+e_typeproperties_nTypeSign.ts_type_sign
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 2 0 2 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_typeproperties_rTypeProp
+.record e_typeproperties_rTypeProp ai 1 1 "TypeProp"
+.descexp e_typeproperties_tTypeProp e_typeproperties_cTypeProp _hnf 2 1 "TypeProp"
+.n 2 e_typeproperties_tTypeProp
+.o 1 0
+e_typeproperties_cTypeProp
+	push_node _cycle_in_spine 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	update_a 0 1
+	pop_a 1
+.impdesc e_typeproperties_rTypeProp
+	fill_r e_typeproperties_rTypeProp 1 1 1 0 0
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_dTypeProp.ts_cons_var_props
+.export e_typeproperties_nTypeProp.ts_cons_var_props
+.export e_typeproperties_eaTypeProp.ts_cons_var_props
+.descs e_typeproperties_dTypeProp.ts_cons_var_props e_typeproperties_nTypeProp.ts_cons_var_props _ 1 0 "TypeProp.ts_cons_var_props"
+.n -4 e_typeproperties_dTypeProp.ts_cons_var_props e_typeproperties_eaTypeProp.ts_cons_var_props
+.o 1 0
+e_typeproperties_nTypeProp.ts_cons_var_props
+	push_node _cycle_in_spine 1
+.o 2 0
+e_typeproperties_eaTypeProp.ts_cons_var_props
+	jsr_eval 0
+	repl_r_args_a 1 1 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_typeproperties_dTypeProp.ts_type_prop
+.export e_typeproperties_nTypeProp.ts_type_prop
+.descs e_typeproperties_dTypeProp.ts_type_prop e_typeproperties_nTypeProp.ts_type_prop INT 2 0 "TypeProp.ts_type_prop"
+.n -3 e_typeproperties_dTypeProp.ts_type_prop
+.o 1 0
+e_typeproperties_nTypeProp.ts_type_prop
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 1 1 1 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.record r40 aa 2 0 "VarBind"
+.record k46 daaa 3 0 "BT_Node"
+.desc d47 _hnf _hnf 0 0 "BT_Empty"
+.record r44 a 1 0 "key;"
+.export e_typeproperties_s*;7
+.descexp e_typeproperties_d*;7 e_typeproperties_n*;7 e_typeproperties_l*;7 2 0 "*;7"
+.a 0 a8
+.o 2 0
+e_typeproperties_l*;7
+	repl_args 1 1
+.o 2 0
+a8
+.d 2 0
+	jsr ea8
+.o 0 2 bb
+	build_r e_typeproperties_rSign 0 2 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_typeproperties_d*;7
+.o 1 0
+e_typeproperties_n*;7
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea8
+.o 0 2 bb
+	fill_r e_typeproperties_rSign 0 2 0 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea8
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 0 2
+	repl_r_args 0 2
+	pop_a 1
+.o 0 4 bbbb
+e_typeproperties_s*;7
+.o 0 4 bbbb
+s8
+	push_b 0
+	jmp_false else.1
+	push_b 1
+	jmp_false else.2
+	update_b 1 3
+	updatepop_b 0 2
+.d 0 2 bb
+	rtn
+else.2
+	pop_b 2
+.d 0 2 bb
+	rtn
+else.1
+	push_b 1
+	jmp_false else.3
+	push_b 2
+	push_b 4
+	update_b 1 5
+	updatepop_b 0 4
+.d 0 2 bb
+	rtn
+else.3
+	update_b 1 3
+	updatepop_b 0 2
+.d 0 2 bb
+	rtn
+.export e_typeproperties_s<<<;6
+.descexp e_typeproperties_d<<<;6 e_typeproperties_n<<<;6 e_typeproperties_l<<<;6 2 0 "<<<;6"
+.a 0 a7
+.o 2 0
+e_typeproperties_l<<<;6
+	repl_args 1 1
+.o 2 0
+a7
+.d 2 0
+	jsr ea7
+.o 0 2 f
+	buildF_b 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_typeproperties_d<<<;6
+.o 1 0
+e_typeproperties_n<<<;6
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea7
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea7
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 0 2
+	pushF_a 0
+	pop_a 2
+.o 0 4 fbb
+e_typeproperties_s<<<;6
+.o 0 4 fbb
+s7
+	push_b 2
+	jmp_false else.4
+	push_b 3
+	jmp_false else.5
+	buildAC "T"
+	push_b 1
+	push_b 1
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 0 2 f
+	rtn
+else.5
+	buildAC "+"
+	push_b 1
+	push_b 1
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 0 2 f
+	rtn
+else.4
+	push_b 3
+	jmp_false else.6
+	buildAC "-"
+	push_b 1
+	push_b 1
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 0 2 f
+	rtn
+else.6
+	buildAC "L"
+	push_b 1
+	push_b 1
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 0 2 f
+	rtn
+.export e_typeproperties_saddPropClassification
+.export e_typeproperties_eaaddPropClassification
+.descexp e_typeproperties_daddPropClassification e_typeproperties_naddPropClassification e_typeproperties_laddPropClassification 3 0 "addPropClassification"
+.a 0 a6
+.o 2 0
+e_typeproperties_laddPropClassification
+	repl_args 2 2
+.o 3 0
+a6
+.d 3 0
+	jsr ea6
+.o 2 0
+.impdesc e_typeproperties_rTypeClassification
+	build_r e_typeproperties_rTypeClassification 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 3 e_typeproperties_daddPropClassification e_typeproperties_eaaddPropClassification
+.o 1 0
+e_typeproperties_naddPropClassification
+	push_node _cycle_in_spine 3
+.o 3 0
+m.7
+.d 3 0
+	jsr ea6
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+e_typeproperties_eaaddPropClassification
+.d 3 0
+	jmp m.7
+.o 3 1 i
+e_typeproperties_saddPropClassification
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.d 3 1 i
+	jsr s6
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 3 0
+ea6
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 2 0
+	pushI_a 3
+	update_a 1 4
+	update_a 0 3
+	pop_a 2
+.o 3 1 i
+s6
+	push_a 2
+	push_b 0
+	push_a 1
+	build_u _ 2 1 n48
+	push_a 3
+	push_a 3
+	update_a 2 1
+	update_a 1 5
+	updatepop_a 0 4
+	pop_b 1
+.d 2 0
+	rtn
+.nu 2 1 _ _
+.o 1 0
+n48
+	push_node_u _cycle_in_spine 2 1
+.o 3 1 i
+ea48
+.o 3 1 i
+s48
+	push_a 1
+	jsr_eval 0
+	push_b 0
+	push_a 1
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 4 1 i
+	jmp s22
+.o 4 1 i
+s22
+	eq_desc d47 0 2
+	jmp_true case.8
+	jmp case.9
+case.8
+	buildh d47 0
+	buildh d47 0
+	build_r e_typeproperties_rTypeProp 1 1 3 0
+	fill_r k46 3 0 6 0 0
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+case.9
+	push_args 2 3 3
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	push_r_args 0 1 1
+.d 1 1 i
+	jsr s12
+.o 1 0
+	buildh e_compare_types_d=<;1 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI -1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.10
+	create
+	push_a 2
+	push_b 0
+	push_a 6
+	push_a 6
+	updatepop_b 0 1
+	update_a 6 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	push_a 5
+	push_a 4
+	push_a 6
+	fill_r k46 3 0 9 0 0
+	pop_a 3
+.d 4 1 i
+	jsr s22.2
+.o 1 0
+	pop_a 3
+.d 1 0
+	rtn
+else.10
+	create
+	push_a 3
+	push_b 0
+	push_a 6
+	push_a 6
+	updatepop_b 0 1
+	update_a 5 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	push_a 3
+	push_a 6
+	push_a 6
+	fill_r k46 3 0 9 0 0
+	pop_a 3
+.d 4 1 i
+	jsr s22.2
+.o 1 0
+	pop_a 3
+.d 1 0
+	rtn
+.o 4 1 i
+s22.2
+	eq_desc d47 0 2
+	jmp_true case.11
+	jmp case.12
+case.11
+	buildh d47 0
+	buildh d47 0
+	build_r e_typeproperties_rTypeProp 1 1 3 0
+	fill_r k46 3 0 6 0 0
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+case.12
+	push_args 2 3 3
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	push_r_args 0 1 1
+.d 1 1 i
+	jsr s12
+.o 1 0
+	buildh e_compare_types_d=<;1 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI -1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.13
+	create
+	push_a 2
+	push_b 0
+	push_a 6
+	push_a 6
+	updatepop_b 0 1
+	update_a 6 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	push_a 5
+	push_a 4
+	push_a 6
+	fill_r k46 3 0 9 0 0
+	pop_a 3
+.keep 6 3
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 4 1 i
+	jmp s22.2
+else.13
+	create
+	push_a 3
+	push_b 0
+	push_a 6
+	push_a 6
+	updatepop_b 0 1
+	update_a 5 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	push_a 3
+	push_a 6
+	push_a 6
+	fill_r k46 3 0 9 0 0
+	pop_a 3
+.keep 6 3
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 4 1 i
+	jmp s22.2
+.export e_typeproperties_saddSignClassification
+.export e_typeproperties_eaaddSignClassification
+.descexp e_typeproperties_daddSignClassification e_typeproperties_naddSignClassification e_typeproperties_laddSignClassification 3 0 "addSignClassification"
+.a 0 a5
+.o 2 0
+e_typeproperties_laddSignClassification
+	repl_args 2 2
+.o 3 0
+a5
+.d 3 0
+	jsr ea5
+.o 2 0
+	build_r e_typeproperties_rTypeClassification 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 3 e_typeproperties_daddSignClassification e_typeproperties_eaaddSignClassification
+.o 1 0
+e_typeproperties_naddSignClassification
+	push_node _cycle_in_spine 3
+.o 3 0
+m.14
+.d 3 0
+	jsr ea5
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+e_typeproperties_eaaddSignClassification
+.d 3 0
+	jmp m.14
+.o 3 2 ii
+e_typeproperties_saddSignClassification
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.d 3 2 ii
+	jsr s5
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 3 0
+ea5
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 2 0
+	push_r_args 3 0 2
+	update_a 1 4
+	update_a 0 3
+	pop_a 2
+.o 3 2 ii
+s5
+	build_r e_typeproperties_rSignClassification 0 2 0 0
+	push_a 2
+	push_a 2
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n49
+	push_a 3
+	push_a 3
+	update_a 2 0
+	update_a 1 5
+	updatepop_a 0 4
+	pop_b 2
+.d 2 0
+	rtn
+.n 3 _ ea49
+.o 1 0
+n49
+	push_node _cycle_in_spine 3
+.o 4 0
+ea49
+.o 4 0
+s49
+	push_a 2
+	jsr_eval 0
+	push_a 2
+	push_a 2
+	push_a 3
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	jmp s20
+.o 5 0
+s20
+	eq_desc d47 0 3
+	jmp_true case.15
+	jmp case.16
+case.15
+	buildh d47 0
+	buildh d47 0
+	build_r e_typeproperties_rTypeSign 2 0 3 0
+	fill_r k46 3 0 7 0 0
+	pop_a 7
+.d 1 0
+	rtn
+case.16
+	push_args 3 3 3
+	buildh _Nil 0
+	update_a 0 7
+	pop_a 1
+	push_r_args 0 2 0
+.d 2 0
+	jsr s11
+.o 1 0
+	buildh d14 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI -1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.17
+	create
+	push_a 2
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 7 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	push_a 6
+	push_a 5
+	push_a 7
+	fill_r k46 3 0 10 0 0
+	pop_a 3
+.d 5 0
+	jsr s20.2
+.o 1 0
+	pop_a 3
+.d 1 0
+	rtn
+else.17
+	create
+	push_a 3
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 6 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	push_a 4
+	push_a 7
+	push_a 7
+	fill_r k46 3 0 10 0 0
+	pop_a 3
+.d 5 0
+	jsr s20.2
+.o 1 0
+	pop_a 3
+.d 1 0
+	rtn
+.o 5 0
+s20.2
+	eq_desc d47 0 3
+	jmp_true case.18
+	jmp case.19
+case.18
+	buildh d47 0
+	buildh d47 0
+	build_r e_typeproperties_rTypeSign 2 0 3 0
+	fill_r k46 3 0 7 0 0
+	pop_a 7
+.d 1 0
+	rtn
+case.19
+	push_args 3 3 3
+	buildh _Nil 0
+	update_a 0 7
+	pop_a 1
+	push_r_args 0 2 0
+.d 2 0
+	jsr s11
+.o 1 0
+	buildh d14 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI -1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.20
+	create
+	push_a 2
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 7 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	push_a 6
+	push_a 5
+	push_a 7
+	fill_r k46 3 0 10 0 0
+	pop_a 3
+.keep 7 4
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	jmp s20.2
+else.20
+	create
+	push_a 3
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 6 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	push_a 4
+	push_a 7
+	push_a 7
+	fill_r k46 3 0 10 0 0
+	pop_a 3
+.keep 7 4
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	jmp s20.2
+.export e_typeproperties_sretrievePropClassification
+.export e_typeproperties_earetrievePropClassification
+.descexp e_typeproperties_dretrievePropClassification e_typeproperties_nretrievePropClassification e_typeproperties_lretrievePropClassification 2 0 "retrievePropClassification"
+.a 2 e_typeproperties_earetrievePropClassification
+.o 2 0
+e_typeproperties_lretrievePropClassification
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_typeproperties_earetrievePropClassification
+.n 2 e_typeproperties_dretrievePropClassification e_typeproperties_earetrievePropClassification
+.o 1 0
+e_typeproperties_nretrievePropClassification
+	push_node _cycle_in_spine 2
+.d 3 0
+	jmp e_typeproperties_earetrievePropClassification
+.o 3 0
+e_typeproperties_sretrievePropClassification
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.d 4 0
+	jmp s4
+.o 3 0
+e_typeproperties_earetrievePropClassification
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.o 4 0
+s4
+	push_a 2
+	jsr_eval 0
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 0
+	jmp s18
+.o 3 0
+s18
+	eq_desc d47 0 1
+	jmp_true case.21
+	jmp case.22
+case.21
+	fillh e_general_dNo 0 2
+	pop_a 2
+.d 1 0
+	rtn
+case.22
+	push_args 1 3 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_r_args 0 1 1
+.d 1 1 i
+	jsr s12
+.o 1 0
+	buildh e_compare_types_d=<;1 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.23
+	push_a 0
+	fill_r e_general_kYes 1 0 6 0 0
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+else.23
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.24
+	push_a 1
+	push_a 4
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 3 0
+	jmp s18
+else.24
+	push_a 2
+	push_a 4
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 3 0
+	jmp s18
+.o 1 1 i
+s12
+	pop_b 1
+.d 1 0
+	rtn
+.export e_typeproperties_sretrieveSignClassification
+.export e_typeproperties_earetrieveSignClassification
+.descexp e_typeproperties_dretrieveSignClassification e_typeproperties_nretrieveSignClassification e_typeproperties_lretrieveSignClassification 2 0 "retrieveSignClassification"
+.a 2 e_typeproperties_earetrieveSignClassification
+.o 2 0
+e_typeproperties_lretrieveSignClassification
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_typeproperties_earetrieveSignClassification
+.n 2 e_typeproperties_dretrieveSignClassification e_typeproperties_earetrieveSignClassification
+.o 1 0
+e_typeproperties_nretrieveSignClassification
+	push_node _cycle_in_spine 2
+.d 3 0
+	jmp e_typeproperties_earetrieveSignClassification
+.o 3 0
+e_typeproperties_sretrieveSignClassification
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.d 4 0
+	jmp s3
+.o 3 0
+e_typeproperties_earetrieveSignClassification
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 0
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+.o 4 0
+s3
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 0
+	jmp s16
+.o 3 0
+s16
+	eq_desc d47 0 1
+	jmp_true case.25
+	jmp case.26
+case.25
+	fillh e_general_dNo 0 2
+	pop_a 2
+.d 1 0
+	rtn
+case.26
+	push_args 1 3 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_r_args 0 2 0
+.d 2 0
+	jsr s11
+.o 1 0
+	buildh d14 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 3 0
+	jsr e_compare_types_s=<;5
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.27
+	push_a 0
+	fill_r e_general_kYes 1 0 6 0 0
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+else.27
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.28
+	push_a 1
+	push_a 4
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 3 0
+	jmp s16
+else.28
+	push_a 2
+	push_a 4
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 3 0
+	jmp s16
+.desc d14 _hnf l14 2 0 "=<;20"
+.a 0 a14
+.o 2 0
+l14
+	repl_args 1 1
+.o 2 0
+a14
+.d 2 0
+	jsr ea14
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea14
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 0 2
+	repl_r_args 0 2
+	pop_a 1
+.o 0 4 iiii
+s14
+	push_b 2
+	push_b 1
+	eqI
+	jmp_false else.29
+	push_b 3
+	push_b 2
+	eqI
+	jmp_false else.30
+	pop_b 4
+	pushI 0
+.d 0 1 i
+	rtn
+else.30
+	push_b 3
+	push_b 2
+	ltI
+	jmp_false else.31
+	pop_b 4
+	pushI -1
+.d 0 1 i
+	rtn
+else.31
+	pop_b 4
+	pushI 1
+.d 0 1 i
+	rtn
+else.29
+	push_b 2
+	push_b 1
+	ltI
+	jmp_false else.32
+	pop_b 4
+	pushI -1
+.d 0 1 i
+	rtn
+else.32
+	pop_b 4
+	pushI 1
+.d 0 1 i
+	rtn
+.o 2 0
+s11
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.export e_typeproperties_ssignClassToSign
+.descexp e_typeproperties_dsignClassToSign e_typeproperties_nsignClassToSign e_typeproperties_lsignClassToSign 2 0 "signClassToSign"
+.a 0 a2
+.o 2 0
+e_typeproperties_lsignClassToSign
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 0 2 bb
+	build_r e_typeproperties_rSign 0 2 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_typeproperties_dsignClassToSign
+.o 1 0
+e_typeproperties_nsignClassToSign
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 0 2 bb
+	fill_r e_typeproperties_rSign 0 2 0 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	repl_r_args 0 2
+	pop_a 1
+.o 0 3 iii
+e_typeproperties_ssignClassToSign
+.o 0 3 iii
+s2
+	push_b 2
+	pushI 1
+	shiftl%
+	push_b 2
+	and%
+	pushI 0
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	notB
+	push_b 3
+	pushI 1
+	shiftl%
+	push_b 2
+	and%
+	pushI 0
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	notB
+	update_b 1 4
+	updatepop_b 0 3
+.d 0 2 bb
+	rtn
+.export e_typeproperties_sEmptyTypeClassification
+.export e_typeproperties_eaEmptyTypeClassification
+.descexp e_typeproperties_dEmptyTypeClassification e_typeproperties_nEmptyTypeClassification e_typeproperties_lEmptyTypeClassification 0 0 "EmptyTypeClassification"
+.o 1 0
+e_typeproperties_lEmptyTypeClassification
+	halt
+.n 0 e_typeproperties_dEmptyTypeClassification e_typeproperties_eaEmptyTypeClassification
+.o 1 0
+e_typeproperties_nEmptyTypeClassification
+	push_node _cycle_in_spine 0
+.o 0 0
+m.33
+.d 0 0
+	jsr ea1
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+e_typeproperties_eaEmptyTypeClassification
+.d 0 0
+	jmp m.33
+.o 1 0
+e_typeproperties_sEmptyTypeClassification
+.d 0 0
+	jsr ea1
+.o 2 0
+	fill_r e_typeproperties_rTypeClassification 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 0 0
+ea1
+.o 0 0
+s1
+	buildh d47 0
+	buildh d47 0
+.d 2 0
+	rtn

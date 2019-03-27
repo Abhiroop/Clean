@@ -1,0 +1,160 @@
+.comp 920 0101110000100
+.start _nostart_
+.depend "StdInt"
+.depend "StdMisc"
+.depend "StdBool"
+.depend "StdOverloaded"
+.depend "StdClass"
+.depend "StdFunctions"
+.depend "StdFunc"
+.endinfo
+.module m_StdFunc "StdFunc"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.export e_StdFunc_sseqList
+.descexp e_StdFunc_dseqList e_StdFunc_nseqList e_StdFunc_lseqList 2 0 "seqList"
+.a 0 a2
+.o 2 0
+e_StdFunc_lseqList
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 2 0
+	push_a 1
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_StdFunc_dseqList
+.o 1 0
+e_StdFunc_nseqList
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 2 0
+	push_a 1
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 0
+.o 2 0
+e_StdFunc_sseqList
+.o 2 0
+s2
+	eq_desc _Cons 2 0
+	jmp_true case.1
+	jmp case.2
+case.1
+	repl_args 2 2
+	push_a 2
+	push_a 1
+	build e_system_dAP 2 e_system_nAP
+	push_a 0
+	build d_S.2 -1 n_S.2
+	push_a 3
+	build e_StdFunc_dseqList 2 e_StdFunc_nseqList
+	push_a 0
+	build d_S.2 -1 n_S.2
+	push_a 1
+	build d_S.1 -1 n_S.1
+	push_a 3
+	build d_S.1 -1 n_S.1
+	buildh _Cons 2
+	update_a 1 6
+	updatepop_a 0 5
+.d 2 0
+	rtn
+case.2
+	buildh _Nil 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.export e_StdFunc_sseq
+.descexp e_StdFunc_dseq e_StdFunc_nseq e_StdFunc_lseq 2 0 "seq"
+.a 0 ea1
+.o 2 0
+e_StdFunc_lseq
+	repl_args 1 1
+.d 2 0
+	jmp ea1
+.n 2 e_StdFunc_dseq _
+.o 1 0
+e_StdFunc_nseq
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea1
+.o 1 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+ea1
+	jsr_eval 0
+.o 2 0
+e_StdFunc_sseq
+.o 2 0
+s1
+	eq_desc _Cons 2 0
+	jmp_true case.3
+	jmp case.4
+case.3
+	repl_args 2 2
+	push_a 2
+	push_a 1
+	build e_system_dAP 2 e_system_nAP
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s1
+case.4
+	pop_a 1
+	jmp_eval

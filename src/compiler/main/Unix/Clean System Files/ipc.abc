@@ -1,0 +1,182 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "ipc"
+.endinfo
+.module m_ipc "ipc"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.export e_ipc_ssend_result
+.descexp e_ipc_dsend_result e_ipc_nsend_result e_ipc_lsend_result 1 0 "send_result"
+.o 2 0
+e_ipc_lsend_result
+	pop_a 1
+.d 1 0
+	jsr ea4
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_ipc_dsend_result
+.o 1 0
+e_ipc_nsend_result
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea4
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea4
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_ipc_ssend_result
+.o 0 1 i
+s4
+	ccall send_result "I:I"
+
+.d 0 1 i
+	rtn
+.export e_ipc_sget_command
+.descexp e_ipc_dget_command e_ipc_nget_command e_ipc_lget_command 1 0 "get_command"
+.o 2 0
+e_ipc_lget_command
+	pop_a 1
+.d 1 0
+	jsr ea3
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_ipc_dget_command
+.o 1 0
+e_ipc_nget_command
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea3
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea3
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_ipc_sget_command
+.o 1 0
+s3
+	ccall get_command "S:I"
+
+.d 0 1 i
+	rtn
+.export e_ipc_sget_command_length
+.descexp e_ipc_dget_command_length e_ipc_nget_command_length e_ipc_lget_command_length 0 0 "get_command_length"
+.o 1 0
+e_ipc_lget_command_length
+	halt
+.n 0 e_ipc_dget_command_length
+.o 1 0
+e_ipc_nget_command_length
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea2
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 0 0
+ea2
+.o 0 0
+e_ipc_sget_command_length
+.o 0 0
+s2
+	ccall get_command_length ":I"
+
+.d 0 1 i
+	rtn
+.export e_ipc_sopen_pipes
+.descexp e_ipc_dopen_pipes e_ipc_nopen_pipes e_ipc_lopen_pipes 2 0 "open_pipes"
+.a 0 a1
+.o 2 0
+e_ipc_lopen_pipes
+	repl_args 1 1
+.o 2 0
+a1
+.d 2 0
+	jsr ea1
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_ipc_dopen_pipes
+.o 1 0
+e_ipc_nopen_pipes
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea1
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea1
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	push_array 1
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 0
+e_ipc_sopen_pipes
+.o 2 0
+s1
+	ccall open_pipes "SS:I"
+
+.d 0 1 i
+	rtn

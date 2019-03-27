@@ -1,0 +1,1769 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "backendsupport"
+.depend "StdFunc"
+.depend "_aconcat"
+.depend "utilities"
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "backendpreprocess"
+.endinfo
+.module m_backendpreprocess "backendpreprocess"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod Heap
+.implab e_Heap_sisNilPtr
+.impdesc e_Heap_dreadPtr
+.implab e_Heap_sreadPtr
+.implab e_Heap_nreadPtr
+.impdesc e_Heap_dwritePtr
+.implab e_Heap_nwritePtr
+.impmod general
+.impdesc e_general_kYes
+.impdesc e_general_dNo
+.impmod syntax
+.implab e_syntax_s==;15
+.impdesc e_syntax_dIclModule.icl_functions
+.implab e_syntax_nIclModule.icl_functions
+.impdesc e_syntax_dFreeVar.fv_info_ptr
+.implab e_syntax_nFreeVar.fv_info_ptr
+.impdesc e_syntax_dTransformedBody.tb_args
+.implab e_syntax_nTransformedBody.tb_args e_syntax_eaTransformedBody.tb_args
+.impdesc e_syntax_dTransformedBody.tb_rhs
+.implab e_syntax_nTransformedBody.tb_rhs e_syntax_eaTransformedBody.tb_rhs
+.impdesc e_syntax_dFunDef.fun_body
+.implab e_syntax_nFunDef.fun_body e_syntax_eaFunDef.fun_body
+.impdesc e_syntax_dLetBind.lb_dst
+.implab e_syntax_nLetBind.lb_dst
+.impdesc e_syntax_kTransformedBody
+.impdesc e_syntax_kVI_SequenceNumber
+.impdesc e_syntax_dVI_SequenceNumber
+.implab e_syntax_nVI_SequenceNumber e_syntax_eaVI_SequenceNumber
+.impdesc e_syntax_kVI_AliasSequenceNumber
+.impdesc e_syntax_kVar
+.impdesc e_syntax_kApp
+.impdesc e_syntax_k@
+.impdesc e_syntax_kLet
+.impdesc e_syntax_kCase
+.impdesc e_syntax_kSelection
+.impdesc e_syntax_kConditional
+.impdesc e_syntax_kAnyCodeExpr
+.impdesc e_syntax_kAlgebraicPatterns
+.impdesc e_syntax_kBasicPatterns
+.impdesc e_syntax_kOverloadedListPatterns
+.impdesc e_syntax_kRecordSelection
+.impdesc e_syntax_kArraySelection
+.impdesc e_syntax_kDictionarySelection
+.impmod StdMisc
+.implab e_StdMisc_sabort
+.impmod StdList
+.implab e_StdList_shd
+.impmod StdInt
+.implab e_StdInt_s+;6
+.impmod StdBool
+.implab e_StdBool_snot
+.record r80 iaa 2 1 "SequenceState"
+.descs d81 n81 INT 4 0 "SequenceState.ss_sequenceNumber"
+.n -3 d81
+.o 1 0
+n81
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 2 1 1 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.descs d82 n82 _ 1 0 "SequenceState.ss_varHeap"
+.n -4 d82
+.o 1 0
+n82
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 2 1 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.record r84 a 1 0 "preprocess;"
+.record r86 a 1 0 "sequence;"
+.export e_backendpreprocess_sbackEndPreprocess
+.descexp e_backendpreprocess_dbackEndPreprocess e_backendpreprocess_nbackEndPreprocess e_backendpreprocess_lbackEndPreprocess 4 0 "backEndPreprocess"
+.a 0 a1
+.o 2 0
+e_backendpreprocess_lbackEndPreprocess
+	repl_args 3 3
+.o 4 0
+a1
+.d 4 0
+	jsr ea1
+.o 1 0
+.impmod Heap
+.impdesc e_Heap_rHeap
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 4 e_backendpreprocess_dbackEndPreprocess
+.o 1 0
+e_backendpreprocess_nbackEndPreprocess
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea1
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 4 0
+ea1
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_r_args 3 9 0
+	push_r_args 10 2 0
+	update_a 11 15
+	update_a 7 11
+	update_a 3 7
+	update_a 0 3
+	update_a 10 14
+	update_a 6 10
+	update_a 2 6
+	update_a 8 12
+	update_a 4 8
+	update_a 1 4
+	push_a 13
+	update_a 10 14
+	update_a 6 10
+	update_a 0 6
+	pop_a 4
+.o 13 0
+e_backendpreprocess_sbackEndPreprocess
+.o 13 0
+s1
+	build_r e_Heap_rHeap 1 0 12 0
+.impmod syntax
+.impdesc e_syntax_rIclModule
+	build_r e_syntax_rIclModule 9 0 4 0
+	create
+	push_a 5
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 7
+	update_a 0 8
+	update_a 0 9
+	update_a 0 10
+	update_a 0 11
+	update_a 0 12
+	update_a 0 13
+	update_a 0 14
+	update_a 0 15
+	update_a 0 16
+	update_a 0 17
+	pop_a 1
+.d 3 0
+	jsr s3
+.o 1 0
+	push_a 3
+	push_a 3
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+.d 4 0
+	jmp s88
+.n 2 _ ea74
+.o 1 0
+n74
+	push_node _cycle_in_spine 2
+.o 3 0
+ea74
+	jsr_eval 1
+	repl_r_args 2 0
+.o 4 0
+s74
+	eq_desc _Nil 0 2
+	jmp_true case.1
+	jmp case.2
+case.1
+	fillh d27 0 3
+	pop_a 3
+.d 1 0
+	rtn
+case.2
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.impdesc e_syntax_rIdent
+	build_r e_syntax_rIdent 2 0 2 0
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n9
+	build_r e_syntax_rIdent 2 0 3 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n74
+	fillh d28 2 7
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _ ea9
+.o 1 0
+n9
+	push_node _cycle_in_spine 2
+.o 3 0
+ea9
+	jsr_eval 0
+	repl_r_args 2 0
+.o 4 0
+s9
+	build_r e_syntax_rIdent 2 0 0 0
+	push_a 3
+	build e_syntax_dFunDef.fun_body -4 e_syntax_nFunDef.fun_body
+	build _ 1 n12
+	fillh d72 2 5
+	pop_a 3
+.d 1 0
+	rtn
+.desc d72 _hnf l72 3 0 "<lambda>[line:23];9;90"
+.a 0 a72
+.o 2 0
+l72
+	repl_args 2 2
+.o 3 0
+a72
+.d 3 0
+	jsr ea72
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.o 3 0
+ea72
+	jsr_eval 0
+.o 3 0
+s72
+	push_a 2
+	push_a 2
+	build _ 2 n32
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s70
+.o 2 0
+s70
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	jsr_ap 1
+	repl_r_args 2 1
+.d 2 1 i
+	jmp s31
+.n 1 _ ea12
+.o 1 0
+n12
+	push_node _cycle_in_spine 1
+.o 2 0
+ea12
+	jsr_eval 0
+.o 2 0
+s12
+	eq_desc e_syntax_kTransformedBody 0 0
+	jmp_true case.3
+	jmp case.4
+case.3
+	repl_args 2 2
+.impdesc e_syntax_rTransformedBody
+	build_r e_syntax_rTransformedBody 2 0 0 0
+	updatepop_a 0 2
+.d 2 0
+	jmp s13
+case.4
+	buildAC "preprocess (FunctionBody): unknown body"
+	updatepop_a 0 1
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+s13
+	push_r_args_a 0 2 0 1 1
+	build _ 1 n68
+	push_r_args_a 1 2 0 2 1
+	build _ 1 n15
+	fillh d37 2 3
+	pop_a 1
+.d 1 0
+	rtn
+.n 1 _ ea58
+.o 1 0
+n58
+	push_node _cycle_in_spine 1
+.o 2 0
+ea58
+	jsr_eval 0
+.o 2 0
+s58
+	eq_desc _Nil 0 0
+	jmp_true case.5
+	jmp case.6
+case.5
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.6
+	repl_args 2 2
+	push_a 0
+	build _ 1 n15
+	push_a 2
+	build _ 1 n58
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.n 1 _ ea57
+.o 1 0
+n57
+	push_node _cycle_in_spine 1
+.o 2 0
+ea57
+.o 2 0
+s57
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s58
+.n 1 _ ea20
+.o 1 0
+n20
+	push_node _cycle_in_spine 1
+.o 2 0
+ea20
+	jsr_eval 0
+.o 2 0
+s20
+	pushD_a 0
+	eqD_b e_syntax_kRecordSelection 0
+	jmp_true case.7
+	eqD_b e_syntax_kArraySelection 0
+	jmp_true case.8
+	jmp case.9
+case.7
+	pop_b 1
+	repl_r_args 1 1
+	pop_a 1
+	pop_b 1
+	fillh d51 0 0
+.d 1 0
+	rtn
+case.8
+	pop_b 1
+	repl_args 3 3
+	pop_a 2
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s15
+case.9
+	pop_b 1
+	repl_args 4 4
+	pop_a 3
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s15
+.n 1 _ ea60
+.o 1 0
+n60
+	push_node _cycle_in_spine 1
+.o 2 0
+ea60
+	jsr_eval 0
+.o 2 0
+s60
+	eq_desc _Nil 0 0
+	jmp_true case.10
+	jmp case.11
+case.10
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.11
+	repl_args 2 2
+	push_a 0
+	build _ 1 n20
+	push_a 2
+	build _ 1 n60
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.n 1 _ ea59
+.o 1 0
+n59
+	push_node _cycle_in_spine 1
+.o 2 0
+ea59
+.o 2 0
+s59
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s60
+.n 1 _ ea55
+.o 1 0
+n55
+	push_node _cycle_in_spine 1
+.o 2 0
+ea55
+	jsr_eval 0
+.o 2 0
+s55
+	eq_desc e_general_kYes 0 0
+	jmp_true case.12
+	jmp case.13
+case.12
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s15
+case.13
+	fillh d36 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.n 1 _ ea19
+.o 1 0
+n19
+	push_node _cycle_in_spine 1
+.o 2 0
+ea19
+	jsr_eval 0
+	repl_r_args 3 0
+.o 4 0
+s19
+	push_a 1
+	updatepop_a 0 3
+.d 2 0
+	jmp s15
+.n 1 _ ea67
+.o 1 0
+n67
+	push_node _cycle_in_spine 1
+.o 2 0
+ea67
+	jsr_eval 0
+.o 2 0
+s67
+	eq_desc _Nil 0 0
+	jmp_true case.14
+	jmp case.15
+case.14
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.15
+	repl_args 2 2
+	push_a 0
+	build _ 1 n19
+	push_a 2
+	build _ 1 n67
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+s66
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s67
+.n 1 _ ea18
+.o 1 0
+n18
+	push_node _cycle_in_spine 1
+.o 2 0
+ea18
+	jsr_eval 0
+	repl_r_args 4 0
+.o 5 0
+s18
+	push_a 1
+	build _ 1 n68
+	push_a 3
+	build _ 1 n15
+	fillh d50 2 6
+	pop_a 4
+.d 1 0
+	rtn
+.n 1 _ ea65
+.o 1 0
+n65
+	push_node _cycle_in_spine 1
+.o 2 0
+ea65
+	jsr_eval 0
+.o 2 0
+s65
+	eq_desc _Nil 0 0
+	jmp_true case.16
+	jmp case.17
+case.16
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.17
+	repl_args 2 2
+	push_a 0
+	build _ 1 n18
+	push_a 2
+	build _ 1 n65
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+s64
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s65
+.n 1 _ ea17
+.o 1 0
+n17
+	push_node _cycle_in_spine 1
+.o 2 0
+ea17
+.o 2 0
+s17
+	pushD_a 0
+	eqD_b e_syntax_kAlgebraicPatterns 0
+	jmp_true case.18
+	eqD_b e_syntax_kBasicPatterns 0
+	jmp_true case.19
+	eqD_b e_syntax_kOverloadedListPatterns 0
+	jmp_true case.20
+	pop_b 1
+	jmp s17.1
+case.18
+	pop_b 1
+	repl_args 2 2
+	pop_a 1
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s64
+case.19
+	pop_b 1
+	repl_args 2 2
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s66
+case.20
+	pop_b 1
+	repl_args 3 3
+	pop_a 2
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s64
+s17.1
+	pop_a 2
+	pushD m_backendpreprocess
+	pushD x_17
+.d 0 2 ii
+	jmp _match_error
+.string x_17 "sequence;19"
+.o 7 1 b
+s16
+	push_a 0
+	build _ 1 n15
+	push_a 2
+	build _ 1 n17
+	push_a 4
+	build _ 1 n55
+	fillh d63 3 9
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 _ ea15
+.o 1 0
+n15
+	push_node _cycle_in_spine 1
+.o 2 0
+ea15
+	jsr_eval 0
+.o 2 0
+s15
+	pushD_a 0
+	eqD_b e_syntax_kLet 0
+	jmp_true case.21
+	eqD_b e_syntax_kConditional 0
+	jmp_true case.22
+	eqD_b e_syntax_kApp 0
+	jmp_true case.23
+	eqD_b e_syntax_k@ 0
+	jmp_true case.24
+	eqD_b e_syntax_kSelection 0
+	jmp_true case.25
+	eqD_b e_syntax_kAnyCodeExpr 0
+	jmp_true case.26
+	eqD_b e_syntax_kCase 0
+	jmp_true case.27
+	pop_b 1
+	jmp case.28
+case.21
+	pop_b 1
+	repl_args 5 5
+	update_a 2 4
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+	push_a 0
+	build _ 1 n52
+	push_a 2
+	build _ 1 n52
+	push_a 4
+	build _ 1 n15
+	fillh d54 3 6
+	pop_a 3
+.d 1 0
+	rtn
+case.22
+	pop_b 1
+	repl_args 3 3
+	push_a 0
+	build _ 1 n15
+	push_a 2
+	build _ 1 n15
+	push_a 4
+	build _ 1 n55
+	fillh d56 3 6
+	pop_a 3
+.d 1 0
+	rtn
+case.23
+	pop_b 1
+	repl_args 3 3
+	update_a 1 2
+	pop_a 2
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s57
+case.24
+	pop_b 1
+	repl_args 2 2
+	push_a 0
+	build _ 1 n15
+	push_a 2
+	build _ 1 n57
+	fillh d42 2 4
+	pop_a 2
+.d 1 0
+	rtn
+case.25
+	pop_b 1
+	repl_args 3 3
+	pop_a 1
+	push_a 0
+	build _ 1 n15
+	push_a 2
+	build _ 1 n59
+	fillh d43 2 4
+	pop_a 2
+.d 1 0
+	rtn
+case.26
+	pop_b 1
+	repl_args 3 3
+	update_a 1 2
+	pop_a 2
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s62
+case.27
+	pop_b 1
+	repl_r_args 6 1
+	push_a 5
+	push_b 0
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	updatepop_b 0 1
+.d 7 1 b
+	jmp s16
+case.28
+	fillh d47 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.desc d54 _hnf l54 4 0 "<lambda>[line:23];9;72"
+.a 0 ea54
+.o 2 0
+l54
+	repl_args 3 3
+.o 4 0
+ea54
+	jsr_eval 0
+.o 4 0
+s54
+	push_a 3
+	push_a 3
+	build e_system_dAP 2 e_system_nAP
+	push_a 2
+	push_a 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jmp s38
+.n 1 _ ea52
+.o 1 0
+n52
+	push_node _cycle_in_spine 1
+.o 2 0
+ea52
+	jsr_eval 0
+.o 2 0
+s52
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s53
+.n 1 _ ea53
+.o 1 0
+n53
+	push_node _cycle_in_spine 1
+.o 2 0
+ea53
+	jsr_eval 0
+.o 2 0
+s53
+	eq_desc _Nil 0 0
+	jmp_true case.29
+	jmp case.30
+case.29
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.30
+	repl_args 2 2
+	push_a 0
+	build _ 1 n21
+	push_a 2
+	build _ 1 n53
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.desc d56 _hnf l56 4 0 "<lambda>[line:23];9;74"
+.a 0 ea56
+.o 2 0
+l56
+	repl_args 3 3
+.o 4 0
+ea56
+	jsr_eval 0
+.o 4 0
+s56
+	push_a 3
+	push_a 3
+	build e_system_dAP 2 e_system_nAP
+	push_a 2
+	push_a 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jmp s40
+.n 1 _ ea62
+.o 1 0
+n62
+	push_node _cycle_in_spine 1
+.o 2 0
+ea62
+	jsr_eval 0
+.o 2 0
+s62
+	eq_desc _Nil 0 0
+	jmp_true case.31
+	jmp case.32
+case.31
+	fillh d45 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.32
+	repl_args 2 2
+	push_a 0
+	build _ 1 n61
+	push_a 2
+	build _ 1 n62
+	fillh d46 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.n 1 _ ea61
+.o 1 0
+n61
+	push_node _cycle_in_spine 1
+.o 2 0
+ea61
+	jsr_eval 0
+	repl_r_args 2 0
+.o 3 0
+s61
+	push_a 1
+	updatepop_a 0 2
+.d 2 0
+	jmp s14
+.desc d63 _hnf l63 4 0 "<lambda>[line:23];9;81"
+.a 0 ea63
+.o 2 0
+l63
+	repl_args 3 3
+.o 4 0
+ea63
+	jsr_eval 0
+.o 4 0
+s63
+	push_a 3
+	push_a 3
+	build e_system_dAP 2 e_system_nAP
+	push_a 2
+	push_a 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jmp s48
+.n 1 _ ea68
+.o 1 0
+n68
+	push_node _cycle_in_spine 1
+.o 2 0
+ea68
+	jsr_eval 0
+.o 2 0
+s68
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s69
+.n 1 _ ea69
+.o 1 0
+n69
+	push_node _cycle_in_spine 1
+.o 2 0
+ea69
+	jsr_eval 0
+.o 2 0
+s69
+	eq_desc _Nil 0 0
+	jmp_true case.33
+	jmp case.34
+case.33
+	fillh d34 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.34
+	repl_args 2 2
+	push_a 0
+	build _ 1 n14
+	push_a 2
+	build _ 1 n69
+	fillh d35 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.n 1 _ ea21
+.o 1 0
+n21
+	push_node _cycle_in_spine 1
+.o 2 0
+ea21
+	jsr_eval 0
+	repl_r_args 3 0
+.o 4 0
+s21
+	jmp case.35
+case.35
+	eq_desc e_syntax_kApp 0 1
+	jmp_true case.37
+	jmp case.36
+case.37
+	push_args 1 3 3
+.impdesc e_syntax_rApp
+	build_r e_syntax_rApp 3 0 0 0
+	push_a 4
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	fillh d6 2 8
+	pop_a 6
+.d 1 0
+	rtn
+case.36
+	push_a 0
+	updatepop_a 0 3
+.d 2 0
+	jmp s14
+.desc d6 _hnf l6 3 0 "sequence`;5"
+.a 0 a6
+.o 2 0
+l6
+	repl_args 2 2
+.o 3 0
+a6
+.d 3 0
+	jsr ea6
+.o 2 1 i
+	build_r r80 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea6
+	jsr_eval 2
+	push_r_args 2 2 1
+	push_r_args 2 3 0
+	update_a 4 7
+	update_a 2 4
+	update_a 0 2
+	update_a 6 5
+	update_a 3 6
+	update_a 1 3
+	pop_a 2
+.o 6 1 i
+s6
+	push_r_args_a 0 2 0 1 1
+	repl_r_args 2 0
+	pop_a 1
+.d 1 0
+	jsr e_Heap_sisNilPtr
+.o 0 1 b
+	notB
+	jmp_false else.38
+	push_r_args 5 2 0
+	push_r_args_a 2 2 0 1 1
+	repl_r_args 2 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 4 0
+	jsr e_syntax_s==;15
+.o 0 1 b
+	buildh _Nil 0
+	jmp_false else.38
+	push_a 1
+	updatepop_a 0 3
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	push_a 1
+	push_a 4
+	push_a 4
+	push_b 0
+	push_a 3
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	updatepop_b 0 1
+.d 4 1 i
+	jmp s77
+else.38
+	push_a 3
+	jsr_eval 0
+	repl_r_args 2 2
+	push_a 7
+	push_a 7
+	push_b 2
+	push_a 3
+	update_a 2 4
+	update_a 0 2
+	update_a 3 0
+	update_a 1 3
+	update_a 0 1
+	pop_a 1
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+.d 4 3 iii
+	jmp s89
+.o 4 1 i
+s77
+	eq_desc e_syntax_kVar 0 0
+	jmp_true case.40
+	jmp case.41
+case.40
+	repl_args 3 3
+	push_a 2
+	push_a 2
+	push_a 2
+	update_a 1 2
+	pop_a 2
+	push_a 5
+	push_a 5
+	push_b 0
+	push_a 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 8
+	update_a 0 9
+	pop_a 1
+.d 3 1 i
+	jsr s2
+.o 2 1 i
+	push_a 0
+.impmod Heap
+.impdesc e_Heap_rPtr
+	build_r e_Heap_rPtr 1 0 3 0
+	build e_Heap_dreadPtr 2 e_Heap_nreadPtr
+	push_a 0
+	build d_S.2 -1 n_S.2
+.impmod syntax
+.impdesc e_syntax_rBoundVar
+	build_r e_syntax_rBoundVar 3 0 5 0
+	push_a 2
+	build d_S.1 -1 n_S.1
+	build _ 2 n92
+	push_a 11
+	build e_syntax_dFreeVar.fv_info_ptr 1 e_syntax_nFreeVar.fv_info_ptr
+	build e_Heap_dwritePtr 3 e_Heap_nwritePtr
+	push_a 3
+	push_a 3
+	push_b 0
+	update_a 2 0
+	update_a 1 12
+	updatepop_a 0 11
+	updatepop_b 0 1
+.d 2 1 i
+	rtn
+case.41
+	push_a 3
+	jsr_eval 0
+	repl_r_args 2 2
+	push_a 4
+	push_a 4
+	push_b 2
+	push_a 3
+	update_a 2 4
+	update_a 0 2
+	update_a 3 0
+	update_a 1 3
+	update_a 0 1
+	pop_a 1
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+.d 4 3 iii
+	jmp s89
+.n 2 _ ea92
+.o 1 0
+n92
+	push_node _cycle_in_spine 2
+.o 3 0
+ea92
+.o 3 0
+s92
+	push_a 0
+	jsr_eval 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr s76
+.o 3 0
+	fill_r e_syntax_kVI_AliasSequenceNumber 3 0 3 0 0
+	pop_a 3
+.d 1 0
+	rtn
+.o 2 0
+s76
+	pushD_a 0
+	eqD_b e_syntax_kVI_SequenceNumber 0
+	jmp_true case.42
+	eqD_b e_syntax_kVI_AliasSequenceNumber 0
+	jmp_true case.43
+	pop_b 1
+	jmp s76.1
+case.42
+	pop_b 1
+	repl_r_args 0 1
+	pop_b 1
+	repl_r_args 3 0
+.d 3 0
+	rtn
+case.43
+	pop_b 1
+	repl_args 3 3
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 3 0
+	rtn
+s76.1
+	pop_a 2
+	pushD m_backendpreprocess
+	pushD x_76
+.d 0 2 ii
+	jmp _match_error
+.string x_76 "<case>[line:167];49;94"
+.desc d51 _hnf l51 1 0 "<lambda>[line:13];9;61"
+.o 2 0
+l51
+	pop_a 1
+.o 1 0
+ea51
+	jsr_eval 0
+.o 1 0
+s51
+.d 1 0
+	rtn
+.desc d50 _hnf l50 3 0 "<lambda>[line:23];9;60"
+.a 0 ea50
+.o 2 0
+l50
+	repl_args 2 2
+.o 3 0
+ea50
+	jsr_eval 0
+.o 3 0
+s50
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.o 3 0
+s48
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d36 _hnf l36 1 0 "<lambda>[line:13];9;46"
+.o 2 0
+l36
+	pop_a 1
+.o 1 0
+ea36
+	jsr_eval 0
+.o 1 0
+s36
+.d 1 0
+	rtn
+.o 3 0
+s38
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.o 3 0
+s40
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d42 _hnf l42 3 0 "<lambda>[line:23];9;52"
+.a 0 ea42
+.o 2 0
+l42
+	repl_args 2 2
+.o 3 0
+ea42
+	jsr_eval 0
+.o 3 0
+s42
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d43 _hnf l43 3 0 "<lambda>[line:23];9;53"
+.a 0 ea43
+.o 2 0
+l43
+	repl_args 2 2
+.o 3 0
+ea43
+	jsr_eval 0
+.o 3 0
+s43
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d46 _hnf l46 3 0 "<lambda>[line:23];9;56"
+.a 0 ea46
+.o 2 0
+l46
+	repl_args 2 2
+.o 3 0
+ea46
+	jsr_eval 0
+.o 3 0
+s46
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d45 _hnf l45 1 0 "<lambda>[line:13];9;55"
+.o 2 0
+l45
+	pop_a 1
+.o 1 0
+ea45
+	jsr_eval 0
+.o 1 0
+s45
+.d 1 0
+	rtn
+.desc d47 _hnf l47 1 0 "<lambda>[line:13];9;57"
+.o 2 0
+l47
+	pop_a 1
+.o 1 0
+ea47
+	jsr_eval 0
+.o 1 0
+s47
+.d 1 0
+	rtn
+.n 1 _ ea14
+.o 1 0
+n14
+	push_node _cycle_in_spine 1
+.o 2 0
+ea14
+.o 2 0
+s14
+	push_a 0
+	build e_syntax_dFreeVar.fv_info_ptr 1 e_syntax_nFreeVar.fv_info_ptr
+	updatepop_a 0 1
+.d 2 0
+	jmp s22
+.o 2 0
+s22
+	push_a 0
+	fillh d2 1 2
+	pop_a 1
+.d 1 0
+	rtn
+.desc d2 _hnf l2 2 0 "assignSequenceNumber"
+.a 0 a2
+.o 2 0
+l2
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 2 1 i
+	build_r r80 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 1
+	push_r_args 2 1 0
+	update_a 2 4
+	update_a 0 2
+	update_a 1 3
+	pop_a 2
+.o 3 1 i
+s2
+	push_a 1
+	jsr_eval 0
+	repl_r_args 1 0
+	push_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	update_a 0 1
+	pop_a 1
+.d 1 0
+	jsr s4
+.o 0 1 b
+	jmp_false else.44
+	pop_a 1
+.d 2 1 i
+	rtn
+else.44
+	push_a 1
+	buildI_b 0
+	build e_syntax_dVI_SequenceNumber 1 e_syntax_nVI_SequenceNumber
+	build_r e_Heap_rPtr 1 0 2 0
+	build e_Heap_dwritePtr 3 e_Heap_nwritePtr
+	push_b 0
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	addI
+	push_a 3
+	push_a 3
+	push_b 1
+	update_b 1 0
+	update_a 2 0
+	update_a 1 5
+	updatepop_a 0 4
+	updatepop_b 0 2
+.d 2 1 i
+	rtn
+.o 1 0
+s4
+	pushD_a 0
+	eqD_b e_syntax_kVI_SequenceNumber 0
+	jmp_true case.45
+	eqD_b e_syntax_kVI_AliasSequenceNumber 0
+	jmp_true case.46
+	pop_b 1
+	jmp case.47
+case.45
+	pop_b 1
+	repl_r_args 0 1
+	pop_b 1
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.46
+	pop_b 1
+	repl_args 3 3
+	pop_a 3
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.47
+	pop_a 1
+	pushB FALSE
+.d 0 1 b
+	rtn
+.desc d35 _hnf l35 3 0 "<lambda>[line:23];9;45"
+.a 0 ea35
+.o 2 0
+l35
+	repl_args 2 2
+.o 3 0
+ea35
+	jsr_eval 0
+.o 3 0
+s35
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d34 _hnf l34 1 0 "<lambda>[line:13];9;44"
+.o 2 0
+l34
+	pop_a 1
+.o 1 0
+ea34
+	jsr_eval 0
+.o 1 0
+s34
+.d 1 0
+	rtn
+.desc d37 _hnf l37 3 0 "<lambda>[line:23];9;47"
+.a 0 ea37
+.o 2 0
+l37
+	repl_args 2 2
+.o 3 0
+ea37
+	jsr_eval 0
+.o 3 0
+s37
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.o 2 1 i
+s31
+	pop_b 1
+	jsr_eval 0
+	updatepop_a 0 1
+	repl_r_args 1 0
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n32
+	push_node _cycle_in_spine 2
+.o 2 0
+ea32
+	jsr_eval 0
+	repl_r_args 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	push_a 3
+	pushI 0
+	update_a 1 4
+	updatepop_a 0 3
+	fill_r r80 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.desc d28 _hnf l28 3 0 "<lambda>[line:23];9;34"
+.a 0 ea28
+.o 2 0
+l28
+	repl_args 2 2
+.o 3 0
+ea28
+	jsr_eval 0
+.o 3 0
+s28
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d27 _hnf l27 1 0 "<lambda>[line:13];9;33"
+.o 2 0
+l27
+	pop_a 1
+.o 1 0
+ea27
+	jsr_eval 0
+.o 1 0
+s27
+.d 1 0
+	rtn
+.n 2 _ ea3
+.o 1 0
+n3
+	push_node _cycle_in_spine 2
+.o 3 0
+ea3
+	jsr_eval 1
+.o 3 0
+s3
+	push_a 0
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jmp s75
+.o 3 0
+s75
+	eq_desc _Cons 2 0
+	jmp_true case.48
+	jmp case.49
+case.48
+	repl_args 2 2
+	push_a 1
+	push_a 3
+	build _ 2 n3
+	push_a 3
+	build e_syntax_dIclModule.icl_functions 1 e_syntax_nIclModule.icl_functions
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 nselect;65
+	fillh _Cons 2 5
+	pop_a 3
+.d 1 0
+	rtn
+case.49
+	fillh _Nil 0 2
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+s88
+	push_a 3
+	push_a 3
+	push_a 3
+	push_a 3
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 4 0
+	jmp s90
+.o 4 3 iii
+s89
+	push_a 1
+	push_a 4
+	push_a 4
+	push_b 2
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	updatepop_b 0 3
+.d 3 1 i
+	jmp s91
+.o 4 0
+s90
+	eq_desc _Nil 0 2
+	jmp_true case.50
+	jmp case.51
+case.50
+	push_a 3
+	updatepop_a 0 4
+.d 1 0
+	jsr s27
+.o 1 0
+	repl_r_args 1 0
+.d 1 0
+	rtn
+case.51
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	build_r e_syntax_rIdent 2 0 2 0
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n9
+	push_a 2
+	jsr_eval 0
+	create
+	push_a 6
+	push_a 6
+	push_a 3
+	update_a 3 4
+	update_a 0 3
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 8
+	update_a 0 9
+	update_a 0 7
+	update_a 0 6
+	pop_a 1
+.d 4 0
+	jsr s74
+.o 1 0
+	push_a 7
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	jsr s28
+.o 1 0
+	repl_r_args 1 0
+.d 1 0
+	rtn
+.o 3 1 i
+s91
+	push_a 2
+	push_a 2
+	push_b 0
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	updatepop_b 0 1
+.d 3 1 i
+	jmp s2
+.n 2 _
+.o 1 0
+nselect;65
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr easelect;65
+.o 7 2 ii
+.impdesc e_syntax_rFunDef
+	fill_r e_syntax_rFunDef 7 2 7 0 0
+	pop_a 7
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+easelect;65
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+	select e_syntax_rFunDef 7 2
+.d 7 2 ii
+	rtn
+.impmod _system
+.implab _match_error

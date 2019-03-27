@@ -1,0 +1,5104 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "compilerSwitches"
+.depend "backendinterface"
+.depend "transform"
+.depend "partition"
+.depend "classify"
+.depend "trans"
+.depend "analunitypes"
+.depend "unitype"
+.depend "typesupport"
+.depend "overloading"
+.depend "frontend"
+.depend "filesystem"
+.depend "_aconcat"
+.depend "utilities"
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "CoclSystemDependent"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "compile"
+.endinfo
+.module m_compile "compile"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod backendinterface
+.implab e_backendinterface_sbackEndInterface
+.impmod trans
+.impdesc e_trans_rFusionOptions
+.impdesc e_trans_tFusionOptions
+.implab e_trans_cFusionOptions
+.impmod frontend
+.implab e_frontend_sfrontEndInterface
+.implab e_frontend_s==;2
+.impdesc e_frontend_rFrontEndOptions
+.impdesc e_frontend_dFrontEndSyntaxTree.fe_icl
+.implab e_frontend_nFrontEndSyntaxTree.fe_icl
+.impdesc e_frontend_rListTypesOption
+.impdesc e_frontend_dFrontEndPhaseAll
+.impdesc e_frontend_dListTypesNone
+.impdesc e_frontend_dListTypesInferred
+.impdesc e_frontend_dListTypesStrictExports
+.impdesc e_frontend_dListTypesAll
+.impmod filesystem
+.impdesc e_filesystem_dfmodificationtime
+.impmod hashtable
+.implab e_hashtable_snewHashTable
+.implab e_hashtable_sputIdentInHashTable
+.impdesc e_hashtable_kIC_Module
+.impdesc e_hashtable_dNoQualifiedIdents
+.impmod predef
+.implab e_predef_sbuildPredefinedSymbols
+.impmod Heap
+.implab e_Heap_snewHeap
+.impmod general
+.impdesc e_general_kYes
+.impdesc e_general_dNo
+.impmod scanner
+.implab e_scanner_sfopenInSearchPaths
+.impdesc e_scanner_rSearchPaths
+.impmod syntax
+.impdesc e_syntax_dIclModule.icl_functions
+.implab e_syntax_nIclModule.icl_functions
+.impdesc e_syntax_rTypeHeaps
+.impdesc e_syntax_dTypeHeaps.th_vars
+.implab e_syntax_nTypeHeaps.th_vars
+.impdesc e_syntax_dTypeHeaps.th_attrs
+.implab e_syntax_nTypeHeaps.th_attrs
+.impmod checksupport
+.impdesc e_checksupport_rHeaps
+.impdesc e_checksupport_dHeaps.hp_var_heap
+.implab e_checksupport_nHeaps.hp_var_heap
+.impdesc e_checksupport_dHeaps.hp_type_heaps
+.implab e_checksupport_nHeaps.hp_type_heaps
+.impmod CoclSystemDependent
+.implab e_CoclSystemDependent_sensureCleanSystemFilesExists
+.implab e_CoclSystemDependent_sset_compiler_id
+.impmod StdMisc
+.implab e_StdMisc_sabort
+.impmod StdList
+.impdesc e_StdList_d++
+.implab e_StdList_n++ e_StdList_ea++
+.implab e_StdList_slast
+.impdesc e_StdList_dmap
+.implab e_StdList_nmap e_StdList_eamap
+.impmod StdFile
+.implab e_StdFile_sfwrites
+.impdesc e_StdFile_dstderr
+.implab e_StdFile_nstderr
+.impdesc e_StdFile_dfclose;26
+.implab e_StdFile_sfclose;26
+.impdesc e_StdFile_dfopen;27
+.implab e_StdFile_sfopen;27
+.impdesc e_StdFile_dsfopen;28
+.impdesc e_StdFile_dstdio;29
+.implab e_StdFile_sstdio;29
+.implab e_StdFile_nstdio;29
+.impdesc e_StdFile_rFileSystem;
+.impmod StdString
+.implab e_StdString_s==;2
+.implab e_StdString_s%;10
+.implab e_StdString_s+++;11
+.impmod _SystemArray
+.impmod StdChar
+.implab e_StdChar_s==;18
+.impmod StdInt
+.impdesc e_StdInt_d+;6
+.implab e_StdInt_s+;6
+.implab e_StdInt_n+;6
+.implab e_StdInt_s-;7
+.implab e_StdInt_sone;11
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.implab e_StdInt_stoInt;23
+.impmod StdBool
+.implab e_StdBool_snot
+.export e_compile_rDclCache
+.record e_compile_rDclCache aaaaa 5 0 "DclCache"
+.descexp e_compile_tDclCache e_compile_cDclCache _hnf 5 1 "DclCache"
+.n 5 e_compile_tDclCache
+.o 1 0
+e_compile_cDclCache
+	push_node _cycle_in_spine 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_array 2
+	push_array 2
+	push_array 2
+	update_a 2 5
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.impmod compile
+.impdesc e_compile_rDclCache
+	fill_r e_compile_rDclCache 5 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.export e_compile_dDclCache.dcl_modules
+.export e_compile_nDclCache.dcl_modules
+.desc e_compile_dDclCache.dcl_modules e_compile_nDclCache.dcl_modules _hnf 1 0 "DclCache.dcl_modules"
+.n 1 e_compile_dDclCache.dcl_modules
+.o 1 0
+e_compile_nDclCache.dcl_modules
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 1 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_compile_dDclCache.functions_and_macros
+.export e_compile_nDclCache.functions_and_macros
+.desc e_compile_dDclCache.functions_and_macros e_compile_nDclCache.functions_and_macros _hnf 1 0 "DclCache.functions_and_macros"
+.n 1 e_compile_dDclCache.functions_and_macros
+.o 1 0
+e_compile_nDclCache.functions_and_macros
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 2 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_compile_dDclCache.predef_symbols
+.export e_compile_nDclCache.predef_symbols
+.desc e_compile_dDclCache.predef_symbols e_compile_nDclCache.predef_symbols _hnf 1 0 "DclCache.predef_symbols"
+.n 1 e_compile_dDclCache.predef_symbols
+.o 1 0
+e_compile_nDclCache.predef_symbols
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 3 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_compile_dDclCache.hash_table
+.export e_compile_nDclCache.hash_table
+.descs e_compile_dDclCache.hash_table e_compile_nDclCache.hash_table _ 5 0 "DclCache.hash_table"
+.n -4 e_compile_dDclCache.hash_table
+.o 1 0
+e_compile_nDclCache.hash_table
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 4 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_compile_dDclCache.heaps
+.export e_compile_nDclCache.heaps
+.descs e_compile_dDclCache.heaps e_compile_nDclCache.heaps _ 6 0 "DclCache.heaps"
+.n -4 e_compile_dDclCache.heaps
+.o 1 0
+e_compile_nDclCache.heaps
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 5 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.record r81 aaaaaaaaaabbb 10 3 "CoclOptions"
+.descn t81 c81 13 1 "CoclOptions"
+.n 13 t81
+.o 1 0
+c81
+	push_node _cycle_in_spine 13
+	jsr_eval 12
+	jsr_eval 11
+	jsr_eval 10
+	jsr_eval 9
+	pushB_a 12
+	pushB_a 11
+	pushB_a 10
+	update_a 9 12
+	update_a 6 9
+	update_a 3 6
+	update_a 0 3
+	update_a 8 11
+	update_a 5 8
+	update_a 2 5
+	update_a 7 10
+	update_a 4 7
+	update_a 1 4
+	pop_a 3
+	fill_r r81 10 3 10 0 0
+	pop_a 10
+	pop_b 3
+.d 1 0
+	rtn
+.descs d86 n86 _ 6 0 "CoclOptions.errorMode"
+.n -4 d86
+.o 1 0
+n86
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 10 3 5 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.descs d88 n88 _ 8 0 "CoclOptions.outMode"
+.n -4 d88
+.o 1 0
+n88
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 10 3 7 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.descs d89 n89 _ 9 0 "CoclOptions.searchPaths"
+.n -4 d89
+.o 1 0
+n89
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 10 3 8 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.descs d90 n90 _ 10 0 "CoclOptions.listTypes"
+.n -4 d90
+.o 1 0
+n90
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 10 3 9 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.descs d91 n91 _ 11 0 "CoclOptions.fusion_options"
+.n -4 d91
+.o 1 0
+n91
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 10 3 10 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_compile_sempty_cache
+.descexp e_compile_dempty_cache e_compile_nempty_cache e_compile_lempty_cache 1 0 "empty_cache"
+.o 2 0
+e_compile_lempty_cache
+	pop_a 1
+.d 1 0
+	jsr ea2
+.o 5 0
+	build_r e_compile_rDclCache 5 0 0 0
+	updatepop_a 0 5
+.d 1 0
+	rtn
+.n 1 e_compile_dempty_cache
+.o 1 0
+e_compile_nempty_cache
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea2
+.o 5 0
+	fill_r e_compile_rDclCache 5 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.o 1 0
+ea2
+	jsr_eval 0
+	repl_r_args 1 0
+.o 1 0
+e_compile_sempty_cache
+.o 1 0
+s2
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jsr e_hashtable_snewHashTable
+.o 2 1 i
+.d 2 1 i
+	jsr e_predef_sbuildPredefinedSymbols
+.o 3 1 i
+.d 0 0
+	jsr e_Heap_snewHeap
+.o 1 0
+.d 0 0
+	jsr e_Heap_snewHeap
+.o 1 0
+.d 0 0
+	jsr e_Heap_snewHeap
+.o 1 0
+	build_r e_syntax_rTypeHeaps 2 0 0 0
+	updatepop_a 0 2
+.d 0 0
+	jsr e_Heap_snewHeap
+.o 1 0
+.d 0 0
+	jsr e_Heap_snewHeap
+.o 1 0
+	build_r e_checksupport_rHeaps 4 0 0 0
+	updatepop_a 0 4
+.impmod hashtable
+.impdesc e_hashtable_rHashTable
+	build_r e_hashtable_rHashTable 2 1 2 0
+	pushI 0
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 4
+	update_a 0 5
+	pop_a 1
+	create_array_ _ 1 0
+	pushI 0
+.impmod syntax
+.impdesc e_syntax_rDclModule
+	create_array_ e_syntax_rDclModule 14 1
+	push_a 4
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	rtn
+.export e_compile_scompile
+.descexp e_compile_dcompile e_compile_ncompile e_compile_lcompile 3 0 "compile"
+.a 0 a1
+.o 2 0
+e_compile_lcompile
+	repl_args 2 2
+.o 3 0
+a1
+.d 3 0
+	jsr ea1
+.o 6 1 b
+	push_a 5
+	build_r e_compile_rDclCache 5 0 1 0
+	buildB_b 0
+	buildh _Tuple 3
+	updatepop_a 0 6
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_compile_dcompile
+.o 1 0
+e_compile_ncompile
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea1
+.o 6 1 b
+	push_a 5
+	build_r e_compile_rDclCache 5 0 1 0
+	buildB_b 0
+	fillh _Tuple 3 9
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea1
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	push_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 7 0
+e_compile_scompile
+.o 7 0
+s1
+	build _ 0 n10
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 6
+	push_a 9
+	buildI 0
+	push_a 10
+	update_a 9 18
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+.d 10 0
+	jmp s100
+.o 17 3 bbb
+s17
+	push_a 4
+	push_a 4
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 18
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 20
+	pop_a 1
+.d 3 0
+	jsr s95
+.o 2 1 b
+	push_b 0
+	notB
+	jmp_false else.1
+	push_a 5
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 4
+	update_a 1 20
+	updatepop_a 0 19
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't open error file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.1
+	push_a 8
+	push_a 8
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 3
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	pop_b 1
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 3 0
+	jsr s95
+.o 2 1 b
+	push_b 0
+	notB
+	jmp_false else.2
+	push_a 8
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 4
+	update_a 1 21
+	updatepop_a 0 20
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't open out file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.2
+	push_a 1
+	jsr_eval 0
+	buildh e_StdFile_dstdio;29 0
+	buildh e_StdFile_dsfopen;28 0
+	buildh e_StdFile_dfopen;27 0
+	buildh e_StdFile_dfclose;26 0
+	build_r e_StdFile_rFileSystem; 4 0 0 0
+	updatepop_a 0 4
+	buildh e_filesystem_dfmodificationtime 1
+	push_a 12
+	jsr_eval 0
+	repl_r_args 2 0
+	push_a 7
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	pushI 3
+	buildAC ".icl"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	updatepop_b 0 1
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 6 1 i
+	jsr e_scanner_sfopenInSearchPaths
+.o 2 0
+	push_a 0
+	jsr_eval 0
+	updatepop_a 0 1
+.d 1 0
+	jsr s96
+.o 2 0
+	build_r r81 10 3 5 0
+	push_a 3
+	push_a 6
+	push_a 4
+	push_a 3
+	update_a 3 4
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 7 8
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 4 0
+	jsr s97
+.o 3 1 b
+	push_b 0
+	notB
+	jmp_false else.3
+	push_a 2
+	jsr_eval 0
+	push_a 5
+	jsr_eval 0
+	pushF_a 6
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 2 5
+	updatepop_a 0 4
+	buildh _Nil 0
+	update_a 0 13
+	pop_a 1
+.d 1 2 f
+	jsr e_StdFile_sfclose;26
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.4
+	buildAC "couldn't close stdio"
+	updatepop_a 0 19
+	pop_b 4
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.4
+	push_a 1
+	jsr_eval 0
+	pushF_a 2
+	pop_a 1
+	push_a 0
+	update_b 1 2
+	updatepop_b 0 1
+	updatepop_a 0 2
+.d 1 2 f
+	jsr e_StdFile_sfclose;26
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.5
+	push_a 6
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 4
+	update_a 1 19
+	updatepop_a 0 18
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't close out file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.5
+	push_a 0
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	pushB FALSE
+	update_a 5 23
+	update_a 4 22
+	update_a 3 21
+	update_a 2 20
+	update_a 1 19
+	updatepop_a 0 18
+	updatepop_b 0 4
+.d 6 1 b
+	rtn
+else.3
+	push_r_args 19 2 1
+	buildh e_hashtable_dNoQualifiedIdents 0
+	build_r e_hashtable_kIC_Module 1 0 0 0
+	updatepop_a 0 1
+	push_a 8
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 24
+	pop_a 1
+.d 4 1 i
+	jsr e_hashtable_sputIdentInHashTable
+.o 3 1 i
+	push_a 5
+	jsr_eval 0
+	buildh _Nil 0
+	update_a 0 7
+	pop_a 1
+.d 1 0
+	jsr e_StdFile_sstdio;29
+.o 1 2 f
+	push_r_args 24 4 0
+	push_a 8
+	jsr_eval 0
+	push_a 13
+	jsr_eval 0
+	pushF_a 14
+	pop_a 1
+	push_a 10
+	jsr_eval 0
+	pushF_a 11
+	pop_a 1
+	buildh e_StdFile_dstdio;29 0
+	buildh e_StdFile_dsfopen;28 0
+	buildh e_StdFile_dfopen;27 0
+	buildh e_StdFile_dfclose;26 0
+	build_r e_StdFile_rFileSystem; 4 0 0 0
+	updatepop_a 0 4
+	buildh e_filesystem_dfmodificationtime 1
+	build_r r81 10 3 15 7
+	buildh e_frontend_dListTypesInferred 0
+	push_a 25
+	jsr_eval 0
+	repl_r_args 2 0
+	pop_a 1
+	jsr_eval 0
+	buildh _Nil 0
+	update_a 0 15
+	update_a 0 18
+	update_a 0 14
+	update_a 0 34
+	pop_a 1
+.d 2 0
+	jsr e_frontend_s==;2
+.o 0 1 b
+	create
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 1 b
+	jsr s71
+.o 1 0
+	push_a 23
+	jsr_eval 0
+	repl_r_args 2 0
+	push_r_args 10 2 0
+	push_b 9
+	push_a 29
+	buildh e_frontend_dFrontEndPhaseAll 0
+	push_a 20
+	jsr_eval 0
+	push_b 6
+	push_b 6
+	push_a 14
+	push_b 9
+	push_a 18
+	push_a 18
+	push_a 39
+	push_a 39
+	push_a 39
+	push_a 14
+	update_a 6 15
+	update_a 12 6
+	update_a 4 12
+	update_a 10 4
+	update_a 14 10
+	update_a 0 14
+	update_a 13 0
+	update_a 5 13
+	update_a 11 5
+	update_a 3 11
+	update_a 9 3
+	update_a 2 9
+	update_a 8 2
+	update_a 1 8
+	update_a 7 1
+	update_a 0 7
+	pop_a 1
+	push_b 5
+	update_b 3 6
+	update_b 5 3
+	update_b 2 5
+	update_b 1 2
+	update_b 4 1
+	update_b 0 4
+	pop_b 1
+	update_b 7 10
+	update_b 6 9
+	update_b 5 8
+	update_b 4 7
+	update_b 3 6
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+	update_a 19 28
+	update_a 18 27
+	update_a 17 26
+	update_a 16 25
+	update_a 15 24
+	update_a 14 23
+	update_a 13 22
+	update_a 12 21
+	update_a 11 20
+	update_a 10 19
+	update_a 9 18
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	buildh _Nil 0
+	update_a 0 32
+	update_a 0 33
+	update_a 0 34
+	pop_a 1
+.d 20 8 bifff
+	jsr e_frontend_sfrontEndInterface
+.o 12 8 iifff
+	push_a 6
+	push_a 8
+	buildh _Nil 0
+	update_a 0 10
+	update_a 0 9
+	pop_a 1
+.d 2 0
+	jsr s9
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.6
+	push_a 14
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "tcl\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 12
+	update_a 1 31
+	updatepop_a 0 30
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't close tcl file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.6
+	push_a 0
+	jsr_eval 0
+	push_b 6
+	push_b 6
+	update_b 1 2
+	updatepop_b 0 1
+	updatepop_a 0 1
+.d 1 2 f
+	jsr e_StdFile_sfclose;26
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.7
+	buildAC "couldn't close stdio"
+	updatepop_a 0 30
+	pop_b 12
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.7
+	push_a 4
+	buildh ARRAY 1
+	buildI_b 1
+	build_r e_checksupport_rHeaps 4 0 11 0
+	push_r_args_a 0 4 0 3 1
+	push_r_args_a 0 2 0 2 1
+.impmod Heap
+.impdesc e_Heap_rHeap
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+	push_r_args_a 1 2 0 1 1
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+	push_r_args_a 3 4 0 1 1
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+	build_r r81 10 3 20 9
+	push_b 8
+	push_b 8
+	push_b 6
+	push_b 6
+	pushI_a 6
+	push_array 7
+	push_a 32
+	push_a 11
+	push_a 3
+	update_a 3 4
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_b 4 6
+	update_b 3 5
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 17 23
+	update_a 16 22
+	update_a 14 21
+	update_a 13 20
+	update_a 11 19
+	update_a 10 18
+	update_a 9 17
+	update_a 8 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	buildh _Nil 0
+	update_a 0 26
+	pop_a 1
+.d 7 5 iff
+	jsr s98
+.o 6 2 f
+	push_a 9
+	push_b 1
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 10
+	pop_a 1
+.d 1 2 f
+	jsr e_StdFile_sfclose;26
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.8
+	push_a 19
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 11
+	update_a 1 32
+	updatepop_a 0 31
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't close out file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.8
+	push_a 5
+	jsr_eval 0
+	pushF_a 6
+	pop_a 1
+	push_a 0
+	update_b 1 2
+	updatepop_b 0 1
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 1 2 f
+	jsr e_StdFile_sfclose;26
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.9
+	push_a 17
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildAC "\"\n"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 11
+	update_a 1 32
+	updatepop_a 0 31
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't close error file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 3 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 5 0
+	pushB_a 5
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	update_a 3 5
+	update_a 1 3
+	pop_a 2
+.d 6 1 b
+	rtn
+else.9
+	push_a 1
+	jsr_eval 0
+	pushB_a 2
+	pop_a 1
+	push_b 0
+	jmp_false else.10
+	push_a 11
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 12
+	pop_a 1
+	push_a 0
+	push_arraysize e_syntax_rDclModule 14 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	subI
+	pushI 1
+	push_b 1
+	addI
+	create_array_ e_syntax_rDclModule 14 1
+	push_a 1
+	push_b 0
+	pushI 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 2 ii
+	jsr s54
+.o 1 0
+	pushI_a 7
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	push_array 22
+	buildh _Nil 0
+	update_a 0 24
+	pop_a 1
+.impmod predef
+.impdesc e_predef_rPredefinedSymbol
+	push_a 0
+	push_arraysize e_predef_rPredefinedSymbol 0 2
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	subI
+	push_a 19
+	jsr_eval 0
+	repl_r_args 1 0
+	push_a 19
+	jsr_eval 0
+	repl_r_args 1 0
+	build_r e_syntax_rTypeHeaps 2 0 0 0
+	updatepop_a 0 2
+	push_a 18
+	jsr_eval 0
+	repl_r_args 1 0
+	push_r_args 23 4 0
+	update_a 4 0
+	update_a 5 2
+	build_r e_checksupport_rHeaps 4 0 0 0
+	updatepop_a 0 6
+	build_r e_hashtable_rHashTable 2 1 28 4
+	pushI 1
+	push_b 1
+	addI
+	buildh _Nil 0
+	update_a 0 30
+	update_a 0 31
+	update_a 0 24
+	update_a 0 20
+	update_a 0 21
+	update_a 0 22
+	pop_a 1
+	create_array_ e_predef_rPredefinedSymbol 0 2
+	push_a 3
+	buildh ARRAY 1
+	push_b 0
+	pushI 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 2 ii
+	jsr s53
+.o 1 0
+	pushB FALSE
+	push_a 17
+	push_a 17
+	push_a 17
+	push_b 1
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	push_a 17
+	update_b 1 0
+	updatepop_b 0 1
+	pushI_a 39
+	push_a 32
+	update_b 1 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 34
+	update_a 0 41
+	update_a 0 20
+	update_a 0 21
+	update_a 0 22
+	update_a 0 23
+	update_a 0 24
+	update_a 0 25
+	update_a 0 26
+	update_a 0 27
+	update_a 0 28
+	update_a 0 29
+	update_a 0 30
+	update_a 0 31
+	update_a 0 32
+	update_a 0 33
+	pop_a 1
+	update e_syntax_rDclModule 14 1
+	push_a 29
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_a 21
+	push_b 0
+	push_a 5
+	update_a 1 6
+	update_a 2 1
+	update_a 3 2
+	update_a 4 3
+	update_a 5 4
+	update_a 0 5
+	pop_a 1
+	update_a 5 51
+	update_a 4 50
+	update_a 3 49
+	update_a 2 48
+	update_a 1 47
+	updatepop_a 0 46
+	updatepop_b 0 12
+.d 6 1 b
+	rtn
+else.10
+	push_array 8
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 9
+	pop_a 1
+	push_a 0
+	push_arraysize e_predef_rPredefinedSymbol 0 2
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	subI
+	push_a 4
+	jsr_eval 0
+	repl_r_args 1 0
+	push_a 4
+	jsr_eval 0
+	repl_r_args 1 0
+	build_r e_syntax_rTypeHeaps 2 0 0 0
+	updatepop_a 0 2
+	push_a 3
+	jsr_eval 0
+	repl_r_args 1 0
+	push_r_args 8 4 0
+	update_a 4 0
+	update_a 5 2
+	build_r e_checksupport_rHeaps 4 0 0 0
+	updatepop_a 0 6
+	build_r e_hashtable_rHashTable 2 1 13 3
+	pushI 1
+	push_b 1
+	addI
+	buildh _Nil 0
+	update_a 0 15
+	update_a 0 16
+	update_a 0 9
+	update_a 0 5
+	update_a 0 6
+	update_a 0 7
+	pop_a 1
+	create_array_ e_predef_rPredefinedSymbol 0 2
+	push_a 3
+	buildh ARRAY 1
+	push_b 0
+	pushI 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 2 ii
+	jsr s53
+.o 1 0
+	push_a 13
+	push_a 15
+	push_a 6
+	push_b 0
+	push_a 5
+	update_a 1 6
+	update_a 2 1
+	update_a 3 2
+	update_a 4 3
+	update_a 5 4
+	update_a 0 5
+	pop_a 1
+	update_a 5 36
+	update_a 4 35
+	update_a 3 34
+	update_a 2 33
+	update_a 1 32
+	updatepop_a 0 31
+	updatepop_b 0 12
+.d 6 1 b
+	rtn
+.o 2 1 b
+s71
+	eqB_b TRUE 0
+	jmp_true case.11
+	jmp case.12
+case.11
+	push_r_args_a 0 10 3 9 1
+	jsr_eval 0
+	repl_r_args 2 0
+	updatepop_a 0 1
+	jsr_eval 0
+	fill_r e_general_kYes 1 0 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+case.12
+	fillh e_general_dNo 0 1
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 2 ii
+s54
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.13
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	pushI 1
+	push_b 2
+	addI
+	push_a 13
+	push_a 13
+	push_a 13
+	push_b 1
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_b 3
+	push_a 29
+	update_a 29 30
+	update_a 14 29
+	update_a 13 28
+	update_a 12 27
+	update_a 11 26
+	update_a 10 25
+	update_a 9 24
+	update_a 8 23
+	update_a 7 22
+	update_a 6 21
+	update_a 5 20
+	update_a 4 19
+	update_a 3 18
+	update_a 2 17
+	update_a 1 16
+	updatepop_a 0 15
+	update e_syntax_rDclModule 14 1
+	push_a 1
+	push_b 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 1 4
+	updatepop_b 0 3
+.d 2 2 ii
+	jmp s54
+else.13
+	updatepop_a 0 1
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 2 ii
+s53
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.14
+	push_a 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_b 0
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select e_predef_rPredefinedSymbol 0 2
+	push_a 0
+	buildh ARRAY 1
+	pushI 1
+	push_b 3
+	addI
+	push_b 2
+	push_b 2
+	push_b 5
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+	update e_predef_rPredefinedSymbol 0 2
+	push_a 1
+	push_b 4
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 1 5
+	updatepop_b 0 4
+.d 2 2 ii
+	jmp s53
+else.14
+	updatepop_a 0 1
+	pop_b 2
+.d 1 0
+	rtn
+.desc d30 _hnf l30 1 0 "appendRedirection;29"
+.o 2 0
+l30
+	pop_a 1
+.d 1 0
+	jsr ea30
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.o 1 0
+ea30
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+s30
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jmp s68
+.o 1 0
+s68
+	push_a 0
+	eqAC_a "-RE"
+	jmp_true case.15
+	push_a 0
+	eqAC_a "-RO"
+	jmp_true case.16
+	jmp case.17
+case.15
+	pop_a 1
+	buildAC "-RAE"
+.d 1 0
+	rtn
+case.16
+	pop_a 1
+	buildAC "-RAO"
+.d 1 0
+	rtn
+case.17
+.d 1 0
+	rtn
+.o 2 0
+s9
+	eq_desc e_general_kYes 0 0
+	jmp_true case.18
+	jmp case.19
+case.18
+	repl_args 1 1
+	push_a 1
+	pushF_a 1
+	updatepop_a 0 2
+.d 1 2 f
+	jmp e_StdFile_sfclose;26
+case.19
+	push_a 1
+	pushB TRUE
+	updatepop_a 0 2
+.d 1 1 b
+	rtn
+.o 3 2 f
+s7
+	push_a 2
+	push_b 1
+	push_b 1
+	pushI 4
+	buildAC ".tcl"
+	push_a 3
+	push_a 3
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 4 3 if
+	jmp s8
+.o 4 3 if
+s8
+	pushI 1
+	create_array_ CHAR 0 1
+	pushC '/'
+	pushI 0
+	update CHAR 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jsr s6
+.o 2 0
+	push_a 2
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr catAC
+.o 1 0
+	pushI 1
+	create_array_ CHAR 0 1
+	pushC '/'
+	pushI 0
+	update CHAR 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 2
+	push_b 0
+	push_a 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 1 i
+	jsr e_StdFile_sfopen;27
+.o 1 3 bf
+	push_b 0
+	jmp_false else.20
+	buildF_b 1
+	build_r e_general_kYes 1 0 0 0
+	updatepop_a 0 1
+	push_a 1
+	push_b 5
+	push_b 5
+	pushB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 5
+	updatepop_a 0 4
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 2 3 bf
+	rtn
+else.20
+	push_a 0
+	push_a 3
+	pop_b 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr e_CoclSystemDependent_sensureCleanSystemFilesExists
+.o 1 1 b
+	push_b 0
+	notB
+	jmp_false else.21
+	buildAC "\"\n"
+	push_a 3
+	pop_b 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "can't create folder \""
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 1
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildh e_general_dNo 0
+	push_a 1
+	pushB FALSE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 3 bf
+	rtn
+else.21
+	push_a 0
+	push_b 1
+	push_a 2
+	updatepop_b 0 2
+	update_a 3 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 i
+	jsr e_StdFile_sfopen;27
+.o 1 3 bf
+	push_b 0
+	notB
+	jmp_false else.22
+	buildAC "\"\n"
+	push_a 2
+	pop_b 3
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "couldn't open file \""
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 1
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildh e_general_dNo 0
+	push_a 1
+	pushB FALSE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 3 bf
+	rtn
+else.22
+	buildF_b 1
+	build_r e_general_kYes 1 0 0 0
+	updatepop_a 0 1
+	push_a 1
+	push_b 4
+	push_b 4
+	pushB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 2 7
+	update_b 1 6
+	updatepop_b 0 5
+.d 2 3 bf
+	rtn
+.o 1 0
+s6
+	push_a 0
+.d 1 0
+	jsr s38
+.o 0 1 i
+	push_a 0
+	push_b 0
+.d 1 1 i
+	jsr s40
+.o 0 1 i
+	pushI 0
+	push_b 1
+	ltI
+	jmp_false else.23
+	push_a 0
+	buildAC "Clean System Files"
+	update_a 1 2
+	updatepop_a 0 1
+	pop_b 2
+.d 2 0
+	rtn
+else.23
+	pushI 0
+	push_b 2
+	ltI
+	jmp_false else.24
+	pushI 1
+	push_b 1
+	subI
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	pushI 1
+	push_b 3
+	addI
+	push_a 0
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	pushI 1
+	create_array_ CHAR 0 1
+	pushC '/'
+	pushI 0
+	update CHAR 0 1
+	buildAC "Clean System Files"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	create_array_ CHAR 0 1
+	push_b 0
+	pushI 0
+	push_a 3
+	update_b 1 4
+	updatepop_b 0 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 2 ii
+	jsr s45
+.o 1 0
+.d 2 0
+	jsr catAC
+.o 1 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+else.24
+	push_b 1
+	push_b 1
+	eqI
+	jmp_false else.25
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	pushI 1
+	push_b 2
+	addI
+	push_a 0
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	push_b 0
+	pushI 0
+	push_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	buildAC "Clean System Files"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+else.25
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	pushI 1
+	push_b 2
+	addI
+	push_a 0
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	pushI 1
+	create_array_ CHAR 0 1
+	pushC '/'
+	pushI 0
+	update CHAR 0 1
+	buildAC "Clean System Files"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	pushI 1
+	push_b 1
+	subI
+	pushI 1
+	push_b 3
+	addI
+	pushI 1
+	push_b 3
+	subI
+	pushI 1
+	push_b 5
+	addI
+	pushI 0
+.d 0 3 iii
+	jsr s50
+.o 0 1 i
+	create_array_ CHAR 0 1
+	buildI 0
+	push_a 4
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+.d 3 2 ii
+	jsr s47
+.o 1 0
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 0
+	pushI 0
+	push_a 2
+	update_b 1 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+.d 2 0
+	jsr catAC
+.o 1 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.o 0 3 iii
+s50
+	push_b 1
+	push_b 3
+	ltI
+	notB
+	jmp_false else.26
+	pushI 1
+	push_b 2
+	addI
+	pushI 1
+	push_b 2
+	addI
+	push_b 4
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 0 3 iii
+	jmp s50
+else.26
+	update_b 0 2
+	pop_b 2
+.d 0 1 i
+	rtn
+.o 3 2 ii
+s47
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.27
+	push_b 0
+	push_a 0
+	select CHAR 0 1
+	pushI 1
+	push_b 2
+	addI
+	push_a 2
+	build _ 1 n105
+	pushC '.'
+	push_b 2
+	eqC
+	push_b 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 2 bc
+	jsr s67
+.o 0 1 c
+	push_a 3
+	jsr_eval 0
+	pushI_a 4
+	pop_a 1
+	push_a 2
+	buildh _Nil 0
+	update_a 0 4
+	update_a 0 5
+	pop_a 1
+	update CHAR 0 1
+	push_b 3
+	push_a 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 1 4
+	updatepop_b 0 3
+.d 3 2 ii
+	jmp s47
+else.27
+	updatepop_a 1 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 _ ea105
+.o 1 0
+n105
+	push_node _cycle_in_spine 1
+.o 2 0
+ea105
+.o 2 0
+s105
+	pushI 1
+	push_a 0
+	jsr_eval 0
+	pushI_a 1
+	pop_a 1
+	pop_a 1
+	addI
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 0 2 bc
+s67
+	eqB_b TRUE 0
+	jmp_true case.28
+	jmp case.29
+case.28
+	pop_b 2
+	pushC '/'
+.d 0 1 c
+	rtn
+case.29
+	pop_b 1
+.d 0 1 c
+	rtn
+.o 2 2 ii
+s45
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.30
+	push_b 0
+	push_a 0
+	select CHAR 0 1
+	pushI 1
+	push_b 2
+	addI
+	pushC '.'
+	push_b 2
+	eqC
+	push_b 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 2 bc
+	jsr s66
+.o 0 1 c
+	push_b 3
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	update CHAR 0 1
+	push_b 3
+	push_a 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 1 4
+	updatepop_b 0 3
+.d 2 2 ii
+	jmp s45
+else.30
+	pop_a 1
+	pop_b 2
+.d 1 0
+	rtn
+.o 0 2 bc
+s66
+	eqB_b TRUE 0
+	jmp_true case.31
+	jmp case.32
+case.31
+	pop_b 2
+	pushC '/'
+.d 0 1 c
+	rtn
+case.32
+	pop_b 1
+.d 0 1 c
+	rtn
+.o 1 1 i
+s40
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	push_a 0
+	push_b 1
+	updatepop_a 0 1
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jmp s41
+.o 1 2 ii
+s41
+	push_b 1
+	push_b 1
+	ltI
+	jmp_false else.33
+	push_b 1
+	push_a 0
+	select CHAR 0 1
+	pushC '.'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	notB
+	jmp_false else.33
+	pushI 1
+	push_b 2
+	subI
+	push_a 0
+	push_b 1
+	updatepop_a 0 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jmp s41
+else.33
+	pop_a 1
+	pop_b 1
+.d 0 1 i
+	rtn
+.o 1 0
+s38
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	push_a 0
+	updatepop_a 0 1
+.d 1 1 i
+	jmp s39
+.o 1 1 i
+s39
+	pushI 0
+	push_b 1
+	ltI
+	notB
+	jmp_false else.35
+	push_b 0
+	push_a 0
+	select CHAR 0 1
+	pushC '/'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	notB
+	jmp_false else.35
+	pushI 1
+	push_b 1
+	subI
+	push_a 0
+	updatepop_a 0 1
+	updatepop_b 0 1
+.d 1 1 i
+	jmp s39
+else.35
+	pop_a 1
+.d 0 1 i
+	rtn
+.o 10 3 bbb
+s28
+	push_a 1
+	build _ 1 n3
+	push_b 2
+	push_b 2
+	push_b 2
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	update_a 10 0
+	update_a 9 20
+	update_a 8 19
+	update_a 7 18
+	update_a 6 17
+	update_a 5 16
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 10 3 bbb
+	rtn
+.n 1 _
+.o 1 0
+n3
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea3
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea3
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+s3
+	create
+	push_a 1
+	buildC '/'
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 3 0
+	jsr s5
+.o 1 0
+.d 1 0
+	jsr e_StdList_slast
+.o 1 0
+	push_array 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.o 2 0
+s12
+	push_a 1
+	push_arraysize CHAR 0 1
+	push_a 0
+	push_arraysize CHAR 0 1
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.37
+	pushI 1
+	push_b 2
+	subI
+	push_b 1
+	push_b 3
+	subI
+	push_a 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr eqAC
+.o 0 1 b	
+	buildh _Nil 0
+	jmp_false else.37
+	push_b 0
+	push_b 2
+	subI
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	subI
+	pushI 0
+	push_a 1
+	updatepop_a 0 2
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+.d 1 0
+	rtn
+else.37
+	pop_a 1
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n11
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea11
+.o 3 0
+	push_a 2
+	push_a 2
+	push_a 2
+	fillh _Tuple 3 6
+	pop_a 3
+.d 1 0
+	rtn
+.o 2 0
+ea11
+	jsr_eval 0
+.o 2 0
+s11
+	eq_desc _Nil 0 0
+	jmp_true case.39
+	jmp case.40
+case.39
+	buildh _Nil 0
+	buildh _Nil 0
+	push_a 3
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	rtn
+case.40
+	repl_args 2 2
+	jsr_eval 0
+	push_array 0
+	eqAC_a "-o"
+	jmp_true case.41
+	push_array 0
+	eqAC_a "-P"
+	jmp_true case.42
+	push_array 0
+	eqAC_a "-RO"
+	jmp_true case.43
+	push_array 0
+	eqAC_a "-RAO"
+	jmp_true case.44
+	push_array 0
+	eqAC_a "-RE"
+	jmp_true case.45
+	push_array 0
+	eqAC_a "-RAE"
+	jmp_true case.46
+	push_array 0
+	eqAC_a "-id"
+	jmp_true case.47
+	push_array 0
+	eqAC_a "-dynamics"
+	jmp_true case.48
+	push_array 0
+	eqAC_a "-fusion"
+	jmp_true case.49
+	push_array 0
+	eqAC_a "-generic_fusion"
+	jmp_true case.50
+	push_array 0
+	eqAC_a "-dump"
+	jmp_true case.51
+	push_array 0
+	eqAC_a "-strip"
+	jmp_true case.52
+	push_array 0
+	eqAC_a "-generics"
+	jmp_true case.53
+	push_array 0
+	eqAC_a "-lattr"
+	jmp_true case.54
+	push_array 0
+	eqAC_a "-lt"
+	jmp_true case.55
+	push_array 0
+	eqAC_a "-lset"
+	jmp_true case.56
+	push_array 0
+	eqAC_a "-lat"
+	jmp_true case.57
+	jmp case.58
+case.41
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.59
+	jmp case.58
+case.59
+	push_args 1 2 2
+	jsr_eval 4
+	push_r_args_u 4 10 3
+	pop_a 10
+	pop_b 3
+	push_a 0
+	push_r_args 5 10 3
+	update_a 10 2
+	build_r r81 10 3 0 0
+	updatepop_a 0 11
+	pop_b 3
+	push_a 2
+	jsr_eval 0
+	update_a 1 6
+	updatepop_a 0 5
+.d 2 0
+	jmp s11
+case.42
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.60
+	jmp case.58
+case.60
+	push_args 1 2 2
+	jsr_eval 4
+	push_r_args_u 4 10 3
+	pop_a 10
+	pop_b 3
+	push_a 0
+	build _ 1 n14
+	push_r_args_a 5 10 3 8 1
+	build _ 2 n107
+	push_r_args 5 10 3
+	update_a 10 7
+	build_r r81 10 3 0 0
+	updatepop_a 0 11
+	pop_b 3
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	push_a 6
+	buildh _Cons 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	rtn
+case.43
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.61
+	jmp case.58
+case.61
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 1
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n108
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	push_a 6
+	buildh _Cons 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	rtn
+case.44
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.62
+	jmp case.58
+case.62
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 2
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n109
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	push_a 6
+	buildh _Cons 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	rtn
+case.45
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.63
+	jmp case.58
+case.63
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 1
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n110
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	push_a 6
+	buildh _Cons 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	rtn
+case.46
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.64
+	jmp case.58
+case.64
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 2
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n111
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	push_a 6
+	buildh _Cons 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	rtn
+case.47
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.65
+	jmp case.58
+case.65
+	push_args 1 2 2
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_a 0 1
+.d 1 0
+	jsr e_StdInt_stoInt;23
+.o 0 1 i
+	buildI_b 0
+.d 1 0
+	jsr e_CoclSystemDependent_sset_compiler_id
+.o 0 1 i
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.66
+	push_a 0
+	jsr_eval 0
+	push_a 4
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 5
+	updatepop_a 0 4
+	pop_b 1
+.d 2 0
+	jmp s11
+else.66
+	pop_a 1
+	pop_b 1
+	jmp case.58
+case.48
+	buildB TRUE
+	push_a 3
+	build _ 2 n112
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.49
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n114
+	push_a 3
+	build _ 2 n113
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.50
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n116
+	push_a 3
+	build _ 2 n115
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.51
+	buildB TRUE
+	push_a 3
+	build _ 2 n117
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.52
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n119
+	push_a 3
+	build _ 2 n118
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.53
+	buildB TRUE
+	push_a 3
+	build _ 2 n120
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.54
+	push_a 2
+	build d90 -4 n90
+	buildB FALSE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n122
+	push_a 3
+	build _ 2 n121
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.55
+	buildh e_frontend_dListTypesInferred 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n124
+	push_a 3
+	build _ 2 n123
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.56
+	buildh e_frontend_dListTypesStrictExports 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n126
+	push_a 3
+	build _ 2 n125
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.57
+	buildh e_frontend_dListTypesAll 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n128
+	push_a 3
+	build _ 2 n127
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s11
+case.58
+	pushI 0
+	push_array 0
+	select CHAR 0 1
+	pushC '-'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	jmp_false else.67
+	push_a 2
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	push_a 4
+	buildh _Cons 2
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+else.67
+	push_a 2
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 3
+	buildh _Cons 2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+.n 2 _
+.o 1 0
+n107
+	push_node _cycle_in_spine 2
+.o 2 0
+ea107
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_scanner_rSearchPaths 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n108
+	push_node _cycle_in_spine 3
+.o 3 0
+ea108
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 5
+	update_a 11 6
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n109
+	push_node _cycle_in_spine 3
+.o 3 0
+ea109
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 5
+	update_a 11 6
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n110
+	push_node _cycle_in_spine 3
+.o 3 0
+ea110
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 3
+	update_a 11 4
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n111
+	push_node _cycle_in_spine 3
+.o 3 0
+ea111
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 3
+	update_a 11 4
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n112
+	push_node _cycle_in_spine 2
+.o 2 0
+ea112
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 0
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n113
+	push_node _cycle_in_spine 2
+.o 2 0
+ea113
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n114
+	push_node _cycle_in_spine 2
+.o 2 0
+ea114
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 0
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n115
+	push_node _cycle_in_spine 2
+.o 2 0
+ea115
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n116
+	push_node _cycle_in_spine 2
+.o 2 0
+ea116
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 1
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n117
+	push_node _cycle_in_spine 2
+.o 2 0
+ea117
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 1
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n118
+	push_node _cycle_in_spine 2
+.o 2 0
+ea118
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n119
+	push_node _cycle_in_spine 2
+.o 2 0
+ea119
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 2
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n120
+	push_node _cycle_in_spine 2
+.o 2 0
+ea120
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 2
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n121
+	push_node _cycle_in_spine 2
+.o 2 0
+ea121
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n122
+	push_node _cycle_in_spine 2
+.o 2 0
+ea122
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 0
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n123
+	push_node _cycle_in_spine 2
+.o 2 0
+ea123
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n124
+	push_node _cycle_in_spine 2
+.o 2 0
+ea124
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n125
+	push_node _cycle_in_spine 2
+.o 2 0
+ea125
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n126
+	push_node _cycle_in_spine 2
+.o 2 0
+ea126
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n127
+	push_node _cycle_in_spine 2
+.o 2 0
+ea127
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n128
+	push_node _cycle_in_spine 2
+.o 2 0
+ea128
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 1 _
+.o 1 0
+n13
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea13
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea13
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+s13
+	push_a 0
+	push_arraysize CHAR 0 1
+	push_b 0
+	pushI 1
+	ltI
+	jmp_false else.68
+	pushI 0
+	push_a 0
+	select CHAR 0 1
+	pushC '"'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	jmp_false else.68
+	pushI 1
+	push_b 1
+	subI
+	push_a 0
+	select CHAR 0 1
+	pushC '"'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	jmp_false else.68
+	pushI 2
+	push_b 1
+	subI
+	pushI 1
+	push_a 0
+	updatepop_a 0 1
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+.d 1 0
+	rtn
+else.68
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 _ ea14
+.o 1 0
+n14
+	push_node _cycle_in_spine 1
+.o 2 0
+ea14
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 2 0
+s14
+	create
+	push_a 1
+	buildC ':'
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 3 0
+	jsr s5
+.o 1 0
+.d 2 0
+	jmp s37
+.n 1 _ ea37
+.o 1 0
+n37
+	push_node _cycle_in_spine 1
+.o 2 0
+ea37
+	jsr_eval 0
+.o 2 0
+s37
+	push_a 0
+	updatepop_a 0 1
+.d 2 0
+	jmp s61
+.o 2 0
+s61
+	eq_desc _Cons 2 0
+	jmp_true case.71
+	jmp case.72
+case.71
+	repl_args 2 2
+	push_a 1
+	build _ 1 n37
+	push_a 1
+	build _ 1 n106
+	fillh _Cons 2 4
+	pop_a 2
+.d 1 0
+	rtn
+case.72
+	fillh _Nil 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.n 1 _ ea106
+.o 1 0
+n106
+	push_node _cycle_in_spine 1
+.o 2 0
+ea106
+.o 2 0
+s106
+	pushI 1
+	create_array_ CHAR 0 1
+	pushC '/'
+	pushI 0
+	update CHAR 0 1
+	push_a 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 3 0
+s5
+	push_a 1
+	push_arraysize CHAR 0 1
+	pushI 0
+	buildI 0
+	push_a 2
+	buildh ARRAY 1
+	push_a 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 4 2 ii
+	jmp s35
+.o 4 2 ii
+s35
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.73
+	buildh _Nil 0
+	push_b 1
+	push_a 3
+	push_a 3
+	build_u _ 2 1 n102
+	fillh _Cons 2 5
+	pop_a 3
+	pop_b 2
+.d 1 0
+	rtn
+else.73
+	push_a 0
+	jsr_eval 0
+	pushC_a 1
+	pop_a 1
+	push_a 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_b 2
+	select CHAR 0 1
+	eqC
+	jmp_false else.74
+	buildI 1
+	buildI_b 1
+	build _ 2 e_StdInt_n+;6
+	push_b 1
+	push_b 1
+	push_a 2
+	push_a 2
+	build_u _ 3 2 n104
+	push_b 1
+	push_a 3
+	push_a 3
+	build_u _ 2 1 n103
+	fillh _Cons 2 5
+	pop_a 3
+	pop_b 2
+.d 1 0
+	rtn
+else.74
+	pushI 1
+	push_b 2
+	addI
+	push_a 2
+	push_b 1
+	push_a 2
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 1 3
+	updatepop_b 0 2
+.d 4 2 ii
+	jmp s35
+.nu 3 2 _ _
+.o 1 0
+n104
+	push_node_u _cycle_in_spine 3 2
+.o 4 2 ii
+ea104
+.o 4 2 ii
+s104
+	pushI 1
+	push_b 2
+	addI
+	push_a 2
+	push_b 1
+	push_a 2
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 1 3
+	updatepop_b 0 2
+.d 4 2 ii
+	jmp s35
+.nu 2 1 _ _
+.o 1 0
+n103
+	push_node_u _cycle_in_spine 2 1
+.o 3 1 i
+ea103
+.o 3 1 i
+s103
+	pushI 1
+	push_b 1
+	subI
+	push_a 1
+	jsr_eval 0
+	pushI_a 2
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_a 0 2
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.nu 2 1 _ _
+.o 1 0
+n102
+	push_node_u _cycle_in_spine 2 1
+.o 3 1 i
+ea102
+.o 3 1 i
+s102
+	pushI 1
+	push_b 1
+	subI
+	push_a 1
+	jsr_eval 0
+	pushI_a 2
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_a 0 2
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.n 0 _
+.o 1 0
+n10
+	push_node _cycle_in_spine 0
+.o 0 0
+ea10
+	pushB FALSE
+	pushB FALSE
+	pushB FALSE
+	build_r e_trans_rFusionOptions 0 3 0 0
+	pop_b 3
+	buildh e_frontend_dListTypesNone 0
+	buildB TRUE
+	build_r e_frontend_rListTypesOption 2 0 0 0
+	updatepop_a 0 2
+	buildh _Nil 0
+	buildh _Nil 0
+	build_r e_scanner_rSearchPaths 2 0 0 0
+	updatepop_a 0 2
+	pushB TRUE
+	pushB FALSE
+	pushB FALSE
+	buildI 1
+	buildAC "_stderr_"
+	buildh ARRAY 1
+	buildI 1
+	buildAC "_stderr_"
+	buildh ARRAY 1
+	buildAC ""
+	buildh ARRAY 1
+	buildAC ""
+	buildh ARRAY 1
+	buildAC ""
+	buildh ARRAY 1
+	fill_r r81 10 3 10 0 0
+	pop_a 10
+	pop_b 3
+.d 1 0
+	rtn
+.o 3 0
+s95
+	buildAC "_stderr_"
+	push_a 1
+.d 2 0
+	jsr eqAC
+.o 0 1 b	
+	jmp_false else.75
+	build _ 0 e_StdFile_nstderr
+	push_a 3
+	pushB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 b
+	rtn
+else.75
+	buildAC "_stderr_"
+	push_a 1
+.d 2 0
+	jsr eqAC
+.o 0 1 b	
+	jmp_false else.76
+	push_a 2
+	build e_StdFile_dstdio;29 1 e_StdFile_nstdio;29
+	push_a 0
+	build d_S.2 -1 n_S.2
+	push_a 1
+	build d_S.1 -1 n_S.1
+	pushB TRUE
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 1 b
+	rtn
+else.76
+	push_a 2
+	jsr_eval 0
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 i
+	jsr e_StdFile_sfopen;27
+.o 1 3 bf
+	buildF_b 1
+	update_b 0 2
+	pop_b 2
+.d 2 1 b
+	rtn
+.o 1 0
+s96
+	eq_desc e_general_kYes 0 0
+	jmp_true case.77
+	jmp case.78
+case.77
+	push_args 0 1 1
+	repl_args 3 3
+	update_a 1 2
+	pop_a 2
+	push_a 0
+	jsr_eval 0
+	build_r e_general_kYes 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+case.78
+	buildh e_general_dNo 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.o 4 0
+s97
+	eq_desc e_general_kYes 0 0
+	jmp_true case.79
+	jmp case.80
+case.79
+	repl_args 1 1
+	push_r_args_b 1 10 3 1 1
+	jmp_false else.81
+	push_a 2
+	jsr_eval 0
+	pushF_a 3
+	pop_a 1
+	push_r_args_a 1 10 3 1 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 4
+	push_array 2
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 2 f
+	jsr s7
+.o 2 3 bf
+	buildF_b 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_b 0 2
+	pop_b 2
+.d 3 1 b
+	rtn
+else.81
+	jmp case.80
+case.80
+	buildh e_general_dNo 0
+	push_a 4
+	push_a 4
+	pushB TRUE
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 1 b
+	rtn
+.o 7 5 iff
+s98
+	eq_desc e_general_kYes 0 0
+	jmp_true case.82
+	jmp case.83
+case.82
+	repl_args 1 1
+	push_a 6
+	jsr_eval 0
+	repl_r_args 1 0
+	push_a 6
+	jsr_eval 0
+	repl_r_args 1 0
+	push_a 6
+	jsr_eval 0
+	repl_r_args 1 0
+	push_r_args 3 4 0
+	push_r_args_a 8 10 3 6 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_r_args_a 9 10 3 9 1
+	jsr_eval 0
+	repl_r_args 2 0
+	buildh d30 0
+	push_a 13
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_StdList_dmap 2 e_StdList_nmap
+	push_r_args_a 12 10 3 2 1
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 14
+	update_a 0 15
+	update_a 0 17
+	update_a 0 18
+	update_a 0 19
+	pop_a 1
+.d 1 0
+	jsr s3
+.o 1 0
+	push_b 4
+	push_b 4
+	push_b 4
+	push_b 4
+	push_b 4
+	push_a 15
+	push_a 5
+	update_a 1 6
+	update_a 2 1
+	update_a 3 2
+	update_a 4 3
+	update_a 5 4
+	update_a 0 5
+	pop_a 1
+	update_b 4 9
+	update_b 3 8
+	update_b 2 7
+	update_b 1 6
+	updatepop_b 0 5
+	update_a 13 19
+	update_a 12 18
+	update_a 11 17
+	update_a 10 16
+	update_a 9 15
+	update_a 8 14
+	update_a 7 13
+	update_a 6 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 13 5 iff
+	jsr e_backendinterface_sbackEndInterface
+.o 3 5 bff
+	build_r e_Heap_rHeap 1 0 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	push_r_args_a 6 4 0 1 1
+	repl_r_args_a 9 0 2 1
+	buildh ARRAY 1
+	push_b 4
+	push_b 4
+	buildF_b 3
+	buildB_b 2
+	push_a 5
+	update_a 2 6
+	update_a 3 2
+	update_a 4 3
+	update_a 5 4
+	update_a 0 5
+	pop_a 1
+	update_a 5 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	update_b 1 6
+	updatepop_b 0 5
+.d 6 2 f
+	rtn
+case.83
+	buildI 0
+	build _ 1 n_createArray;42
+	push_b 4
+	push_b 4
+	buildF_b 3
+	push_a 8
+	push_a 8
+	push_a 8
+	buildB FALSE
+	push_a 5
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	update_b 1 6
+	updatepop_b 0 5
+.d 6 2 f
+	rtn
+.o 2 0
+s99
+	eq_desc _Nil 0 0
+	jmp_true case.84
+	jmp case.85
+case.84
+	buildh _Nil 0
+	buildh _Nil 0
+	push_a 3
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	rtn
+case.85
+	repl_args 2 2
+	jsr_eval 0
+	push_array 0
+	eqAC_a "-o"
+	jmp_true case.86
+	push_array 0
+	eqAC_a "-P"
+	jmp_true case.87
+	push_array 0
+	eqAC_a "-RO"
+	jmp_true case.88
+	push_array 0
+	eqAC_a "-RAO"
+	jmp_true case.89
+	push_array 0
+	eqAC_a "-RE"
+	jmp_true case.90
+	push_array 0
+	eqAC_a "-RAE"
+	jmp_true case.91
+	push_array 0
+	eqAC_a "-id"
+	jmp_true case.92
+	push_array 0
+	eqAC_a "-dynamics"
+	jmp_true case.93
+	push_array 0
+	eqAC_a "-fusion"
+	jmp_true case.94
+	push_array 0
+	eqAC_a "-generic_fusion"
+	jmp_true case.95
+	push_array 0
+	eqAC_a "-dump"
+	jmp_true case.96
+	push_array 0
+	eqAC_a "-strip"
+	jmp_true case.97
+	push_array 0
+	eqAC_a "-generics"
+	jmp_true case.98
+	push_array 0
+	eqAC_a "-lattr"
+	jmp_true case.99
+	push_array 0
+	eqAC_a "-lt"
+	jmp_true case.100
+	push_array 0
+	eqAC_a "-lset"
+	jmp_true case.101
+	push_array 0
+	eqAC_a "-lat"
+	jmp_true case.102
+	jmp case.103
+case.86
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.104
+	jmp case.103
+case.104
+	push_args 1 2 2
+	jsr_eval 4
+	push_r_args_u 4 10 3
+	pop_a 10
+	pop_b 3
+	push_a 0
+	push_r_args 5 10 3
+	update_a 10 2
+	build_r r81 10 3 0 0
+	updatepop_a 0 11
+	pop_b 3
+	push_a 2
+	jsr_eval 0
+	update_a 1 6
+	updatepop_a 0 5
+.d 2 0
+	jmp s99
+case.87
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.105
+	jmp case.103
+case.105
+	push_args 1 2 2
+	jsr_eval 4
+	push_r_args_u 4 10 3
+	pop_a 10
+	pop_b 3
+	push_a 0
+	build _ 1 n14
+	push_r_args_a 5 10 3 8 1
+	build _ 2 n129
+	push_r_args 5 10 3
+	update_a 10 7
+	build_r r81 10 3 0 0
+	updatepop_a 0 11
+	pop_b 3
+	push_a 2
+	jsr_eval 0
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 5
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	rtn
+case.88
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.106
+	jmp case.103
+case.106
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 1
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n130
+	push_a 2
+	jsr_eval 0
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 5
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	rtn
+case.89
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.107
+	jmp case.103
+case.107
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 2
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n131
+	push_a 2
+	jsr_eval 0
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 5
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	rtn
+case.90
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.108
+	jmp case.103
+case.108
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 1
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n132
+	push_a 2
+	jsr_eval 0
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 5
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	rtn
+case.91
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.109
+	jmp case.103
+case.109
+	push_args 1 2 2
+	push_a 0
+	build _ 1 n13
+	buildI 2
+	push_a 6
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build _ 3 n133
+	push_a 2
+	jsr_eval 0
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 5
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	rtn
+case.92
+	jsr_eval 1
+	eq_desc _Cons 2 1
+	jmp_true case.110
+	jmp case.103
+case.110
+	push_args 1 2 2
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_a 0 1
+.d 1 0
+	jsr e_StdInt_stoInt;23
+.o 0 1 i
+	buildI_b 0
+.d 1 0
+	jsr e_CoclSystemDependent_sset_compiler_id
+.o 0 1 i
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.111
+	push_a 0
+	jsr_eval 0
+	push_a 4
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 5
+	updatepop_a 0 4
+	pop_b 1
+.d 2 0
+	jmp s99
+else.111
+	pop_a 1
+	pop_b 1
+	jmp case.103
+case.93
+	buildB TRUE
+	push_a 3
+	build _ 2 n134
+	push_a 2
+	jsr_eval 0
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.94
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n136
+	push_a 3
+	build _ 2 n135
+	push_a 2
+	jsr_eval 0
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.95
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n138
+	push_a 3
+	build _ 2 n137
+	push_a 2
+	jsr_eval 0
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+case.96
+	buildB TRUE
+	push_a 3
+	build _ 2 n139
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.97
+	push_a 2
+	build d91 -4 n91
+	buildB TRUE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n141
+	push_a 3
+	build _ 2 n140
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.98
+	buildB TRUE
+	push_a 3
+	build _ 2 n142
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.99
+	push_a 2
+	build d90 -4 n90
+	buildB FALSE
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 n144
+	push_a 3
+	build _ 2 n143
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.100
+	buildh e_frontend_dListTypesInferred 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n146
+	push_a 3
+	build _ 2 n145
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.101
+	buildh e_frontend_dListTypesStrictExports 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n148
+	push_a 3
+	build _ 2 n147
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.102
+	buildh e_frontend_dListTypesAll 0
+	push_a 3
+	build d90 -4 n90
+	build _ 2 n150
+	push_a 3
+	build _ 2 n149
+	push_a 2
+	jsr_eval 0
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jmp s99
+case.103
+	pushI 0
+	push_array 0
+	select CHAR 0 1
+	pushC '-'
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	jmp_false else.112
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr s99
+.o 3 0
+	push_a 0
+	push_a 4
+	buildh _Cons 2
+	push_a 3
+	push_a 3
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+else.112
+	push_a 2
+	push_a 2
+	build _ 2 n11
+	push_a 0
+	build d_S.3 -1 n_S.3
+	push_a 1
+	build d_S.2 -1 n_S.2
+	push_a 3
+	buildh _Cons 2
+	push_a 2
+	build d_S.1 -1 n_S.1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	rtn
+.n 2 _
+.o 1 0
+n129
+	push_node _cycle_in_spine 2
+.o 2 0
+ea129
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_scanner_rSearchPaths 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n130
+	push_node _cycle_in_spine 3
+.o 3 0
+ea130
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 5
+	update_a 11 6
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n131
+	push_node _cycle_in_spine 3
+.o 3 0
+ea131
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 5
+	update_a 11 6
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n132
+	push_node _cycle_in_spine 3
+.o 3 0
+ea132
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 3
+	update_a 11 4
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 3 _
+.o 1 0
+n133
+	push_node _cycle_in_spine 3
+.o 3 0
+ea133
+	push_a 2
+	push_a 2
+	push_a 2
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 3
+	update_a 11 4
+	fill_r r81 10 3 15 0 0
+	pop_a 15
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n134
+	push_node _cycle_in_spine 2
+.o 2 0
+ea134
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 0
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n135
+	push_node _cycle_in_spine 2
+.o 2 0
+ea135
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n136
+	push_node _cycle_in_spine 2
+.o 2 0
+ea136
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 0
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n137
+	push_node _cycle_in_spine 2
+.o 2 0
+ea137
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n138
+	push_node _cycle_in_spine 2
+.o 2 0
+ea138
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 1
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n139
+	push_node _cycle_in_spine 2
+.o 2 0
+ea139
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 1
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n140
+	push_node _cycle_in_spine 2
+.o 2 0
+ea140
+	push_a 1
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 9
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n141
+	push_node _cycle_in_spine 2
+.o 2 0
+ea141
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 0 3
+	update_b 3 2
+	fill_r e_trans_rFusionOptions 0 3 2 0 0
+	pop_a 2
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n142
+	push_node _cycle_in_spine 2
+.o 2 0
+ea142
+	jsr_eval 1
+	pushB_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 10 3
+	update_b 3 2
+	fill_r r81 10 3 12 0 0
+	pop_a 12
+	pop_b 4
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n143
+	push_node _cycle_in_spine 2
+.o 2 0
+ea143
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n144
+	push_node _cycle_in_spine 2
+.o 2 0
+ea144
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 0
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n145
+	push_node _cycle_in_spine 2
+.o 2 0
+ea145
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n146
+	push_node _cycle_in_spine 2
+.o 2 0
+ea146
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n147
+	push_node _cycle_in_spine 2
+.o 2 0
+ea147
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n148
+	push_node _cycle_in_spine 2
+.o 2 0
+ea148
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n149
+	push_node _cycle_in_spine 2
+.o 2 0
+ea149
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 8
+	fill_r r81 10 3 13 0 0
+	pop_a 13
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 _
+.o 1 0
+n150
+	push_node _cycle_in_spine 2
+.o 2 0
+ea150
+	push_a 1
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 0
+	update_a 2 1
+	fill_r e_frontend_rListTypesOption 2 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+.o 10 0
+s100
+	eq_desc _Cons 2 0
+	jmp_true case.113
+	jmp case.114
+case.113
+	repl_args 2 2
+	push_a 0
+	build _ 1 n101
+	push_a 4
+	jsr_eval 0
+	repl_r_args 10 3
+	update_a 10 1
+	update_a 9 10
+	update_a 8 9
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 14
+	pop_a 1
+.d 10 3 bbb
+	jsr s28
+.o 10 3 bbb
+	buildh _Nil 0
+	push_a 11
+	buildh _Cons 2
+	push_a 15
+	build e_StdList_d++ 2 e_StdList_n++
+	push_a 21
+	push_a 21
+	push_a 21
+	push_a 21
+	push_a 21
+	push_a 21
+	push_b 2
+	push_b 2
+	push_b 2
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	update_a 16 17
+	update_a 15 16
+	update_a 14 15
+	update_a 13 14
+	update_a 12 13
+	update_a 11 12
+	update_a 0 11
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 33
+	update_a 0 34
+	update_a 0 35
+	update_a 0 36
+	update_a 0 37
+	update_a 0 38
+	update_a 0 28
+	pop_a 1
+.d 17 3 bbb
+	jsr s17
+.o 6 1 b
+	push_b 0
+	jmp_false else.115
+	build_r r81 10 3 6 1
+	buildI 1
+	push_a 20
+	build _ 2 e_StdInt_n+;6
+	push_a 19
+	jsr_eval 0
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 29
+	push_a 9
+	update_a 7 10
+	update_a 4 7
+	update_a 1 4
+	update_a 8 1
+	update_a 5 8
+	update_a 2 5
+	update_a 9 2
+	update_a 6 9
+	update_a 3 6
+	update_a 0 3
+	pop_a 1
+	update_a 9 36
+	update_a 8 35
+	update_a 7 34
+	update_a 6 33
+	update_a 5 32
+	update_a 4 31
+	update_a 3 30
+	update_a 2 29
+	update_a 1 28
+	updatepop_a 0 27
+	pop_b 4
+.d 10 0
+	jmp s100
+else.115
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	push_b 0
+	update_a 5 32
+	update_a 4 31
+	update_a 3 30
+	update_a 2 29
+	update_a 1 28
+	updatepop_a 0 27
+	updatepop_b 0 4
+.d 6 1 b
+	rtn
+case.114
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	pushB TRUE
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+.d 6 1 b
+	rtn
+.n 1 _ ea101
+.o 1 0
+n101
+	push_node _cycle_in_spine 1
+.o 2 0
+ea101
+.o 2 0
+s101
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	updatepop_a 0 1
+.d 1 0
+	jsr s13
+.o 1 0
+	buildAC ".icl"
+.d 2 0
+	jsr s12
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.n 1 _
+.o 1 0
+n_createArray;42
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea_createArray;42
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea_createArray;42
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.impmod syntax
+.impdesc e_syntax_rFunDef
+	create_array_ e_syntax_rFunDef 7 2
+.d 1 0
+	rtn

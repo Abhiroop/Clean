@@ -1,0 +1,1819 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "genericsupport"
+.endinfo
+.module m_genericsupport "genericsupport"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod Heap
+.implab e_Heap_snilPtr
+.implab e_Heap_sreadPtr
+.impmod general
+.impdesc e_general_kYes
+.impdesc e_general_dNo
+.impmod syntax
+.implab e_syntax_stoString;2
+.implab e_syntax_s==;11
+.implab e_syntax_stoString;71
+.impdesc e_syntax_rIdent
+.impdesc e_syntax_rGlobal
+.impdesc e_syntax_dTypeConsSymb
+.impdesc e_syntax_dTypeConsBasic
+.impdesc e_syntax_dTypeConsArrow
+.impdesc e_syntax_dTypeConsVar
+.impdesc e_syntax_kTypeConsQualifiedIdent
+.impdesc e_syntax_dKindConst
+.impdesc e_syntax_kKindArrow
+.impmod StdList
+.implab e_StdList_slength;47
+.impmod StdString
+.implab e_StdString_s+++;11
+.impmod _SystemArray
+.impmod StdInt
+.implab e_StdInt_s+;6
+.implab e_StdInt_s-;7
+.implab e_StdInt_sone;11
+.implab e_StdInt_s<;17
+.impmod StdBool
+.implab e_StdBool_snot
+.export e_genericsupport_sfield_5_name_of_generic_info
+.descexp e_genericsupport_dfield_5_name_of_generic_info e_genericsupport_nfield_5_name_of_generic_info e_genericsupport_lfield_5_name_of_generic_info 1 0 "field_5_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_5_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea22
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_5_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_5_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea22
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea22
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_5_name_of_generic_info
+.o 0 1 i
+s22
+	eqI_b 1 0
+	jmp_true case.1
+	jmp s22.1
+case.1
+	pop_b 1
+	buildAC "gcd_index"
+.d 1 0
+	rtn
+s22.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_5_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_4_name_of_generic_info
+.descexp e_genericsupport_dfield_4_name_of_generic_info e_genericsupport_nfield_4_name_of_generic_info e_genericsupport_lfield_4_name_of_generic_info 1 0 "field_4_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_4_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea21
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_4_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_4_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea21
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea21
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_4_name_of_generic_info
+.o 0 1 i
+s21
+	eqI_b 1 0
+	jmp_true case.2
+	eqI_b 2 0
+	jmp_true case.3
+	jmp s21.1
+case.2
+	pop_b 1
+	buildAC "gcd_type"
+.d 1 0
+	rtn
+case.3
+	pop_b 1
+	buildAC "grd_fields"
+.d 1 0
+	rtn
+s21.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_4_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_3_name_of_generic_info
+.descexp e_genericsupport_dfield_3_name_of_generic_info e_genericsupport_nfield_3_name_of_generic_info e_genericsupport_lfield_3_name_of_generic_info 1 0 "field_3_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_3_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea20
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_3_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_3_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea20
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea20
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_3_name_of_generic_info
+.o 0 1 i
+s20
+	eqI_b 0 0
+	jmp_true case.4
+	eqI_b 1 0
+	jmp_true case.5
+	eqI_b 2 0
+	jmp_true case.6
+	jmp s20.1
+case.4
+	pop_b 1
+	buildAC "gtd_conses"
+.d 1 0
+	rtn
+case.5
+	pop_b 1
+	buildAC "gcd_type_def"
+.d 1 0
+	rtn
+case.6
+	pop_b 1
+	buildAC "grd_type"
+.d 1 0
+	rtn
+s20.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_3_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_2_name_of_generic_info
+.descexp e_genericsupport_dfield_2_name_of_generic_info e_genericsupport_nfield_2_name_of_generic_info e_genericsupport_lfield_2_name_of_generic_info 1 0 "field_2_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_2_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea19
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_2_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_2_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea19
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea19
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_2_name_of_generic_info
+.o 0 1 i
+s19
+	eqI_b 0 0
+	jmp_true case.7
+	eqI_b 1 0
+	jmp_true case.8
+	eqI_b 2 0
+	jmp_true case.9
+	eqI_b 3 0
+	jmp_true case.10
+	jmp s19.1
+case.7
+	pop_b 1
+	buildAC "gtd_num_conses"
+.d 1 0
+	rtn
+case.8
+	pop_b 1
+	buildAC "gcd_prio"
+.d 1 0
+	rtn
+case.9
+	pop_b 1
+	buildAC "grd_type_arity"
+.d 1 0
+	rtn
+case.10
+	pop_b 1
+	buildAC "gfd_cons"
+.d 1 0
+	rtn
+s19.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_2_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_1_name_of_generic_info
+.descexp e_genericsupport_dfield_1_name_of_generic_info e_genericsupport_nfield_1_name_of_generic_info e_genericsupport_lfield_1_name_of_generic_info 1 0 "field_1_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_1_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea18
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_1_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_1_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea18
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea18
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_1_name_of_generic_info
+.o 0 1 i
+s18
+	eqI_b 0 0
+	jmp_true case.11
+	eqI_b 1 0
+	jmp_true case.12
+	eqI_b 2 0
+	jmp_true case.13
+	eqI_b 3 0
+	jmp_true case.14
+	jmp s18.1
+case.11
+	pop_b 1
+	buildAC "gtd_arity"
+.d 1 0
+	rtn
+case.12
+	pop_b 1
+	buildAC "gcd_arity"
+.d 1 0
+	rtn
+case.13
+	pop_b 1
+	buildAC "grd_arity"
+.d 1 0
+	rtn
+case.14
+	pop_b 1
+	buildAC "gfd_index"
+.d 1 0
+	rtn
+s18.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_1_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_0_name_of_generic_info
+.descexp e_genericsupport_dfield_0_name_of_generic_info e_genericsupport_nfield_0_name_of_generic_info e_genericsupport_lfield_0_name_of_generic_info 1 0 "field_0_name_of_generic_info"
+.o 2 0
+e_genericsupport_lfield_0_name_of_generic_info
+	pop_a 1
+.d 1 0
+	jsr ea17
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_0_name_of_generic_info
+.o 1 0
+e_genericsupport_nfield_0_name_of_generic_info
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea17
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea17
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_genericsupport_sfield_0_name_of_generic_info
+.o 0 1 i
+s17
+	eqI_b 0 0
+	jmp_true case.15
+	eqI_b 1 0
+	jmp_true case.16
+	eqI_b 2 0
+	jmp_true case.17
+	eqI_b 3 0
+	jmp_true case.18
+	jmp s17.1
+case.15
+	pop_b 1
+	buildAC "gtd_name"
+.d 1 0
+	rtn
+case.16
+	pop_b 1
+	buildAC "gcd_name"
+.d 1 0
+	rtn
+case.17
+	pop_b 1
+	buildAC "grd_name"
+.d 1 0
+	rtn
+case.18
+	pop_b 1
+	buildAC "gfd_name"
+.d 1 0
+	rtn
+s17.1
+	pop_b 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dfield_0_name_of_generic_info
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_sfield_n_of_GenericRecordDescriptor
+.descexp e_genericsupport_dfield_n_of_GenericRecordDescriptor e_genericsupport_nfield_n_of_GenericRecordDescriptor e_genericsupport_lfield_n_of_GenericRecordDescriptor 1 0 "field_n_of_GenericRecordDescriptor"
+.o 2 0
+e_genericsupport_lfield_n_of_GenericRecordDescriptor
+	pop_a 1
+.d 1 0
+	jsr ea16
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_n_of_GenericRecordDescriptor
+.o 1 0
+e_genericsupport_nfield_n_of_GenericRecordDescriptor
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea16
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea16
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_genericsupport_sfield_n_of_GenericRecordDescriptor
+.o 1 0
+s16
+	push_a 0
+	eqAC_a "grd_name"
+	jmp_true case.19
+	push_a 0
+	eqAC_a "grd_arity"
+	jmp_true case.20
+	push_a 0
+	eqAC_a "grd_type_arity"
+	jmp_true case.21
+	push_a 0
+	eqAC_a "grd_type"
+	jmp_true case.22
+	push_a 0
+	eqAC_a "grd_fields"
+	jmp_true case.23
+	jmp case.24
+case.19
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.20
+	pop_a 1
+	pushI 1
+.d 0 1 i
+	rtn
+case.21
+	pop_a 1
+	pushI 2
+.d 0 1 i
+	rtn
+case.22
+	pop_a 1
+	pushI 3
+.d 0 1 i
+	rtn
+case.23
+	pop_a 1
+	pushI 4
+.d 0 1 i
+	rtn
+case.24
+	pop_a 1
+	pushI -1
+.d 0 1 i
+	rtn
+.export e_genericsupport_sfield_n_of_GenericFieldDescriptor
+.descexp e_genericsupport_dfield_n_of_GenericFieldDescriptor e_genericsupport_nfield_n_of_GenericFieldDescriptor e_genericsupport_lfield_n_of_GenericFieldDescriptor 1 0 "field_n_of_GenericFieldDescriptor"
+.o 2 0
+e_genericsupport_lfield_n_of_GenericFieldDescriptor
+	pop_a 1
+.d 1 0
+	jsr ea15
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_n_of_GenericFieldDescriptor
+.o 1 0
+e_genericsupport_nfield_n_of_GenericFieldDescriptor
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea15
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea15
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_genericsupport_sfield_n_of_GenericFieldDescriptor
+.o 1 0
+s15
+	push_a 0
+	eqAC_a "gfd_name"
+	jmp_true case.25
+	push_a 0
+	eqAC_a "gfd_index"
+	jmp_true case.26
+	push_a 0
+	eqAC_a "gfd_cons"
+	jmp_true case.27
+	jmp case.28
+case.25
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.26
+	pop_a 1
+	pushI 1
+.d 0 1 i
+	rtn
+case.27
+	pop_a 1
+	pushI 2
+.d 0 1 i
+	rtn
+case.28
+	pop_a 1
+	pushI -1
+.d 0 1 i
+	rtn
+.export e_genericsupport_sfield_n_of_GenericConsDescriptor
+.descexp e_genericsupport_dfield_n_of_GenericConsDescriptor e_genericsupport_nfield_n_of_GenericConsDescriptor e_genericsupport_lfield_n_of_GenericConsDescriptor 1 0 "field_n_of_GenericConsDescriptor"
+.o 2 0
+e_genericsupport_lfield_n_of_GenericConsDescriptor
+	pop_a 1
+.d 1 0
+	jsr ea14
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_n_of_GenericConsDescriptor
+.o 1 0
+e_genericsupport_nfield_n_of_GenericConsDescriptor
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea14
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea14
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_genericsupport_sfield_n_of_GenericConsDescriptor
+.o 1 0
+s14
+	push_a 0
+	eqAC_a "gcd_name"
+	jmp_true case.29
+	push_a 0
+	eqAC_a "gcd_arity"
+	jmp_true case.30
+	push_a 0
+	eqAC_a "gcd_prio"
+	jmp_true case.31
+	push_a 0
+	eqAC_a "gcd_type_def"
+	jmp_true case.32
+	push_a 0
+	eqAC_a "gcd_type"
+	jmp_true case.33
+	push_a 0
+	eqAC_a "gcd_index"
+	jmp_true case.34
+	jmp case.35
+case.29
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.30
+	pop_a 1
+	pushI 1
+.d 0 1 i
+	rtn
+case.31
+	pop_a 1
+	pushI 2
+.d 0 1 i
+	rtn
+case.32
+	pop_a 1
+	pushI 3
+.d 0 1 i
+	rtn
+case.33
+	pop_a 1
+	pushI 4
+.d 0 1 i
+	rtn
+case.34
+	pop_a 1
+	pushI 5
+.d 0 1 i
+	rtn
+case.35
+	pop_a 1
+	pushI -1
+.d 0 1 i
+	rtn
+.export e_genericsupport_sfield_n_of_GenericTypeDefDescriptor
+.descexp e_genericsupport_dfield_n_of_GenericTypeDefDescriptor e_genericsupport_nfield_n_of_GenericTypeDefDescriptor e_genericsupport_lfield_n_of_GenericTypeDefDescriptor 1 0 "field_n_of_GenericTypeDefDescriptor"
+.o 2 0
+e_genericsupport_lfield_n_of_GenericTypeDefDescriptor
+	pop_a 1
+.d 1 0
+	jsr ea13
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dfield_n_of_GenericTypeDefDescriptor
+.o 1 0
+e_genericsupport_nfield_n_of_GenericTypeDefDescriptor
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea13
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea13
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_genericsupport_sfield_n_of_GenericTypeDefDescriptor
+.o 1 0
+s13
+	push_a 0
+	eqAC_a "gtd_name"
+	jmp_true case.36
+	push_a 0
+	eqAC_a "gtd_arity"
+	jmp_true case.37
+	push_a 0
+	eqAC_a "gtd_num_conses"
+	jmp_true case.38
+	push_a 0
+	eqAC_a "gtd_conses"
+	jmp_true case.39
+	jmp case.40
+case.36
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.37
+	pop_a 1
+	pushI 1
+.d 0 1 i
+	rtn
+case.38
+	pop_a 1
+	pushI 2
+.d 0 1 i
+	rtn
+case.39
+	pop_a 1
+	pushI 3
+.d 0 1 i
+	rtn
+case.40
+	pop_a 1
+	pushI -1
+.d 0 1 i
+	rtn
+.export e_genericsupport_sgenericIdentToFunIdent
+.descexp e_genericsupport_dgenericIdentToFunIdent e_genericsupport_ngenericIdentToFunIdent e_genericsupport_lgenericIdentToFunIdent 2 0 "genericIdentToFunIdent"
+.a 0 a10
+.o 2 0
+e_genericsupport_lgenericIdentToFunIdent
+	repl_args 1 1
+.o 2 0
+a10
+.d 2 0
+	jsr ea10
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_genericsupport_dgenericIdentToFunIdent
+.o 1 0
+e_genericsupport_ngenericIdentToFunIdent
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea10
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea10
+	jsr_eval 1
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 2 0
+e_genericsupport_sgenericIdentToFunIdent
+.o 2 0
+s10
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s11
+.o 1 0
+	buildAC "_"
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jmp s7
+.export e_genericsupport_stype_cons_to_string
+.descexp e_genericsupport_dtype_cons_to_string e_genericsupport_ntype_cons_to_string e_genericsupport_ltype_cons_to_string 1 0 "type_cons_to_string"
+.o 2 0
+e_genericsupport_ltype_cons_to_string
+	pop_a 1
+.d 1 0
+	jsr ea11
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dtype_cons_to_string
+.o 1 0
+e_genericsupport_ntype_cons_to_string
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea11
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea11
+	jsr_eval 0
+.o 1 0
+e_genericsupport_stype_cons_to_string
+.o 1 0
+s11
+	pushD_a 0
+	eqD_b e_syntax_dTypeConsSymb 1
+	jmp_true case.41
+	eqD_b e_syntax_dTypeConsBasic 1
+	jmp_true case.42
+	eqD_b e_syntax_dTypeConsArrow 0
+	jmp_true case.43
+	eqD_b e_syntax_dTypeConsVar 1
+	jmp_true case.44
+	jmp case.45
+case.41
+	pop_b 1
+	repl_args 1 1
+	jsr_eval 0
+	repl_r_args 3 1
+	update_a 0 2
+	pop_a 2
+	pop_b 1
+	push_r_args 0 2 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jmp e_syntax_stoString;2
+case.42
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	jsr_eval 0
+	updatepop_a 0 1
+.d 1 0
+	jmp e_syntax_stoString;71
+case.43
+	pop_b 1
+	pop_a 1
+	buildAC "ARROW"
+.d 1 0
+	rtn
+case.44
+	pop_b 1
+	repl_args 1 1
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	repl_r_args 2 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+case.45
+	pop_b 1
+	repl_args 2 2
+	pop_a 1
+.d 1 0
+	rtn
+.export e_genericsupport_sgenericIdentToMemberIdent
+.descexp e_genericsupport_dgenericIdentToMemberIdent e_genericsupport_ngenericIdentToMemberIdent e_genericsupport_lgenericIdentToMemberIdent 2 0 "genericIdentToMemberIdent"
+.a 0 a9
+.o 2 0
+e_genericsupport_lgenericIdentToMemberIdent
+	repl_args 1 1
+.o 2 0
+a9
+.d 2 0
+	jsr ea9
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_genericsupport_dgenericIdentToMemberIdent
+.o 1 0
+e_genericsupport_ngenericIdentToMemberIdent
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea9
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea9
+	jsr_eval 1
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 2 0
+e_genericsupport_sgenericIdentToMemberIdent
+.o 2 0
+s9
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp s8
+.export e_genericsupport_sgenericIdentToClassIdent
+.descexp e_genericsupport_dgenericIdentToClassIdent e_genericsupport_ngenericIdentToClassIdent e_genericsupport_lgenericIdentToClassIdent 2 0 "genericIdentToClassIdent"
+.a 0 a8
+.o 2 0
+e_genericsupport_lgenericIdentToClassIdent
+	repl_args 1 1
+.o 2 0
+a8
+.d 2 0
+	jsr ea8
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_genericsupport_dgenericIdentToClassIdent
+.o 1 0
+e_genericsupport_ngenericIdentToClassIdent
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea8
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea8
+	jsr_eval 1
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 2 0
+e_genericsupport_sgenericIdentToClassIdent
+.o 2 0
+s8
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s12
+.o 1 0
+	buildAC "_"
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jmp s7
+.o 1 0
+s25
+	eq_desc _Nil 0 0
+	jmp_true case.46
+	jmp case.47
+case.46
+	pop_a 1
+	buildAC ""
+.d 1 0
+	rtn
+case.47
+	repl_args 2 2
+	jsr_eval 0
+	eq_desc e_syntax_dKindConst 0 0
+	jmp_true case.48
+	jmp case.49
+case.48
+	push_a 1
+	jsr_eval 0
+	updatepop_a 0 2
+.d 1 0
+	jsr s25
+.o 1 0
+	buildAC "s"
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	rtn
+case.49
+	push_a 1
+	jsr_eval 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s25
+.o 1 0
+	buildAC "c"
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+.d 1 0
+	jsr s12
+.o 1 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "o"
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	rtn
+.export e_genericsupport_skind_to_short_string
+.descexp e_genericsupport_dkind_to_short_string e_genericsupport_nkind_to_short_string e_genericsupport_lkind_to_short_string 1 0 "kind_to_short_string"
+.o 2 0
+e_genericsupport_lkind_to_short_string
+	pop_a 1
+.d 1 0
+	jsr ea12
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dkind_to_short_string
+.o 1 0
+e_genericsupport_nkind_to_short_string
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea12
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 1 0
+ea12
+	jsr_eval 0
+.o 1 0
+e_genericsupport_skind_to_short_string
+.o 1 0
+s12
+	pushD_a 0
+	eqD_b e_syntax_dKindConst 0
+	jmp_true case.50
+	eqD_b e_syntax_kKindArrow 0
+	jmp_true case.51
+	pop_b 1
+	jmp s12.1
+case.50
+	pop_b 1
+	pop_a 1
+	buildAC "s"
+.d 1 0
+	rtn
+case.51
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jsr s25
+.o 1 0
+	buildAC "s"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	rtn
+s12.1
+	pop_a 1
+	pushD m_genericsupport
+	pushD e_genericsupport_dkind_to_short_string
+.d 0 2 ii
+	jmp _match_error
+.export e_genericsupport_spostfixIdent
+.descexp e_genericsupport_dpostfixIdent e_genericsupport_npostfixIdent e_genericsupport_lpostfixIdent 2 0 "postfixIdent"
+.a 0 a7
+.o 2 0
+e_genericsupport_lpostfixIdent
+	repl_args 1 1
+.o 2 0
+a7
+.d 2 0
+	jsr ea7
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_genericsupport_dpostfixIdent
+.o 1 0
+e_genericsupport_npostfixIdent
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea7
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea7
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	push_array 1
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 0
+e_genericsupport_spostfixIdent
+.o 2 0
+s7
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr catAC
+.o 1 0
+.d 1 0
+	jmp s6
+.export e_genericsupport_smakeIdent
+.descexp e_genericsupport_dmakeIdent e_genericsupport_nmakeIdent e_genericsupport_lmakeIdent 1 0 "makeIdent"
+.o 2 0
+e_genericsupport_lmakeIdent
+	pop_a 1
+.d 1 0
+	jsr ea6
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_genericsupport_dmakeIdent
+.o 1 0
+e_genericsupport_nmakeIdent
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea6
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea6
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_genericsupport_smakeIdent
+.o 1 0
+s6
+.d 0 0
+	jsr e_Heap_snilPtr
+.o 1 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.export e_genericsupport_sgetGenericClass
+.descexp e_genericsupport_dgetGenericClass e_genericsupport_ngetGenericClass e_genericsupport_lgetGenericClass 4 0 "getGenericClass"
+.a 0 a5
+.o 2 0
+e_genericsupport_lgetGenericClass
+	repl_args 3 3
+.o 4 0
+a5
+.d 4 0
+	jsr ea5
+.o 2 0
+.impmod Heap
+.impdesc e_Heap_rHeap
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 4 e_genericsupport_dgetGenericClass
+.o 1 0
+e_genericsupport_ngetGenericClass
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea5
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+ea5
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_array 3
+	push_r_args 2 1 1
+	update_a 2 6
+	update_a 1 5
+	update_a 0 3
+	pop_a 3
+.o 4 1 i
+e_genericsupport_sgetGenericClass
+.o 4 1 i
+s5
+	push_a 3
+	push_a 3
+	push_a 3
+	push_b 0
+	push_a 3
+	updatepop_b 0 1
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 4 1 i
+	jsr s34
+.o 2 0
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp s31
+.o 2 0
+s31
+	eq_desc e_general_dNo 0 0
+	jmp_true case.52
+	jmp case.53
+case.52
+	buildh e_general_dNo 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+case.53
+	repl_args 1 1
+	repl_r_args 1 3
+	update_b 1 2
+	update_b 0 1
+	pop_a 1
+	pop_b 1
+	push_b 0
+	buildI_b 2
+	build_r e_syntax_rGlobal 1 1 0 0
+	build_r e_general_kYes 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 3
+.d 2 0
+	rtn
+.export e_genericsupport_sgetGenericMember
+.descexp e_genericsupport_dgetGenericMember e_genericsupport_ngetGenericMember e_genericsupport_lgetGenericMember 4 0 "getGenericMember"
+.a 0 a4
+.o 2 0
+e_genericsupport_lgetGenericMember
+	repl_args 3 3
+.o 4 0
+a4
+.d 4 0
+	jsr ea4
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 4 e_genericsupport_dgetGenericMember
+.o 1 0
+e_genericsupport_ngetGenericMember
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea4
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+ea4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_array 3
+	push_r_args 2 1 1
+	update_a 2 6
+	update_a 1 5
+	update_a 0 3
+	pop_a 3
+.o 4 1 i
+e_genericsupport_sgetGenericMember
+.o 4 1 i
+s4
+	push_a 3
+	push_a 3
+	push_a 3
+	push_b 0
+	push_a 3
+	updatepop_b 0 1
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 4 1 i
+	jsr s34
+.o 2 0
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp s30
+.o 2 0
+s30
+	eq_desc e_general_dNo 0 0
+	jmp_true case.54
+	jmp case.55
+case.54
+	buildh e_general_dNo 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+case.55
+	repl_args 1 1
+	repl_r_args 1 3
+	update_b 0 1
+	pop_a 1
+	pop_b 1
+	push_b 0
+	buildI_b 2
+	build_r e_syntax_rGlobal 1 1 0 0
+	build_r e_general_kYes 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 3
+.d 2 0
+	rtn
+.export e_genericsupport_sgetGenericClassInfo
+.descexp e_genericsupport_dgetGenericClassInfo e_genericsupport_ngetGenericClassInfo e_genericsupport_lgetGenericClassInfo 4 0 "getGenericClassInfo"
+.a 0 a3
+.o 2 0
+e_genericsupport_lgetGenericClassInfo
+	repl_args 3 3
+.o 4 0
+a3
+.d 4 0
+	jsr ea3
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 4 e_genericsupport_dgetGenericClassInfo
+.o 1 0
+e_genericsupport_ngetGenericClassInfo
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea3
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+ea3
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_array 3
+	push_r_args 2 1 1
+	update_a 2 6
+	update_a 1 5
+	update_a 0 3
+	pop_a 3
+.o 4 1 i
+e_genericsupport_sgetGenericClassInfo
+.o 4 1 i
+s3
+	push_b 0
+	push_a 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.impmod syntax
+.impdesc e_syntax_rCommonDefs
+	select e_syntax_rCommonDefs 8 0
+	updatepop_a 6 7
+	pushI_a 1
+	update_a 2 3
+	updatepop_a 0 2
+.impdesc e_syntax_rGenericDef
+	select e_syntax_rGenericDef 7 0
+	push_a 6
+	push_a 9
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 9 10
+	update_a 1 9
+	updatepop_a 0 8
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args_a 0 3 0 1 1
+	create
+	push_a 4
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 4 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s1
+.o 1 0
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.export e_genericsupport_saddGenericClassInfo
+.descexp e_genericsupport_daddGenericClassInfo e_genericsupport_naddGenericClassInfo e_genericsupport_laddGenericClassInfo 2 0 "addGenericClassInfo"
+.a 0 a2
+.o 2 0
+e_genericsupport_laddGenericClassInfo
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 1 0
+	buildh ARRAY 1
+.d 1 0
+	rtn
+.n 2 e_genericsupport_daddGenericClassInfo
+.o 1 0
+e_genericsupport_naddGenericClassInfo
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	push_r_args 1 1 3
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 3 iii
+e_genericsupport_saddGenericClassInfo
+.o 2 3 iii
+s2
+	push_a 0
+.d 1 0
+	jsr s29
+.o 0 1 i
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+.impdesc e_syntax_rGenericClassInfo
+	build_r e_syntax_rGenericClassInfo 1 3 3 1
+	buildh _Cons 2
+	push_a 2
+	update_a 1 4
+	updatepop_a 0 3
+	push_a 0
+	push_arraysize _ 1 0
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	subI
+	pushI 1
+	push_b 1
+	addI
+	create_array_ _ 1 0
+	push_a 1
+	push_b 0
+	pushI 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 2 ii
+	jsr s27
+.o 1 0
+	push_a 1
+	push_b 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 4
+	update _ 1 0
+.d 1 0
+	rtn
+.o 1 0
+s29
+	pushD_a 0
+	eqD_b e_syntax_dKindConst 0
+	jmp_true case.56
+	eqD_b e_syntax_kKindArrow 0
+	jmp_true case.57
+	pop_b 1
+	jmp s29.1
+case.56
+	pop_b 1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.57
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jmp e_StdList_slength;47
+s29.1
+	pop_a 1
+	pushD m_genericsupport
+	pushD x_29
+.d 0 2 ii
+	jmp _match_error
+.string x_29 "<case>[line:68];21;44"
+.o 2 2 ii
+s27
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.58
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 0
+	push_b 1
+	push_a 3
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+	update _ 1 0
+	push_a 1
+	push_b 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 2 ii
+	jmp s27
+else.58
+	updatepop_a 0 1
+	pop_b 2
+.d 1 0
+	rtn
+.export e_genericsupport_slookupGenericClassInfo
+.export e_genericsupport_ealookupGenericClassInfo
+.descexp e_genericsupport_dlookupGenericClassInfo e_genericsupport_nlookupGenericClassInfo e_genericsupport_llookupGenericClassInfo 2 0 "lookupGenericClassInfo"
+.a 2 e_genericsupport_ealookupGenericClassInfo
+.o 2 0
+e_genericsupport_llookupGenericClassInfo
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_genericsupport_ealookupGenericClassInfo
+.n 2 e_genericsupport_dlookupGenericClassInfo e_genericsupport_ealookupGenericClassInfo
+.o 1 0
+e_genericsupport_nlookupGenericClassInfo
+	push_node _cycle_in_spine 2
+.o 3 0
+e_genericsupport_ealookupGenericClassInfo
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	update_a 0 2
+	pop_a 1
+.o 3 0
+e_genericsupport_slookupGenericClassInfo
+.o 3 0
+s1
+	push_a 0
+.d 1 0
+	jsr s28
+.o 0 1 i
+	push_b 0
+	push_a 1
+	updatepop_b 0 1
+	update_a 1 2
+	updatepop_a 0 1
+	select _ 1 0
+	jsr_eval 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 3 0
+	jmp s23
+.o 1 0
+s28
+	pushD_a 0
+	eqD_b e_syntax_dKindConst 0
+	jmp_true case.59
+	eqD_b e_syntax_kKindArrow 0
+	jmp_true case.60
+	pop_b 1
+	jmp s28.1
+case.59
+	pop_b 1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.60
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jmp e_StdList_slength;47
+s28.1
+	pop_a 1
+	pushD m_genericsupport
+	pushD x_28
+.d 0 2 ii
+	jmp _match_error
+.string x_28 "<case>[line:56];21;43"
+.o 3 0
+s23
+	eq_desc _Nil 0 1
+	jmp_true case.61
+	jmp case.62
+case.61
+	fillh e_general_dNo 0 2
+	pop_a 2
+.d 1 0
+	rtn
+case.62
+	push_args 1 2 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	jsr_eval 0
+	push_r_args_a 0 1 3 1 1
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr e_syntax_s==;11
+.o 0 1 b
+	jmp_false else.63
+	push_a 0
+	fill_r e_general_kYes 1 0 5 0 0
+	pop_a 5
+.d 1 0
+	rtn
+else.63
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jmp s23
+.o 4 1 i
+s34
+	push_b 0
+	push_a 2
+	updatepop_b 0 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	select e_syntax_rCommonDefs 8 0
+	updatepop_a 6 7
+	pushI_a 1
+	update_a 2 3
+	updatepop_a 0 2
+	select e_syntax_rGenericDef 7 0
+	push_a 6
+	push_a 9
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 9 10
+	update_a 1 9
+	updatepop_a 0 8
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args_a 0 3 0 1 1
+	create
+	push_a 4
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 4 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s1
+.o 1 0
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.impmod _system
+.implab _match_error

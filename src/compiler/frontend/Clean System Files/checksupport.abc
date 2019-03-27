@@ -1,0 +1,9756 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "genericsupport"
+.depend "compare_constructor"
+.depend "_aconcat"
+.depend "utilities"
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "checksupport"
+.endinfo
+.module m_checksupport "checksupport"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod genericsupport
+.implab e_genericsupport_stype_cons_to_string
+.impmod compare_constructor
+.implab e_compare_constructor_sequal_constructor
+.impmod Heap
+.implab e_Heap_snilPtr
+.implab e_Heap_sreadPtr
+.implab e_Heap_swritePtr
+.implab e_Heap_s==;10
+.impmod general
+.impdesc e_general_dBind.bind_dst
+.implab e_general_nBind.bind_dst e_general_eaBind.bind_dst
+.impdesc e_general_kYes
+.impdesc e_general_dNo
+.impmod syntax
+.implab e_syntax_stoString;2
+.implab e_syntax_s==;15
+.implab e_syntax_s<<<;24
+.impdesc e_syntax_rIdent
+.impdesc e_syntax_rSymbolTableEntry
+.impdesc e_syntax_dSymbolTableEntry.ste_def_level
+.implab e_syntax_nSymbolTableEntry.ste_def_level
+.impdesc e_syntax_dSymbolTableEntry.ste_previous
+.implab e_syntax_nSymbolTableEntry.ste_previous
+.impdesc e_syntax_rDeclarationRecord
+.impdesc e_syntax_dDeclarationRecord.decl_pos
+.implab e_syntax_nDeclarationRecord.decl_pos e_syntax_eaDeclarationRecord.decl_pos
+.impdesc e_syntax_dDeclarationRecord.decl_index
+.implab e_syntax_nDeclarationRecord.decl_index
+.impdesc e_syntax_rGlobal
+.impdesc e_syntax_tGlobal
+.implab e_syntax_cGlobal
+.impdesc e_syntax_dDclModule.dcl_common
+.implab e_syntax_nDclModule.dcl_common
+.impdesc e_syntax_dCommonDefs.com_gencase_defs
+.implab e_syntax_nCommonDefs.com_gencase_defs
+.impdesc e_syntax_rIdentPos
+.impdesc e_syntax_rStringPos
+.impdesc e_syntax_kSTE_FunctionOrMacro
+.impdesc e_syntax_kSTE_DclMacroOrLocalMacroFunction
+.impdesc e_syntax_dSTE_Type
+.impdesc e_syntax_dSTE_Constructor
+.impdesc e_syntax_kSTE_Selector
+.impdesc e_syntax_kSTE_Field
+.impdesc e_syntax_dSTE_Class
+.impdesc e_syntax_dSTE_Member
+.impdesc e_syntax_dSTE_Generic
+.impdesc e_syntax_dSTE_GenericCase
+.impdesc e_syntax_dSTE_GenericDeriveClass
+.impdesc e_syntax_dSTE_Instance
+.impdesc e_syntax_kSTE_Imported
+.impdesc e_syntax_dSTE_DclFunction
+.impdesc e_syntax_dSTE_Empty
+.impdesc e_syntax_dSTE_TypeExtension
+.impdesc e_syntax_kDeclaration
+.impdesc e_syntax_dDeclaration
+.implab e_syntax_nDeclaration e_syntax_eaDeclaration
+.impdesc e_syntax_kAlgType
+.impdesc e_syntax_kRecordType
+.impdesc e_syntax_kNewType
+.impdesc e_syntax_dFunPos
+.impdesc e_syntax_dLinePos
+.impdesc e_syntax_dPreDefPos
+.impdesc e_syntax_dNoPos
+.impmod StdMisc
+.impdesc e_StdMisc_dabort
+.implab e_StdMisc_sabort
+.implab e_StdMisc_nabort _
+.impmod StdList
+.implab e_StdList_shd
+.implab e_StdList_slength;47
+.impmod StdFile
+.implab e_StdFile_s<<<;36
+.implab e_StdFile_s<<<;37
+.impdesc e_StdFile_d<<<;38
+.implab e_StdFile_s<<<;38
+.implab e_StdFile_n<<<;38
+.impdesc e_StdFile_d<<<;.<<<
+.implab e_StdFile_n<<<;.<<< e_StdFile_ea<<<;.<<<
+.impmod StdString
+.implab e_StdString_s+++;11
+.impmod _SystemArray
+.impmod StdInt
+.implab e_StdInt_sbitor
+.implab e_StdInt_s+;6
+.implab e_StdInt_sone;11
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.impmod StdBool
+.implab e_StdBool_snot
+.impmod Heap
+.impdesc e_Heap_rHeap
+.export e_checksupport_rHeaps
+.record e_checksupport_rHeaps {a}{a}a{a} 4 0 e_Heap_rHeap e_Heap_rHeap e_Heap_rHeap "Heaps"
+.descexp e_checksupport_tHeaps e_checksupport_cHeaps _hnf 4 1 "Heaps"
+.n 4 e_checksupport_tHeaps
+.o 1 0
+e_checksupport_cHeaps
+	push_node _cycle_in_spine 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_r_args 2 1 0
+	push_r_args 2 1 0
+	update_a 2 6
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.impmod checksupport
+.impdesc e_checksupport_rHeaps
+	fill_r e_checksupport_rHeaps 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.export e_checksupport_dHeaps.hp_var_heap
+.export e_checksupport_nHeaps.hp_var_heap
+.desc e_checksupport_dHeaps.hp_var_heap e_checksupport_nHeaps.hp_var_heap _hnf 1 0 "Heaps.hp_var_heap"
+.n 1 e_checksupport_dHeaps.hp_var_heap
+.o 1 0
+e_checksupport_nHeaps.hp_var_heap
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 1 1
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dHeaps.hp_expression_heap
+.export e_checksupport_nHeaps.hp_expression_heap
+.desc e_checksupport_dHeaps.hp_expression_heap e_checksupport_nHeaps.hp_expression_heap _hnf 1 0 "Heaps.hp_expression_heap"
+.n 1 e_checksupport_dHeaps.hp_expression_heap
+.o 1 0
+e_checksupport_nHeaps.hp_expression_heap
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 2 1
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dHeaps.hp_type_heaps
+.export e_checksupport_nHeaps.hp_type_heaps
+.descs e_checksupport_dHeaps.hp_type_heaps e_checksupport_nHeaps.hp_type_heaps _ 4 0 "Heaps.hp_type_heaps"
+.n -4 e_checksupport_dHeaps.hp_type_heaps
+.o 1 0
+e_checksupport_nHeaps.hp_type_heaps
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 3 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dHeaps.hp_generic_heap
+.export e_checksupport_nHeaps.hp_generic_heap
+.desc e_checksupport_dHeaps.hp_generic_heap e_checksupport_nHeaps.hp_generic_heap _hnf 1 0 "Heaps.hp_generic_heap"
+.n 1 e_checksupport_dHeaps.hp_generic_heap
+.o 1 0
+e_checksupport_nHeaps.hp_generic_heap
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 4 1
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_rErrorAdmin
+.record e_checksupport_rErrorAdmin fab 1 3 "ErrorAdmin"
+.descexp e_checksupport_tErrorAdmin e_checksupport_cErrorAdmin _hnf 3 1 "ErrorAdmin"
+.n 3 e_checksupport_tErrorAdmin
+.o 1 0
+e_checksupport_cErrorAdmin
+	push_node _cycle_in_spine 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushB_a 2
+	pushF_a 0
+	update_a 1 2
+	pop_a 2
+.impdesc e_checksupport_rErrorAdmin
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.export e_checksupport_dErrorAdmin.ea_file
+.export e_checksupport_nErrorAdmin.ea_file
+.descs e_checksupport_dErrorAdmin.ea_file e_checksupport_nErrorAdmin.ea_file FILE 4 3 "ErrorAdmin.ea_file"
+.n -3 e_checksupport_dErrorAdmin.ea_file
+.o 1 0
+e_checksupport_nErrorAdmin.ea_file
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 1 3 1 2
+	pop_a 1
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_checksupport_dErrorAdmin.ea_loc
+.export e_checksupport_nErrorAdmin.ea_loc
+.export e_checksupport_eaErrorAdmin.ea_loc
+.descs e_checksupport_dErrorAdmin.ea_loc e_checksupport_nErrorAdmin.ea_loc _ 1 0 "ErrorAdmin.ea_loc"
+.n -4 e_checksupport_dErrorAdmin.ea_loc e_checksupport_eaErrorAdmin.ea_loc
+.o 1 0
+e_checksupport_nErrorAdmin.ea_loc
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaErrorAdmin.ea_loc
+	jsr_eval 0
+	repl_r_args_a 1 3 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dErrorAdmin.ea_ok
+.export e_checksupport_nErrorAdmin.ea_ok
+.descs e_checksupport_dErrorAdmin.ea_ok e_checksupport_nErrorAdmin.ea_ok BOOL 5 0 "ErrorAdmin.ea_ok"
+.n -3 e_checksupport_dErrorAdmin.ea_ok
+.o 1 0
+e_checksupport_nErrorAdmin.ea_ok
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 1 3 3 1
+	pop_a 1
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_rCheckState
+.record e_checksupport_rCheckState {a}aaa 4 0 e_Heap_rHeap "CheckState"
+.descexp e_checksupport_tCheckState e_checksupport_cCheckState _hnf 4 1 "CheckState"
+.n 4 e_checksupport_tCheckState
+.o 1 0
+e_checksupport_cCheckState
+	push_node _cycle_in_spine 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	push_r_args 1 1 0
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.impdesc e_checksupport_rCheckState
+	fill_r e_checksupport_rCheckState 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.export e_checksupport_dCheckState.cs_symbol_table
+.export e_checksupport_nCheckState.cs_symbol_table
+.desc e_checksupport_dCheckState.cs_symbol_table e_checksupport_nCheckState.cs_symbol_table _hnf 1 0 "CheckState.cs_symbol_table"
+.n 1 e_checksupport_dCheckState.cs_symbol_table
+.o 1 0
+e_checksupport_nCheckState.cs_symbol_table
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 1 1
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dCheckState.cs_predef_symbols
+.export e_checksupport_nCheckState.cs_predef_symbols
+.desc e_checksupport_dCheckState.cs_predef_symbols e_checksupport_nCheckState.cs_predef_symbols _hnf 1 0 "CheckState.cs_predef_symbols"
+.n 1 e_checksupport_dCheckState.cs_predef_symbols
+.o 1 0
+e_checksupport_nCheckState.cs_predef_symbols
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 2 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dCheckState.cs_error
+.export e_checksupport_nCheckState.cs_error
+.descs e_checksupport_dCheckState.cs_error e_checksupport_nCheckState.cs_error _ 4 0 "CheckState.cs_error"
+.n -4 e_checksupport_dCheckState.cs_error
+.o 1 0
+e_checksupport_nCheckState.cs_error
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 3 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dCheckState.cs_x
+.export e_checksupport_nCheckState.cs_x
+.descs e_checksupport_dCheckState.cs_x e_checksupport_nCheckState.cs_x _ 5 0 "CheckState.cs_x"
+.n -4 e_checksupport_dCheckState.cs_x
+.o 1 0
+e_checksupport_nCheckState.cs_x
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 4 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_rCheckStateX
+.record e_checksupport_rCheckStateX iib 0 3 "CheckStateX"
+.descexp e_checksupport_tCheckStateX e_checksupport_cCheckStateX _hnf 3 1 "CheckStateX"
+.n 3 e_checksupport_tCheckStateX
+.o 1 0
+e_checksupport_cCheckStateX
+	push_node _cycle_in_spine 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushB_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.impdesc e_checksupport_rCheckStateX
+	fill_r e_checksupport_rCheckStateX 0 3 0 0 0
+	pop_b 3
+.d 1 0
+	rtn
+.export e_checksupport_dCheckStateX.x_needed_modules
+.export e_checksupport_nCheckStateX.x_needed_modules
+.descs e_checksupport_dCheckStateX.x_needed_modules e_checksupport_nCheckStateX.x_needed_modules INT 1 0 "CheckStateX.x_needed_modules"
+.n -3 e_checksupport_dCheckStateX.x_needed_modules
+.o 1 0
+e_checksupport_nCheckStateX.x_needed_modules
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 3 1 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_dCheckStateX.x_main_dcl_module_n
+.export e_checksupport_nCheckStateX.x_main_dcl_module_n
+.descs e_checksupport_dCheckStateX.x_main_dcl_module_n e_checksupport_nCheckStateX.x_main_dcl_module_n INT 3 0 "CheckStateX.x_main_dcl_module_n"
+.n -3 e_checksupport_dCheckStateX.x_main_dcl_module_n
+.o 1 0
+e_checksupport_nCheckStateX.x_main_dcl_module_n
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 3 2 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_dCheckStateX.x_check_dynamic_types
+.export e_checksupport_nCheckStateX.x_check_dynamic_types
+.descs e_checksupport_dCheckStateX.x_check_dynamic_types e_checksupport_nCheckStateX.x_check_dynamic_types BOOL 4 0 "CheckStateX.x_check_dynamic_types"
+.n -3 e_checksupport_dCheckStateX.x_check_dynamic_types
+.o 1 0
+e_checksupport_nCheckStateX.x_check_dynamic_types
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 0 3 3 1
+	pop_a 1
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_rGroup
+.record e_checksupport_rGroup a 1 0 "Group"
+.descexp e_checksupport_tGroup e_checksupport_cGroup _hnf 1 1 "Group"
+.n 1 e_checksupport_tGroup
+.o 1 0
+e_checksupport_cGroup
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impdesc e_checksupport_rGroup
+	fill_r e_checksupport_rGroup 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dGroup.group_members
+.export e_checksupport_nGroup.group_members
+.export e_checksupport_eaGroup.group_members
+.descs e_checksupport_dGroup.group_members e_checksupport_nGroup.group_members _ 1 0 "Group.group_members"
+.n -4 e_checksupport_dGroup.group_members e_checksupport_eaGroup.group_members
+.o 1 0
+e_checksupport_nGroup.group_members
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaGroup.group_members
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_rComponent
+.record e_checksupport_rComponent a 1 0 "Component"
+.descexp e_checksupport_tComponent e_checksupport_cComponent _hnf 1 1 "Component"
+.n 1 e_checksupport_tComponent
+.o 1 0
+e_checksupport_cComponent
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impdesc e_checksupport_rComponent
+	fill_r e_checksupport_rComponent 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dComponent.component_members
+.export e_checksupport_nComponent.component_members
+.export e_checksupport_eaComponent.component_members
+.descs e_checksupport_dComponent.component_members e_checksupport_nComponent.component_members _ 1 0 "Component.component_members"
+.n -4 e_checksupport_dComponent.component_members e_checksupport_eaComponent.component_members
+.o 1 0
+e_checksupport_nComponent.component_members
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaComponent.component_members
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_eaComponentMember
+.descexp e_checksupport_dComponentMember e_checksupport_nComponentMember e_checksupport_lComponentMember 2 0 "ComponentMember"
+.a 2 e_checksupport_eaComponentMember
+.o 2 0
+e_checksupport_lComponentMember
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_checksupport_eaComponentMember
+.n 2 e_checksupport_dComponentMember e_checksupport_eaComponentMember
+.o 1 0
+e_checksupport_nComponentMember
+	push_node _cycle_in_spine 2
+.o 3 0
+e_checksupport_eaComponentMember
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+	fill_r e_checksupport_kComponentMember 1 1 1 0 0
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_eaGeneratedComponentMember
+.descexp e_checksupport_dGeneratedComponentMember e_checksupport_nGeneratedComponentMember e_checksupport_lGeneratedComponentMember 3 0 "GeneratedComponentMember"
+.a 3 e_checksupport_eaGeneratedComponentMember
+.o 2 0
+e_checksupport_lGeneratedComponentMember
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.d 4 0
+	jmp e_checksupport_eaGeneratedComponentMember
+.n 3 e_checksupport_dGeneratedComponentMember e_checksupport_eaGeneratedComponentMember
+.o 1 0
+e_checksupport_nGeneratedComponentMember
+	push_node _cycle_in_spine 3
+.o 4 0
+e_checksupport_eaGeneratedComponentMember
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	pushI_a 1
+	update_a 0 2
+	pop_a 2
+	fill_r e_checksupport_kGeneratedComponentMember 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_kComponentMember
+.record e_checksupport_kComponentMember dia 1 1 "ComponentMember"
+.impmod Heap
+.impdesc e_Heap_rPtr
+.export e_checksupport_kGeneratedComponentMember
+.record e_checksupport_kGeneratedComponentMember di{a}a 2 1 e_Heap_rPtr "GeneratedComponentMember"
+.export e_checksupport_dNoComponentMembers
+.desc e_checksupport_dNoComponentMembers _hnf _hnf 0 0 "NoComponentMembers"
+.export e_checksupport_rExpressionInfo
+.record e_checksupport_rExpressionInfo aaaaaaaab 8 1 "ExpressionInfo"
+.descexp e_checksupport_tExpressionInfo e_checksupport_cExpressionInfo _hnf 9 1 "ExpressionInfo"
+.n 9 e_checksupport_tExpressionInfo
+.o 1 0
+e_checksupport_cExpressionInfo
+	push_node _cycle_in_spine 9
+	jsr_eval 8
+	jsr_eval 7
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushB_a 8
+	push_array 7
+	push_array 7
+	push_array 7
+	push_array 7
+	push_array 7
+	push_array 7
+	push_array 7
+	push_array 7
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	update_a 0 9
+	pop_a 9
+.impmod checksupport
+.impdesc e_checksupport_rExpressionInfo
+	fill_r e_checksupport_rExpressionInfo 8 1 8 0 0
+	pop_a 8
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_type_defs
+.export e_checksupport_nExpressionInfo.ef_type_defs
+.desc e_checksupport_dExpressionInfo.ef_type_defs e_checksupport_nExpressionInfo.ef_type_defs _hnf 1 0 "ExpressionInfo.ef_type_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_type_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_type_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 1 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_selector_defs
+.export e_checksupport_nExpressionInfo.ef_selector_defs
+.desc e_checksupport_dExpressionInfo.ef_selector_defs e_checksupport_nExpressionInfo.ef_selector_defs _hnf 1 0 "ExpressionInfo.ef_selector_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_selector_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_selector_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 2 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_cons_defs
+.export e_checksupport_nExpressionInfo.ef_cons_defs
+.desc e_checksupport_dExpressionInfo.ef_cons_defs e_checksupport_nExpressionInfo.ef_cons_defs _hnf 1 0 "ExpressionInfo.ef_cons_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_cons_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_cons_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 3 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_member_defs
+.export e_checksupport_nExpressionInfo.ef_member_defs
+.desc e_checksupport_dExpressionInfo.ef_member_defs e_checksupport_nExpressionInfo.ef_member_defs _hnf 1 0 "ExpressionInfo.ef_member_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_member_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_member_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 4 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_class_defs
+.export e_checksupport_nExpressionInfo.ef_class_defs
+.desc e_checksupport_dExpressionInfo.ef_class_defs e_checksupport_nExpressionInfo.ef_class_defs _hnf 1 0 "ExpressionInfo.ef_class_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_class_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_class_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 5 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_generic_defs
+.export e_checksupport_nExpressionInfo.ef_generic_defs
+.desc e_checksupport_dExpressionInfo.ef_generic_defs e_checksupport_nExpressionInfo.ef_generic_defs _hnf 1 0 "ExpressionInfo.ef_generic_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_generic_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_generic_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 6 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_modules
+.export e_checksupport_nExpressionInfo.ef_modules
+.desc e_checksupport_dExpressionInfo.ef_modules e_checksupport_nExpressionInfo.ef_modules _hnf 1 0 "ExpressionInfo.ef_modules"
+.n 1 e_checksupport_dExpressionInfo.ef_modules
+.o 1 0
+e_checksupport_nExpressionInfo.ef_modules
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 7 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_macro_defs
+.export e_checksupport_nExpressionInfo.ef_macro_defs
+.desc e_checksupport_dExpressionInfo.ef_macro_defs e_checksupport_nExpressionInfo.ef_macro_defs _hnf 1 0 "ExpressionInfo.ef_macro_defs"
+.n 1 e_checksupport_dExpressionInfo.ef_macro_defs
+.o 1 0
+e_checksupport_nExpressionInfo.ef_macro_defs
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 8 1 8 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_checksupport_dExpressionInfo.ef_is_macro_fun
+.export e_checksupport_nExpressionInfo.ef_is_macro_fun
+.descs e_checksupport_dExpressionInfo.ef_is_macro_fun e_checksupport_nExpressionInfo.ef_is_macro_fun BOOL 10 0 "ExpressionInfo.ef_is_macro_fun"
+.n -3 e_checksupport_dExpressionInfo.ef_is_macro_fun
+.o 1 0
+e_checksupport_nExpressionInfo.ef_is_macro_fun
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 8 1 1 1
+	pop_a 1
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_checksupport_eaBS_Constructors
+.descexp e_checksupport_dBS_Constructors e_checksupport_nBS_Constructors e_checksupport_lBS_Constructors 1 0 "BS_Constructors"
+.o 2 0
+e_checksupport_lBS_Constructors
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_checksupport_eaBS_Constructors
+.n 1 e_checksupport_dBS_Constructors e_checksupport_eaBS_Constructors
+.o 1 0
+e_checksupport_nBS_Constructors
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaBS_Constructors
+	jsr_eval 0
+	fill_r e_checksupport_kBS_Constructors 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_eaBS_Fields
+.descexp e_checksupport_dBS_Fields e_checksupport_nBS_Fields e_checksupport_lBS_Fields 1 0 "BS_Fields"
+.o 2 0
+e_checksupport_lBS_Fields
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_checksupport_eaBS_Fields
+.n 1 e_checksupport_dBS_Fields e_checksupport_eaBS_Fields
+.o 1 0
+e_checksupport_nBS_Fields
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaBS_Fields
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+	fill_r e_checksupport_kBS_Fields 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_eaBS_Members
+.descexp e_checksupport_dBS_Members e_checksupport_nBS_Members e_checksupport_lBS_Members 1 0 "BS_Members"
+.o 2 0
+e_checksupport_lBS_Members
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_checksupport_eaBS_Members
+.n 1 e_checksupport_dBS_Members e_checksupport_eaBS_Members
+.o 1 0
+e_checksupport_nBS_Members
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaBS_Members
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+	fill_r e_checksupport_kBS_Members 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_kBS_Constructors
+.record e_checksupport_kBS_Constructors da 1 0 "BS_Constructors"
+.export e_checksupport_kBS_Fields
+.record e_checksupport_kBS_Fields da 1 0 "BS_Fields"
+.export e_checksupport_kBS_Members
+.record e_checksupport_kBS_Members da 1 0 "BS_Members"
+.export e_checksupport_dBS_Nothing
+.desc e_checksupport_dBS_Nothing _hnf _hnf 0 0 "BS_Nothing"
+.export e_checksupport_rErroradmin;
+.record e_checksupport_rErroradmin; aaa 3 0 "Erroradmin;"
+.descexp e_checksupport_tErroradmin; e_checksupport_cErroradmin; _hnf 3 1 "Erroradmin;"
+.n 3 e_checksupport_tErroradmin;
+.o 1 0
+e_checksupport_cErroradmin;
+	push_node _cycle_in_spine 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+.impdesc e_checksupport_rErroradmin;
+	fill_r e_checksupport_rErroradmin; 3 0 3 0 0
+	pop_a 3
+.d 1 0
+	rtn
+.export e_checksupport_dErroradmin;.popErrorAdmin
+.export e_checksupport_nErroradmin;.popErrorAdmin
+.export e_checksupport_eaErroradmin;.popErrorAdmin
+.descs e_checksupport_dErroradmin;.popErrorAdmin e_checksupport_nErroradmin;.popErrorAdmin _ 1 0 "Erroradmin;.popErrorAdmin"
+.n -4 e_checksupport_dErroradmin;.popErrorAdmin e_checksupport_eaErroradmin;.popErrorAdmin
+.o 1 0
+e_checksupport_nErroradmin;.popErrorAdmin
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaErroradmin;.popErrorAdmin
+	jsr_eval 0
+	repl_r_args_a 3 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dErroradmin;.pushErrorAdmin
+.export e_checksupport_nErroradmin;.pushErrorAdmin
+.export e_checksupport_eaErroradmin;.pushErrorAdmin
+.descs e_checksupport_dErroradmin;.pushErrorAdmin e_checksupport_nErroradmin;.pushErrorAdmin _ 3 0 "Erroradmin;.pushErrorAdmin"
+.n -4 e_checksupport_dErroradmin;.pushErrorAdmin e_checksupport_eaErroradmin;.pushErrorAdmin
+.o 1 0
+e_checksupport_nErroradmin;.pushErrorAdmin
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaErroradmin;.pushErrorAdmin
+	jsr_eval 0
+	repl_r_args_a 3 0 2 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dErroradmin;.setErrorAdmin
+.export e_checksupport_nErroradmin;.setErrorAdmin
+.export e_checksupport_eaErroradmin;.setErrorAdmin
+.descs e_checksupport_dErroradmin;.setErrorAdmin e_checksupport_nErroradmin;.setErrorAdmin _ 4 0 "Erroradmin;.setErrorAdmin"
+.n -4 e_checksupport_dErroradmin;.setErrorAdmin e_checksupport_eaErroradmin;.setErrorAdmin
+.o 1 0
+e_checksupport_nErroradmin;.setErrorAdmin
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaErroradmin;.setErrorAdmin
+	jsr_eval 0
+	repl_r_args_a 3 0 3 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_renvLookUp;
+.record e_checksupport_renvLookUp; a 1 0 "envLookUp;"
+.descexp e_checksupport_tenvLookUp; e_checksupport_cenvLookUp; _hnf 1 1 "envLookUp;"
+.n 1 e_checksupport_tenvLookUp;
+.o 1 0
+e_checksupport_cenvLookUp;
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impdesc e_checksupport_renvLookUp;
+	fill_r e_checksupport_renvLookUp; 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_denvLookUp;.envLookUp
+.export e_checksupport_nenvLookUp;.envLookUp
+.export e_checksupport_eaenvLookUp;.envLookUp
+.descs e_checksupport_denvLookUp;.envLookUp e_checksupport_nenvLookUp;.envLookUp _ 1 0 "envLookUp;.envLookUp"
+.n -4 e_checksupport_denvLookUp;.envLookUp e_checksupport_eaenvLookUp;.envLookUp
+.o 1 0
+e_checksupport_nenvLookUp;.envLookUp
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eaenvLookUp;.envLookUp
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_rtoIdent;
+.record e_checksupport_rtoIdent; a 1 0 "toIdent;"
+.descexp e_checksupport_ttoIdent; e_checksupport_ctoIdent; _hnf 1 1 "toIdent;"
+.n 1 e_checksupport_ttoIdent;
+.o 1 0
+e_checksupport_ctoIdent;
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impdesc e_checksupport_rtoIdent;
+	fill_r e_checksupport_rtoIdent; 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_dtoIdent;.toIdent
+.export e_checksupport_ntoIdent;.toIdent
+.export e_checksupport_eatoIdent;.toIdent
+.descs e_checksupport_dtoIdent;.toIdent e_checksupport_ntoIdent;.toIdent _ 1 0 "toIdent;.toIdent"
+.n -4 e_checksupport_dtoIdent;.toIdent e_checksupport_eatoIdent;.toIdent
+.o 1 0
+e_checksupport_ntoIdent;.toIdent
+	push_node _cycle_in_spine 1
+.o 2 0
+e_checksupport_eatoIdent;.toIdent
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_s<<<;53
+.descexp e_checksupport_d<<<;53 e_checksupport_n<<<;53 e_checksupport_l<<<;53 2 0 "<<<;53"
+.a 0 a54
+.o 2 0
+e_checksupport_l<<<;53
+	repl_args 1 1
+.o 2 0
+a54
+.d 2 0
+	jsr ea54
+.o 0 2 f
+	buildF_b 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_checksupport_d<<<;53
+.o 1 0
+e_checksupport_n<<<;53
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea54
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea54
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 1
+	pushF_a 2
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 3 fi
+e_checksupport_s<<<;53
+.o 2 3 fi
+s54
+	pushI -1
+	push_b 3
+	eqI
+	jmp_false else.1
+	pushC '['
+	push_b 2
+	push_b 2
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 1
+	update_b 1 4
+	updatepop_b 0 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ']'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+.d 0 2 f
+	rtn
+else.1
+	pushC '['
+	push_b 2
+	push_b 2
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 1
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_b 2
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 i f
+	jsr writeFI
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 0
+	update_b 1 2
+	updatepop_b 0 1
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ']'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+.d 0 2 f
+	rtn
+.export e_checksupport_stoInt;51
+.descexp e_checksupport_dtoInt;51 e_checksupport_ntoInt;51 e_checksupport_ltoInt;51 1 0 "toInt;51"
+.o 2 0
+e_checksupport_ltoInt;51
+	pop_a 1
+.d 1 0
+	jsr ea52
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoInt;51
+.o 1 0
+e_checksupport_ntoInt;51
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea52
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea52
+	jsr_eval 0
+.o 1 0
+e_checksupport_stoInt;51
+.o 1 0
+s52
+	pushD_a 0
+	eqD_b e_syntax_dSTE_Type 0
+	jmp_true case.2
+	eqD_b e_syntax_dSTE_Constructor 0
+	jmp_true case.3
+	eqD_b e_syntax_kSTE_Field 0
+	jmp_true case.4
+	eqD_b e_syntax_dSTE_Class 0
+	jmp_true case.5
+	eqD_b e_syntax_dSTE_Generic 0
+	jmp_true case.6
+	eqD_b e_syntax_dSTE_GenericCase 0
+	jmp_true case.7
+	eqD_b e_syntax_dSTE_Member 0
+	jmp_true case.8
+	eqD_b e_syntax_dSTE_Instance 0
+	jmp_true case.9
+	eqD_b e_syntax_dSTE_DclFunction 0
+	jmp_true case.10
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.11
+	eqD_b e_syntax_kSTE_DclMacroOrLocalMacroFunction 0
+	jmp_true case.12
+	eqD_b e_syntax_dSTE_GenericDeriveClass 0
+	jmp_true case.13
+	eqD_b e_syntax_dSTE_TypeExtension 0
+	jmp_true case.14
+	pop_b 1
+	jmp case.15
+case.2
+	pop_b 1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.3
+	pop_b 1
+	pop_a 1
+	pushI 1
+.d 0 1 i
+	rtn
+case.4
+	pop_b 1
+	repl_args 2 2
+	pop_a 2
+	pushI 2
+.d 0 1 i
+	rtn
+case.5
+	pop_b 1
+	pop_a 1
+	pushI 3
+.d 0 1 i
+	rtn
+case.6
+	pop_b 1
+	pop_a 1
+	pushI 5
+.d 0 1 i
+	rtn
+case.7
+	pop_b 1
+	pop_a 1
+	pushI 6
+.d 0 1 i
+	rtn
+case.8
+	pop_b 1
+	pop_a 1
+	pushI 4
+.d 0 1 i
+	rtn
+case.9
+	pop_b 1
+	pop_a 1
+	pushI 7
+.d 0 1 i
+	rtn
+case.10
+	pop_b 1
+	pop_a 1
+	pushI 8
+.d 0 1 i
+	rtn
+case.11
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	pushI 9
+.d 0 1 i
+	rtn
+case.12
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	pushI 9
+.d 0 1 i
+	rtn
+case.13
+	pop_b 1
+	pop_a 1
+	pushI 6
+.d 0 1 i
+	rtn
+case.14
+	pop_b 1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+case.15
+	pop_a 1
+	pushI -1
+.d 0 1 i
+	rtn
+.export e_checksupport_stoIdent;50
+.descexp e_checksupport_dtoIdent;50 e_checksupport_ntoIdent;50 e_checksupport_ltoIdent;50 1 0 "toIdent;50"
+.o 2 0
+e_checksupport_ltoIdent;50
+	pop_a 1
+.d 1 0
+	jsr ea51
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;50
+.o 1 0
+e_checksupport_ntoIdent;50
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea51
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea51
+	jsr_eval 0
+	repl_r_args 2 0
+.o 2 0
+e_checksupport_stoIdent;50
+.o 2 0
+s51
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;49
+.descexp e_checksupport_dtoIdent;49 e_checksupport_ntoIdent;49 e_checksupport_ltoIdent;49 1 0 "toIdent;49"
+.o 2 0
+e_checksupport_ltoIdent;49
+	pop_a 1
+.d 1 0
+	jsr ea50
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;49
+.o 1 0
+e_checksupport_ntoIdent;49
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea50
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea50
+	jsr_eval 0
+	repl_r_args 2 0
+.o 2 0
+e_checksupport_stoIdent;49
+.o 2 0
+s50
+	push_r_args_a 1 2 0 1 1
+	updatepop_a 0 2
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;48
+.descexp e_checksupport_dtoIdent;48 e_checksupport_ntoIdent;48 e_checksupport_ltoIdent;48 1 0 "toIdent;48"
+.o 2 0
+e_checksupport_ltoIdent;48
+	pop_a 1
+.d 1 0
+	jsr ea49
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;48
+.o 1 0
+e_checksupport_ntoIdent;48
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea49
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea49
+	jsr_eval 0
+	repl_r_args 2 0
+.o 2 0
+e_checksupport_stoIdent;48
+.o 2 0
+s49
+	updatepop_a 0 1
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;47
+.descexp e_checksupport_dtoIdent;47 e_checksupport_ntoIdent;47 e_checksupport_ltoIdent;47 1 0 "toIdent;47"
+.o 2 0
+e_checksupport_ltoIdent;47
+	pop_a 1
+.d 1 0
+	jsr ea48
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;47
+.o 1 0
+e_checksupport_ntoIdent;47
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea48
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea48
+	jsr_eval 0
+	repl_r_args 3 0
+.o 3 0
+e_checksupport_stoIdent;47
+.o 3 0
+s48
+	updatepop_a 0 2
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;46
+.descexp e_checksupport_dtoIdent;46 e_checksupport_ntoIdent;46 e_checksupport_ltoIdent;46 1 0 "toIdent;46"
+.o 2 0
+e_checksupport_ltoIdent;46
+	pop_a 1
+.d 1 0
+	jsr ea47
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;46
+.o 1 0
+e_checksupport_ntoIdent;46
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea47
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea47
+	jsr_eval 0
+	repl_r_args 3 1
+.o 3 1 i
+e_checksupport_stoIdent;46
+.o 3 1 i
+s47
+	pop_b 1
+	updatepop_a 0 2
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;45
+.descexp e_checksupport_dtoIdent;45 e_checksupport_ntoIdent;45 e_checksupport_ltoIdent;45 1 0 "toIdent;45"
+.o 2 0
+e_checksupport_ltoIdent;45
+	pop_a 1
+.d 1 0
+	jsr ea46
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;45
+.o 1 0
+e_checksupport_ntoIdent;45
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea46
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea46
+	jsr_eval 0
+	repl_r_args 2 0
+.o 2 0
+e_checksupport_stoIdent;45
+.o 2 0
+s46
+	updatepop_a 0 1
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;44
+.descexp e_checksupport_dtoIdent;44 e_checksupport_ntoIdent;44 e_checksupport_ltoIdent;44 1 0 "toIdent;44"
+.o 2 0
+e_checksupport_ltoIdent;44
+	pop_a 1
+.d 1 0
+	jsr ea45
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;44
+.o 1 0
+e_checksupport_ntoIdent;44
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea45
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea45
+	jsr_eval 0
+	repl_r_args 6 2
+.o 6 2 ii
+e_checksupport_stoIdent;44
+.o 6 2 ii
+s45
+	pop_b 2
+	updatepop_a 0 5
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;42
+.descexp e_checksupport_dtoIdent;42 e_checksupport_ntoIdent;42 e_checksupport_ltoIdent;42 1 0 "toIdent;42"
+.o 2 0
+e_checksupport_ltoIdent;42
+	pop_a 1
+.d 1 0
+	jsr ea43
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;42
+.o 1 0
+e_checksupport_ntoIdent;42
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea43
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea43
+	jsr_eval 0
+	repl_r_args 7 1
+.o 7 1 i
+e_checksupport_stoIdent;42
+.o 7 1 i
+s43
+	pop_b 1
+	updatepop_a 0 6
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;41
+.descexp e_checksupport_dtoIdent;41 e_checksupport_ntoIdent;41 e_checksupport_ltoIdent;41 1 0 "toIdent;41"
+.o 2 0
+e_checksupport_ltoIdent;41
+	pop_a 1
+.d 1 0
+	jsr ea42
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;41
+.o 1 0
+e_checksupport_ntoIdent;41
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea42
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea42
+	jsr_eval 0
+	repl_r_args 6 2
+.o 6 2 ii
+e_checksupport_stoIdent;41
+.o 6 2 ii
+s42
+	pop_b 2
+	updatepop_a 0 5
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;40
+.descexp e_checksupport_dtoIdent;40 e_checksupport_ntoIdent;40 e_checksupport_ltoIdent;40 1 0 "toIdent;40"
+.o 2 0
+e_checksupport_ltoIdent;40
+	pop_a 1
+.d 1 0
+	jsr ea41
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;40
+.o 1 0
+e_checksupport_ntoIdent;40
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea41
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea41
+	jsr_eval 0
+	repl_r_args 7 3
+.o 7 3 iii
+e_checksupport_stoIdent;40
+.o 7 3 iii
+s41
+	pop_b 3
+	updatepop_a 0 6
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_stoIdent;39
+.descexp e_checksupport_dtoIdent;39 e_checksupport_ntoIdent;39 e_checksupport_ltoIdent;39 1 0 "toIdent;39"
+.o 2 0
+e_checksupport_ltoIdent;39
+	pop_a 1
+.d 1 0
+	jsr ea40
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;39
+.o 1 0
+e_checksupport_ntoIdent;39
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea40
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea40
+	jsr_eval 0
+	repl_r_args 6 2
+.o 6 2 ii
+e_checksupport_stoIdent;39
+.o 6 2 ii
+s40
+	pop_b 2
+	updatepop_a 0 5
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_senvLookUp;38
+.descexp e_checksupport_denvLookUp;38 e_checksupport_nenvLookUp;38 e_checksupport_lenvLookUp;38 2 0 "envLookUp;38"
+.a 0 a39
+.o 2 0
+e_checksupport_lenvLookUp;38
+	repl_args 1 1
+.o 2 0
+a39
+.d 2 0
+	jsr ea39
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	buildh _Tuple 2
+	updatepop_a 0 1
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_denvLookUp;38
+.o 1 0
+e_checksupport_nenvLookUp;38
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea39
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	fillh _Tuple 2 3
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea39
+	jsr_eval 1
+	jsr_eval 0
+	repl_r_args 2 0
+.o 3 0
+e_checksupport_senvLookUp;38
+.o 3 0
+s39
+	jmp case.16
+case.16
+	eq_desc _Cons 2 2
+	jmp_true case.18
+	jmp case.17
+case.18
+	push_args 2 2 2
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	repl_r_args 2 0
+	push_r_args_a 5 2 0 1 1
+	repl_r_args 2 0
+.d 4 0
+	jsr e_syntax_s==;15
+.o 0 1 b
+	jmp_false else.19
+	push_r_args_a 0 2 0 2 1
+	pushB TRUE
+	updatepop_a 0 5
+.d 1 1 b
+	rtn
+else.19
+	push_a 1
+	jsr_eval 0
+	push_a 4
+	push_a 4
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 3 0
+	jmp s39
+case.17
+	eq_desc _Nil 0 2
+	jmp_true case.20
+	jmp s39.1
+case.20
+	buildAC "illegal value"
+	buildh ARRAY 1
+	build _ 1 e_StdMisc_nabort
+	pushB FALSE
+	updatepop_a 0 3
+.d 1 1 b
+	rtn
+s39.1
+	pop_a 3
+	pushD m_checksupport
+	pushD e_checksupport_denvLookUp;38
+.d 0 2 ii
+	jmp _match_error
+.export e_checksupport_senvLookUp;37
+.descexp e_checksupport_denvLookUp;37 e_checksupport_nenvLookUp;37 e_checksupport_lenvLookUp;37 2 0 "envLookUp;37"
+.a 0 a38
+.o 2 0
+e_checksupport_lenvLookUp;37
+	repl_args 1 1
+.o 2 0
+a38
+.d 2 0
+	jsr ea38
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	buildh _Tuple 2
+	updatepop_a 0 1
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_denvLookUp;37
+.o 1 0
+e_checksupport_nenvLookUp;37
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea38
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	fillh _Tuple 2 3
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea38
+	jsr_eval 1
+	jsr_eval 0
+	repl_r_args 2 0
+.o 3 0
+e_checksupport_senvLookUp;37
+.o 3 0
+s38
+	eq_desc _Cons 2 2
+	jmp_true case.21
+	jmp case.22
+case.21
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	repl_r_args 2 0
+	push_r_args 4 2 0
+.d 4 0
+	jsr e_syntax_s==;15
+.o 0 1 b
+	jmp_false else.23
+	push_r_args_a 0 2 0 2 1
+	pushB TRUE
+	updatepop_a 0 5
+.d 1 1 b
+	rtn
+else.23
+	push_a 1
+	jsr_eval 0
+	push_a 4
+	push_a 4
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 3 0
+	jmp s38
+case.22
+	buildAC "illegal value"
+	buildh ARRAY 1
+	build _ 1 e_StdMisc_nabort
+	pushB FALSE
+	updatepop_a 0 3
+.d 1 1 b
+	rtn
+.export e_checksupport_senvLookUp;36
+.descexp e_checksupport_denvLookUp;36 e_checksupport_nenvLookUp;36 e_checksupport_lenvLookUp;36 2 0 "envLookUp;36"
+.a 0 a37
+.o 2 0
+e_checksupport_lenvLookUp;36
+	repl_args 1 1
+.o 2 0
+a37
+.d 2 0
+	jsr ea37
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	buildh _Tuple 2
+	updatepop_a 0 1
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_denvLookUp;36
+.o 1 0
+e_checksupport_nenvLookUp;36
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea37
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	fillh _Tuple 2 3
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea37
+	jsr_eval 1
+	jsr_eval 0
+	repl_r_args 2 0
+.o 3 0
+e_checksupport_senvLookUp;36
+.o 3 0
+s37
+	eq_desc _Cons 2 2
+	jmp_true case.24
+	jmp case.25
+case.24
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	repl_r_args 2 0
+	push_r_args 4 2 0
+.d 4 0
+	jsr e_syntax_s==;15
+.o 0 1 b
+	jmp_false else.26
+	push_r_args_a 0 2 0 2 1
+	pushB TRUE
+	updatepop_a 0 5
+.d 1 1 b
+	rtn
+else.26
+	push_a 1
+	jsr_eval 0
+	push_a 4
+	push_a 4
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 3 0
+	jmp s37
+case.25
+	buildAC "illegal value"
+	buildh ARRAY 1
+	build _ 1 e_StdMisc_nabort
+	pushB FALSE
+	updatepop_a 0 3
+.d 1 1 b
+	rtn
+.export e_checksupport_ssetErrorAdmin;35
+.descexp e_checksupport_dsetErrorAdmin;35 e_checksupport_nsetErrorAdmin;35 e_checksupport_lsetErrorAdmin;35 2 0 "setErrorAdmin;35"
+.a 0 a36
+.o 2 0
+e_checksupport_lsetErrorAdmin;35
+	repl_args 1 1
+.o 2 0
+a36
+.d 2 0
+	jsr ea36
+.o 4 0
+	build_r e_checksupport_rCheckState 4 0 0 0
+	updatepop_a 0 4
+.d 1 0
+	rtn
+.n 2 e_checksupport_dsetErrorAdmin;35
+.o 1 0
+e_checksupport_nsetErrorAdmin;35
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea36
+.o 4 0
+	fill_r e_checksupport_rCheckState 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.o 3 1 i
+e_checksupport_ssetErrorAdmin;35
+	jsr_eval 2
+	push_r_args 2 4 0
+	update_a 3 6
+	update_a 0 3
+	push_a 5
+	update_a 3 6
+	update_a 0 3
+	update_a 5 0
+	update_a 2 5
+	update_a 0 2
+	pop_a 2
+.d 6 1 i
+	jmp s36
+.o 2 0
+ea36
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 4 0
+	push_r_args 4 2 1
+	update_a 5 7
+	update_a 3 5
+	update_a 1 3
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 6 1 i
+s36
+	push_r_args 4 1 3
+	push_a 2
+	push_b 3
+	push_a 2
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 4 ifb
+	jsr s33
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 2
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	rtn
+.export e_checksupport_spushErrorAdmin;34
+.descexp e_checksupport_dpushErrorAdmin;34 e_checksupport_npushErrorAdmin;34 e_checksupport_lpushErrorAdmin;34 2 0 "pushErrorAdmin;34"
+.a 0 a35
+.o 2 0
+e_checksupport_lpushErrorAdmin;34
+	repl_args 1 1
+.o 2 0
+a35
+.d 2 0
+	jsr ea35
+.o 4 0
+	build_r e_checksupport_rCheckState 4 0 0 0
+	updatepop_a 0 4
+.d 1 0
+	rtn
+.n 2 e_checksupport_dpushErrorAdmin;34
+.o 1 0
+e_checksupport_npushErrorAdmin;34
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea35
+.o 4 0
+	fill_r e_checksupport_rCheckState 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.o 3 1 i
+e_checksupport_spushErrorAdmin;34
+	jsr_eval 2
+	push_r_args 2 4 0
+	update_a 3 6
+	update_a 0 3
+	push_a 5
+	update_a 3 6
+	update_a 0 3
+	update_a 5 0
+	update_a 2 5
+	update_a 0 2
+	pop_a 2
+.d 6 1 i
+	jmp s35
+.o 2 0
+ea35
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 4 0
+	push_r_args 4 2 1
+	update_a 5 7
+	update_a 3 5
+	update_a 1 3
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 6 1 i
+s35
+	push_r_args 4 1 3
+	push_a 2
+	push_b 3
+	push_a 2
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 4 ifb
+	jsr s32
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 2
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	rtn
+.export e_checksupport_spopErrorAdmin;33
+.descexp e_checksupport_dpopErrorAdmin;33 e_checksupport_npopErrorAdmin;33 e_checksupport_lpopErrorAdmin;33 1 0 "popErrorAdmin;33"
+.o 2 0
+e_checksupport_lpopErrorAdmin;33
+	pop_a 1
+.d 1 0
+	jsr ea34
+.o 4 0
+	build_r e_checksupport_rCheckState 4 0 0 0
+	updatepop_a 0 4
+.d 1 0
+	rtn
+.n 1 e_checksupport_dpopErrorAdmin;33
+.o 1 0
+e_checksupport_npopErrorAdmin;33
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea34
+.o 4 0
+	fill_r e_checksupport_rCheckState 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.o 1 0
+e_checksupport_spopErrorAdmin;33
+.o 1 0
+ea34
+	jsr_eval 0
+	repl_r_args 4 0
+.o 4 0
+s34
+	push_r_args 2 1 3
+.d 1 3 fb
+	jsr s31
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 2
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	rtn
+.export e_checksupport_ssetErrorAdmin;32
+.descexp e_checksupport_dsetErrorAdmin;32 e_checksupport_nsetErrorAdmin;32 e_checksupport_lsetErrorAdmin;32 2 0 "setErrorAdmin;32"
+.a 0 a33
+.o 2 0
+e_checksupport_lsetErrorAdmin;32
+	repl_args 1 1
+.o 2 0
+a33
+.d 2 0
+	jsr ea33
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 e_checksupport_dsetErrorAdmin;32
+.o 1 0
+e_checksupport_nsetErrorAdmin;32
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea33
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 3 1 i
+e_checksupport_ssetErrorAdmin;32
+	jsr_eval 2
+	push_r_args 2 1 3
+	update_a 0 3
+	pop_a 1
+	push_b 3
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 3 4 ifb
+	jmp s33
+.o 2 0
+ea33
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 3
+	push_r_args 1 2 1
+	update_a 2 4
+	update_a 0 2
+	update_a 1 3
+	pop_a 2
+.o 3 4 ifb
+s33
+	buildh _Nil 0
+	build_r e_syntax_rIdentPos 2 1 1 0
+	buildh _Cons 2
+	push_b 3
+	push_a 3
+	push_b 3
+	push_b 3
+	update_a 1 0
+	updatepop_a 0 4
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 3 fb
+	rtn
+.export e_checksupport_spushErrorAdmin;31
+.descexp e_checksupport_dpushErrorAdmin;31 e_checksupport_npushErrorAdmin;31 e_checksupport_lpushErrorAdmin;31 2 0 "pushErrorAdmin;31"
+.a 0 a32
+.o 2 0
+e_checksupport_lpushErrorAdmin;31
+	repl_args 1 1
+.o 2 0
+a32
+.d 2 0
+	jsr ea32
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 e_checksupport_dpushErrorAdmin;31
+.o 1 0
+e_checksupport_npushErrorAdmin;31
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea32
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 3 1 i
+e_checksupport_spushErrorAdmin;31
+	jsr_eval 2
+	push_r_args 2 1 3
+	update_a 0 3
+	pop_a 1
+	push_b 3
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 3 4 ifb
+	jmp s32
+.o 2 0
+ea32
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 3
+	push_r_args 1 2 1
+	update_a 2 4
+	update_a 0 2
+	update_a 1 3
+	pop_a 2
+.o 3 4 ifb
+s32
+	push_a 2
+	build_r e_syntax_rIdentPos 2 1 1 0
+	buildh _Cons 2
+	push_b 3
+	push_a 3
+	push_b 3
+	push_b 3
+	update_a 1 0
+	updatepop_a 0 4
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 1 3 fb
+	rtn
+.export e_checksupport_spopErrorAdmin;30
+.descexp e_checksupport_dpopErrorAdmin;30 e_checksupport_npopErrorAdmin;30 e_checksupport_lpopErrorAdmin;30 1 0 "popErrorAdmin;30"
+.o 2 0
+e_checksupport_lpopErrorAdmin;30
+	pop_a 1
+.d 1 0
+	jsr ea31
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 1 e_checksupport_dpopErrorAdmin;30
+.o 1 0
+e_checksupport_npopErrorAdmin;30
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea31
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 1 0
+e_checksupport_spopErrorAdmin;30
+.o 1 0
+ea31
+	jsr_eval 0
+	repl_r_args 1 3
+.o 1 3 fb
+s31
+	eq_desc _Cons 2 0
+	jmp_true case.27
+	jmp s31.1
+case.27
+	push_args 0 2 2
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_b 2
+	push_a 2
+	push_b 2
+	push_b 2
+	update_a 1 0
+	updatepop_a 0 3
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 1 3 fb
+	rtn
+s31.1
+	pop_a 1
+	pop_b 3
+	pushD m_checksupport
+	pushD e_checksupport_dpopErrorAdmin;30
+.d 0 2 ii
+	jmp _match_error
+.export e_checksupport_srestoreIdentsSymbolPtrs
+.descexp e_checksupport_drestoreIdentsSymbolPtrs e_checksupport_nrestoreIdentsSymbolPtrs e_checksupport_lrestoreIdentsSymbolPtrs 2 0 "restoreIdentsSymbolPtrs"
+.a 0 a29
+.o 2 0
+e_checksupport_lrestoreIdentsSymbolPtrs
+	repl_args 1 1
+.o 2 0
+a29
+.d 2 0
+	jsr ea29
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_drestoreIdentsSymbolPtrs
+.o 1 0
+e_checksupport_nrestoreIdentsSymbolPtrs
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea29
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+ea29
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	update_a 0 2
+	pop_a 1
+.o 2 0
+e_checksupport_srestoreIdentsSymbolPtrs
+.o 2 0
+s29
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp s90
+.o 2 0
+s90
+	eq_desc _Nil 0 0
+	jmp_true case.28
+	jmp case.29
+case.28
+	pop_a 1
+.d 1 0
+	rtn
+case.29
+	repl_args 2 2
+	push_a 0
+	jsr_eval 0
+	repl_r_args 2 0
+	push_a 4
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 4 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s56
+.o 1 0
+	push_a 1
+	jsr_eval 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jmp s90
+.o 3 0
+s56
+	push_a 2
+	push_a 2
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args_a 0 2 2 2 1
+	jsr_eval 0
+	push_a 2
+	push_a 4
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 0
+	jmp e_Heap_swritePtr
+.export e_checksupport_simport_ident
+.descexp e_checksupport_dimport_ident e_checksupport_nimport_ident e_checksupport_limport_ident 0 0 "import_ident"
+.o 1 0
+e_checksupport_limport_ident
+	halt
+.n 0 e_checksupport_dimport_ident
+.o 1 0
+e_checksupport_nimport_ident
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea28
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 0 0
+ea28
+.o 0 0
+e_checksupport_simport_ident
+.o 0 0
+s28
+	testcaf c28
+	jmp_false m.30
+	pushcaf c28 2 0
+.d 2 0
+	rtn
+.caf c28 2 0
+m.30
+.d 0 0
+	jsr s28.1
+.o 2 0
+	fillcaf c28 2 0
+.d 2 0
+	rtn
+.o 0 0
+s28.1
+.d 0 0
+	jsr e_Heap_snilPtr
+.o 1 0
+	buildAC "import"
+.d 2 0
+	rtn
+.export e_checksupport_snrOfBelongingSymbols
+.descexp e_checksupport_dnrOfBelongingSymbols e_checksupport_nnrOfBelongingSymbols e_checksupport_lnrOfBelongingSymbols 1 0 "nrOfBelongingSymbols"
+.o 2 0
+e_checksupport_lnrOfBelongingSymbols
+	pop_a 1
+.d 1 0
+	jsr ea27
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_checksupport_dnrOfBelongingSymbols
+.o 1 0
+e_checksupport_nnrOfBelongingSymbols
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea27
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea27
+	jsr_eval 0
+.o 1 0
+e_checksupport_snrOfBelongingSymbols
+.o 1 0
+s27
+	pushD_a 0
+	eqD_b e_checksupport_kBS_Constructors 0
+	jmp_true case.31
+	eqD_b e_checksupport_kBS_Fields 0
+	jmp_true case.32
+	eqD_b e_checksupport_kBS_Members 0
+	jmp_true case.33
+	jmp case.34
+case.31
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jmp e_StdList_slength;47
+case.32
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.impmod syntax
+.impdesc e_syntax_rFieldSymbol
+	push_arraysize e_syntax_rFieldSymbol 2 1
+.d 0 1 i
+	rtn
+case.33
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	updatepop_a 0 1
+.impdesc e_syntax_rDefinedSymbol
+	push_arraysize e_syntax_rDefinedSymbol 1 2
+.d 0 1 i
+	rtn
+case.34
+	pop_b 1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+.export e_checksupport_sgetBelongingSymbols
+.descexp e_checksupport_dgetBelongingSymbols e_checksupport_ngetBelongingSymbols e_checksupport_lgetBelongingSymbols 2 0 "getBelongingSymbols"
+.a 0 a26
+.o 2 0
+e_checksupport_lgetBelongingSymbols
+	repl_args 1 1
+.o 2 0
+a26
+.d 2 0
+	jsr ea26
+.o 2 0
+	push_a 1
+	buildh ARRAY 1
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_checksupport_dgetBelongingSymbols
+.o 1 0
+e_checksupport_ngetBelongingSymbols
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea26
+.o 2 0
+	push_a 1
+	buildh ARRAY 1
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea26
+	jsr_eval 1
+	jsr_eval 0
+	push_array 1
+	update_a 0 2
+	pop_a 1
+.o 2 0
+e_checksupport_sgetBelongingSymbols
+.o 2 0
+s26
+	jmp case.35
+case.35
+	repl_r_args 3 1
+	pop_a 2
+	eq_desc e_syntax_kSTE_Imported 0 0
+	jmp_true case.37
+	pop_b 1
+	jmp case.36
+case.37
+	repl_r_args 1 1
+	pushD_a 0
+	eqD_b e_syntax_dSTE_Type 0
+	jmp_true case.38
+	eqD_b e_syntax_dSTE_Class 0
+	jmp_true case.39
+	pop_b 3
+	jmp case.36
+case.38
+	pop_b 1
+	push_b 0
+	push_a 1
+	updatepop_b 0 1
+	updatepop_a 0 2
+.impdesc e_syntax_rDclModule
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	updatepop_a 7 13
+	pop_b 1
+	push_r_args 0 8 0
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	updatepop_a 0 7
+	push_b 0
+	updatepop_b 0 1
+.impdesc e_syntax_rTypeDef
+	select e_syntax_rTypeDef 7 3
+	updatepop_a 3 6
+	pop_b 3
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp s128
+case.39
+	pop_b 1
+	push_b 0
+	push_a 1
+	updatepop_b 0 1
+	updatepop_a 0 2
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	updatepop_a 7 13
+	pop_b 1
+	push_r_args 0 8 0
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	updatepop_a 3 7
+	push_b 0
+	updatepop_b 0 1
+.impdesc e_syntax_rClassDef
+	select e_syntax_rClassDef 6 2
+	push_a 3
+	build_r e_checksupport_kBS_Members 1 0 0 0
+	updatepop_a 0 1
+	push_a 7
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 2
+.d 2 0
+	rtn
+case.36
+	buildh e_checksupport_dBS_Nothing 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.o 2 0
+s128
+	pushD_a 0
+	eqD_b e_syntax_kAlgType 0
+	jmp_true case.40
+	eqD_b e_syntax_kRecordType 0
+	jmp_true case.41
+	eqD_b e_syntax_kNewType 0
+	jmp_true case.42
+	pop_b 1
+	jmp case.43
+case.40
+	pop_b 1
+	repl_args 1 1
+	push_a 0
+	build_r e_checksupport_kBS_Constructors 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+case.41
+	pop_b 1
+	repl_r_args 2 1
+	pop_a 1
+	pop_b 1
+	push_a 0
+	build_r e_checksupport_kBS_Fields 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+case.42
+	pop_b 1
+	repl_r_args 1 2
+	buildh _Nil 0
+	build_r e_syntax_rDefinedSymbol 1 2 1 0
+	buildh _Cons 2
+	build_r e_checksupport_kBS_Constructors 1 0 0 0
+	updatepop_a 0 1
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 2
+.d 2 0
+	rtn
+case.43
+	buildh e_checksupport_dBS_Nothing 0
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.export e_checksupport_slocal_declaration_for_import
+.export e_checksupport_ealocal_declaration_for_import
+.descexp e_checksupport_dlocal_declaration_for_import e_checksupport_nlocal_declaration_for_import e_checksupport_llocal_declaration_for_import 2 0 "local_declaration_for_import"
+.a 2 e_checksupport_ealocal_declaration_for_import
+.o 2 0
+e_checksupport_llocal_declaration_for_import
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_checksupport_ealocal_declaration_for_import
+.n 2 e_checksupport_dlocal_declaration_for_import e_checksupport_ealocal_declaration_for_import
+.o 1 0
+e_checksupport_nlocal_declaration_for_import
+	push_node _cycle_in_spine 2
+.o 3 0
+e_checksupport_ealocal_declaration_for_import
+	jsr_eval 0
+.o 3 0
+e_checksupport_slocal_declaration_for_import
+.o 3 0
+s25
+	push_r_args 0 3 1
+	push_a 2
+	push_a 2
+	push_a 2
+	push_b 0
+	pop_a 2
+	pop_b 1
+	pushD_a 0
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.44
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.45
+	pop_b 1
+	jmp case.46
+case.44
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	pop_b 1
+	fill_a 3 5
+	pop_a 5
+.d 1 0
+	rtn
+case.45
+	pop_b 1
+	repl_r_args 1 1
+	pop_a 1
+	pop_b 1
+	buildAC "local_declaration_for_import"
+	updatepop_a 0 5
+	pop_b 1
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+case.46
+	push_a 5
+	jsr_eval 0
+	pushI_a 6
+	pop_a 1
+	push_a 0
+	build_r e_syntax_kSTE_Imported 1 1 0 0
+	updatepop_a 0 1
+	pop_b 1
+	push_b 0
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 3 2
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	fill_r e_syntax_kDeclaration 3 1 9 0 0
+	pop_a 9
+	pop_b 2
+.d 1 0
+	rtn
+.export e_checksupport_snewFreeVariable
+.descexp e_checksupport_dnewFreeVariable e_checksupport_nnewFreeVariable e_checksupport_lnewFreeVariable 2 0 "newFreeVariable"
+.a 0 a24
+.o 2 0
+e_checksupport_lnewFreeVariable
+	repl_args 1 1
+.o 2 0
+a24
+.d 2 0
+	jsr ea24
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	buildh _Tuple 2
+	updatepop_a 0 1
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_dnewFreeVariable
+.o 1 0
+e_checksupport_nnewFreeVariable
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea24
+.o 1 1 b
+	push_a 0
+	buildB_b 0
+	fillh _Tuple 2 3
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea24
+	jsr_eval 1
+	jsr_eval 0
+	repl_r_args 2 2
+.o 3 2 ii
+e_checksupport_snewFreeVariable
+.o 3 2 ii
+s24
+	eq_desc _Cons 2 2
+	jmp_true case.47
+	jmp case.48
+case.47
+	push_args 2 2 2
+	jsr_eval 0
+	push_r_args 0 2 2
+	update_b 0 1
+	pop_a 1
+	pop_b 1
+	push_b 1
+	push_b 1
+	ltI
+	jmp_false else.49
+	push_a 5
+.impdesc e_syntax_rFreeVar
+	build_r e_syntax_rFreeVar 2 2 4 1
+	buildh _Cons 2
+	pushB TRUE
+	updatepop_a 0 6
+	updatepop_b 0 3
+.d 1 1 b
+	rtn
+else.49
+	push_b 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.50
+	push_a 4
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	pop_b 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr e_Heap_s==;10
+.o 0 1 b
+	jmp_false else.51
+	push_a 4
+	pushB FALSE
+	updatepop_a 0 5
+	updatepop_b 0 2
+.d 1 1 b
+	rtn
+else.51
+	push_a 1
+	jsr_eval 0
+	push_b 1
+	push_a 4
+	push_a 4
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 2 ii
+	jsr s24
+.o 1 1 b
+	push_a 0
+	push_a 2
+	buildh _Cons 2
+	push_b 0
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 1 1 b
+	rtn
+else.50
+	push_a 2
+	jsr_eval 0
+	push_b 2
+	push_a 5
+	push_a 5
+	push_b 2
+	update_b 1 4
+	updatepop_b 0 3
+	update_a 4 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 3 2 ii
+	jsr s24
+.o 1 1 b
+	push_a 0
+	push_a 2
+	buildh _Cons 2
+	push_b 0
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 1 1 b
+	rtn
+case.48
+	buildh _Nil 0
+	build_r e_syntax_rFreeVar 2 2 1 0
+	buildh _Cons 2
+	pushB TRUE
+	updatepop_a 0 3
+	updatepop_b 0 2
+.d 1 1 b
+	rtn
+.export e_checksupport_sremoveLocalDclMacrosFromSymbolTable
+.descexp e_checksupport_dremoveLocalDclMacrosFromSymbolTable e_checksupport_nremoveLocalDclMacrosFromSymbolTable e_checksupport_lremoveLocalDclMacrosFromSymbolTable 5 0 "removeLocalDclMacrosFromSymbolTable"
+.a 0 a23
+.o 2 0
+e_checksupport_lremoveLocalDclMacrosFromSymbolTable
+	repl_args 4 4
+.o 5 0
+a23
+.d 5 0
+	jsr ea23
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 5 e_checksupport_dremoveLocalDclMacrosFromSymbolTable
+.o 1 0
+e_checksupport_nremoveLocalDclMacrosFromSymbolTable
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea23
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 5 0
+ea23
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 1 0
+	push_array 4
+	push_r_args 4 0 2
+	pushI_a 3
+	pushI_a 2
+	update_a 1 6
+	update_a 0 5
+	pop_a 5
+.o 2 4 iiii
+e_checksupport_sremoveLocalDclMacrosFromSymbolTable
+.o 2 4 iiii
+s23
+	push_a 1
+	push_a 1
+	push_b 3
+	push_b 3
+	buildI_b 2
+	buildI_b 3
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 5
+	updatepop_b 0 4
+.d 4 2 ii
+	jmp s182
+.export e_checksupport_sremoveLocalFunctionsFromSymbolTable
+.descexp e_checksupport_dremoveLocalFunctionsFromSymbolTable e_checksupport_nremoveLocalFunctionsFromSymbolTable e_checksupport_lremoveLocalFunctionsFromSymbolTable 4 0 "removeLocalFunctionsFromSymbolTable"
+.a 0 a22
+.o 2 0
+e_checksupport_lremoveLocalFunctionsFromSymbolTable
+	repl_args 3 3
+.o 4 0
+a22
+.d 4 0
+	jsr ea22
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 4 e_checksupport_dremoveLocalFunctionsFromSymbolTable
+.o 1 0
+e_checksupport_nremoveLocalFunctionsFromSymbolTable
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea22
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+ea22
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_array 3
+	push_r_args 3 0 2
+	pushI_a 2
+	update_a 1 5
+	update_a 0 4
+	pop_a 4
+.o 2 3 iii
+e_checksupport_sremoveLocalFunctionsFromSymbolTable
+.o 2 3 iii
+s22
+	push_a 1
+	push_a 1
+	push_b 2
+	push_b 2
+	buildI_b 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 4
+	updatepop_b 0 3
+.d 3 2 ii
+	jmp s181
+.export e_checksupport_stoIdent;43
+.descexp e_checksupport_dtoIdent;43 e_checksupport_ntoIdent;43 e_checksupport_ltoIdent;43 1 0 "toIdent;43"
+.o 2 0
+e_checksupport_ltoIdent;43
+	pop_a 1
+.d 1 0
+	jsr ea44
+.o 2 0
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_checksupport_dtoIdent;43
+.o 1 0
+e_checksupport_ntoIdent;43
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea44
+.o 2 0
+	fill_r e_syntax_rIdent 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea44
+	jsr_eval 0
+	repl_r_args 7 2
+.o 7 2 ii
+e_checksupport_stoIdent;43
+.o 7 2 ii
+s44
+	pop_b 2
+	updatepop_a 0 6
+	repl_r_args 2 0
+.d 2 0
+	rtn
+.export e_checksupport_sremoveImportsAndLocalsOfModuleFromSymbolTable
+.descexp e_checksupport_dremoveImportsAndLocalsOfModuleFromSymbolTable e_checksupport_nremoveImportsAndLocalsOfModuleFromSymbolTable e_checksupport_lremoveImportsAndLocalsOfModuleFromSymbolTable 2 0 "removeImportsAndLocalsOfModuleFromSymbolTable"
+.a 0 a21
+.o 2 0
+e_checksupport_lremoveImportsAndLocalsOfModuleFromSymbolTable
+	repl_args 1 1
+.o 2 0
+a21
+.d 2 0
+	jsr ea21
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_dremoveImportsAndLocalsOfModuleFromSymbolTable
+.o 1 0
+e_checksupport_nremoveImportsAndLocalsOfModuleFromSymbolTable
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea21
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+ea21
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	push_r_args 1 3 0
+	update_a 3 5
+	update_a 1 3
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 4 0
+e_checksupport_sremoveImportsAndLocalsOfModuleFromSymbolTable
+.o 4 0
+s21
+	push_a 3
+	push_a 1
+	pushI 0
+	update_a 4 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 i
+	jsr s57
+.o 1 0
+	push_a 1
+	pushI 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 1 i
+	jmp s57
+.o 2 1 i
+s57
+	push_a 0
+	push_arraysize _ 1 0
+	push_b 1
+	ltI
+	jmp_false else.52
+	push_b 0
+	push_a 0
+	select _ 1 0
+	repl_r_args 3 1
+	updatepop_a 0 2
+	pop_b 1
+	repl_r_args 2 0
+	pop_a 1
+	push_a 2
+	push_a 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_a 0
+	buildh e_syntax_dSTE_Empty 0
+	push_a 1
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 2 0
+	jsr s30
+.o 0 1 b
+	jmp_true then.53
+	push_b 1
+	pushI 0
+	ltI
+	jmp_false else.53
+then.53
+	pushI 1
+	push_b 3
+	addI
+	push_a 4
+	push_a 7
+	update_a 1 9
+	updatepop_a 0 8
+	updatepop_b 0 3
+.d 2 1 i
+	jmp s57
+else.53
+	push_a 4
+	push_a 3
+	push_b 1
+	push_b 1
+	push_a 3
+	push_a 8
+	push_b 4
+	push_a 10
+	push_a 5
+	update_a 5 13
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 6 3 iii
+	jmp s127
+else.52
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+.o 6 3 iii
+s127
+	pushD_a 0
+	eqD_b e_syntax_kSTE_Field 0
+	jmp_true case.55
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.56
+	pop_b 1
+	jmp case.57
+case.55
+	pop_b 1
+	repl_args 2 2
+	push_b 0
+	push_a 2
+	select _ 1 0
+	push_a 6
+	jsr_eval 0
+	push_a 5
+	push_a 9
+	push_a 2
+	push_a 2
+	update_a 8 12
+	update_a 7 11
+	update_a 6 10
+	update_a 5 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 1
+	build _ 1 n201
+	build e_syntax_dDeclarationRecord.decl_index -3 e_syntax_nDeclarationRecord.decl_index
+	buildI -1
+	push_a 5
+	push_a 5
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	jsr s17
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 3
+.d 2 1 i
+	jmp s57
+case.56
+	pop_b 1
+	repl_r_args 1 1
+	push_a 5
+	push_b 0
+	push_a 5
+	push_b 4
+	push_b 4
+	push_a 5
+	push_a 5
+	push_b 4
+	push_a 5
+	push_a 5
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	update_b 3 7
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 6 4 iiii
+	jmp s126
+case.57
+	push_a 5
+	push_a 2
+	push_b 0
+	push_a 6
+	push_b 3
+	push_b 3
+	push_a 6
+	push_a 6
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 5 3 iii
+	jmp s125
+.n 1 _
+.o 1 0
+n201
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea201
+.o 3 1 i
+	fill_r e_syntax_rDeclarationRecord 3 1 3 0 0
+	pop_a 3
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea201
+	jsr_eval 0
+.o 1 0
+s201
+	repl_r_args 3 1
+.d 3 1 i
+	rtn
+.o 6 4 iiii
+s126
+	eq_desc e_syntax_kSTE_Field 0 0
+	jmp_true case.58
+	jmp case.59
+case.58
+	repl_args 2 2
+	push_b 0
+	push_a 2
+	select _ 1 0
+	push_a 6
+	jsr_eval 0
+	push_a 5
+	push_a 9
+	push_a 2
+	push_a 2
+	update_a 8 12
+	update_a 7 11
+	update_a 6 10
+	update_a 5 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 1
+	build _ 1 n202
+	build e_syntax_dDeclarationRecord.decl_index -3 e_syntax_nDeclarationRecord.decl_index
+	buildI_b 3
+	push_a 5
+	push_a 5
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 5 0
+	jsr s17
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 4
+.d 2 1 i
+	jmp s57
+case.59
+	push_a 5
+	push_a 2
+	push_b 0
+	push_a 6
+	push_b 3
+	push_b 3
+	push_a 6
+	push_a 6
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 5 3 iii
+	jmp s125
+.n 1 _
+.o 1 0
+n202
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea202
+.o 3 1 i
+	fill_r e_syntax_rDeclarationRecord 3 1 3 0 0
+	pop_a 3
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea202
+	jsr_eval 0
+.o 1 0
+s202
+	repl_r_args 3 1
+.d 3 1 i
+	rtn
+.o 5 3 iii
+s125
+	push_a 2
+	jsr_eval 0
+	push_a 1
+	push_a 6
+	push_a 2
+	push_a 2
+	pop_b 2
+	update_a 8 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 1
+.d 2 1 i
+	jmp s57
+.export e_checksupport_sremoveLocalIdentsFromSymbolTable
+.descexp e_checksupport_dremoveLocalIdentsFromSymbolTable e_checksupport_nremoveLocalIdentsFromSymbolTable e_checksupport_lremoveLocalIdentsFromSymbolTable 3 0 "removeLocalIdentsFromSymbolTable"
+.a 0 a19
+.o 2 0
+e_checksupport_lremoveLocalIdentsFromSymbolTable
+	repl_args 2 2
+.o 3 0
+a19
+.d 3 0
+	jsr ea19
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 3 e_checksupport_dremoveLocalIdentsFromSymbolTable
+.o 1 0
+e_checksupport_nremoveLocalIdentsFromSymbolTable
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea19
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 3 0
+ea19
+	jsr_eval 2
+	jsr_eval 1
+	push_r_args 2 1 0
+	update_a 0 3
+	pop_a 1
+.o 3 0
+e_checksupport_sremoveLocalIdentsFromSymbolTable
+.o 3 0
+s19
+	push_a 2
+	push_a 2
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 0
+	jmp s84
+.o 3 0
+s84
+	eq_desc _Nil 0 1
+	jmp_true case.60
+	jmp case.61
+case.60
+	pop_a 2
+.d 1 0
+	rtn
+case.61
+	push_args 1 2 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	repl_r_args 2 0
+	push_a 4
+	jsr_eval 0
+	pushI_a 5
+	pop_a 1
+	push_a 6
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 5 7
+	update_a 4 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 1 i
+	jsr s20
+.o 1 0
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jmp s84
+.export e_checksupport_sremoveIdentFromSymbolTable
+.descexp e_checksupport_dremoveIdentFromSymbolTable e_checksupport_nremoveIdentFromSymbolTable e_checksupport_lremoveIdentFromSymbolTable 3 0 "removeIdentFromSymbolTable"
+.a 0 a20
+.o 2 0
+e_checksupport_lremoveIdentFromSymbolTable
+	repl_args 2 2
+.o 3 0
+a20
+.d 3 0
+	jsr ea20
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 3 e_checksupport_dremoveIdentFromSymbolTable
+.o 1 0
+e_checksupport_nremoveIdentFromSymbolTable
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea20
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 3 0
+ea20
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 1 0
+	push_r_args 2 2 0
+	pushI_a 3
+	update_a 2 5
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.o 3 1 i
+e_checksupport_sremoveIdentFromSymbolTable
+.o 3 1 i
+s20
+	push_a 2
+	push_a 2
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_b 1
+	push_b 3
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	ltI
+	notB
+	jmp_false else.62
+	push_a 1
+	jsr_eval 0
+	push_a 5
+	push_a 5
+	push_a 2
+	push_a 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 3
+.d 3 0
+	jmp e_Heap_swritePtr
+else.62
+	updatepop_a 3 4
+	pop_b 3
+.d 1 0
+	rtn
+.export e_checksupport_sremoveDeclarationsFromSymbolTable
+.descexp e_checksupport_dremoveDeclarationsFromSymbolTable e_checksupport_nremoveDeclarationsFromSymbolTable e_checksupport_lremoveDeclarationsFromSymbolTable 3 0 "removeDeclarationsFromSymbolTable"
+.a 0 a18
+.o 2 0
+e_checksupport_lremoveDeclarationsFromSymbolTable
+	repl_args 2 2
+.o 3 0
+a18
+.d 3 0
+	jsr ea18
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 3 e_checksupport_dremoveDeclarationsFromSymbolTable
+.o 1 0
+e_checksupport_nremoveDeclarationsFromSymbolTable
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea18
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 3 0
+ea18
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 1 0
+	pushI_a 2
+	update_a 0 3
+	update_a 1 2
+	pop_a 2
+.o 2 1 i
+e_checksupport_sremoveDeclarationsFromSymbolTable
+.o 2 1 i
+s18
+	push_a 1
+	push_a 1
+	push_b 0
+	update_a 1 3
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 2 1 i
+	jmp s83
+.o 2 1 i
+s83
+	eq_desc _Nil 0 0
+	jmp_true case.63
+	jmp case.64
+case.63
+	pop_a 1
+	pop_b 1
+.d 1 0
+	rtn
+case.64
+	repl_args 2 2
+	push_a 0
+	jsr_eval 0
+	push_a 3
+	push_b 0
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 1 i
+	jsr s64
+.o 1 0
+	push_a 1
+	jsr_eval 0
+	push_b 0
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 1
+.d 2 1 i
+	jmp s83
+.o 2 1 i
+s64
+	repl_r_args 3 1
+	update_a 0 2
+	pop_a 2
+	repl_args 2 2
+	pop_a 1
+	push_a 1
+	push_a 1
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	build_r e_Heap_rPtr 1 0 4 0
+	push_a 2
+	buildI_b 1
+	push_a 3
+	push_a 7
+	push_b 2
+	push_b 4
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 1 5
+	updatepop_b 0 4
+.d 5 2 ii
+	jmp s124
+.o 5 2 ii
+s124
+	pushD_a 0
+	eqD_b e_syntax_kSTE_Field 0
+	jmp_true case.65
+	eqD_b e_syntax_dSTE_Empty 0
+	jmp_true case.66
+	pop_b 1
+	jmp case.67
+case.65
+	pop_b 1
+	repl_args 2 2
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	notB
+	jmp_false else.68
+	pushI 1
+	push_b 1
+	eqI
+	jmp_false else.68
+	push_a 3
+	buildI_b 1
+	buildI -1
+	push_a 4
+	push_a 4
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 5 0
+	jmp s17
+else.68
+	jsr_eval 4
+	push_r_args_b 4 2 2 2 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.70
+	push_r_args_a 4 2 2 2 1
+	jsr_eval 0
+	push_r_args 6 1 0
+	push_a 5
+	buildI_b 1
+	buildI -1
+	push_a 6
+	push_a 6
+	pop_b 2
+	update_a 6 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 5 0
+	jsr s17
+.o 1 0
+	push_a 2
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jmp e_Heap_swritePtr
+else.70
+	push_r_args 5 1 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_a 5
+	buildI_b 1
+	buildI -1
+	push_a 6
+	push_a 6
+	pop_b 2
+	update_a 6 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 5 0
+	jsr s17
+.o 1 0
+	push_a 2
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jmp e_Heap_swritePtr
+case.66
+	pop_b 1
+	updatepop_a 2 4
+	pop_b 2
+.d 1 0
+	rtn
+case.67
+	push_a 1
+	jsr_eval 0
+	pushI_a 2
+	pop_a 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	notB
+	jmp_false else.71
+	pushI 1
+	push_b 1
+	eqI
+	jmp_false else.71
+	updatepop_a 2 4
+	pop_b 2
+.d 1 0
+	rtn
+else.71
+	jsr_eval 3
+	push_r_args_b 3 2 2 2 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.73
+	push_r_args_a 3 2 2 2 1
+	jsr_eval 0
+	push_r_args 5 1 0
+	push_a 4
+	push_a 2
+	push_a 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 2
+.d 3 0
+	jmp e_Heap_swritePtr
+else.73
+	push_r_args 4 1 0
+	push_a 4
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_a 4
+	push_a 2
+	push_a 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 2
+.d 3 0
+	jmp e_Heap_swritePtr
+.export e_checksupport_sremoveImportedSymbolsFromSymbolTable
+.descexp e_checksupport_dremoveImportedSymbolsFromSymbolTable e_checksupport_nremoveImportedSymbolsFromSymbolTable e_checksupport_lremoveImportedSymbolsFromSymbolTable 2 0 "removeImportedSymbolsFromSymbolTable"
+.a 0 a16
+.o 2 0
+e_checksupport_lremoveImportedSymbolsFromSymbolTable
+	repl_args 1 1
+.o 2 0
+a16
+.d 2 0
+	jsr ea16
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_dremoveImportedSymbolsFromSymbolTable
+.o 1 0
+e_checksupport_nremoveImportedSymbolsFromSymbolTable
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea16
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+e_checksupport_sremoveImportedSymbolsFromSymbolTable
+	jsr_eval 0
+.d 2 0
+	jmp s16
+.o 2 0
+ea16
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	update_a 0 2
+	pop_a 1
+.o 2 0
+s16
+	repl_r_args 3 1
+	update_a 0 2
+	pop_a 2
+	repl_args 2 2
+	pop_a 1
+	push_a 1
+	push_a 1
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_a 1
+	jsr_eval 0
+	repl_r_args 2 2
+	push_a 2
+	push_a 6
+	push_b 4
+	push_a 8
+	push_a 4
+	update_a 2 5
+	update_a 1 2
+	update_a 3 1
+	update_a 4 3
+	update_a 0 4
+	pop_a 1
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 5 3 iii
+	jmp s123
+.o 5 3 iii
+s123
+	eq_desc e_syntax_kSTE_Imported 0 0
+	jmp_true case.74
+	jmp case.75
+case.74
+	repl_r_args 1 1
+	push_a 4
+	push_b 3
+	push_b 1
+	push_a 4
+	push_b 4
+	push_b 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 3 7
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 5 4 iiii
+	jmp s122
+case.75
+	push_a 4
+	push_a 4
+	push_b 1
+	push_b 1
+	push_a 4
+	push_a 4
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 4 2 ii
+	jmp s121
+.o 5 4 iiii
+s122
+	eq_desc e_syntax_kSTE_Field 0 0
+	jmp_true case.76
+	jmp case.77
+case.76
+	repl_args 2 2
+	build_r e_syntax_rSymbolTableEntry 2 2 3 0
+	push_a 3
+	push_a 7
+	push_a 2
+	push_a 2
+	pop_b 2
+	update_a 6 10
+	update_a 5 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	buildI_b 1
+	buildI_b 0
+	push_a 4
+	push_a 4
+	update_a 4 6
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 2
+.d 5 0
+	jmp s17
+case.77
+	push_a 4
+	push_a 4
+	push_b 1
+	push_b 1
+	push_a 4
+	push_a 4
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 1 5
+	updatepop_b 0 4
+.d 4 2 ii
+	jmp s121
+.o 4 2 ii
+s121
+	build_r e_syntax_rSymbolTableEntry 2 2 1 0
+	push_a 1
+	push_a 5
+	push_a 2
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 3 0
+	jmp e_Heap_swritePtr
+.export e_checksupport_sremoveFieldFromSelectorDefinition
+.descexp e_checksupport_dremoveFieldFromSelectorDefinition e_checksupport_nremoveFieldFromSelectorDefinition e_checksupport_lremoveFieldFromSelectorDefinition 4 0 "removeFieldFromSelectorDefinition"
+.a 0 a17
+.o 2 0
+e_checksupport_lremoveFieldFromSelectorDefinition
+	repl_args 3 3
+.o 4 0
+a17
+.d 4 0
+	jsr ea17
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 4 e_checksupport_dremoveFieldFromSelectorDefinition
+.o 1 0
+e_checksupport_nremoveFieldFromSelectorDefinition
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea17
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 4 0
+ea17
+	jsr_eval 3
+	jsr_eval 0
+	push_r_args 3 1 0
+	push_r_args 1 2 0
+	update_a 2 6
+	update_a 0 2
+	update_a 1 3
+	pop_a 2
+.o 5 0
+e_checksupport_sremoveFieldFromSelectorDefinition
+.o 5 0
+s17
+	push_a 4
+	push_a 2
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	build_r e_Heap_rPtr 1 0 5 0
+	push_a 2
+	push_a 6
+	push_a 10
+	push_a 10
+	push_a 5
+	update_a 3 6
+	update_a 0 3
+	update_a 5 0
+	update_a 2 5
+	update_a 0 2
+	update_a 4 0
+	update_a 1 4
+	update_a 0 1
+	pop_a 1
+	update_a 5 13
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	pop_b 2
+.d 6 0
+	jmp s120
+.o 6 0
+s120
+	eq_desc e_syntax_kSTE_Selector 0 0
+	jmp_true case.78
+	jmp case.79
+case.78
+	repl_args 1 1
+	create
+	push_a 1
+	push_a 6
+	push_a 6
+	update_a 6 8
+	update_a 5 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 4 0
+	jsr s82
+.o 1 0
+	build_r e_syntax_kSTE_Selector 1 0 0 0
+	updatepop_a 0 1
+	push_r_args 2 2 2
+	update_a 2 0
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 3
+	pop_b 2
+	push_r_args 1 1 0
+	push_a 4
+	push_a 2
+	push_a 2
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 3 0
+	jmp e_Heap_swritePtr
+case.79
+	pop_a 5
+.d 1 0
+	rtn
+.n 3 _ ea82
+.o 1 0
+n82
+	push_node _cycle_in_spine 3
+.o 4 0
+ea82
+	jsr_eval 2
+.o 4 0
+s82
+	eq_desc _Cons 2 2
+	jmp_true case.80
+	jmp case.81
+case.80
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	jsr_eval 0
+	push_r_args 0 1 1
+	push_a 3
+	jsr_eval 0
+	pushI_a 4
+	pop_a 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.82
+	push_a 4
+	jsr_eval 0
+	pushI_a 5
+	pop_a 1
+	pushI_a 0
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_false else.82
+	pop_b 1
+	updatepop_a 2 5
+	jmp_eval_upd
+else.82
+	push_a 2
+	push_a 5
+	push_a 5
+	build _ 3 n82
+	push_a 2
+	fillh _Cons 2 8
+	pop_a 6
+	pop_b 1
+.d 1 0
+	rtn
+case.81
+	fillh _Nil 0 3
+	pop_a 3
+.d 1 0
+	rtn
+.export e_checksupport_saddGlobalDefinitionsToSymbolTable
+.descexp e_checksupport_daddGlobalDefinitionsToSymbolTable e_checksupport_naddGlobalDefinitionsToSymbolTable e_checksupport_laddGlobalDefinitionsToSymbolTable 2 0 "addGlobalDefinitionsToSymbolTable"
+.a 0 a13
+.o 2 0
+e_checksupport_laddGlobalDefinitionsToSymbolTable
+	repl_args 1 1
+.o 2 0
+a13
+.d 2 0
+	jsr ea13
+.o 4 0
+	build_r e_checksupport_rCheckState 4 0 0 0
+	updatepop_a 0 4
+.d 1 0
+	rtn
+.n 2 e_checksupport_daddGlobalDefinitionsToSymbolTable
+.o 1 0
+e_checksupport_naddGlobalDefinitionsToSymbolTable
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea13
+.o 4 0
+	fill_r e_checksupport_rCheckState 4 0 4 0 0
+	pop_a 4
+.d 1 0
+	rtn
+.o 2 0
+ea13
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 4 0
+	update_a 3 5
+	update_a 1 3
+	update_a 4 1
+	update_a 2 4
+	update_a 0 2
+	pop_a 1
+.o 5 0
+e_checksupport_saddGlobalDefinitionsToSymbolTable
+.o 5 0
+s13
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 5 0
+	jmp s81
+.o 5 0
+s81
+	eq_desc _Nil 0 0
+	jmp_true case.84
+	jmp case.85
+case.84
+	pop_a 1
+.d 4 0
+	rtn
+case.85
+	repl_args 2 2
+	push_a 0
+	jsr_eval 0
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 4
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 6 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 5 0
+	jsr s62
+.o 4 0
+	push_a 4
+	jsr_eval 0
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 5 0
+	jmp s81
+.o 5 0
+s62
+	repl_r_args 3 1
+	push_args 0 2 2
+	pop_a 1
+	push_a 4
+	push_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_b 1
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	ltI
+	jmp_false else.86
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	push_a 4
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_b 2
+	push_a 10
+	push_a 14
+	push_a 7
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 0 3
+	pop_a 1
+	update_a 7 19
+	update_a 6 18
+	update_a 5 17
+	update_a 4 16
+	update_a 3 15
+	update_a 2 14
+	update_a 1 13
+	updatepop_a 0 12
+	updatepop_b 0 3
+.d 8 1 i
+	jmp s119
+else.86
+	push_r_args 10 1 3
+	push_r_args 6 2 0
+	push_a 9
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 11
+	update_a 0 10
+	pop_a 1
+.d 3 0
+	jsr s1
+.o 2 1 i
+	buildAC "multiply defined"
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_b 3 6
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+	update_a 7 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 4 4 ifb
+	jsr s80
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 1
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 0
+	update_a 5 2
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 4 0
+	rtn
+.o 8 1 i
+s119
+	eq_desc e_syntax_kSTE_Field 0 0
+	jmp_true case.87
+	jmp case.88
+case.87
+	push_args 0 2 2
+	push_a 4
+	pushI 1
+	push_b 1
+	push_a 3
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 4
+	push_a 11
+	push_a 2
+	push_a 2
+	update_a 6 9
+	update_a 5 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	buildh _Nil 0
+	update_a 0 10
+	pop_a 1
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	pushI -1
+	buildI_b 1
+	build_r e_syntax_rGlobal 1 1 0 0
+	updatepop_a 0 1
+	pop_b 1
+	push_a 6
+	push_a 6
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 1
+.d 7 0
+	jmp s55
+case.88
+	push_a 2
+	pushI 1
+	push_b 1
+	push_a 1
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 2
+	push_a 9
+	push_a 2
+	push_a 2
+	pop_b 1
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 0
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 4 0
+	rtn
+.o 4 4 ifb
+s80
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 1
+	push_b 2
+	push_a 1
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.export e_checksupport_saddDeclarationsOfDclModToSymbolTable
+.descexp e_checksupport_daddDeclarationsOfDclModToSymbolTable e_checksupport_naddDeclarationsOfDclModToSymbolTable e_checksupport_laddDeclarationsOfDclModToSymbolTable 5 0 "addDeclarationsOfDclModToSymbolTable"
+.a 0 a12
+.o 2 0
+e_checksupport_laddDeclarationsOfDclModToSymbolTable
+	repl_args 4 4
+.o 5 0
+a12
+.d 5 0
+	jsr ea12
+.o 5 0
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildh _Tuple 2
+	updatepop_a 0 5
+.d 1 0
+	rtn
+.n 5 e_checksupport_daddDeclarationsOfDclModToSymbolTable
+.o 1 0
+e_checksupport_naddDeclarationsOfDclModToSymbolTable
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea12
+.o 5 0
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	fillh _Tuple 2 7
+	pop_a 5
+.d 1 0
+	rtn
+.o 5 0
+ea12
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	push_r_args 4 4 0
+	push_array 7
+	push_array 7
+	push_array 7
+	update_a 6 11
+	update_a 1 6
+	update_a 5 10
+	update_a 0 5
+	update_a 4 9
+	update_a 7 4
+	update_a 2 7
+	update_a 3 8
+	pop_a 4
+.o 8 0
+e_checksupport_saddDeclarationsOfDclModToSymbolTable
+.o 8 0
+s12
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	pushI 0
+	update_a 7 13
+	update_a 6 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 6 1 i
+	jsr s58
+.o 5 0
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 10
+	push_a 12
+	pushI 0
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 7 1 i
+	jmp s59
+.o 7 1 i
+s59
+	push_a 0
+	push_arraysize _ 1 0
+	push_b 1
+	ltI
+	jmp_false else.89
+	push_b 0
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+	repl_r_args 3 1
+	push_a 1
+	push_b 0
+	push_r_args 1 2 0
+	push_a 5
+	push_a 9
+	push_a 9
+	push_b 2
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 16
+	push_a 9
+	update_a 7 10
+	update_a 4 7
+	update_a 1 4
+	update_a 8 1
+	update_a 5 8
+	update_a 2 5
+	update_a 9 2
+	update_a 6 9
+	update_a 3 6
+	update_a 0 3
+	pop_a 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 10 21
+	update_a 9 20
+	update_a 8 19
+	update_a 7 18
+	update_a 6 17
+	update_a 5 16
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+	update_b 1 3
+	updatepop_b 0 2
+.d 11 2 ii
+	jmp s118
+else.89
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 1
+.d 5 0
+	rtn
+.o 11 2 ii
+s118
+	pushD_a 0
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.90
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.91
+	pop_b 1
+	jmp s118.1
+case.90
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	buildh e_general_dNo 0
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_b 0
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	updatepop_b 0 1
+	update_a 7 14
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+	buildh _Nil 0
+	update_a 0 11
+	pop_a 1
+.d 8 1 i
+	jsr s15
+.o 5 1 b
+	pushI 1
+	push_b 2
+	addI
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 11
+	push_a 11
+	update_a 6 14
+	update_a 5 13
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	updatepop_b 0 2
+.d 7 1 i
+	jmp s59
+case.91
+	pop_b 1
+	push_r_args 0 1 1
+	pop_b 1
+	push_a 10
+	jsr_eval 0
+	pushI_a 11
+	pop_a 1
+	push_a 11
+	jsr_eval 0
+	buildh e_general_dNo 0
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	pushI -1
+	push_b 2
+	push_a 7
+	push_a 9
+	push_a 12
+	push_a 12
+	push_a 10
+	update_a 9 11
+	update_a 7 9
+	update_a 5 7
+	update_a 3 5
+	update_a 2 3
+	update_a 1 2
+	update_a 10 1
+	update_a 8 10
+	update_a 6 8
+	update_a 4 6
+	update_a 0 4
+	pop_a 1
+	push_b 2
+	update_b 2 3
+	update_b 0 2
+	pop_b 1
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 10 19
+	update_a 9 18
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	buildh _Nil 0
+	update_a 0 14
+	pop_a 1
+.d 11 3 iii
+	jsr s14
+.o 5 1 b
+	pushI 1
+	push_b 2
+	addI
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 11
+	push_a 11
+	update_a 6 14
+	update_a 5 13
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	updatepop_b 0 2
+.d 7 1 i
+	jmp s59
+s118.1
+	pop_a 11
+	pop_b 2
+	pushD m_checksupport
+	pushD x_118
+.d 0 2 ii
+	jmp _match_error
+.string x_118 "<case>[line:248];15;175"
+.o 6 1 i
+s58
+	push_a 0
+	push_arraysize _ 1 0
+	push_b 1
+	ltI
+	jmp_false else.92
+	push_b 0
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+	repl_r_args 3 1
+	push_a 1
+	push_r_args 1 2 0
+	push_a 5
+	push_a 8
+	push_a 8
+	push_a 15
+	push_a 15
+	push_a 15
+	push_a 15
+	push_a 15
+	push_b 1
+	push_a 10
+	update_a 7 11
+	update_a 3 7
+	update_a 10 3
+	update_a 6 10
+	update_a 2 6
+	update_a 9 2
+	update_a 5 9
+	update_a 1 5
+	update_a 8 1
+	update_a 4 8
+	update_a 0 4
+	pop_a 1
+	update_a 10 20
+	update_a 9 19
+	update_a 8 18
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	updatepop_b 0 2
+.d 11 1 i
+	jmp s117
+else.92
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 1
+.d 5 0
+	rtn
+.o 11 1 i
+s117
+	pushD_a 0
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.93
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.94
+	pop_b 1
+	jmp s117.1
+case.93
+	pop_b 1
+	push_r_args 0 1 1
+	push_a 11
+	push_b 1
+	push_a 0
+	buildh _Nil 0
+	update_a 0 13
+	update_a 0 14
+	pop_a 1
+	select _ 1 0
+	push_a 0
+	repl_r_args 3 1
+	pop_a 3
+	push_a 6
+	jsr_eval 0
+	buildh e_general_dNo 0
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	pushI -1
+	push_b 2
+	push_a 9
+	push_a 11
+	push_a 14
+	push_a 14
+	push_a 10
+	update_a 9 11
+	update_a 7 9
+	update_a 5 7
+	update_a 3 5
+	update_a 2 3
+	update_a 1 2
+	update_a 10 1
+	update_a 8 10
+	update_a 6 8
+	update_a 4 6
+	update_a 0 4
+	pop_a 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 12 24
+	update_a 10 23
+	update_a 9 22
+	update_a 8 21
+	update_a 7 20
+	update_a 6 19
+	update_a 5 18
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+.d 11 3 iii
+	jsr s14
+.o 5 1 b
+	pushI 1
+	push_b 2
+	addI
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 10
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	updatepop_b 0 2
+.d 6 1 i
+	jmp s58
+case.94
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	push_a 9
+	push_b 0
+	push_a 0
+	buildh _Nil 0
+	update_a 0 11
+	update_a 0 12
+	update_a 0 5
+	pop_a 1
+	select _ 1 0
+	push_a 0
+	repl_r_args 3 1
+	pop_a 3
+	buildh e_general_dNo 0
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 9
+	push_a 9
+	push_a 7
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 9 19
+	update_a 7 18
+	update_a 6 17
+	update_a 5 16
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+.d 8 1 i
+	jsr s15
+.o 5 1 b
+	pushI 1
+	push_b 2
+	addI
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 10
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	updatepop_b 0 2
+.d 6 1 i
+	jmp s58
+s117.1
+	pop_a 11
+	pop_b 1
+	pushD m_checksupport
+	pushD x_117
+.d 0 2 ii
+	jmp _match_error
+.string x_117 "<case>[line:231];15;174"
+.export e_checksupport_saddSymbol
+.descexp e_checksupport_daddSymbol e_checksupport_naddSymbol e_checksupport_laddSymbol 10 0 "addSymbol"
+.a 0 a14
+.o 2 0
+e_checksupport_laddSymbol
+	repl_args 9 9
+.o 10 0
+a14
+.d 10 0
+	jsr ea14
+.o 5 1 b
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildB_b 0
+	buildh _Tuple 3
+	updatepop_a 0 5
+	pop_b 1
+.d 1 0
+	rtn
+.n 10 e_checksupport_daddSymbol
+.o 1 0
+e_checksupport_naddSymbol
+	push_node _cycle_in_spine 10
+.d 10 0
+	jsr ea14
+.o 5 1 b
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildB_b 0
+	fillh _Tuple 3 8
+	pop_a 5
+	pop_b 1
+.d 1 0
+	rtn
+.o 10 0
+ea14
+	jsr_eval 9
+	jsr_eval 8
+	jsr_eval 7
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 9 4 0
+	push_array 12
+	pushI_a 12
+	pushI_a 11
+	pushI_a 10
+	push_r_args 6 2 0
+	update_a 6 16
+	update_a 7 6
+	update_a 0 7
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 8
+	pop_a 6
+.o 11 3 iii
+e_checksupport_saddSymbol
+.o 11 3 iii
+s14
+	push_a 2
+	push_a 8
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_a 1
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	build_r e_syntax_rIdent 2 0 7 0
+	push_r_args 5 2 2
+	build_r e_syntax_rIdent 2 0 10 0
+	push_a 16
+	push_b 4
+	push_b 4
+	push_b 4
+	push_a 16
+	push_a 15
+	push_a 13
+	push_a 18
+	push_a 8
+	update_a 5 9
+	update_a 8 5
+	update_a 4 8
+	update_a 7 4
+	update_a 3 7
+	update_a 2 3
+	update_a 1 2
+	update_a 6 1
+	update_a 0 6
+	pop_a 1
+	push_b 4
+	update_b 3 5
+	update_b 1 3
+	update_b 4 1
+	update_b 2 4
+	update_b 0 2
+	pop_b 1
+	update_a 12 25
+	update_a 11 24
+	update_a 10 23
+	update_a 9 22
+	update_a 8 21
+	update_a 7 20
+	update_a 6 19
+	update_a 5 18
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	update_b 4 7
+	update_b 3 6
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 13 5 iiiii
+	jmp s180
+.o 4 3 fb
+s115
+	pushD_a 0
+	eqD_b e_syntax_dSTE_GenericDeriveClass 0
+	jmp_true case.95
+	eqD_b e_syntax_dSTE_Instance 0
+	jmp_true case.96
+	pop_b 1
+	jmp case.97
+case.95
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC "derive of class "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 2
+	push_a 1
+	push_b 2
+	push_b 2
+	buildAC "multiply defined"
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 3 3 fb
+	jmp s76
+case.96
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC "instance of class "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 2
+	push_a 1
+	push_b 2
+	push_b 2
+	buildAC "multiply defined"
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 3 3 fb
+	jmp s76
+case.97
+	push_b 2
+	push_a 3
+	push_b 2
+	push_b 2
+	buildAC "multiply defined"
+	push_a 4
+	push_a 4
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 4 3 fb
+	jmp s73
+.o 4 3 fb
+s79
+	eq_desc _Nil 0 3
+	jmp_true case.98
+	jmp case.99
+case.98
+	buildAC "Error "
+	push_b 1
+	push_b 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+case.99
+	push_a 3
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	repl_r_args 2 1
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.o 3 3 fb
+s76
+	eq_desc _Nil 0 2
+	jmp_true case.100
+	jmp case.101
+case.100
+	buildAC "Error "
+	push_b 1
+	push_b 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+case.101
+	push_a 2
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	repl_r_args 2 1
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.o 7 0
+s55
+	push_a 3
+	push_a 2
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	push_a 1
+	push_a 5
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 8
+	update_a 7 9
+	update_a 5 7
+	update_a 3 5
+	update_a 0 3
+	update_a 8 0
+	update_a 6 8
+	update_a 4 6
+	update_a 2 4
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 8 18
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	pop_b 2
+.d 9 0
+	jmp s92
+.o 9 0
+s92
+	eq_desc e_syntax_kSTE_Selector 0 0
+	jmp_true case.102
+	jmp case.103
+case.102
+	repl_args 1 1
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	push_a 8
+	buildh _Cons 2
+	build_r e_syntax_kSTE_Selector 1 0 0 0
+	updatepop_a 0 1
+	push_r_args 7 2 2
+	update_a 2 0
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 3
+	pop_b 2
+	push_a 6
+	push_a 2
+	push_a 2
+	push_a 2
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 0
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	rtn
+case.103
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	push_a 8
+	buildh _Cons 2
+	build_r e_syntax_kSTE_Selector 1 0 0 0
+	updatepop_a 0 1
+	push_a 7
+	pushI 0
+	pushI -1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 6
+	push_a 2
+	push_a 2
+	push_a 2
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 0
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	rtn
+.export e_checksupport_saddImportedFunctionOrMacro
+.descexp e_checksupport_daddImportedFunctionOrMacro e_checksupport_naddImportedFunctionOrMacro e_checksupport_laddImportedFunctionOrMacro 5 0 "addImportedFunctionOrMacro"
+.a 0 a15
+.o 2 0
+e_checksupport_laddImportedFunctionOrMacro
+	repl_args 4 4
+.o 5 0
+a15
+.d 5 0
+	jsr ea15
+.o 5 1 b
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildB_b 0
+	buildh _Tuple 3
+	updatepop_a 0 5
+	pop_b 1
+.d 1 0
+	rtn
+.n 5 e_checksupport_daddImportedFunctionOrMacro
+.o 1 0
+e_checksupport_naddImportedFunctionOrMacro
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea15
+.o 5 1 b
+	build_r e_checksupport_rCheckState 4 0 1 0
+	push_a 1
+	buildh ARRAY 1
+	buildB_b 0
+	fillh _Tuple 3 8
+	pop_a 5
+	pop_b 1
+.d 1 0
+	rtn
+.o 5 0
+ea15
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 4 0
+	push_array 7
+	pushI_a 7
+	push_r_args 6 2 0
+	update_a 6 11
+	update_a 1 6
+	update_a 5 10
+	update_a 0 5
+	update_a 4 9
+	update_a 7 4
+	update_a 2 7
+	update_a 3 8
+	pop_a 4
+.o 8 1 i
+e_checksupport_saddImportedFunctionOrMacro
+.o 8 1 i
+s15
+	push_a 4
+	push_a 3
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	build_r e_syntax_rIdent 2 0 5 0
+	build_r e_syntax_rSymbolTableEntry 2 2 1 0
+	build_r e_Heap_rPtr 1 0 8 0
+	push_a 3
+	push_a 8
+	push_a 12
+	push_a 9
+	push_a 18
+	push_a 18
+	push_a 18
+	push_a 18
+	push_b 2
+	push_a 9
+	update_a 7 10
+	update_a 4 7
+	update_a 1 4
+	update_a 8 1
+	update_a 5 8
+	update_a 2 5
+	update_a 9 2
+	update_a 6 9
+	update_a 3 6
+	update_a 0 3
+	pop_a 1
+	update_a 10 22
+	update_a 9 21
+	update_a 8 20
+	update_a 7 19
+	update_a 6 18
+	update_a 5 17
+	update_a 4 16
+	update_a 3 15
+	update_a 2 14
+	update_a 1 13
+	updatepop_a 0 12
+	updatepop_b 0 3
+.d 11 1 i
+	jmp s91
+.o 11 1 i
+s91
+	pushD_a 0
+	eqD_b e_syntax_dSTE_Empty 0
+	jmp_true case.104
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.105
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.106
+	pop_b 1
+	jmp case.107
+case.104
+	pop_b 1
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	build_r e_syntax_kSTE_FunctionOrMacro 1 0 0 0
+	updatepop_a 0 1
+	push_a 7
+	pushI 0
+	push_b 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_r_args 6 1 0
+	push_a 2
+	push_a 2
+	push_a 2
+	pop_b 1
+	update_a 17 19
+	update_a 8 18
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 2 14
+	update_a 1 13
+	updatepop_a 0 12
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 8
+	pushB TRUE
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 5 1 b
+	rtn
+case.105
+	pop_b 1
+	repl_args 1 1
+	pop_a 1
+	push_r_args_b 1 2 2 1 1
+	push_b 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	jmp_true then.108
+	push_b 0
+	push_a 8
+	updatepop_b 0 1
+	updatepop_a 0 2
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+.d 1 1 i
+	jsr s60
+.o 0 1 b
+	buildh _Nil 0
+	push_a 0
+	pushI 0
+	update_b 1 0
+	jmp_false else.108
+then.108
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 11
+	pushB FALSE
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	updatepop_b 0 1
+.d 5 1 b
+	rtn
+else.108
+	buildh _Nil 0
+	jmp case.107
+case.106
+	pop_b 1
+	repl_r_args 1 1
+	pop_a 1
+	pushI 0
+	push_b 1
+	ltI
+	notB
+	jmp_false else.110
+	push_a 7
+	updatepop_a 0 2
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+	push_arraysize e_syntax_rDclModule 14 1
+	push_b 1
+	ltI
+	buildh _Nil 0
+	push_a 0
+	jmp_false else.110
+	push_b 0
+	push_a 7
+	updatepop_b 0 2
+	updatepop_a 0 2
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	updatepop_a 0 13
+	pop_b 1
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_r_args 2 1 3
+	push_r_args 5 2 0
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC ")"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "multiply defined (also defined in module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_r_args 15 2 0
+.d 4 3 fb
+	jsr s73
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 9
+	pushB FALSE
+	update_a 4 18
+	update_a 3 17
+	update_a 2 16
+	update_a 1 15
+	updatepop_a 0 14
+.d 5 1 b
+	rtn
+else.110
+	buildh _Nil 0
+	pop_b 1
+	jmp case.107
+case.107
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_r_args 2 1 3
+	push_r_args 15 2 0
+	buildAC "multiply defined"
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 16 18
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+.d 4 3 fb
+	jsr s73
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 4
+	push_a 4
+	push_a 4
+	push_a 4
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 8
+	pushB FALSE
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 5 1 b
+	rtn
+.o 1 1 i
+s60
+	eq_desc e_general_kYes 0 0
+	jmp_true case.112
+	jmp case.113
+case.112
+	repl_args 1 1
+	repl_r_args 0 2
+	push_b 0
+	push_b 3
+	ltI
+	notB
+	jmp_false else.114
+	push_b 1
+	push_b 3
+	update_b 1 4
+	updatepop_b 0 3
+	ltI
+.d 0 1 b
+	rtn
+else.114
+	pop_b 3
+	pushB FALSE
+.d 0 1 b
+	rtn
+case.113
+	pop_a 1
+	pop_b 1
+	pushB FALSE
+.d 0 1 b
+	rtn
+.export e_checksupport_saddLocalDclMacroDefsToSymbolTable
+.descexp e_checksupport_daddLocalDclMacroDefsToSymbolTable e_checksupport_naddLocalDclMacroDefsToSymbolTable e_checksupport_laddLocalDclMacroDefsToSymbolTable 7 0 "addLocalDclMacroDefsToSymbolTable"
+.a 0 a10
+.o 2 0
+e_checksupport_laddLocalDclMacroDefsToSymbolTable
+	repl_args 6 6
+.o 7 0
+a10
+.d 7 0
+	jsr ea10
+.o 3 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	push_a 2
+	buildh ARRAY 1
+	buildh _Tuple 3
+	updatepop_a 0 3
+	pop_b 3
+.d 1 0
+	rtn
+.n 7 e_checksupport_daddLocalDclMacroDefsToSymbolTable
+.o 1 0
+e_checksupport_naddLocalDclMacroDefsToSymbolTable
+	push_node _cycle_in_spine 7
+.d 7 0
+	jsr ea10
+.o 3 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	push_a 2
+	buildh ARRAY 1
+	fillh _Tuple 3 6
+	pop_a 3
+	pop_b 3
+.d 1 0
+	rtn
+.o 7 0
+ea10
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 6 1 3
+	push_r_args 6 1 0
+	push_array 6
+	pushI_a 6
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	update_a 2 9
+	update_a 1 8
+	update_a 0 7
+	pop_a 7
+.o 3 7 iiiifb
+e_checksupport_saddLocalDclMacroDefsToSymbolTable
+.o 3 7 iiiifb
+s10
+	push_b 3
+	push_b 3
+	eqI
+	jmp_false else.115
+	push_b 6
+	push_a 2
+	push_b 6
+	push_b 6
+	push_a 2
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 2 9
+	update_b 1 8
+	updatepop_b 0 7
+.d 3 3 fb
+	rtn
+else.115
+	push_b 1
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	push_b 2
+.impdesc e_syntax_rFunDef
+	select e_syntax_rFunDef 7 2
+	push_b 3
+	push_a 7
+	buildh _Nil 0
+	update_a 0 9
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	push_b 4
+	select e_syntax_rFunDef 7 2
+	buildh _Nil 0
+	build_r e_syntax_kSTE_DclMacroOrLocalMacroFunction 1 0 0 0
+	updatepop_a 0 1
+	push_r_args 9 2 0
+	push_b 10
+	push_a 20
+	push_b 10
+	push_b 10
+	push_a 20
+	push_b 9
+	push_b 8
+	push_a 4
+	update_a 2 5
+	update_a 4 2
+	update_a 1 4
+	update_a 3 1
+	update_a 0 3
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 22
+	update_a 0 23
+	pop_a 1
+.d 5 5 iifb
+	jsr s11
+.o 2 3 fb
+	push_r_args 16 4 3
+	pop_b 2
+	pop_a 4
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	or%
+	push_r_args 8 4 3
+	update_b 3 2
+.impdesc e_syntax_rFunInfo
+	build_r e_syntax_rFunInfo 4 3 0 0
+	updatepop_a 0 4
+	pop_b 4
+	push_a 9
+	push_b 4
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_b 4
+	push_a 9
+	update_a 7 6
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_b 10
+	push_a 16
+	buildh _Nil 0
+	update_a 0 18
+	update_a 0 11
+	update_a 0 12
+	update_a 0 13
+	update_a 0 14
+	update_a 0 15
+	update_a 0 16
+	update_a 0 17
+	update_a 0 19
+	update_a 0 20
+	update_a 0 21
+	update_a 0 22
+	update_a 0 23
+	update_a 0 24
+	update_a 0 25
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	push_b 11
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	update_a 8 15
+	update_a 6 14
+	update_a 5 13
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	update_a 0 8
+	pop_a 7
+	update e_syntax_rFunDef 7 2
+.keep 0 1
+	pop_a 1
+	pushI 1
+	push_b 10
+	addI
+	push_b 3
+	push_a 2
+	push_b 3
+	push_b 3
+	push_a 2
+	push_b 14
+	push_b 13
+	push_b 13
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_b 6
+	update_b 6 7
+	update_b 5 6
+	update_b 4 5
+	update_b 3 4
+	update_b 0 3
+	pop_b 1
+	update_a 2 22
+	update_a 1 21
+	updatepop_a 0 20
+	update_b 6 20
+	update_b 5 19
+	update_b 4 18
+	update_b 3 17
+	update_b 2 16
+	update_b 1 15
+	updatepop_b 0 14
+.d 3 7 iiiifb
+	jmp s10
+.export e_checksupport_saddLocalFunctionDefsToSymbolTable
+.descexp e_checksupport_daddLocalFunctionDefsToSymbolTable e_checksupport_naddLocalFunctionDefsToSymbolTable e_checksupport_laddLocalFunctionDefsToSymbolTable 7 0 "addLocalFunctionDefsToSymbolTable"
+.a 0 a9
+.o 2 0
+e_checksupport_laddLocalFunctionDefsToSymbolTable
+	repl_args 6 6
+.o 7 0
+a9
+.d 7 0
+	jsr ea9
+.o 3 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	push_a 2
+	buildh ARRAY 1
+	buildh _Tuple 3
+	updatepop_a 0 3
+	pop_b 3
+.d 1 0
+	rtn
+.n 7 e_checksupport_daddLocalFunctionDefsToSymbolTable
+.o 1 0
+e_checksupport_naddLocalFunctionDefsToSymbolTable
+	push_node _cycle_in_spine 7
+.d 7 0
+	jsr ea9
+.o 3 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 2 0
+	build_r e_Heap_rHeap 1 0 2 0
+	push_a 2
+	buildh ARRAY 1
+	fillh _Tuple 3 6
+	pop_a 3
+	pop_b 3
+.d 1 0
+	rtn
+.o 7 0
+ea9
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 6 1 3
+	push_r_args 6 1 0
+	push_array 6
+	pushB_a 6
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	update_a 2 9
+	update_a 1 8
+	update_a 0 7
+	pop_a 7
+.o 3 7 iiibfb
+e_checksupport_saddLocalFunctionDefsToSymbolTable
+.o 3 7 iiibfb
+s9
+	push_b 2
+	push_b 2
+	eqI
+	jmp_false else.116
+	push_b 6
+	push_a 2
+	push_b 6
+	push_b 6
+	push_a 2
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 2 9
+	update_b 1 8
+	updatepop_b 0 7
+.d 3 3 fb
+	rtn
+else.116
+	push_b 3
+	jmp_false else.117
+	push_b 1
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rFunDef 7 2
+	push_b 3
+	push_a 7
+	buildh _Nil 0
+	update_a 0 9
+	pop_a 1
+	push_a 0
+	select e_syntax_rFunDef 7 2
+	buildh _Nil 0
+	build_r e_syntax_kSTE_FunctionOrMacro 1 0 0 0
+	updatepop_a 0 1
+	push_r_args 9 2 0
+	push_b 10
+	push_a 20
+	push_b 10
+	push_b 10
+	push_a 20
+	push_b 8
+	push_b 8
+	push_a 4
+	update_a 2 5
+	update_a 4 2
+	update_a 1 4
+	update_a 3 1
+	update_a 0 3
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 22
+	update_a 0 23
+	pop_a 1
+.d 5 5 iifb
+	jsr s11
+.o 2 3 fb
+	push_r_args 16 4 3
+	pop_b 2
+	pop_a 4
+	pushI 1
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	or%
+	push_r_args 8 4 3
+	update_b 3 2
+	build_r e_syntax_rFunInfo 4 3 0 0
+	updatepop_a 0 4
+	pop_b 4
+	push_a 9
+	push_b 4
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_b 4
+	push_a 9
+	update_a 7 6
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_b 10
+	push_a 16
+	update_a 9 27
+	update_a 8 26
+	update_a 7 25
+	update_a 6 24
+	update_a 5 23
+	update_a 4 22
+	update_a 3 21
+	update_a 2 20
+	update_a 1 19
+	updatepop_a 0 18
+	update e_syntax_rFunDef 7 2
+	pushI 1
+	push_b 9
+	addI
+	push_b 3
+	push_a 2
+	push_b 3
+	push_b 3
+	push_a 2
+	push_b 14
+	push_b 14
+	push_b 13
+	push_a 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_b 6
+	update_b 6 7
+	update_b 5 6
+	update_b 4 5
+	update_b 3 4
+	update_b 2 3
+	update_b 0 2
+	pop_b 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 6 20
+	update_b 5 19
+	update_b 4 18
+	update_b 3 17
+	update_b 2 16
+	update_b 1 15
+	updatepop_b 0 14
+.d 3 7 iiibfb
+	jmp s9
+else.117
+	push_b 1
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rFunDef 7 2
+	buildh _Nil 0
+	build_r e_syntax_kSTE_FunctionOrMacro 1 0 0 0
+	updatepop_a 0 1
+	push_r_args 1 2 0
+	push_b 8
+	push_a 12
+	push_b 8
+	push_b 8
+	push_a 12
+	push_b 6
+	push_b 6
+	push_a 4
+	update_a 2 5
+	update_a 4 2
+	update_a 1 4
+	update_a 3 1
+	update_a 0 3
+	pop_a 1
+	update_b 4 6
+	update_b 3 5
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 12 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+.d 5 5 iifb
+	jsr s11
+.o 2 3 fb
+	pushI 1
+	push_b 5
+	addI
+	push_b 3
+	push_a 1
+	push_b 3
+	push_b 3
+	push_a 1
+	push_a 4
+	push_b 10
+	push_b 10
+	push_b 9
+	push_b 6
+	update_b 6 7
+	update_b 5 6
+	update_b 4 5
+	update_b 3 4
+	update_b 2 3
+	update_b 0 2
+	pop_b 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 6 16
+	update_b 5 15
+	update_b 4 14
+	update_b 3 13
+	update_b 2 12
+	update_b 1 11
+	updatepop_b 0 10
+.d 3 7 iiibfb
+	jmp s9
+.export e_checksupport_saddDefToSymbolTable
+.descexp e_checksupport_daddDefToSymbolTable e_checksupport_naddDefToSymbolTable e_checksupport_laddDefToSymbolTable 6 0 "addDefToSymbolTable"
+.a 0 a11
+.o 2 0
+e_checksupport_laddDefToSymbolTable
+	repl_args 5 5
+.o 6 0
+a11
+.d 6 0
+	jsr ea11
+.o 2 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 1 0
+	build_r e_Heap_rHeap 1 0 1 0
+	buildh _Tuple 2
+	updatepop_a 0 2
+	pop_b 3
+.d 1 0
+	rtn
+.n 6 e_checksupport_daddDefToSymbolTable
+.o 1 0
+e_checksupport_naddDefToSymbolTable
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea11
+.o 2 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 1 0
+	build_r e_Heap_rHeap 1 0 1 0
+	fillh _Tuple 2 4
+	pop_a 2
+	pop_b 3
+.d 1 0
+	rtn
+.o 6 0
+ea11
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 5 1 3
+	push_r_args 5 1 0
+	push_r_args 4 2 0
+	pushI_a 5
+	pushI_a 4
+	update_a 3 9
+	update_a 2 8
+	update_a 1 6
+	update_a 0 5
+	pop_a 5
+.o 5 5 iifb
+e_checksupport_saddDefToSymbolTable
+.o 5 5 iifb
+s11
+	push_a 3
+	push_a 2
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	buildh e_syntax_dSTE_Empty 0
+	push_a 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 0
+	jsr s30
+.o 0 1 b
+	jmp_true then.118
+	push_b 1
+	push_b 3
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqI
+	notB
+	jmp_false else.118
+then.118
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	push_b 2
+	push_b 4
+	push_a 7
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 6
+	push_a 5
+	push_a 2
+	push_a 2
+	pop_b 4
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_b 2
+	push_a 1
+	push_b 2
+	push_b 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+.d 2 3 fb
+	rtn
+else.118
+	push_b 6
+	push_a 8
+	push_b 6
+	push_b 6
+	buildAC "already defined"
+	push_a 7
+	push_a 7
+	update_b 2 9
+	update_b 1 8
+	updatepop_b 0 7
+	update_a 7 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+.d 4 3 fb
+	jsr s73
+.o 1 3 fb
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 3 fb
+	rtn
+.o 4 3 fb
+s73
+	eq_desc _Nil 0 3
+	jmp_true case.120
+	jmp case.121
+case.120
+	buildAC "Error "
+	push_b 1
+	push_b 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+case.121
+	push_a 3
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	repl_r_args 2 1
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	push_a 0
+	updatepop_a 0 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.export e_checksupport_sretrieveGlobalDefinition
+.descexp e_checksupport_dretrieveGlobalDefinition e_checksupport_nretrieveGlobalDefinition e_checksupport_lretrieveGlobalDefinition 3 0 "retrieveGlobalDefinition"
+.a 0 a8
+.o 2 0
+e_checksupport_lretrieveGlobalDefinition
+	repl_args 2 2
+.o 3 0
+a8
+.d 3 0
+	jsr ea8
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_checksupport_dretrieveGlobalDefinition
+.o 1 0
+e_checksupport_nretrieveGlobalDefinition
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea8
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea8
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	repl_r_args 2 2
+	update_a 2 3
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.o 3 3 iii
+e_checksupport_sretrieveGlobalDefinition
+.o 3 3 iii
+s8
+	eq_desc e_syntax_kSTE_Imported 0 0
+	jmp_true case.122
+	jmp case.123
+case.122
+	repl_r_args 1 1
+	push_a 2
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr s30
+.o 0 1 b
+	jmp_false else.124
+	push_b 0
+	push_b 2
+	update_b 1 5
+	updatepop_b 0 4
+.d 0 2 ii
+	rtn
+else.124
+	push_b 3
+	pushI -1
+	update_b 1 5
+	updatepop_b 0 4
+.d 0 2 ii
+	rtn
+case.123
+	push_a 2
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr s30
+.o 0 1 b
+	jmp_false else.125
+	pushI 1
+	push_b 2
+	eqI
+	jmp_false else.125
+	push_b 2
+	push_b 1
+	update_b 1 4
+	updatepop_b 0 3
+.d 0 2 ii
+	rtn
+else.125
+	push_b 2
+	pushI -1
+	update_b 1 4
+	updatepop_b 0 3
+.d 0 2 ii
+	rtn
+.export e_checksupport_s==;29
+.descexp e_checksupport_d==;29 e_checksupport_n==;29 e_checksupport_l==;29 2 0 "==;29"
+.a 0 a30
+.o 2 0
+e_checksupport_l==;29
+	repl_args 1 1
+.o 2 0
+a30
+.d 2 0
+	jsr ea30
+.o 0 1 b
+	buildB_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_d==;29
+.o 1 0
+e_checksupport_n==;29
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea30
+.o 0 1 b
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea30
+	jsr_eval 1
+	jsr_eval 0
+.o 2 0
+e_checksupport_s==;29
+.o 2 0
+s30
+	pushD_a 0
+	eqD_b e_syntax_kSTE_FunctionOrMacro 0
+	jmp_true case.127
+	eqD_b e_syntax_dSTE_DclFunction 0
+	jmp_true case.128
+	eqD_b e_syntax_kSTE_DclMacroOrLocalMacroFunction 0
+	jmp_true case.129
+	pop_b 1
+	jmp case.130
+case.127
+	pop_b 1
+	push_args 0 1 1
+	pop_a 1
+	pushD_a 1
+	eqD_b e_syntax_dSTE_DclFunction 0
+	jmp_true case.131
+	eqD_b e_syntax_kSTE_DclMacroOrLocalMacroFunction 0
+	jmp_true case.132
+	pop_b 1
+	jmp case.130
+case.131
+	pop_b 1
+	pop_a 2
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.132
+	pop_b 1
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	pop_a 1
+	pop_a 2
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.128
+	pop_b 1
+	eq_desc e_syntax_kSTE_FunctionOrMacro 0 1
+	jmp_true case.133
+	jmp case.130
+case.133
+	push_args 1 1 1
+	pop_a 1
+	pop_a 2
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.129
+	pop_b 1
+	push_args 0 1 1
+	pop_a 1
+	eq_desc e_syntax_kSTE_FunctionOrMacro 0 1
+	jmp_true case.134
+	jmp case.130
+case.134
+	push_args 1 1 1
+	pop_a 1
+	pop_a 2
+	pushB TRUE
+.d 0 1 b
+	rtn
+case.130
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jmp e_compare_constructor_sequal_constructor
+.export e_checksupport_scheckWarningWithPosition
+.descexp e_checksupport_dcheckWarningWithPosition e_checksupport_ncheckWarningWithPosition e_checksupport_lcheckWarningWithPosition 5 0 "checkWarningWithPosition"
+.a 0 a7
+.o 2 0
+e_checksupport_lcheckWarningWithPosition
+	repl_args 4 4
+.o 5 0
+a7
+.d 5 0
+	jsr ea7
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 5 e_checksupport_dcheckWarningWithPosition
+.o 1 0
+e_checksupport_ncheckWarningWithPosition
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea7
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 5 0
+ea7
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 1 3
+	push_r_args 2 2 0
+	push_r_args 3 1 0
+	update_a 3 8
+	update_a 0 3
+	update_a 2 5
+	update_a 1 4
+	pop_a 3
+.o 6 3 fb
+e_checksupport_scheckWarningWithPosition
+.o 6 3 fb
+s7
+	push_a 4
+	build_r e_syntax_rIdent 2 0 2 0
+	push_a 5
+	push_b 1
+	push_b 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_u _ 2 2 n190
+	push_a 2
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_b 4
+	push_a 0
+	push_b 4
+	push_b 4
+	update_b 3 0
+	update_b 4 1
+	updatepop_a 0 1
+	update_b 2 7
+	update_b 1 6
+	updatepop_b 0 5
+.d 1 3 fb
+	rtn
+.nu 2 2 _ _
+.o 1 0
+n190
+	push_node_u _cycle_in_spine 2 2
+.o 3 2 f
+ea190
+.o 3 2 f
+s190
+	push_r_args 0 2 0
+	push_a 3
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s1
+.o 2 1 i
+	buildAC "Warning "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_checksupport_scheckErrorWithPosition
+.descexp e_checksupport_dcheckErrorWithPosition e_checksupport_ncheckErrorWithPosition e_checksupport_lcheckErrorWithPosition 5 0 "checkErrorWithPosition"
+.a 0 a6
+.o 2 0
+e_checksupport_lcheckErrorWithPosition
+	repl_args 4 4
+.o 5 0
+a6
+.d 5 0
+	jsr ea6
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 5 e_checksupport_dcheckErrorWithPosition
+.o 1 0
+e_checksupport_ncheckErrorWithPosition
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea6
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 5 0
+ea6
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 1 3
+	push_r_args 2 2 0
+	push_r_args 3 1 0
+	update_a 3 8
+	update_a 0 3
+	update_a 2 5
+	update_a 1 4
+	pop_a 3
+.o 6 3 fb
+e_checksupport_scheckErrorWithPosition
+.o 6 3 fb
+s6
+	push_a 4
+	build_r e_syntax_rIdent 2 0 2 0
+	push_a 5
+	push_b 1
+	push_b 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_u _ 2 2 n191
+	push_a 2
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.nu 2 2 _ _
+.o 1 0
+n191
+	push_node_u _cycle_in_spine 2 2
+.o 3 2 f
+ea191
+.o 3 2 f
+s191
+	push_r_args 0 2 0
+	push_a 3
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s1
+.o 2 1 i
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_checksupport_scheckErrorWithIdentPos
+.descexp e_checksupport_dcheckErrorWithIdentPos e_checksupport_ncheckErrorWithIdentPos e_checksupport_lcheckErrorWithIdentPos 4 0 "checkErrorWithIdentPos"
+.a 0 a5
+.o 2 0
+e_checksupport_lcheckErrorWithIdentPos
+	repl_args 3 3
+.o 4 0
+a5
+.d 4 0
+	jsr ea5
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 4 e_checksupport_dcheckErrorWithIdentPos
+.o 1 0
+e_checksupport_ncheckErrorWithIdentPos
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea5
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 4 0
+ea5
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 1 3
+	push_r_args 2 2 1
+	push_r_args 3 1 0
+	update_a 3 7
+	update_a 0 3
+	update_a 2 5
+	update_a 1 4
+	pop_a 3
+.o 5 4 ifb
+e_checksupport_scheckErrorWithIdentPos
+.o 5 4 ifb
+s5
+	push_a 3
+	build_r e_syntax_rIdentPos 2 1 2 0
+	push_b 2
+	push_b 2
+	build_u _ 1 2 n192
+	push_a 2
+	pop_b 1
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.nu 1 2 _ _
+.o 1 0
+n192
+	push_node_u _cycle_in_spine 1 2
+.o 2 2 f
+ea192
+.o 2 2 f
+s192
+	push_r_args 0 2 1
+	buildAC "Error "
+	push_b 2
+	push_b 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.export e_checksupport_scheckWarning
+.descexp e_checksupport_dcheckWarning e_checksupport_ncheckWarning e_checksupport_lcheckWarning 5 0 "checkWarning"
+.a 0 a4
+.o 2 0
+e_checksupport_lcheckWarning
+	repl_args 4 4
+.o 5 0
+a4
+.d 5 0
+	jsr ea4
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 5 e_checksupport_dcheckWarning
+.o 1 0
+e_checksupport_ncheckWarning
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea4
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 5 0
+ea4
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 1 3
+	push_r_args 2 1 0
+	push_r_args 2 1 0
+	update_a 2 7
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.o 5 3 fb
+e_checksupport_scheckWarning
+.o 5 3 fb
+s4
+	eq_desc _Nil 0 4
+	jmp_true case.135
+	jmp case.136
+case.135
+	push_a 3
+	push_b 1
+	push_b 1
+	build_u _ 0 2 n194
+	push_a 2
+	push_a 5
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	build _ 3 n193
+	buildAC " "
+	buildh ARRAY 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 e_StdFile_n<<<;38
+	push_a 3
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_b 4
+	push_a 0
+	push_b 4
+	push_b 4
+	update_b 3 0
+	update_b 4 1
+	updatepop_a 0 1
+	update_b 2 7
+	update_b 1 6
+	updatepop_b 0 5
+.d 1 3 fb
+	rtn
+case.136
+	push_a 3
+	push_a 5
+	push_b 1
+	push_b 1
+	build_u _ 1 2 n196
+	push_a 2
+	push_a 5
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	build _ 3 n195
+	buildAC " "
+	buildh ARRAY 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 e_StdFile_n<<<;38
+	push_a 3
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_b 4
+	push_a 0
+	push_b 4
+	push_b 4
+	update_b 3 0
+	update_b 4 1
+	updatepop_a 0 1
+	update_b 2 7
+	update_b 1 6
+	updatepop_b 0 5
+.d 1 3 fb
+	rtn
+.nu 1 2 _ _
+.o 1 0
+n196
+	push_node_u _cycle_in_spine 1 2
+.o 2 2 f
+ea196
+.o 2 2 f
+s196
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	repl_r_args 2 1
+	buildAC "Warning "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 _ ea195
+.o 1 0
+n195
+	push_node _cycle_in_spine 3
+.o 4 0
+ea195
+.o 4 0
+s195
+	push_a 2
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	jsr_ap 2
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.nu 0 2 _ _
+.o 1 0
+n194
+	push_node_u _cycle_in_spine 0 2
+.o 1 2 f
+ea194
+.o 1 2 f
+s194
+	buildAC "Warning "
+	push_b 1
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 _ ea193
+.o 1 0
+n193
+	push_node _cycle_in_spine 3
+.o 4 0
+ea193
+.o 4 0
+s193
+	push_a 2
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	jsr_ap 2
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_scheckError
+.descexp e_checksupport_dcheckError e_checksupport_ncheckError e_checksupport_lcheckError 5 0 "checkError"
+.a 0 a3
+.o 2 0
+e_checksupport_lcheckError
+	repl_args 4 4
+.o 5 0
+a3
+.d 5 0
+	jsr ea3
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+.d 1 0
+	rtn
+.n 5 e_checksupport_dcheckError
+.o 1 0
+e_checksupport_ncheckError
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea3
+.o 1 3 fb
+	fill_r e_checksupport_rErrorAdmin 1 3 1 0 0
+	pop_a 1
+	pop_b 3
+.d 1 0
+	rtn
+.o 5 0
+ea3
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 4 1 3
+	push_r_args 2 1 0
+	push_r_args 2 1 0
+	update_a 2 7
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.o 5 3 fb
+e_checksupport_scheckError
+.o 5 3 fb
+s3
+	eq_desc _Nil 0 4
+	jmp_true case.137
+	jmp case.138
+case.137
+	push_a 3
+	push_b 1
+	push_b 1
+	build_u _ 0 2 n198
+	push_a 2
+	push_a 5
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	build _ 3 n197
+	buildAC " "
+	buildh ARRAY 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 e_StdFile_n<<<;38
+	push_a 3
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+case.138
+	push_a 3
+	push_a 5
+	push_b 1
+	push_b 1
+	build_u _ 1 2 n200
+	push_a 2
+	push_a 5
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	build _ 3 n199
+	buildAC " "
+	buildh ARRAY 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 2 e_StdFile_n<<<;38
+	push_a 3
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+	jsr_ap 2
+	pushF_a 0
+	pop_a 1
+	pushC '\n'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	pushB FALSE
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 5
+	push_a 0
+	push_b 5
+	push_b 5
+	update_b 3 0
+	update_b 4 1
+	update_b 5 2
+	updatepop_a 0 1
+	update_b 2 8
+	update_b 1 7
+	updatepop_b 0 6
+.d 1 3 fb
+	rtn
+.nu 1 2 _ _
+.o 1 0
+n200
+	push_node_u _cycle_in_spine 1 2
+.o 2 2 f
+ea200
+.o 2 2 f
+s200
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jsr e_StdList_shd
+.o 1 0
+	repl_r_args 2 1
+	buildAC "Error "
+	push_b 2
+	push_b 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 3 fi
+	jsr s53
+.o 0 2 f
+	buildAC ": "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 _ ea199
+.o 1 0
+n199
+	push_node _cycle_in_spine 3
+.o 4 0
+ea199
+.o 4 0
+s199
+	push_a 2
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	jsr_ap 2
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.nu 0 2 _ _
+.o 1 0
+n198
+	push_node_u _cycle_in_spine 0 2
+.o 1 2 f
+ea198
+.o 1 2 f
+s198
+	buildAC "Error "
+	push_b 1
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	buildAC " "
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 _ ea197
+.o 1 0
+n197
+	push_node _cycle_in_spine 3
+.o 4 0
+ea197
+.o 4 0
+s197
+	push_a 2
+	push_a 1
+	jsr_eval 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	jsr_ap 2
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_checksupport_s<<<;52
+.descexp e_checksupport_d<<<;52 e_checksupport_n<<<;52 e_checksupport_l<<<;52 2 0 "<<<;52"
+.a 0 a53
+.o 2 0
+e_checksupport_l<<<;52
+	repl_args 1 1
+.o 2 0
+a53
+.d 2 0
+	jsr ea53
+.o 0 2 f
+	buildF_b 0
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_checksupport_d<<<;52
+.o 1 0
+e_checksupport_n<<<;52
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea53
+.o 0 2 f
+	fillF_b 0 0
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea53
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 1
+	pushF_a 2
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 3 fi
+e_checksupport_s<<<;52
+.o 2 3 fi
+s53
+	pushI -1
+	push_b 3
+	eqI
+	jmp_false else.139
+	push_r_args 0 2 0
+	pushC '['
+	push_b 2
+	push_b 2
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 3
+	update_b 1 4
+	updatepop_b 0 3
+	buildh _Nil 0
+	update_a 0 5
+	update_a 0 4
+	pop_a 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	pushC ']'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+.d 0 2 f
+	rtn
+else.139
+	push_r_args 0 2 0
+	pushC '['
+	push_b 2
+	push_b 2
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_a 3
+	update_b 1 3
+	updatepop_b 0 2
+	buildh _Nil 0
+	update_a 0 5
+	update_a 0 4
+	pop_a 1
+.d 1 2 f
+	jsr writeFS
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	push_b 2
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 i f
+	jsr writeFI
+.o 0 2 f
+	pushC ','
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+	update_b 1 2
+	updatepop_b 0 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 2 f
+	jsr e_syntax_s<<<;24
+.o 0 2 f
+	pushC ']'
+	push_b 2
+	update_b 1 3
+	update_b 2 1
+	update_b 0 2
+	pop_b 1
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+.d 0 3 c f
+	jsr writeFC
+.o 0 2 f
+.d 0 2 f
+	rtn
+.export e_checksupport_sstringPosition
+.descexp e_checksupport_dstringPosition e_checksupport_nstringPosition e_checksupport_lstringPosition 2 0 "stringPosition"
+.a 0 a2
+.o 2 0
+e_checksupport_lstringPosition
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 2 1 i
+	build_r e_syntax_rStringPos 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_dstringPosition
+.o 1 0
+e_checksupport_nstringPosition
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 2 1 i
+	fill_r e_syntax_rStringPos 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 2 0
+e_checksupport_sstringPosition
+.o 2 0
+s2
+	pushD_a 1
+	eqD_b e_syntax_dFunPos 3
+	jmp_true case.140
+	eqD_b e_syntax_dLinePos 2
+	jmp_true case.141
+	eqD_b e_syntax_dPreDefPos 1
+	jmp_true case.142
+	jmp case.143
+case.140
+	pop_b 1
+	push_args 1 3 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	push_a 3
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 1 i
+	rtn
+case.141
+	pop_b 1
+	push_args 1 2 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	push_a 3
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 1 i
+	rtn
+case.142
+	pop_b 1
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	pushI -1
+	push_a 2
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 i
+	rtn
+case.143
+	pop_b 1
+	buildAC "???"
+	pushI -1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 1 i
+	rtn
+.export e_checksupport_snewPosition
+.descexp e_checksupport_dnewPosition e_checksupport_nnewPosition e_checksupport_lnewPosition 2 0 "newPosition"
+.a 0 a1
+.o 2 0
+e_checksupport_lnewPosition
+	repl_args 1 1
+.o 2 0
+a1
+.d 2 0
+	jsr ea1
+.o 2 1 i
+	build_r e_syntax_rIdentPos 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_checksupport_dnewPosition
+.o 1 0
+e_checksupport_nnewPosition
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea1
+.o 2 1 i
+	fill_r e_syntax_rIdentPos 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea1
+	jsr_eval 1
+	jsr_eval 0
+	repl_r_args 2 0
+.o 3 0
+e_checksupport_snewPosition
+.o 3 0
+s1
+	pushD_a 2
+	eqD_b e_syntax_dFunPos 3
+	jmp_true case.144
+	eqD_b e_syntax_dLinePos 2
+	jmp_true case.145
+	eqD_b e_syntax_dPreDefPos 1
+	jmp_true case.146
+	jmp case.147
+case.144
+	pop_b 1
+	push_args 2 3 3
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	build_r e_syntax_rIdent 2 0 3 0
+	update_a 1 6
+	updatepop_a 0 5
+.d 2 1 i
+	rtn
+case.145
+	pop_b 1
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_a 2
+	jsr_eval 0
+	pushI_a 3
+	pop_a 1
+	build_r e_syntax_rIdent 2 0 3 0
+	update_a 1 6
+	updatepop_a 0 5
+.d 2 1 i
+	rtn
+case.146
+	pop_b 1
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	jsr_eval 0
+	push_r_args_a 0 2 0 1 1
+	build_r e_syntax_rIdent 2 0 2 0
+	pushI -1
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 1 i
+	rtn
+case.147
+	pop_b 1
+	build_r e_syntax_rIdent 2 0 0 0
+	buildAC "???"
+	pushI -1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 1 i
+	rtn
+.o 13 5 iiiii
+s180
+	jmp case.148
+case.148
+	pushD_a 3
+	eqD_b e_syntax_dSTE_Empty 0
+	jmp_true case.150
+	eqD_b e_syntax_kSTE_Imported 0
+	jmp_true case.151
+	pop_b 1
+	jmp case.149
+case.150
+	pop_b 1
+	jsr_eval 5
+	push_args 5 2 2
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+	pop_a 1
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	push_b 3
+	push_a 13
+	push_a 15
+	push_b 3
+	push_a 8
+	push_a 7
+	push_a 16
+	update_a 8 22
+	update_a 7 21
+	update_a 6 20
+	update_a 5 19
+	update_a 4 18
+	update_a 3 17
+	update_a 2 16
+	update_a 1 15
+	updatepop_a 0 14
+	update_b 1 6
+	updatepop_b 0 5
+.d 9 2 ii
+	jmp s184
+case.151
+	pop_b 1
+	push_r_args 3 1 1
+	push_a 8
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 10
+	pop_a 1
+.d 2 0
+	jsr s30
+.o 0 1 b
+	jmp_false else.152
+	push_b 4
+	push_b 1
+	eqI
+	jmp_false else.152
+	push_b 3
+	push_b 2
+	eqI
+	jmp_false else.152
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	pushB FALSE
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	updatepop_b 0 6
+.d 5 1 b
+	rtn
+else.152
+	pop_b 1
+	jmp case.149
+case.149
+	jsr_eval 2
+	eq_desc e_general_kYes 0 2
+	jmp_true case.155
+	jmp case.156
+case.155
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	pop_a 1
+	push_r_args 12 0 3
+	updatepop_b 1 2
+	push_b 4
+	eqI
+	jmp_false else.157
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	pushB FALSE
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	updatepop_b 0 5
+.d 5 1 b
+	rtn
+else.157
+	jmp case.156
+case.156
+	push_b 3
+	push_b 5
+	eqI
+	jmp_false else.159
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	pushB FALSE
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	updatepop_b 0 5
+.d 5 1 b
+	rtn
+else.159
+	jmp fail.158
+fail.158
+	jmp case.160
+case.160
+	eq_desc e_syntax_kSTE_Imported 0 3
+	jmp_true case.162
+	jmp case.161
+case.162
+	push_r_args 3 1 1
+	pop_a 1
+	pushI 0
+	push_b 1
+	ltI
+	notB
+	jmp_false else.163
+	push_a 8
+	buildh _Nil 0
+	update_a 0 9
+	pop_a 1
+	push_arraysize e_syntax_rDclModule 14 1
+	push_b 1
+	ltI
+	jmp_false else.163
+	pushI 0
+	push_b 5
+	ltI
+	notB
+	jmp_false else.163
+	push_a 8
+	push_arraysize e_syntax_rDclModule 14 1
+	push_b 5
+	ltI
+	jmp_false else.163
+	push_b 4
+	push_a 8
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	updatepop_a 0 13
+	pop_b 1
+	push_b 0
+	push_a 1
+	updatepop_b 0 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	updatepop_a 0 13
+	pop_b 1
+	push_r_args 14 1 3
+	push_r_args 1 2 0
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC ")"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC " and already in module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_r_args 4 2 0
+	buildh _Nil 0
+	update_a 0 7
+	pop_a 1
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "multiply defined (in module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_r_args 5 2 0
+	update_a 5 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 4 3 fb
+	jsr s79
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 13
+	push_a 13
+	push_a 13
+	push_a 13
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	pushB FALSE
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	updatepop_b 0 5
+.d 5 1 b
+	rtn
+else.163
+	pop_b 1
+	jmp case.161
+case.161
+	build_r e_syntax_rSymbolTableEntry 2 2 3 0
+	push_a 12
+	push_a 7
+	push_a 15
+	push_a 15
+	push_a 15
+	push_a 15
+	push_a 15
+	push_a 9
+	push_a 8
+	update_a 8 9
+	update_a 7 8
+	update_a 6 7
+	update_a 5 6
+	update_a 4 5
+	update_a 3 4
+	update_a 0 3
+	pop_a 1
+	update_a 8 21
+	update_a 7 20
+	update_a 6 19
+	update_a 5 18
+	update_a 4 17
+	update_a 3 16
+	update_a 2 15
+	update_a 1 14
+	updatepop_a 0 13
+	pop_b 5
+.d 9 0
+	jmp s183
+.o 3 2 ii
+s181
+	push_b 1
+	push_b 1
+	eqI
+	jmp_false else.167
+	push_a 2
+	push_a 2
+	update_a 1 4
+	updatepop_a 0 3
+	pop_b 2
+.d 2 0
+	rtn
+else.167
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rFunDef 7 2
+	push_a 6
+	push_b 1
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_b 1
+	push_a 6
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 7 2 ii
+	jsr s44
+.o 2 0
+	pop_a 1
+	push_a 3
+	push_a 1
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_b 1
+	push_a 6
+	jsr_eval 0
+	pushI_a 7
+	pop_a 1
+	eqI
+	jmp_false else.168
+	push_a 1
+	jsr_eval 0
+	push_a 5
+	push_a 5
+	push_a 2
+	push_a 2
+	pop_b 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 1
+	push_b 2
+	push_a 3
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	update_b 1 3
+	updatepop_b 0 2
+.d 3 2 ii
+	jmp s181
+else.168
+	pushI 1
+	push_b 3
+	addI
+	push_a 3
+	push_a 6
+	push_b 4
+	push_a 8
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	update_b 1 5
+	updatepop_b 0 4
+.d 3 2 ii
+	jmp s181
+.o 4 2 ii
+s182
+	push_b 1
+	push_b 1
+	eqI
+	jmp_false else.169
+	push_a 3
+	push_a 3
+	update_a 1 5
+	updatepop_a 0 4
+	pop_b 2
+.d 2 0
+	rtn
+else.169
+	push_a 0
+	jsr_eval 0
+	pushI_a 1
+	pop_a 1
+	push_a 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	push_b 0
+	select e_syntax_rFunDef 7 2
+	push_a 6
+	push_b 1
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	push_b 1
+	push_a 6
+	update_b 1 3
+	updatepop_b 0 2
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 7 2 ii
+	jsr s44
+.o 2 0
+	pop_a 1
+	push_a 5
+	push_a 1
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_r_args 0 2 2
+	push_b 1
+	push_a 7
+	jsr_eval 0
+	pushI_a 8
+	pop_a 1
+	eqI
+	jmp_false else.170
+	push_a 1
+	jsr_eval 0
+	push_a 5
+	push_a 5
+	push_a 2
+	push_a 2
+	pop_b 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	pushI 1
+	push_b 1
+	addI
+	push_a 1
+	push_b 2
+	push_a 4
+	push_a 4
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	update_b 1 3
+	updatepop_b 0 2
+.d 4 2 ii
+	jmp s182
+else.170
+	pushI 1
+	push_b 3
+	addI
+	push_a 3
+	push_a 6
+	push_b 4
+	push_a 9
+	push_a 9
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	update_b 1 5
+	updatepop_b 0 4
+.d 4 2 ii
+	jmp s182
+.o 9 0
+s183
+	eq_desc e_syntax_kSTE_Imported 0 0
+	jmp_true case.171
+	jmp case.172
+case.171
+	repl_r_args 1 1
+	pushI 0
+	push_b 1
+	ltI
+	notB
+	jmp_false else.173
+	push_a 1
+	push_arraysize e_syntax_rDclModule 14 1
+	push_b 1
+	ltI
+	jmp_false else.173
+	push_a 2
+	push_a 1
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_b 0
+	push_a 9
+	push_a 8
+	update_a 7 9
+	update_a 5 7
+	update_a 3 5
+	update_a 1 3
+	update_a 8 1
+	update_a 6 8
+	update_a 4 6
+	update_a 2 4
+	update_a 0 2
+	pop_a 1
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	updatepop_b 0 1
+.d 9 1 i
+	jmp s185
+else.173
+	pop_b 1
+	jmp case.172
+case.172
+	push_r_args 8 1 3
+	push_r_args 8 2 0
+	push_r_args_a 5 2 2 1 1
+	update_a 5 6
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	buildh _Nil 0
+	update_a 0 10
+	update_a 0 11
+	pop_a 1
+.d 4 3 fb
+	jsr s115
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	pushB FALSE
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 5 1 b
+	rtn
+.o 9 2 ii
+s184
+	eq_desc e_syntax_kSTE_Field 0 0
+	jmp_true case.175
+	jmp case.176
+case.175
+	repl_args 2 2
+	push_a 4
+	push_a 3
+	buildh _Nil 0
+	update_a 0 7
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_a 0
+	pushI 0
+	push_b 1
+	push_a 6
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 5
+	push_a 3
+	push_a 2
+	push_a 2
+	update_a 8 11
+	update_a 7 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 7
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_b 1
+	buildI_b 1
+	build_r e_syntax_rGlobal 1 1 0 0
+	updatepop_a 0 1
+	pop_b 1
+	push_a 6
+	push_a 6
+	pop_b 2
+	update_a 9 13
+	update_a 6 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 7 0
+	jsr s55
+.o 4 0
+	push_a 4
+	pushB TRUE
+	update_a 4 5
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 5 1 b
+	rtn
+case.176
+	push_a 3
+	push_a 2
+	update_a 1 2
+	updatepop_a 0 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 0
+	jsr e_Heap_sreadPtr
+.o 2 0
+	push_a 0
+	pushI 0
+	push_b 1
+	push_a 4
+	build_r e_syntax_rSymbolTableEntry 2 2 0 0
+	updatepop_a 0 2
+	pop_b 2
+	push_a 3
+	push_a 3
+	push_a 2
+	push_a 2
+	pop_b 2
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 4 0
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	pushB TRUE
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 5 1 b
+	rtn
+.o 9 1 i
+s185
+case.177
+	eq_desc e_syntax_dSTE_GenericDeriveClass 0 0
+	jmp_true case.179
+	jmp case.180
+case.179
+	jsr_eval 1
+	push_r_args 1 2 2
+	update_b 0 1
+	update_a 0 1
+	pop_a 1
+	pop_b 1
+	push_r_args 8 2 0
+	push_a 4
+	push_a 4
+	push_a 13
+	push_a 12
+	push_a 12
+	push_a 12
+	push_a 12
+	push_b 0
+	push_b 2
+	push_a 12
+	push_a 10
+	push_a 10
+	update_a 9 11
+	update_a 7 9
+	update_a 10 7
+	update_a 8 10
+	update_a 0 8
+	pop_a 1
+	update_a 10 20
+	update_a 9 19
+	update_a 8 18
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	update_b 1 3
+	updatepop_b 0 2
+.d 11 2 ii
+	jmp s188
+case.180
+	push_r_args 8 1 3
+	push_r_args 8 2 0
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_b 3
+	push_a 9
+	push_a 9
+	push_a 9
+	update_a 9 18
+	update_a 8 17
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+.d 10 4 ifb
+	jmp s187
+case.178
+	push_r_args 8 1 3
+	push_r_args 8 2 0
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_b 3
+	push_a 9
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	update_b 3 4
+	update_b 2 3
+	update_b 1 2
+	updatepop_b 0 1
+.d 8 4 ifb
+	jmp s186
+.o 8 4 ifb
+s186
+	push_b 0
+	push_a 0
+	updatepop_b 0 1
+	updatepop_a 0 1
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	push_r_args 0 2 0
+	pop_b 1
+	update_a 1 15
+	updatepop_a 0 14
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC ")"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "multiply defined (also imported from module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 2
+	push_a 8
+	push_b 2
+	push_b 2
+	push_a 8
+	push_a 8
+	push_a 3
+	update_a 3 4
+	update_a 0 3
+	pop_a 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+	buildh _Nil 0
+	update_a 0 10
+	update_a 0 11
+	update_a 0 12
+	pop_a 1
+.d 4 3 fb
+	jsr s73
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	pushB FALSE
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+.d 5 1 b
+	rtn
+.o 10 4 ifb
+s187
+	eq_desc e_syntax_dSTE_Instance 0 0
+	jmp_true case.181
+	jmp case.182
+case.181
+	jsr_eval 1
+	push_r_args 1 2 2
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	update_a 0 1
+	pop_a 1
+	pop_b 2
+	push_b 3
+	push_a 10
+	push_b 3
+	push_b 3
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_a 10
+	push_b 3
+	push_a 10
+	push_a 8
+	update_a 8 19
+	update_a 7 18
+	update_a 6 17
+	update_a 5 16
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+	update_b 3 7
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 9 4 ifb
+	jmp s189
+case.182
+	push_b 3
+	push_a 9
+	push_b 3
+	push_b 3
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	push_b 3
+	push_a 9
+	update_a 7 17
+	update_a 6 16
+	update_a 5 15
+	update_a 4 14
+	update_a 3 13
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	update_b 3 7
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 8 4 ifb
+	jmp s186
+.o 11 2 ii
+s188
+	eq_desc e_syntax_dSTE_GenericDeriveClass 0 0
+	jmp_true case.183
+	jmp case.184
+case.183
+	buildI_b 0
+	push_a 2
+	buildh ARRAY 1
+	build _ 2 nuselect;87
+	push_a 0
+	build d_S.1 -1 n_S.1
+	push_a 0
+	build e_syntax_dDclModule.dcl_common -4 e_syntax_nDclModule.dcl_common
+	build e_syntax_dCommonDefs.com_gencase_defs 1 e_syntax_nCommonDefs.com_gencase_defs
+	pushI 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.185
+	push_a 0
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+.impdesc e_syntax_rGenericCaseDef
+	push_arraysize e_syntax_rGenericCaseDef 4 0
+	push_b 2
+	ltI
+	jmp_false else.185
+	push_r_args 11 1 3
+	jsr_eval 2
+	push_r_args_a 2 14 1 1 1
+	repl_r_args 2 0
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC ")"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "multiply defined (also imported from module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 2
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	push_b 4
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	select e_syntax_rGenericCaseDef 4 0
+	updatepop_a 2 3
+.d 1 0
+	jsr e_genericsupport_stype_cons_to_string
+.o 1 0
+	buildAC " for type "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 12
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "derived generic instances for class "
+.d 2 0
+	jsr catAC
+.o 1 0
+	update_a 5 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 3 3 fb
+	jsr s76
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 6
+	push_a 6
+	push_a 6
+	push_a 6
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	jsr_eval 4
+	push_arg 4 2 2
+	jsr_eval 0
+	push_array 0
+	updatepop_a 0 1
+	pushB FALSE
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+	updatepop_b 0 2
+.d 5 1 b
+	rtn
+else.185
+	pop_a 3
+	jmp case.184
+case.184
+	push_r_args 8 1 3
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_b 3
+	push_a 8
+	push_a 18
+	push_a 18
+	update_a 9 20
+	update_a 8 19
+	update_a 7 18
+	update_a 6 17
+	update_a 5 16
+	update_a 4 15
+	update_a 3 14
+	update_a 2 13
+	update_a 1 12
+	updatepop_a 0 11
+	update_b 3 5
+	update_b 2 4
+	update_b 1 3
+	updatepop_b 0 2
+.d 10 4 ifb
+	jmp s187
+.o 9 4 ifb
+s189
+	eq_desc e_syntax_dSTE_Instance 0 0
+	jmp_true case.187
+	jmp case.188
+case.187
+	push_b 0
+	push_a 1
+	updatepop_b 0 1
+	updatepop_a 0 2
+	push_a 0
+	select e_syntax_rDclModule 14 1
+	push_r_args 0 2 0
+	pop_b 1
+	update_a 1 15
+	updatepop_a 0 14
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC ")"
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+.d 2 0
+	jsr catAC
+.o 1 0
+	buildAC "multiply defined (also imported from module "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_a 7
+	push_a 7
+	buildh _Nil 0
+	update_a 0 9
+	update_a 0 10
+	pop_a 1
+.d 2 0
+	jsr e_syntax_stoString;2
+.o 1 0
+	buildAC "instance of class "
+.d 2 0
+	jsr catAC
+.o 1 0
+	push_b 2
+	push_a 9
+	push_b 2
+	push_b 2
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	update_b 2 5
+	update_b 1 4
+	updatepop_b 0 3
+	buildh _Nil 0
+	update_a 0 11
+	pop_a 1
+.d 3 3 fb
+	jsr s76
+.o 1 3 fb
+	build_r e_checksupport_rErrorAdmin 1 3 0 0
+	updatepop_a 0 1
+	pop_b 3
+	push_a 5
+	push_a 5
+	push_a 5
+	push_a 5
+	update_a 4 2
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 4
+	pushB FALSE
+	update_a 4 12
+	update_a 3 11
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+.d 5 1 b
+	rtn
+case.188
+	push_b 3
+	push_a 8
+	push_b 3
+	push_b 3
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_a 8
+	push_b 3
+	push_a 8
+	update_a 7 16
+	update_a 6 15
+	update_a 5 14
+	update_a 4 13
+	update_a 3 12
+	update_a 2 11
+	update_a 1 10
+	updatepop_a 0 9
+	update_b 3 7
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+.d 8 4 ifb
+	jmp s186
+.n 2 _
+.o 1 0
+nuselect;87
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr eauselect;87
+.o 15 1 b
+	push_a 14
+	buildh ARRAY 1
+	build_r e_syntax_rDclModule 14 1 1 0
+	fillh _Tuple 2 17
+	pop_a 15
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+eauselect;87
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+	push_a 0
+	select e_syntax_rDclModule 14 1
+.d 15 1 b
+	rtn
+.impmod _system
+.implab _match_error

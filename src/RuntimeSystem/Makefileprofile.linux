@@ -1,0 +1,40 @@
+
+SDIR = ./
+ODIR = ./
+
+DEFINES = -DUSE_CLIB -DLINUX -DI486 -DGNU_C -DELF -DTIME_PROFILE -DPROFILE
+DEFINESA = -D USE_CLIB -D LINUX -D I486 -D GNU_C -D ELF -D TIME_PROFILE -D PROFILE
+
+all: $(ODIR)_startupProfile.o
+
+$(ODIR)_startupProfile.o: $(ODIR)istartup.o $(ODIR)ifileIO3.o $(ODIR)scon.o $(ODIR)ufileIO2.o $(ODIR)iprofile.o $(ODIR)uwrite_heap.o
+	ld -r -o $(ODIR)_startupProfile.o $(ODIR)istartup.o $(ODIR)scon.o $(ODIR)ifileIO3.o $(ODIR)ufileIO2.o $(ODIR)iprofile.o uwrite_heap.o
+
+$(ODIR)scon.o: $(SDIR)scon.c
+#	gcc -c -O $(DEFINES) -o $(ODIR)scon.o $(SDIR)scon.c
+	$(CC) -O $(DEFINES) $(SDIR)scon.c -S -o $(ODIR)scon.s
+	mv $(ODIR)scon.s $(ODIR)scon.s.copy
+	grep -v -w ___main $(ODIR)scon.s.copy > $(ODIR)scon.s
+	as $(DEFINES_A) $(ODIR)scon.s -o $(ODIR)scon.o
+
+$(ODIR)ufileIO2.o: $(SDIR)ufileIO2.c
+	gcc -c -O $(DEFINES) -o $(ODIR)ufileIO2.o $(SDIR)ufileIO2.c
+
+$(ODIR)istartup.o: $(SDIR)istartup.s
+	cp $(ODIR)istartup.s $(ODIR)istartup.c
+	$(CC) $(DEFINES) -E $(ODIR)istartup.c > $(ODIR)istartup.t
+	sed s/@// < $(SDIR)/istartup.t > $(ODIR)istartup.a
+	as $(DEFINES_A) $(ODIR)istartup.a -o $(ODIR)istartup.o
+
+$(ODIR)ifileIO3.o: $(SDIR)ifileIO3.s
+	cp $(ODIR)ifileIO3.s $(ODIR)ifileIO3.c
+	$(CC) $(DEFINES) -E $(ODIR)ifileIO3.c > $(ODIR)ifileIO3.t
+	sed s/@// < $(SDIR)/ifileIO3.t > $(ODIR)ifileIO3.a
+	as $(DEFINES_A) $(ODIR)ifileIO3.a -o $(ODIR)ifileIO3.o
+
+$(ODIR)iprofile.o: $(SDIR)iprofile.s
+	cp $(ODIR)iprofile.s $(ODIR)iprofile.c
+	$(CC) $(DEFINES) -E $(ODIR)iprofile.c > $(ODIR)iprofile.t
+	sed s/@// < $(SDIR)/iprofile.t > $(ODIR)iprofile.a
+	as $(DEFINES_A) $(ODIR)iprofile.a -o $(ODIR)iprofile.o
+

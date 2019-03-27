@@ -1,0 +1,2300 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "compare_types"
+.depend "compare_constructor"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "hashtable"
+.endinfo
+.module m_hashtable "hashtable"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod compare_types
+.implab e_compare_types_s=<;3
+.implab e_compare_types_s=<;4
+.implab e_compare_types_s=<;5
+.impdesc e_compare_types_d=<;7
+.implab e_compare_types_s=<;7
+.impdesc e_compare_types_r=<;
+.impmod compare_constructor
+.implab e_compare_constructor_sequal_constructor
+.implab e_compare_constructor_sless_constructor
+.impmod Heap
+.implab e_Heap_snewPtr
+.implab e_Heap_swritePtr
+.impmod syntax
+.implab e_syntax_sEmptySymbolTableEntryCAF
+.impdesc e_syntax_rIdent
+.impmod _SystemArray
+.impmod StdInt
+.implab e_StdInt_sbitand
+.implab e_StdInt_s<<
+.implab e_StdInt_s+;6
+.implab e_StdInt_s-;7
+.implab e_StdInt_sone;11
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.implab e_StdInt_stoInt;20
+.implab e_StdInt_srem;28
+.impmod StdBool
+.implab e_StdBool_snot
+.impmod hashtable
+.impdesc e_hashtable_rBoxedIdent
+.record k59 d{a}aiaa 4 1 e_hashtable_rBoxedIdent "HTE_Ident"
+.desc d60 _hnf _hnf 0 0 "HTE_Empty"
+.impmod Heap
+.impdesc e_Heap_rHeap
+.export e_hashtable_rHashTable
+.record e_hashtable_rHashTable {a}ai 2 1 e_Heap_rHeap "HashTable"
+.descexp e_hashtable_tHashTable e_hashtable_cHashTable _hnf 3 1 "HashTable"
+.n 3 e_hashtable_tHashTable
+.o 1 0
+e_hashtable_cHashTable
+	push_node _cycle_in_spine 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	push_array 1
+	push_r_args 1 1 0
+	update_a 1 4
+	update_a 0 3
+	pop_a 3
+.impmod hashtable
+.impdesc e_hashtable_rHashTable
+	fill_r e_hashtable_rHashTable 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.export e_hashtable_dHashTable.hte_symbol_heap
+.export e_hashtable_nHashTable.hte_symbol_heap
+.desc e_hashtable_dHashTable.hte_symbol_heap e_hashtable_nHashTable.hte_symbol_heap _hnf 1 0 "HashTable.hte_symbol_heap"
+.n 1 e_hashtable_dHashTable.hte_symbol_heap
+.o 1 0
+e_hashtable_nHashTable.hte_symbol_heap
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 2 1 1 1
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_dHashTable.hte_entries
+.export e_hashtable_nHashTable.hte_entries
+.desc e_hashtable_dHashTable.hte_entries e_hashtable_nHashTable.hte_entries _hnf 1 0 "HashTable.hte_entries"
+.n 1 e_hashtable_dHashTable.hte_entries
+.o 1 0
+e_hashtable_nHashTable.hte_entries
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 2 1 2 1
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.export e_hashtable_dHashTable.hte_mark
+.export e_hashtable_nHashTable.hte_mark
+.descs e_hashtable_dHashTable.hte_mark e_hashtable_nHashTable.hte_mark INT 4 0 "HashTable.hte_mark"
+.n -3 e_hashtable_dHashTable.hte_mark
+.o 1 0
+e_hashtable_nHashTable.hte_mark
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	push_r_args_b 0 2 1 1 1
+	pop_a 1
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_Module
+.descexp e_hashtable_dIC_Module e_hashtable_nIC_Module e_hashtable_lIC_Module 1 0 "IC_Module"
+.o 2 0
+e_hashtable_lIC_Module
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_Module
+.n 1 e_hashtable_dIC_Module e_hashtable_eaIC_Module
+.o 1 0
+e_hashtable_nIC_Module
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_Module
+	jsr_eval 0
+	fill_r e_hashtable_kIC_Module 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_Field
+.descexp e_hashtable_dIC_Field e_hashtable_nIC_Field e_hashtable_lIC_Field 1 0 "IC_Field"
+.o 2 0
+e_hashtable_lIC_Field
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_Field
+.n 1 e_hashtable_dIC_Field e_hashtable_eaIC_Field
+.o 1 0
+e_hashtable_nIC_Field
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_Field
+	jsr_eval 0
+	repl_r_args 2 0
+	fill_r e_hashtable_kIC_Field 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_Instance
+.descexp e_hashtable_dIC_Instance e_hashtable_nIC_Instance e_hashtable_lIC_Instance 1 0 "IC_Instance"
+.o 2 0
+e_hashtable_lIC_Instance
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_Instance
+.n 1 e_hashtable_dIC_Instance e_hashtable_eaIC_Instance
+.o 1 0
+e_hashtable_nIC_Instance
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_Instance
+	jsr_eval 0
+	fill_r e_hashtable_kIC_Instance 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_InstanceMember
+.descexp e_hashtable_dIC_InstanceMember e_hashtable_nIC_InstanceMember e_hashtable_lIC_InstanceMember 1 0 "IC_InstanceMember"
+.o 2 0
+e_hashtable_lIC_InstanceMember
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_InstanceMember
+.n 1 e_hashtable_dIC_InstanceMember e_hashtable_eaIC_InstanceMember
+.o 1 0
+e_hashtable_nIC_InstanceMember
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_InstanceMember
+	jsr_eval 0
+	fill_r e_hashtable_kIC_InstanceMember 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_GenericCase
+.descexp e_hashtable_dIC_GenericCase e_hashtable_nIC_GenericCase e_hashtable_lIC_GenericCase 1 0 "IC_GenericCase"
+.o 2 0
+e_hashtable_lIC_GenericCase
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_GenericCase
+.n 1 e_hashtable_dIC_GenericCase e_hashtable_eaIC_GenericCase
+.o 1 0
+e_hashtable_nIC_GenericCase
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_GenericCase
+	jsr_eval 0
+	fill_r e_hashtable_kIC_GenericCase 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_GenericDeriveClass
+.descexp e_hashtable_dIC_GenericDeriveClass e_hashtable_nIC_GenericDeriveClass e_hashtable_lIC_GenericDeriveClass 1 0 "IC_GenericDeriveClass"
+.o 2 0
+e_hashtable_lIC_GenericDeriveClass
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_GenericDeriveClass
+.n 1 e_hashtable_dIC_GenericDeriveClass e_hashtable_eaIC_GenericDeriveClass
+.o 1 0
+e_hashtable_nIC_GenericDeriveClass
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_GenericDeriveClass
+	jsr_eval 0
+	fill_r e_hashtable_kIC_GenericDeriveClass 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_eaIC_TypeExtension
+.descexp e_hashtable_dIC_TypeExtension e_hashtable_nIC_TypeExtension e_hashtable_lIC_TypeExtension 1 0 "IC_TypeExtension"
+.o 2 0
+e_hashtable_lIC_TypeExtension
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_hashtable_eaIC_TypeExtension
+.n 1 e_hashtable_dIC_TypeExtension e_hashtable_eaIC_TypeExtension
+.o 1 0
+e_hashtable_nIC_TypeExtension
+	push_node _cycle_in_spine 1
+.o 2 0
+e_hashtable_eaIC_TypeExtension
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+	fill_r e_hashtable_kIC_TypeExtension 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_dIC_Expression
+.desc e_hashtable_dIC_Expression _hnf _hnf 0 0 "IC_Expression"
+.export e_hashtable_dIC_Type
+.desc e_hashtable_dIC_Type _hnf _hnf 0 0 "IC_Type"
+.export e_hashtable_dIC_TypeAttr
+.desc e_hashtable_dIC_TypeAttr _hnf _hnf 0 0 "IC_TypeAttr"
+.export e_hashtable_dIC_Class
+.desc e_hashtable_dIC_Class _hnf _hnf 0 0 "IC_Class"
+.export e_hashtable_kIC_Module
+.record e_hashtable_kIC_Module da 1 0 "IC_Module"
+.impmod Heap
+.impdesc e_Heap_rPtr
+.export e_hashtable_kIC_Field
+.record e_hashtable_kIC_Field d{a{a}} 2 0 e_Heap_rPtr e_syntax_rIdent "IC_Field"
+.export e_hashtable_dIC_Selector
+.desc e_hashtable_dIC_Selector _hnf _hnf 0 0 "IC_Selector"
+.export e_hashtable_kIC_Instance
+.record e_hashtable_kIC_Instance da 1 0 "IC_Instance"
+.export e_hashtable_kIC_InstanceMember
+.record e_hashtable_kIC_InstanceMember da 1 0 "IC_InstanceMember"
+.export e_hashtable_dIC_Generic
+.desc e_hashtable_dIC_Generic _hnf _hnf 0 0 "IC_Generic"
+.export e_hashtable_kIC_GenericCase
+.record e_hashtable_kIC_GenericCase da 1 0 "IC_GenericCase"
+.export e_hashtable_kIC_GenericDeriveClass
+.record e_hashtable_kIC_GenericDeriveClass da 1 0 "IC_GenericDeriveClass"
+.export e_hashtable_kIC_TypeExtension
+.record e_hashtable_kIC_TypeExtension da 1 0 "IC_TypeExtension"
+.export e_hashtable_dIC_Unknown
+.desc e_hashtable_dIC_Unknown _hnf _hnf 0 0 "IC_Unknown"
+.export e_hashtable_eaQualifiedIdents
+.descexp e_hashtable_dQualifiedIdents e_hashtable_nQualifiedIdents e_hashtable_lQualifiedIdents 3 0 "QualifiedIdents"
+.a 3 e_hashtable_eaQualifiedIdents
+.o 2 0
+e_hashtable_lQualifiedIdents
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.d 4 0
+	jmp e_hashtable_eaQualifiedIdents
+.n 3 e_hashtable_dQualifiedIdents e_hashtable_eaQualifiedIdents
+.o 1 0
+e_hashtable_nQualifiedIdents
+	push_node _cycle_in_spine 3
+.o 4 0
+e_hashtable_eaQualifiedIdents
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	fill_r e_hashtable_kQualifiedIdents 3 0 3 0 0
+	pop_a 3
+.d 1 0
+	rtn
+.export e_hashtable_kQualifiedIdents
+.record e_hashtable_kQualifiedIdents daaa 3 0 "QualifiedIdents"
+.export e_hashtable_dNoQualifiedIdents
+.desc e_hashtable_dNoQualifiedIdents _hnf _hnf 0 0 "NoQualifiedIdents"
+.export e_hashtable_rBoxedIdent
+.record e_hashtable_rBoxedIdent a 1 0 "BoxedIdent"
+.descexp e_hashtable_tBoxedIdent e_hashtable_cBoxedIdent _hnf 1 1 "BoxedIdent"
+.n 1 e_hashtable_tBoxedIdent
+.o 1 0
+e_hashtable_cBoxedIdent
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	fill_r e_hashtable_rBoxedIdent 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_dBoxedIdent.boxed_ident
+.export e_hashtable_nBoxedIdent.boxed_ident
+.descs e_hashtable_dBoxedIdent.boxed_ident e_hashtable_nBoxedIdent.boxed_ident _ 1 0 "BoxedIdent.boxed_ident"
+.n -4 e_hashtable_dBoxedIdent.boxed_ident
+.o 1 0
+e_hashtable_nBoxedIdent.boxed_ident
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_hashtable_sremove_icl_symbols_from_hash_table
+.descexp e_hashtable_dremove_icl_symbols_from_hash_table e_hashtable_nremove_icl_symbols_from_hash_table e_hashtable_lremove_icl_symbols_from_hash_table 1 0 "remove_icl_symbols_from_hash_table"
+.o 2 0
+e_hashtable_lremove_icl_symbols_from_hash_table
+	pop_a 1
+.d 1 0
+	jsr ea7
+.o 2 1 i
+	build_r e_hashtable_rHashTable 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_hashtable_dremove_icl_symbols_from_hash_table
+.o 1 0
+e_hashtable_nremove_icl_symbols_from_hash_table
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea7
+.o 2 1 i
+	fill_r e_hashtable_rHashTable 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea7
+	jsr_eval 0
+	repl_r_args 2 1
+.o 2 1 i
+e_hashtable_sremove_icl_symbols_from_hash_table
+.o 2 1 i
+s7
+	push_a 1
+	pushI 0
+.d 1 1 i
+	jsr s28
+.o 1 0
+	push_b 0
+	push_a 2
+	push_a 2
+	update_a 2 1
+	update_a 1 4
+	updatepop_a 0 3
+	updatepop_b 0 1
+.d 2 1 i
+	rtn
+.o 1 1 i
+s28
+	push_a 0
+	push_arraysize _ 1 0
+	push_b 1
+	ltI
+	jmp_false else.1
+	push_b 0
+	push_a 0
+	updatepop_a 0 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jsr s19
+.o 1 1 i
+	pop_b 1
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	update _ 1 0
+	pushI 1
+	push_b 1
+	addI
+	updatepop_b 0 1
+.d 1 1 i
+	jmp s28
+else.1
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+s19
+	eq_desc d60 0 0
+	jmp_true case.2
+	jmp case.3
+case.2
+	buildh d60 0
+	pushI 0
+	updatepop_a 0 1
+.d 1 1 i
+	rtn
+case.3
+	repl_r_args 4 1
+	eqI_b 0 0
+	jmp_true case.4
+	jmp case.5
+case.4
+	push_a 3
+	pop_b 1
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 1 0
+	jsr s19
+.o 1 1 i
+	pop_b 1
+	push_a 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+.d 1 0
+	jsr s19
+.o 1 1 i
+	pop_b 1
+	pushI 0
+	push_a 3
+	push_a 3
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	pushI 0
+	updatepop_a 0 4
+.d 1 1 i
+	rtn
+case.5
+	push_a 2
+	pop_b 1
+	updatepop_a 0 3
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_b 0
+	push_b 2
+	push_a 0
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 2 ii
+	jmp s21
+.o 1 0
+s20
+	eq_desc d60 0 0
+	jmp_true case.6
+	jmp case.7
+case.6
+	buildh d60 0
+	pushI 0
+	updatepop_a 0 1
+.d 1 1 i
+	rtn
+case.7
+	repl_r_args 4 1
+	eqI_b 0 0
+	jmp_true case.8
+	jmp case.9
+case.8
+	push_a 2
+	pop_b 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_a 4
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_a 0
+	push_a 2
+	pushI 0
+	push_a 5
+	push_a 5
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	push_b 1
+	push_b 3
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	buildh _Nil 0
+	update_a 0 4
+	update_a 0 5
+	update_a 0 3
+	update_a 0 2
+	pop_a 1
+.d 0 3 bii
+	jsr s31
+.o 0 1 i
+	updatepop_a 0 6
+	updatepop_b 0 2
+.d 1 1 i
+	rtn
+case.9
+	push_a 2
+	pop_b 1
+	updatepop_a 0 3
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s20
+.o 1 1 i
+	push_b 0
+	push_b 2
+	push_a 0
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 2 ii
+	jmp s21
+.o 0 3 bii
+s31
+	eqB_b TRUE 0
+	jmp_true case.10
+	jmp case.11
+case.10
+	update_b 1 2
+	pop_b 2
+.d 0 1 i
+	rtn
+case.11
+	pop_b 2
+.d 0 1 i
+	rtn
+.o 2 2 ii
+s17
+	eq_desc k59 0 1
+	jmp_true case.12
+	jmp s17.1
+case.12
+	push_r_args 1 4 1
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	pushI 1
+	push_b 3
+	subI
+	push_b 2
+	push_a 2
+	push_a 5
+	update_a 5 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 2 ii
+	jsr s21
+.o 1 1 i
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	addI
+	push_a 3
+	push_a 1
+	push_b 1
+	push_a 4
+	push_a 4
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_b 3
+	push_b 1
+	ltI
+	notB
+	push_b 4
+	push_b 2
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+	buildh _Nil 0
+	update_a 0 3
+	update_a 0 4
+	update_a 0 2
+	update_a 0 5
+	pop_a 1
+.d 0 3 bii
+	jsr s30
+.o 0 1 i
+	updatepop_a 0 4
+.d 1 1 i
+	rtn
+s17.1
+	pop_a 2
+	pop_b 2
+	pushD m_hashtable
+	pushD x_17
+.d 0 2 ii
+	jmp _match_error
+.string x_17 "merge_trees_right;16"
+.o 2 2 ii
+s16
+	eq_desc k59 0 0
+	jmp_true case.13
+	jmp s16.1
+case.13
+	repl_r_args 4 1
+	pushI 1
+	push_b 2
+	subI
+	push_b 3
+	push_a 4
+	push_a 4
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	buildh _Nil 0
+	update_a 0 6
+	update_a 0 7
+	pop_a 1
+.d 2 2 ii
+	jsr s21
+.o 1 1 i
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	addI
+	push_a 0
+	push_a 4
+	push_b 1
+	push_a 4
+	push_a 4
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_b 0
+	push_b 3
+	ltI
+	notB
+	push_b 1
+	push_b 4
+	push_b 2
+	update_b 2 3
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_b 2 6
+	update_b 1 5
+	updatepop_b 0 4
+	buildh _Nil 0
+	update_a 0 3
+	update_a 0 4
+	update_a 0 5
+	update_a 0 2
+	pop_a 1
+.d 0 3 bii
+	jsr s29
+.o 0 1 i
+	updatepop_a 0 6
+.d 1 1 i
+	rtn
+s16.1
+	pop_a 2
+	pop_b 2
+	pushD m_hashtable
+	pushD x_16
+.d 0 2 ii
+	jmp _match_error
+.string x_16 "merge_trees_left;15"
+.o 2 2 ii
+s21
+	eq_desc d60 0 0
+	jmp_true case.14
+	jmp case.15
+case.14
+	push_a 1
+	push_b 1
+	updatepop_a 0 2
+	updatepop_b 0 2
+.d 1 1 i
+	rtn
+case.15
+	eq_desc d60 0 1
+	jmp_true case.16
+	jmp case.17
+case.16
+	push_a 0
+	push_b 0
+	updatepop_a 0 2
+	updatepop_b 0 2
+.d 1 1 i
+	rtn
+case.17
+	push_b 1
+	push_b 1
+	ltI
+	notB
+	jmp_false else.18
+	push_b 1
+	push_b 1
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 2 ii
+	jmp s16
+else.18
+	push_b 1
+	push_b 1
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	update_b 1 3
+	updatepop_b 0 2
+.d 2 2 ii
+	jmp s17
+.o 0 3 bii
+s30
+	eqB_b TRUE 0
+	jmp_true case.19
+	jmp case.20
+case.19
+	update_b 1 2
+	pop_b 2
+.d 0 1 i
+	rtn
+case.20
+	pop_b 2
+.d 0 1 i
+	rtn
+.o 0 3 bii
+s29
+	eqB_b TRUE 0
+	jmp_true case.21
+	jmp case.22
+case.21
+	update_b 1 2
+	pop_b 2
+.d 0 1 i
+	rtn
+case.22
+	pop_b 2
+.d 0 1 i
+	rtn
+.export e_hashtable_sget_qualified_idents_from_hash_table
+.descexp e_hashtable_dget_qualified_idents_from_hash_table e_hashtable_nget_qualified_idents_from_hash_table e_hashtable_lget_qualified_idents_from_hash_table 2 0 "get_qualified_idents_from_hash_table"
+.a 0 a6
+.o 2 0
+e_hashtable_lget_qualified_idents_from_hash_table
+	repl_args 1 1
+.o 2 0
+a6
+.d 2 0
+	jsr ea6
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 3
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_hashtable_dget_qualified_idents_from_hash_table
+.o 1 0
+e_hashtable_nget_qualified_idents_from_hash_table
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea6
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	push_a 1
+	fillh _Tuple 2 5
+	pop_a 3
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea6
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 1
+	push_r_args 2 2 0
+	update_a 3 5
+	update_a 1 3
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 4 1 i
+e_hashtable_sget_qualified_idents_from_hash_table
+.o 4 1 i
+s6
+	push_a 0
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 0
+	jsr s9
+.o 0 1 i
+	push_b 0
+	push_a 2
+	push_a 0
+	select _ 1 0
+	buildh e_hashtable_dNoQualifiedIdents 0
+	build_r e_hashtable_kIC_Module 1 0 0 0
+	updatepop_a 0 1
+	push_a 1
+	push_a 4
+	push_a 2
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	update_a 4 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 3 0
+	jsr s15
+.o 2 0
+	push_a 1
+	push_b 0
+	push_a 3
+	updatepop_b 0 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update _ 1 0
+	push_b 0
+	push_a 3
+	push_a 3
+	update_a 2 1
+	update_a 1 2
+	updatepop_a 0 1
+	push_a 2
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	updatepop_b 0 1
+.d 3 1 i
+	rtn
+.o 3 0
+s15
+	eq_desc k59 0 2
+	jmp_true case.23
+	jmp s15.1
+case.23
+	push_r_args 2 4 1
+	push_a 0
+	repl_args 2 2
+	update_a 0 1
+	pop_a 1
+	push_a 2
+	push_a 1
+	push_a 8
+	push_a 8
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 4 0
+	jsr s27
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.24
+	push_a 1
+	eq_desc e_hashtable_kIC_Module 0 0
+	exit_false selector_m_error
+	repl_r_args 1 0
+	push_a 7
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 1 8
+	updatepop_a 0 7
+	pop_b 2
+.d 2 0
+	rtn
+else.24
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.25
+	push_a 2
+	push_a 6
+	push_a 6
+	pop_b 1
+	update_a 6 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jsr s15
+.o 2 0
+	push_a 4
+	push_a 2
+	push_b 0
+	push_a 5
+	push_a 5
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 1
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 2 0
+	rtn
+else.25
+	push_a 3
+	push_a 6
+	push_a 6
+	pop_b 1
+	update_a 5 9
+	update_a 4 8
+	update_a 3 7
+	update_a 2 6
+	update_a 1 5
+	updatepop_a 0 4
+.d 3 0
+	jsr s15
+.o 2 0
+	push_a 1
+	push_a 5
+	push_b 0
+	push_a 5
+	push_a 5
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 1
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 2 0
+	rtn
+s15.1
+	pop_a 3
+	pushD m_hashtable
+	pushD x_15
+.d 0 2 ii
+	jmp _match_error
+.string x_15 "find_qualified_idents;14"
+.export e_hashtable_sputPredefinedIdentInHashTable
+.descexp e_hashtable_dputPredefinedIdentInHashTable e_hashtable_nputPredefinedIdentInHashTable e_hashtable_lputPredefinedIdentInHashTable 3 0 "putPredefinedIdentInHashTable"
+.a 0 a5
+.o 2 0
+e_hashtable_lputPredefinedIdentInHashTable
+	repl_args 2 2
+.o 3 0
+a5
+.d 3 0
+	jsr ea5
+.o 2 1 i
+	build_r e_hashtable_rHashTable 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_hashtable_dputPredefinedIdentInHashTable
+.o 1 0
+e_hashtable_nputPredefinedIdentInHashTable
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea5
+.o 2 1 i
+	fill_r e_hashtable_rHashTable 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea5
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 2 1
+	push_r_args 2 2 0
+	update_a 3 6
+	update_a 1 3
+	update_a 5 4
+	update_a 2 5
+	update_a 0 2
+	pop_a 2
+.o 5 1 i
+e_hashtable_sputPredefinedIdentInHashTable
+.o 5 1 i
+s5
+	push_a 0
+.d 1 0
+	jsr s9
+.o 0 1 i
+	push_b 0
+	push_a 4
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+	push_a 6
+	push_b 1
+	push_a 6
+	push_a 5
+	push_a 7
+	push_a 7
+	update_a 7 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 6 1 i
+	jsr s14
+.o 2 0
+	push_a 1
+	push_b 0
+	push_a 3
+	updatepop_b 0 1
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update _ 1 0
+	push_b 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	updatepop_b 0 1
+.d 2 1 i
+	rtn
+.o 6 1 i
+s14
+	eq_desc d60 0 5
+	jmp_true case.26
+	jmp case.27
+case.26
+	buildh d60 0
+	buildh d60 0
+	build_r e_syntax_rIdent 2 0 2 0
+	push_b 0
+	push_a 6
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	pop_b 1
+	buildh _Nil 0
+	update_a 0 5
+	update_a 0 4
+	pop_a 1
+.d 0 0
+	jsr e_syntax_sEmptySymbolTableEntryCAF
+.o 1 0
+	push_a 3
+	push_a 7
+	push_a 2
+	update_a 1 3
+	update_a 2 1
+	update_a 0 2
+	pop_a 1
+	buildh _Nil 0
+	update_a 0 9
+	update_a 0 5
+	update_a 0 6
+	pop_a 1
+.d 3 0
+	jsr e_Heap_swritePtr
+.o 1 0
+	update_a 1 7
+	updatepop_a 0 6
+.d 2 0
+	rtn
+case.27
+	push_r_args 5 4 1
+	buildh _Nil 0
+	update_a 0 10
+	pop_a 1
+	push_a 0
+	repl_args 2 2
+	update_a 0 1
+	pop_a 1
+	push_a 2
+	push_a 1
+	push_a 10
+	push_a 10
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 4 0
+	jsr s27
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.28
+	push_b 2
+	push_b 2
+	and%
+	push_a 3
+	push_a 3
+	push_a 3
+	push_a 3
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 9
+	update_a 1 11
+	updatepop_a 0 10
+	pop_b 3
+.d 2 0
+	rtn
+else.28
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.29
+	push_a 2
+	push_a 9
+	push_b 2
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	updatepop_b 0 1
+	update_a 9 15
+	update_a 7 14
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 6 1 i
+	jsr s14
+.o 2 0
+	push_a 4
+	push_a 2
+	push_b 0
+	push_a 5
+	push_a 5
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 1
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 2
+.d 2 0
+	rtn
+else.29
+	push_a 3
+	push_a 9
+	push_b 2
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	updatepop_b 0 1
+	update_a 8 15
+	update_a 7 14
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 6 1 i
+	jsr s14
+.o 2 0
+	push_a 1
+	push_a 5
+	push_b 0
+	push_a 5
+	push_a 5
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 1
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 2
+.d 2 0
+	rtn
+.export e_hashtable_sputQualifiedIdentInHashTable
+.descexp e_hashtable_dputQualifiedIdentInHashTable e_hashtable_nputQualifiedIdentInHashTable e_hashtable_lputQualifiedIdentInHashTable 4 0 "putQualifiedIdentInHashTable"
+.a 0 a4
+.o 2 0
+e_hashtable_lputQualifiedIdentInHashTable
+	repl_args 3 3
+.o 4 0
+a4
+.d 4 0
+	jsr ea4
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	build_r e_hashtable_rBoxedIdent 1 0 1 0
+	buildh _Tuple 2
+	updatepop_a 0 3
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_hashtable_dputQualifiedIdentInHashTable
+.o 1 0
+e_hashtable_nputQualifiedIdentInHashTable
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea4
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	build_r e_hashtable_rBoxedIdent 1 0 1 0
+	fillh _Tuple 2 5
+	pop_a 3
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 3 2 1
+	push_r_args 3 1 0
+	push_array 3
+	update_a 3 7
+	update_a 0 3
+	update_a 6 5
+	update_a 2 6
+	update_a 1 4
+	pop_a 3
+.o 5 1 i
+e_hashtable_sputQualifiedIdentInHashTable
+.o 5 1 i
+s4
+	push_a 0
+.d 1 0
+	jsr s9
+.o 0 1 i
+	push_b 0
+	push_a 4
+	buildh _Nil 0
+	update_a 0 6
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	buildh e_hashtable_dNoQualifiedIdents 0
+	build_r e_hashtable_kIC_Module 1 0 0 0
+	updatepop_a 0 1
+	push_a 1
+	push_a 7
+	push_b 1
+	push_a 7
+	push_a 7
+	push_a 7
+	push_a 5
+	update_a 5 6
+	update_a 4 5
+	update_a 0 4
+	pop_a 1
+	update_a 7 12
+	update_a 5 11
+	update_a 4 10
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 6 1 i
+	jsr s13
+.o 3 0
+	push_a 2
+	push_b 0
+	push_a 4
+	updatepop_b 0 1
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update _ 1 0
+	push_b 0
+	push_a 2
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 3 1 i
+	rtn
+.o 6 1 i
+s13
+	eq_desc d60 0 5
+	jmp_true case.30
+	jmp case.31
+case.30
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+.d 0 0
+	jsr e_syntax_sEmptySymbolTableEntryCAF
+.o 1 0
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 4 7
+	update_a 3 6
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+.d 2 0
+	jsr e_Heap_snewPtr
+.o 2 0
+	push_a 0
+	push_a 3
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+	buildh d60 0
+	buildh d60 0
+	buildh e_hashtable_dNoQualifiedIdents 0
+	push_a 7
+	push_a 9
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_r e_hashtable_kQualifiedIdents 3 0 0 0
+	updatepop_a 0 3
+	build_r e_hashtable_kIC_Module 1 0 0 0
+	updatepop_a 0 1
+	push_b 0
+	push_a 3
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 3
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 1
+.d 3 0
+	rtn
+case.31
+	push_r_args 5 4 1
+	buildh _Nil 0
+	update_a 0 10
+	pop_a 1
+	push_a 0
+	repl_args 2 2
+	update_a 0 1
+	pop_a 1
+	push_a 2
+	push_a 1
+	push_a 10
+	push_a 8
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 4 0
+	jsr s27
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.32
+	push_b 2
+	push_b 2
+	and%
+	push_a 1
+	eq_desc e_hashtable_kIC_Module 0 0
+	exit_false selector_m_error
+	repl_r_args 1 0
+	push_a 6
+	push_a 8
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build_r e_hashtable_kQualifiedIdents 3 0 0 0
+	updatepop_a 0 3
+	build_r e_hashtable_kIC_Module 1 0 0 0
+	updatepop_a 0 1
+	push_a 4
+	push_a 4
+	push_a 3
+	push_a 3
+	update_a 3 4
+	update_a 2 3
+	update_a 0 2
+	pop_a 1
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 9
+	push_a 2
+	update_a 2 12
+	update_a 1 11
+	updatepop_a 0 10
+	pop_b 3
+.d 3 0
+	rtn
+else.32
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.33
+	push_a 2
+	push_a 9
+	push_b 2
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	updatepop_b 0 1
+	update_a 9 15
+	update_a 7 14
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 6 1 i
+	jsr s13
+.o 3 0
+	push_a 5
+	push_a 3
+	push_b 0
+	push_a 6
+	push_a 6
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 3 0
+	rtn
+else.33
+	push_a 3
+	push_a 9
+	push_b 2
+	push_a 9
+	push_a 9
+	push_a 9
+	push_a 9
+	updatepop_b 0 1
+	update_a 8 15
+	update_a 7 14
+	update_a 6 13
+	update_a 5 12
+	update_a 4 11
+	update_a 3 10
+	update_a 2 9
+	update_a 1 8
+	updatepop_a 0 7
+.d 6 1 i
+	jsr s13
+.o 3 0
+	push_a 2
+	push_a 6
+	push_b 0
+	push_a 6
+	push_a 6
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 3 0
+	rtn
+.export e_hashtable_sputIdentInHashTable
+.descexp e_hashtable_dputIdentInHashTable e_hashtable_nputIdentInHashTable e_hashtable_lputIdentInHashTable 3 0 "putIdentInHashTable"
+.a 0 a3
+.o 2 0
+e_hashtable_lputIdentInHashTable
+	repl_args 2 2
+.o 3 0
+a3
+.d 3 0
+	jsr ea3
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	build_r e_hashtable_rBoxedIdent 1 0 1 0
+	buildh _Tuple 2
+	updatepop_a 0 3
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_hashtable_dputIdentInHashTable
+.o 1 0
+e_hashtable_nputIdentInHashTable
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea3
+.o 3 1 i
+	build_r e_hashtable_rHashTable 2 1 1 0
+	build_r e_hashtable_rBoxedIdent 1 0 1 0
+	fillh _Tuple 2 5
+	pop_a 3
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 2 1
+	push_array 2
+	update_a 2 5
+	update_a 0 2
+	update_a 4 3
+	update_a 1 4
+	pop_a 2
+.o 4 1 i
+e_hashtable_sputIdentInHashTable
+.o 4 1 i
+s3
+	push_a 0
+.d 1 0
+	jsr s9
+.o 0 1 i
+	push_b 0
+	push_a 3
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_a 0
+	select _ 1 0
+	push_a 0
+	push_a 5
+	push_b 1
+	push_a 5
+	push_a 5
+	update_a 5 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 1 i
+	jsr s12
+.o 3 0
+	push_a 2
+	push_b 0
+	push_a 4
+	updatepop_b 0 1
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	update _ 1 0
+	push_b 0
+	push_a 2
+	push_a 2
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+	updatepop_b 0 1
+.d 3 1 i
+	rtn
+.o 4 1 i
+s12
+	eq_desc d60 0 3
+	jmp_true case.34
+	jmp case.35
+case.34
+.d 0 0
+	jsr e_syntax_sEmptySymbolTableEntryCAF
+.o 1 0
+	push_a 3
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 3 5
+	update_a 2 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr e_Heap_snewPtr
+.o 2 0
+	push_a 0
+	push_a 3
+	build_r e_syntax_rIdent 2 0 0 0
+	updatepop_a 0 2
+	buildh d60 0
+	buildh d60 0
+	push_b 0
+	push_a 6
+	push_a 3
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 3
+	push_a 2
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+	pop_b 1
+.d 3 0
+	rtn
+case.35
+	push_r_args 3 4 1
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+	push_a 0
+	repl_args 2 2
+	update_a 0 1
+	pop_a 1
+	push_a 2
+	push_a 1
+	push_a 8
+	push_a 8
+	update_a 3 4
+	update_a 2 3
+	update_a 1 2
+	updatepop_a 0 1
+.d 4 0
+	jsr s27
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.36
+	push_b 2
+	push_b 2
+	and%
+	push_a 3
+	push_a 3
+	push_a 3
+	push_a 3
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 7
+	push_a 2
+	update_a 2 10
+	update_a 1 9
+	updatepop_a 0 8
+	pop_b 3
+.d 3 0
+	rtn
+else.36
+	pushI -1
+	push_b 1
+	eqI
+	jmp_false else.37
+	push_a 2
+	push_a 7
+	push_b 2
+	push_a 7
+	push_a 7
+	updatepop_b 0 1
+	update_a 7 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 1 i
+	jsr s12
+.o 3 0
+	push_a 5
+	push_a 3
+	push_b 0
+	push_a 6
+	push_a 6
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 3 0
+	rtn
+else.37
+	push_a 3
+	push_a 7
+	push_b 2
+	push_a 7
+	push_a 7
+	updatepop_b 0 1
+	update_a 6 11
+	update_a 5 10
+	update_a 4 9
+	update_a 3 8
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 1 i
+	jsr s12
+.o 3 0
+	push_a 2
+	push_a 6
+	push_b 0
+	push_a 6
+	push_a 6
+	build_r k59 4 1 0 0
+	updatepop_a 0 4
+	pop_b 1
+	push_a 2
+	push_a 2
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+	pop_b 2
+.d 3 0
+	rtn
+.o 4 0
+s27
+	push_a 2
+	push_a 1
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr e_compare_types_s=<;3
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.38
+	push_a 1
+	push_a 1
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 1
+.d 2 0
+	jmp s22
+else.38
+	pop_a 2
+.d 0 1 i
+	rtn
+.o 2 0
+s22
+	pushD_a 0
+	eqD_b e_hashtable_kIC_Instance 0
+	jmp_true case.39
+	eqD_b e_hashtable_kIC_InstanceMember 0
+	jmp_true case.40
+	eqD_b e_hashtable_kIC_GenericCase 0
+	jmp_true case.41
+	eqD_b e_hashtable_kIC_GenericDeriveClass 0
+	jmp_true case.42
+	eqD_b e_hashtable_kIC_Field 0
+	jmp_true case.43
+	eqD_b e_hashtable_kIC_TypeExtension 0
+	jmp_true case.44
+	pop_b 1
+	jmp case.45
+case.39
+	pop_b 1
+	push_args 0 1 1
+	eq_desc e_hashtable_kIC_Instance 0 2
+	jmp_true case.46
+	pop_a 1
+	jmp case.45
+case.46
+	push_args 2 1 1
+	push_a 0
+	push_a 2
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 0
+	jmp s25
+case.40
+	pop_b 1
+	push_args 0 1 1
+	eq_desc e_hashtable_kIC_InstanceMember 0 2
+	jmp_true case.47
+	pop_a 1
+	jmp case.45
+case.47
+	push_args 2 1 1
+	push_a 0
+	push_a 2
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 0
+	jmp s25
+case.41
+	pop_b 1
+	push_args 0 1 1
+	eq_desc e_hashtable_kIC_GenericCase 0 2
+	jmp_true case.48
+	pop_a 1
+	jmp case.45
+case.48
+	push_args 2 1 1
+	push_a 0
+	push_a 2
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 0
+	jmp e_compare_types_s=<;7
+case.42
+	pop_b 1
+	push_args 0 1 1
+	eq_desc e_hashtable_kIC_GenericDeriveClass 0 2
+	jmp_true case.49
+	pop_a 1
+	jmp case.45
+case.49
+	push_args 2 1 1
+	push_a 0
+	push_a 2
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 0
+	jmp e_compare_types_s=<;7
+case.43
+	pop_b 1
+	push_args 0 2 2
+	eq_desc e_hashtable_kIC_Field 0 3
+	jmp_true case.50
+	pop_a 2
+	jmp case.45
+case.50
+	push_args 3 2 2
+	push_a 1
+	push_a 1
+	push_a 5
+	push_a 5
+	update_a 3 9
+	update_a 2 8
+	update_a 1 7
+	updatepop_a 0 6
+.d 4 0
+	jmp e_compare_types_s=<;4
+case.44
+	pop_b 1
+	push_args 0 1 1
+	eq_desc e_hashtable_kIC_TypeExtension 0 2
+	jmp_true case.51
+	pop_a 1
+	jmp case.45
+case.51
+	push_args 2 1 1
+	push_a 0
+	push_a 2
+	update_a 1 5
+	updatepop_a 0 4
+.d 2 0
+	jmp e_compare_types_s=<;3
+case.45
+	push_a 1
+	push_a 1
+	pushD_a 1
+	pushD_a 0
+	pop_a 2
+	eqI
+	jmp_false else.52
+	pop_a 2
+	pushI 0
+.d 0 1 i
+	rtn
+else.52
+	push_a 1
+	push_a 1
+	pushD_a 1
+	pushD_a 0
+	pop_a 2
+	ltI
+	jmp_false else.53
+	pop_a 2
+	pushI -1
+.d 0 1 i
+	rtn
+else.53
+	pop_a 2
+	pushI 1
+.d 0 1 i
+	rtn
+.o 2 0
+s25
+	eq_desc _Cons 2 0
+	jmp_true case.54
+	jmp case.55
+case.54
+	repl_args 2 2
+	eq_desc _Cons 2 2
+	jmp_true case.57
+	pop_a 1
+	jmp case.56
+case.57
+	push_args 2 2 2
+	push_a 0
+	jsr_eval 0
+	push_a 3
+	jsr_eval 0
+	update_a 3 4
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	jsr e_compare_types_s=<;7
+.o 0 1 i
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.58
+	push_a 0
+	jsr_eval 0
+	push_a 2
+	jsr_eval 0
+	buildh e_compare_types_d=<;7 0
+	update_a 2 5
+	update_a 1 4
+	updatepop_a 0 3
+	pop_b 1
+.d 3 0
+	jmp e_compare_types_s=<;5
+else.58
+	pop_a 3
+.d 0 1 i
+	rtn
+case.55
+	eq_desc _Nil 0 1
+	jmp_true case.59
+	jmp case.60
+case.59
+	pop_a 2
+	pushI 0
+.d 0 1 i
+	rtn
+case.60
+	pop_a 2
+	pushI -1
+.d 0 1 i
+	rtn
+case.56
+	eq_desc _Nil 0 1
+	jmp_true case.61
+	jmp s25.1
+case.61
+	pop_a 2
+	pushI 1
+.d 0 1 i
+	rtn
+s25.1
+	pop_a 2
+	pushD m_hashtable
+	pushD x_25
+.d 0 2 ii
+	jmp _match_error
+.string x_25 "compare_types;25"
+.o 1 0
+s9
+	push_a 0
+	push_arraysize CHAR 0 1
+	pushI 0
+	push_a 0
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	updatepop_a 0 1
+.d 1 2 ii
+	jsr s11
+.o 0 1 i
+	pushI 1023
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	remI
+	pushI 0
+	push_b 1
+	ltI
+	jmp_false else.62
+	pushI 1023
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	addI
+.d 0 1 i
+	rtn
+else.62
+.d 0 1 i
+	rtn
+.o 1 2 ii
+s11
+	pushI 0
+	push_b 1
+	eqI
+	jmp_false else.63
+	pop_a 1
+	pop_b 1
+.d 0 1 i
+	rtn
+else.63
+	pushI 1
+	push_b 1
+	update_b 1 2
+	updatepop_b 0 1
+	subI
+	push_b 0
+	push_a 0
+	select CHAR 0 1
+	CtoI
+	pushI 2
+	push_b 3
+	shiftl%
+	addI
+	push_b 1
+	push_a 0
+	updatepop_a 0 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jmp s11
+.export e_hashtable_sset_hte_mark
+.descexp e_hashtable_dset_hte_mark e_hashtable_nset_hte_mark e_hashtable_lset_hte_mark 2 0 "set_hte_mark"
+.a 0 a2
+.o 2 0
+e_hashtable_lset_hte_mark
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 2 1 i
+	build_r e_hashtable_rHashTable 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_hashtable_dset_hte_mark
+.o 1 0
+e_hashtable_nset_hte_mark
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 2 1 i
+	fill_r e_hashtable_rHashTable 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 1
+	pushI_a 2
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 2 ii
+e_hashtable_sset_hte_mark
+.o 2 2 ii
+s2
+	push_b 0
+	push_b 2
+	push_a 1
+	push_a 1
+	update_b 1 0
+	update_a 1 3
+	updatepop_a 0 2
+	updatepop_b 0 3
+.d 2 1 i
+	rtn
+.export e_hashtable_snewHashTable
+.descexp e_hashtable_dnewHashTable e_hashtable_nnewHashTable e_hashtable_lnewHashTable 1 0 "newHashTable"
+.o 2 0
+e_hashtable_lnewHashTable
+	pop_a 1
+.d 1 0
+	jsr ea1
+.o 2 1 i
+	build_r e_hashtable_rHashTable 2 1 0 0
+	updatepop_a 0 2
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_hashtable_dnewHashTable
+.o 1 0
+e_hashtable_nnewHashTable
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea1
+.o 2 1 i
+	fill_r e_hashtable_rHashTable 2 1 2 0 0
+	pop_a 2
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea1
+	jsr_eval 0
+	repl_r_args 1 0
+.o 1 0
+e_hashtable_snewHashTable
+.o 1 0
+s1
+	pushI 1
+	pushI 1023
+	subI
+	pushI 1
+	push_b 1
+	addI
+	create_array_ _ 1 0
+	push_b 0
+	pushI 0
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr s24
+.o 1 0
+	pushI 0
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 1 i
+	rtn
+.o 1 2 ii
+s24
+	push_b 0
+	push_b 2
+	ltI
+	notB
+	jmp_false else.64
+	pushI 1
+	push_b 1
+	addI
+	buildh d60 0
+	push_b 1
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	update _ 1 0
+	push_b 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jmp s24
+else.64
+	pop_b 2
+.d 1 0
+	rtn
+.impmod _system
+.implab _match_error
+.implab selector_m_error

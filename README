@@ -1,0 +1,51 @@
+Installing Clean
+================
+
+Clean uses the linker and assembler from Apple. These are not
+installed by default. Therefore first Apple's XCode must be installed.
+XCode can be downloaded at:
+
+https://developer.apple.com/xcode/
+
+First compile the executable files using:
+
+cd src
+make
+cd ..
+
+By default the Clean system is installed in the current directory.
+You can override these defaults by changing INSTALL_BIN_DIR,
+INSTALL_LIB_DIR, INSTALL_MAN_DIR in the Makefile.
+
+Clean can be used from a shell using a command line interface (clm).
+
+To install the Clean system type:
+
+	% make
+
+Using Clean
+===========
+
+To compile Clean programs from a shell you use the command 'clm'. The manual
+page for clm provides more information.
+
+Compiling the example programs
+==============================
+
+The directory 'examples' contains small Clean programs. The
+directory contains a Makefile to compile the examples.
+
+General Info
+============
+
+More information about Clean is available on the World Wide Web:
+
+	http://clean.cs.ru.nl
+
+Bug reports, questions and suggestions are welcome. Please send
+them to:
+
+	mailto:clean@cs.ru.nl
+
+Versions of Clean are available for several platforms. 
+

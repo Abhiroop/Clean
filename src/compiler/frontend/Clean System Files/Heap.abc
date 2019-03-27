@@ -1,0 +1,668 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "StdMisc"
+.depend "StdClass"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "Heap"
+.endinfo
+.module m_Heap "Heap"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.export e_Heap_rHeap
+.record e_Heap_rHeap a 1 0 "Heap"
+.descexp e_Heap_tHeap e_Heap_cHeap _hnf 1 1 "Heap"
+.n 1 e_Heap_tHeap
+.o 1 0
+e_Heap_cHeap
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impmod Heap
+.impdesc e_Heap_rHeap
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_Heap_dHeap.heap
+.export e_Heap_nHeap.heap
+.export e_Heap_eaHeap.heap
+.descs e_Heap_dHeap.heap e_Heap_nHeap.heap _ 1 0 "Heap.heap"
+.n -4 e_Heap_dHeap.heap e_Heap_eaHeap.heap
+.o 1 0
+e_Heap_nHeap.heap
+	push_node _cycle_in_spine 1
+.o 2 0
+e_Heap_eaHeap.heap
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.record k23 di 0 1 "Heap"
+.export e_Heap_rPtr
+.record e_Heap_rPtr a 1 0 "Ptr"
+.descexp e_Heap_tPtr e_Heap_cPtr _hnf 1 1 "Ptr"
+.n 1 e_Heap_tPtr
+.o 1 0
+e_Heap_cPtr
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impdesc e_Heap_rPtr
+	fill_r e_Heap_rPtr 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_Heap_dPtr.pointer
+.export e_Heap_nPtr.pointer
+.export e_Heap_eaPtr.pointer
+.descs e_Heap_dPtr.pointer e_Heap_nPtr.pointer _ 1 0 "Ptr.pointer"
+.n -4 e_Heap_dPtr.pointer e_Heap_eaPtr.pointer
+.o 1 0
+e_Heap_nPtr.pointer
+	push_node _cycle_in_spine 1
+.o 2 0
+e_Heap_eaPtr.pointer
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_Heap_eaPtr
+.descexp e_Heap_dPtr e_Heap_nPtr e_Heap_lPtr 2 0 "Ptr"
+.a 2 e_Heap_eaPtr
+.o 2 0
+e_Heap_lPtr
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.d 3 0
+	jmp e_Heap_eaPtr
+.n 2 e_Heap_dPtr e_Heap_eaPtr
+.o 1 0
+e_Heap_nPtr
+	push_node _cycle_in_spine 2
+.o 3 0
+e_Heap_eaPtr
+	jsr_eval 1
+	jsr_eval 0
+	fill_r e_Heap_kPtr 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.export e_Heap_kPtr
+.record e_Heap_kPtr daa 2 0 "Ptr"
+.export e_Heap_s==;10
+.descexp e_Heap_d==;10 e_Heap_n==;10 e_Heap_l==;10 2 0 "==;10"
+.a 0 a11
+.o 2 0
+e_Heap_l==;10
+	repl_args 1 1
+.o 2 0
+a11
+.d 2 0
+	jsr ea11
+.o 0 1 b
+	buildB_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_Heap_d==;10
+.o 1 0
+e_Heap_n==;10
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea11
+.o 0 1 b
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea11
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	push_r_args 1 1 0
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 0
+e_Heap_s==;10
+.o 2 0
+s11
+	push_r_args_b 1 1 1 1 1
+	push_r_args_b 0 1 1 1 1
+	eqI
+	jmp_false equal_pointer_error
+	push_a_b 1
+	push_a_b 0
+	pop_a 2
+	eqI
+.d 0 1 b
+	rtn	
+equal_pointer_error
+	pop_a 1
+	print "equal_pointer: Pointers to different heaps or a nilPtr"
+	halt	
+
+.d 0 1 b
+	rtn
+.export e_Heap_sptrToInt
+.descexp e_Heap_dptrToInt e_Heap_nptrToInt e_Heap_lptrToInt 1 0 "ptrToInt"
+.o 2 0
+e_Heap_lptrToInt
+	pop_a 1
+.d 1 0
+	jsr ea10
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_Heap_dptrToInt
+.o 1 0
+e_Heap_nptrToInt
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea10
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea10
+	jsr_eval 0
+	repl_r_args 1 0
+.o 1 0
+e_Heap_sptrToInt
+.o 1 0
+s10
+	push_a 0
+.d 1 0
+	jsr s3
+.o 0 1 b
+	jmp_false else.1
+	pop_a 1
+	pushI 0
+.d 0 1 i
+	rtn
+else.1
+	push_a 0
+	updatepop_a 0 1
+.d 1 0
+	jmp s13
+.o 1 0
+s13
+	push_a_b 0
+	pop_a 1
+	build _Nil 0 _hnf
+	push_a_b 0
+	pop_a 1
+	push_b 1
+	eqI
+	jmp_false not_nil
+	pop_b 1
+	pushI 0
+.d 0 1 b
+	rtn
+not_nil
+.d 0 1 b
+	rtn	
+
+.d 0 1 i
+	rtn
+.export e_Heap_sinitPtr
+.descexp e_Heap_dinitPtr e_Heap_ninitPtr e_Heap_linitPtr 4 0 "initPtr"
+.a 0 a9
+.o 2 0
+e_Heap_linitPtr
+	repl_args 3 3
+.o 4 0
+a9
+.d 4 0
+	jsr ea9
+.o 2 0
+	push_a 1
+	build_r e_Heap_rHeap 1 0 1 0
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 4 e_Heap_dinitPtr
+.o 1 0
+e_Heap_ninitPtr
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea9
+.o 2 0
+	push_a 1
+	build_r e_Heap_rHeap 1 0 1 0
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 4 0
+ea9
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 1 0
+	push_r_args 1 1 0
+	update_a 1 4
+	update_a 0 2
+	pop_a 2
+.o 4 0
+e_Heap_sinitPtr
+.o 4 0
+s9
+	push_args 0 2 2
+	pop_a 1
+	eq_desc _Cons 0 0
+	pop_a 1
+	jmp_false init_pointer_error
+	push_a 2
+	push_a 2
+	fill1_r e_Heap_kPtr 2 0 2 011
+.keep 0 2
+	pop_a 2
+.d 2 0
+	rtn
+init_pointer_error
+	pop_a 3
+	print "initPtr: Pointer already initialized"
+	halt
+
+.d 2 0
+	rtn
+.export e_Heap_sallocPtr
+.descexp e_Heap_dallocPtr e_Heap_nallocPtr e_Heap_lallocPtr 0 0 "allocPtr"
+.o 1 0
+e_Heap_lallocPtr
+	halt
+.n 0 e_Heap_dallocPtr
+.o 1 0
+e_Heap_nallocPtr
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea8
+.o 1 0
+	fill_r e_Heap_rPtr 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 0 0
+ea8
+.o 0 0
+e_Heap_sallocPtr
+.o 0 0
+s8
+	build _Cons 0 _hnf
+	push_a 0
+	build_r e_Heap_kPtr 2 0 0 0
+	update_a 0 2
+	pop_a 2
+
+.d 1 0
+	rtn
+.export e_Heap_ssreadPtr
+.descexp e_Heap_dsreadPtr e_Heap_nsreadPtr e_Heap_lsreadPtr 2 0 "sreadPtr"
+.a 0 ea7
+.o 2 0
+e_Heap_lsreadPtr
+	repl_args 1 1
+.d 2 0
+	jmp ea7
+.n 2 e_Heap_dsreadPtr _
+.o 1 0
+e_Heap_nsreadPtr
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea7
+.o 1 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.o 2 0
+ea7
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	push_r_args 1 1 0
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 0
+e_Heap_ssreadPtr
+.o 2 0
+s7
+	push_a_b 1
+	push_r_args_b 0 1 1 1 1
+	eqI
+	jmp_false sread_heap_error
+	repl_r_args_a 2 0 1 1
+	update_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+sread_heap_error
+	pop_a 1
+	print "sreadPtr: Not a pointer of this heap"
+	halt
+
+.d 1 0
+	rtn
+.export e_Heap_swritePtr
+.descexp e_Heap_dwritePtr e_Heap_nwritePtr e_Heap_lwritePtr 3 0 "writePtr"
+.a 0 a6
+.o 2 0
+e_Heap_lwritePtr
+	repl_args 2 2
+.o 3 0
+a6
+.d 3 0
+	jsr ea6
+.o 1 0
+	build_r e_Heap_rHeap 1 0 0 0
+	updatepop_a 0 1
+.d 1 0
+	rtn
+.n 3 e_Heap_dwritePtr
+.o 1 0
+e_Heap_nwritePtr
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea6
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 3 0
+ea6
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 2 1 0
+	push_r_args 1 1 0
+	update_a 1 4
+	update_a 0 2
+	pop_a 2
+.o 3 0
+e_Heap_swritePtr
+.o 3 0
+s6
+	push_a_b 2
+	push_r_args_b 0 1 1 1 1
+	eqI
+	jmp_false write_heap_error
+	push_a 1
+	fill1_r e_Heap_kPtr 2 0 1 010
+.keep 0 2
+	pop_a 2 
+.d 1 0
+	rtn
+write_heap_error
+	pop_a 2
+	print "writePtr: Not a pointer of this heap"
+	halt
+
+.d 1 0
+	rtn
+.export e_Heap_sreadPtr
+.descexp e_Heap_dreadPtr e_Heap_nreadPtr e_Heap_lreadPtr 2 0 "readPtr"
+.a 0 a5
+.o 2 0
+e_Heap_lreadPtr
+	repl_args 1 1
+.o 2 0
+a5
+.d 2 0
+	jsr ea5
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_Heap_dreadPtr
+.o 1 0
+e_Heap_nreadPtr
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea5
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	push_a 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea5
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	push_r_args 1 1 0
+	update_a 1 3
+	update_a 0 2
+	pop_a 2
+.o 2 0
+e_Heap_sreadPtr
+.o 2 0
+s5
+	push_a_b 1
+	push_r_args_b 0 1 1 1 1
+	eqI
+	jmp_false read_heap_error
+	repl_r_args_a 2 0 1 1
+.d 2 0
+	rtn
+read_heap_error
+	pop_a 1
+	print "readPtr: Not a pointer of this heap"
+	halt
+
+.d 2 0
+	rtn
+.export e_Heap_snewPtr
+.descexp e_Heap_dnewPtr e_Heap_nnewPtr e_Heap_lnewPtr 2 0 "newPtr"
+.a 0 a4
+.o 2 0
+e_Heap_lnewPtr
+	repl_args 1 1
+.o 2 0
+a4
+.d 2 0
+	jsr ea4
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	build_r e_Heap_rPtr 1 0 1 0
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_Heap_dnewPtr
+.o 1 0
+e_Heap_nnewPtr
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea4
+.o 2 0
+	build_r e_Heap_rHeap 1 0 1 0
+	build_r e_Heap_rPtr 1 0 1 0
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea4
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 1 0
+	update_a 0 2
+	pop_a 1
+.o 2 0
+e_Heap_snewPtr
+.o 2 0
+s4
+	build_r e_Heap_kPtr 2 0 0 0
+	update_a 0 1
+	pop_a 1
+
+.d 2 0
+	rtn
+.export e_Heap_sisNilPtr
+.descexp e_Heap_disNilPtr e_Heap_nisNilPtr e_Heap_lisNilPtr 1 0 "isNilPtr"
+.o 2 0
+e_Heap_lisNilPtr
+	pop_a 1
+.d 1 0
+	jsr ea3
+.o 0 1 b
+	buildB_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_Heap_disNilPtr
+.o 1 0
+e_Heap_nisNilPtr
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea3
+.o 0 1 b
+	fillB_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea3
+	jsr_eval 0
+	repl_r_args 1 0
+.o 1 0
+e_Heap_sisNilPtr
+.o 1 0
+s3
+	repl_args 2 2
+	pop_a 1
+	eq_desc _Nil 0 0
+	pop_a 1
+
+.d 0 1 b
+	rtn
+.export e_Heap_snilPtr
+.descexp e_Heap_dnilPtr e_Heap_nnilPtr e_Heap_lnilPtr 0 0 "nilPtr"
+.o 1 0
+e_Heap_lnilPtr
+	halt
+.n 0 e_Heap_dnilPtr
+.o 1 0
+e_Heap_nnilPtr
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea2
+.o 1 0
+	fill_r e_Heap_rPtr 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 0 0
+ea2
+.o 0 0
+e_Heap_snilPtr
+.o 0 0
+s2
+	testcaf c2
+	jmp_false m.2
+	pushcaf c2 1 0
+.d 1 0
+	rtn
+.caf c2 1 0
+m.2
+.d 0 0
+	jsr s2.1
+.o 1 0
+	fillcaf c2 1 0
+.d 1 0
+	rtn
+.o 0 0
+s2.1
+.d 0 0
+	jmp s12
+.o 0 0
+s12
+	build _Nil 0 _hnf
+	push_a 0
+	build_r e_Heap_kPtr 2 0 0 0
+	update_a 0 2
+	pop_a 2
+
+.d 1 0
+	rtn
+.export e_Heap_snewHeap
+.descexp e_Heap_dnewHeap e_Heap_nnewHeap e_Heap_lnewHeap 0 0 "newHeap"
+.o 1 0
+e_Heap_lnewHeap
+	halt
+.n 0 e_Heap_dnewHeap
+.o 1 0
+e_Heap_nnewHeap
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea1
+.o 1 0
+	fill_r e_Heap_rHeap 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.o 0 0
+ea1
+.o 0 0
+e_Heap_snewHeap
+.o 0 0
+s1
+	pushI 0
+	build_r k23 0 1 0 0
+	pop_b 1
+.d 1 0
+	rtn

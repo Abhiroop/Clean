@@ -1,0 +1,260 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "hashtable"
+.depend "predef"
+.depend "convertcases"
+.depend "containers"
+.depend "IndexType"
+.depend "Heap"
+.depend "typeproperties"
+.depend "general"
+.depend "scanner"
+.depend "syntax"
+.depend "checksupport"
+.depend "_SystemEnumStrict"
+.depend "_SystemStrictLists"
+.depend "StdStrictLists"
+.depend "_SystemEnum"
+.depend "StdEnum"
+.depend "StdMisc"
+.depend "StdFunctions"
+.depend "StdCharList"
+.depend "StdTuple"
+.depend "StdOrdList"
+.depend "StdList"
+.depend "StdClass"
+.depend "StdFile"
+.depend "StdString"
+.depend "_SystemArray"
+.depend "StdArray"
+.depend "StdChar"
+.depend "StdReal"
+.depend "StdInt"
+.depend "StdOverloaded"
+.depend "StdBool"
+.depend "StdEnv"
+.depend "type_io_common"
+.endinfo
+.module m_type_io_common "type_io_common"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod StdMisc
+.implab e_StdMisc_sabort
+.impmod StdString
+.implab e_StdString_s==;2
+.implab e_StdString_s%;10
+.impmod _SystemArray
+.impmod StdChar
+.implab e_StdChar_s==;18
+.impmod StdInt
+.implab e_StdInt_s+;6
+.implab e_StdInt_s-;7
+.implab e_StdInt_sone;11
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.export e_type_io_common_sget_type_name_and_module_name_from_type_string
+.descexp e_type_io_common_dget_type_name_and_module_name_from_type_string e_type_io_common_nget_type_name_and_module_name_from_type_string e_type_io_common_lget_type_name_and_module_name_from_type_string 1 0 "get_type_name_and_module_name_from_type_string"
+.o 2 0
+e_type_io_common_lget_type_name_and_module_name_from_type_string
+	pop_a 1
+.d 1 0
+	jsr ea1
+.o 2 0
+	push_a 1
+	buildh ARRAY 1
+	push_a 1
+	buildh ARRAY 1
+	buildh _Tuple 2
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_type_io_common_dget_type_name_and_module_name_from_type_string
+.o 1 0
+e_type_io_common_nget_type_name_and_module_name_from_type_string
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea1
+.o 2 0
+	push_a 1
+	buildh ARRAY 1
+	push_a 1
+	buildh ARRAY 1
+	fillh _Tuple 2 4
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea1
+	jsr_eval 0
+	push_array 0
+	update_a 0 1
+	pop_a 1
+.o 1 0
+e_type_io_common_sget_type_name_and_module_name_from_type_string
+.o 1 0
+s1
+	pushC '\''
+	pushI 0
+	push_a 0
+.d 1 2 ic
+	jsr s2
+.o 0 2 bi
+	push_b 0
+	jmp_false else.1
+	pushI 1
+	push_b 2
+	subI
+	pushI 0
+	push_a 0
+	update_b 1 2
+	updatepop_b 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	pushI 1
+	push_a 1
+	push_arraysize CHAR 0 1
+	subI
+	pushI 1
+	push_b 2
+	addI
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 1 2 ii
+	jsr sliceAC
+.o 1 0
+	push_a 0
+	push_a 2
+	update_a 1 3
+	updatepop_a 0 2
+	pop_b 1
+.d 2 0
+	rtn
+else.1
+	buildAC " -> "
+	push_a 1
+	pop_b 1
+.d 2 0
+	jsr eqAC
+.o 0 1 b	
+	jmp_false else.2
+	buildAC "_predefined"
+	push_a 1
+	update_a 1 2
+	updatepop_a 0 1
+	pop_b 1
+.d 2 0
+	rtn
+else.2
+	pop_b 1
+	jmp s1.1
+s1.1
+	pop_a 1
+	pushD m_type_io_common
+	pushD e_type_io_common_dget_type_name_and_module_name_from_type_string
+.d 0 2 ii
+	jmp _match_error
+.o 1 2 ic
+s2
+	push_a 0
+	push_arraysize CHAR 0 1
+	push_b 1
+	eqI
+	jmp_false else.3
+	push_a 0
+	pop_b 2
+	updatepop_a 0 1
+	push_arraysize CHAR 0 1
+	pushB FALSE
+.d 0 2 bi
+	rtn
+else.3
+	push_a 0
+	push_arraysize CHAR 0 1
+	push_b 1
+	ltI
+	jmp_false else.4
+	push_b 0
+	push_a 0
+	select CHAR 0 1
+	push_b 2
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	eqC
+	jmp_false else.5
+	push_b 0
+	pushB TRUE
+	update_b 1 3
+	updatepop_b 0 2
+	pop_a 1
+.d 0 2 bi
+	rtn
+else.5
+	pushI 1
+	push_b 1
+	addI
+	push_b 2
+	push_a 0
+	push_b 1
+	update_b 1 2
+	update_b 0 1
+	pop_b 1
+	updatepop_a 0 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ic
+	jmp s2
+else.4
+	buildAC "CharIndex: index out of range"
+	updatepop_a 0 1
+	pop_b 2
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	repl_args 2 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushB_a 0
+	pop_a 2
+.d 0 2 bi
+	rtn
+.impmod _system
+.implab _match_error

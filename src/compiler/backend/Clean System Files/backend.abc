@@ -1,0 +1,6163 @@
+.comp 920 0101110100100
+.start _nostart_
+.depend "backend"
+.endinfo
+.module m_backend "backend"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.export e_backend_sBEDynamicTempTypeSymbol
+.descexp e_backend_dBEDynamicTempTypeSymbol e_backend_nBEDynamicTempTypeSymbol e_backend_lBEDynamicTempTypeSymbol 1 0 "BEDynamicTempTypeSymbol"
+.o 2 0
+e_backend_lBEDynamicTempTypeSymbol
+	pop_a 1
+.d 1 0
+	jsr ea136
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBEDynamicTempTypeSymbol
+.o 1 0
+e_backend_nBEDynamicTempTypeSymbol
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea136
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea136
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEDynamicTempTypeSymbol
+.o 0 1 i
+s136
+	ccall BEDynamicTempTypeSymbol ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDeclareDynamicTypeSymbol
+.descexp e_backend_dBEDeclareDynamicTypeSymbol e_backend_nBEDeclareDynamicTypeSymbol e_backend_lBEDeclareDynamicTypeSymbol 3 0 "BEDeclareDynamicTypeSymbol"
+.a 0 a135
+.o 2 0
+e_backend_lBEDeclareDynamicTypeSymbol
+	repl_args 2 2
+.o 3 0
+a135
+.d 3 0
+	jsr ea135
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEDeclareDynamicTypeSymbol
+.o 1 0
+e_backend_nBEDeclareDynamicTypeSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea135
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea135
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEDeclareDynamicTypeSymbol
+.o 0 3 iii
+s135
+	ccall BEDeclareDynamicTypeSymbol "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEGetIntFromArray
+.descexp e_backend_dBEGetIntFromArray e_backend_nBEGetIntFromArray e_backend_lBEGetIntFromArray 2 0 "BEGetIntFromArray"
+.a 0 a134
+.o 2 0
+e_backend_lBEGetIntFromArray
+	repl_args 1 1
+.o 2 0
+a134
+.d 2 0
+	jsr ea134
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEGetIntFromArray
+.o 1 0
+e_backend_nBEGetIntFromArray
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea134
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea134
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEGetIntFromArray
+.o 0 2 ii
+s134
+	ccall BEGetIntFromArray "Ip:I"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBECopyInts
+.descexp e_backend_dBECopyInts e_backend_nBECopyInts e_backend_lBECopyInts 3 0 "BECopyInts"
+.a 0 a133
+.o 2 0
+e_backend_lBECopyInts
+	repl_args 2 2
+.o 3 0
+a133
+.d 3 0
+	jsr ea133
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBECopyInts
+.o 1 0
+e_backend_nBECopyInts
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea133
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea133
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBECopyInts
+.o 0 3 iii
+s133
+	ccall BECopyInts "Ipp:I"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEStrictPositions
+.descexp e_backend_dBEStrictPositions e_backend_nBEStrictPositions e_backend_lBEStrictPositions 2 0 "BEStrictPositions"
+.a 0 a132
+.o 2 0
+e_backend_lBEStrictPositions
+	repl_args 1 1
+.o 2 0
+a132
+.d 2 0
+	jsr ea132
+.o 0 3 iii
+	buildI_b 2
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 3
+	pop_b 3
+.d 1 0
+	rtn
+.n 2 e_backend_dBEStrictPositions
+.o 1 0
+e_backend_nBEStrictPositions
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea132
+.o 0 3 iii
+	buildI_b 2
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 3 3
+	pop_b 3
+.d 1 0
+	rtn
+.o 2 0
+ea132
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEStrictPositions
+.o 0 2 ii
+s132
+	ccall BEStrictPositions "I:VIp:p"
+
+.d 0 3 iii
+	rtn
+.export e_backend_sBESetMainDclModuleN
+.descexp e_backend_dBESetMainDclModuleN e_backend_nBESetMainDclModuleN e_backend_lBESetMainDclModuleN 2 0 "BESetMainDclModuleN"
+.a 0 a131
+.o 2 0
+e_backend_lBESetMainDclModuleN
+	repl_args 1 1
+.o 2 0
+a131
+.d 2 0
+	jsr ea131
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBESetMainDclModuleN
+.o 1 0
+e_backend_nBESetMainDclModuleN
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea131
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea131
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBESetMainDclModuleN
+.o 0 2 ii
+s131
+	ccall BESetMainDclModuleN "I:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEInsertForeignExport
+.descexp e_backend_dBEInsertForeignExport e_backend_nBEInsertForeignExport e_backend_lBEInsertForeignExport 3 0 "BEInsertForeignExport"
+.a 0 a130
+.o 2 0
+e_backend_lBEInsertForeignExport
+	repl_args 2 2
+.o 3 0
+a130
+.d 3 0
+	jsr ea130
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEInsertForeignExport
+.o 1 0
+e_backend_nBEInsertForeignExport
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea130
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea130
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEInsertForeignExport
+.o 0 3 iii
+s130
+	ccall BEInsertForeignExport "pI:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDefineImportedObjsAndLibs
+.descexp e_backend_dBEDefineImportedObjsAndLibs e_backend_nBEDefineImportedObjsAndLibs e_backend_lBEDefineImportedObjsAndLibs 3 0 "BEDefineImportedObjsAndLibs"
+.a 0 a129
+.o 2 0
+e_backend_lBEDefineImportedObjsAndLibs
+	repl_args 2 2
+.o 3 0
+a129
+.d 3 0
+	jsr ea129
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEDefineImportedObjsAndLibs
+.o 1 0
+e_backend_nBEDefineImportedObjsAndLibs
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea129
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea129
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEDefineImportedObjsAndLibs
+.o 0 3 iii
+s129
+	ccall BEDefineImportedObjsAndLibs "pp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEExportFunction
+.descexp e_backend_dBEExportFunction e_backend_nBEExportFunction e_backend_lBEExportFunction 2 0 "BEExportFunction"
+.a 0 a128
+.o 2 0
+e_backend_lBEExportFunction
+	repl_args 1 1
+.o 2 0
+a128
+.d 2 0
+	jsr ea128
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEExportFunction
+.o 1 0
+e_backend_nBEExportFunction
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea128
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea128
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEExportFunction
+.o 0 2 ii
+s128
+	ccall BEExportFunction "I:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEExportField
+.descexp e_backend_dBEExportField e_backend_nBEExportField e_backend_lBEExportField 3 0 "BEExportField"
+.a 0 a127
+.o 2 0
+e_backend_lBEExportField
+	repl_args 2 2
+.o 3 0
+a127
+.d 3 0
+	jsr ea127
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEExportField
+.o 1 0
+e_backend_nBEExportField
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea127
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea127
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushB_a 0
+	pop_a 3
+.o 0 3 bii
+e_backend_sBEExportField
+.o 0 3 bii
+s127
+	ccall BEExportField "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEExportConstructor
+.descexp e_backend_dBEExportConstructor e_backend_nBEExportConstructor e_backend_lBEExportConstructor 2 0 "BEExportConstructor"
+.a 0 a126
+.o 2 0
+e_backend_lBEExportConstructor
+	repl_args 1 1
+.o 2 0
+a126
+.d 2 0
+	jsr ea126
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEExportConstructor
+.o 1 0
+e_backend_nBEExportConstructor
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea126
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea126
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEExportConstructor
+.o 0 2 ii
+s126
+	ccall BEExportConstructor "I:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEExportType
+.descexp e_backend_dBEExportType e_backend_nBEExportType e_backend_lBEExportType 3 0 "BEExportType"
+.a 0 a125
+.o 2 0
+e_backend_lBEExportType
+	repl_args 2 2
+.o 3 0
+a125
+.d 3 0
+	jsr ea125
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEExportType
+.o 1 0
+e_backend_nBEExportType
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea125
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea125
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushB_a 0
+	pop_a 3
+.o 0 3 bii
+e_backend_sBEExportType
+.o 0 3 bii
+s125
+	ccall BEExportType "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEGetError
+.descexp e_backend_dBEGetError e_backend_nBEGetError e_backend_lBEGetError 0 0 "BEGetError"
+.o 1 0
+e_backend_lBEGetError
+	halt
+.n 0 e_backend_dBEGetError
+.o 1 0
+e_backend_nBEGetError
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea124
+.o 1 0
+	fillh ARRAY 1 1
+.d 1 0
+	rtn
+.o 0 0
+ea124
+.o 0 0
+e_backend_sBEGetError
+.o 0 0
+s124
+	ccall BEGetError ":S"
+
+.d 1 0
+	rtn
+.export e_backend_sBEGenerateCode
+.descexp e_backend_dBEGenerateCode e_backend_nBEGenerateCode e_backend_lBEGenerateCode 2 0 "BEGenerateCode"
+.a 0 a123
+.o 2 0
+e_backend_lBEGenerateCode
+	repl_args 1 1
+.o 2 0
+a123
+.d 2 0
+	jsr ea123
+.o 0 2 bi
+	buildI_b 1
+	buildB_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEGenerateCode
+.o 1 0
+e_backend_nBEGenerateCode
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea123
+.o 0 2 bi
+	buildI_b 1
+	buildB_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea123
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+.o 1 1 i
+e_backend_sBEGenerateCode
+.o 1 1 i
+s123
+	ccall BEGenerateCode "S:I:p"
+
+.d 0 2 bi
+	rtn
+.export e_backend_sBEDefineRules
+.descexp e_backend_dBEDefineRules e_backend_nBEDefineRules e_backend_lBEDefineRules 2 0 "BEDefineRules"
+.a 0 a122
+.o 2 0
+e_backend_lBEDefineRules
+	repl_args 1 1
+.o 2 0
+a122
+.d 2 0
+	jsr ea122
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEDefineRules
+.o 1 0
+e_backend_nBEDefineRules
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea122
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea122
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEDefineRules
+.o 0 2 ii
+s122
+	ccall BEDefineRules "p:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclarePredefinedModule
+.descexp e_backend_dBEDeclarePredefinedModule e_backend_nBEDeclarePredefinedModule e_backend_lBEDeclarePredefinedModule 3 0 "BEDeclarePredefinedModule"
+.a 0 a121
+.o 2 0
+e_backend_lBEDeclarePredefinedModule
+	repl_args 2 2
+.o 3 0
+a121
+.d 3 0
+	jsr ea121
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEDeclarePredefinedModule
+.o 1 0
+e_backend_nBEDeclarePredefinedModule
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea121
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea121
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEDeclarePredefinedModule
+.o 0 3 iii
+s121
+	ccall BEDeclarePredefinedModule "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareDclModule
+.descexp e_backend_dBEDeclareDclModule e_backend_nBEDeclareDclModule e_backend_lBEDeclareDclModule 9 0 "BEDeclareDclModule"
+.a 0 a120
+.o 2 0
+e_backend_lBEDeclareDclModule
+	repl_args 8 8
+.o 9 0
+a120
+.d 9 0
+	jsr ea120
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 9 e_backend_dBEDeclareDclModule
+.o 1 0
+e_backend_nBEDeclareDclModule
+	push_node _cycle_in_spine 9
+.d 9 0
+	jsr ea120
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 9 0
+ea120
+	jsr_eval 8
+	jsr_eval 7
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 8
+	pushI_a 7
+	pushI_a 6
+	pushI_a 5
+	pushI_a 4
+	pushB_a 3
+	push_array 2
+	push_array 2
+	pushI_a 2
+	update_a 1 10
+	update_a 0 9
+	pop_a 9
+.o 2 7 ibiiiii
+e_backend_sBEDeclareDclModule
+.o 2 7 ibiiiii
+s120
+	ccall BEDeclareDclModule "ISSIIIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareIclModule
+.descexp e_backend_dBEDeclareIclModule e_backend_nBEDeclareIclModule e_backend_lBEDeclareIclModule 7 0 "BEDeclareIclModule"
+.a 0 a119
+.o 2 0
+e_backend_lBEDeclareIclModule
+	repl_args 6 6
+.o 7 0
+a119
+.d 7 0
+	jsr ea119
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 7 e_backend_dBEDeclareIclModule
+.o 1 0
+e_backend_nBEDeclareIclModule
+	push_node _cycle_in_spine 7
+.d 7 0
+	jsr ea119
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 7 0
+ea119
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 6
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	push_array 1
+	push_array 1
+	update_a 1 8
+	update_a 0 7
+	pop_a 7
+.o 2 5 iiiii
+e_backend_sBEDeclareIclModule
+.o 2 5 iiiii
+s119
+	ccall BEDeclareIclModule "SSIIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEAnyCodeBlock
+.descexp e_backend_dBEAnyCodeBlock e_backend_nBEAnyCodeBlock e_backend_lBEAnyCodeBlock 4 0 "BEAnyCodeBlock"
+.a 0 a118
+.o 2 0
+e_backend_lBEAnyCodeBlock
+	repl_args 3 3
+.o 4 0
+a118
+.d 4 0
+	jsr ea118
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEAnyCodeBlock
+.o 1 0
+e_backend_nBEAnyCodeBlock
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea118
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea118
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEAnyCodeBlock
+.o 0 4 iiii
+s118
+	ccall BEAnyCodeBlock "ppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAbcCodeBlock
+.descexp e_backend_dBEAbcCodeBlock e_backend_nBEAbcCodeBlock e_backend_lBEAbcCodeBlock 3 0 "BEAbcCodeBlock"
+.a 0 a117
+.o 2 0
+e_backend_lBEAbcCodeBlock
+	repl_args 2 2
+.o 3 0
+a117
+.d 3 0
+	jsr ea117
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAbcCodeBlock
+.o 1 0
+e_backend_nBEAbcCodeBlock
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea117
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea117
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushB_a 0
+	pop_a 3
+.o 0 3 bii
+e_backend_sBEAbcCodeBlock
+.o 0 3 bii
+s117
+	ccall BEAbcCodeBlock "Ip:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoNodeIds
+.descexp e_backend_dBENoNodeIds e_backend_nBENoNodeIds e_backend_lBENoNodeIds 1 0 "BENoNodeIds"
+.o 2 0
+e_backend_lBENoNodeIds
+	pop_a 1
+.d 1 0
+	jsr ea116
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoNodeIds
+.o 1 0
+e_backend_nBENoNodeIds
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea116
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea116
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoNodeIds
+.o 0 1 i
+s116
+	ccall BENoNodeIds ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeIds
+.descexp e_backend_dBENodeIds e_backend_nBENodeIds e_backend_lBENodeIds 3 0 "BENodeIds"
+.a 0 a115
+.o 2 0
+e_backend_lBENodeIds
+	repl_args 2 2
+.o 3 0
+a115
+.d 3 0
+	jsr ea115
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENodeIds
+.o 1 0
+e_backend_nBENodeIds
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea115
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea115
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENodeIds
+.o 0 3 iii
+s115
+	ccall BENodeIds "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeIdListElem
+.descexp e_backend_dBENodeIdListElem e_backend_nBENodeIdListElem e_backend_lBENodeIdListElem 2 0 "BENodeIdListElem"
+.a 0 a114
+.o 2 0
+e_backend_lBENodeIdListElem
+	repl_args 1 1
+.o 2 0
+a114
+.d 2 0
+	jsr ea114
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBENodeIdListElem
+.o 1 0
+e_backend_nBENodeIdListElem
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea114
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea114
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBENodeIdListElem
+.o 0 2 ii
+s114
+	ccall BENodeIdListElem "p:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoCodeParameters
+.descexp e_backend_dBENoCodeParameters e_backend_nBENoCodeParameters e_backend_lBENoCodeParameters 1 0 "BENoCodeParameters"
+.o 2 0
+e_backend_lBENoCodeParameters
+	pop_a 1
+.d 1 0
+	jsr ea113
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoCodeParameters
+.o 1 0
+e_backend_nBENoCodeParameters
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea113
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea113
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoCodeParameters
+.o 0 1 i
+s113
+	ccall BENoCodeParameters ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBECodeParameters
+.descexp e_backend_dBECodeParameters e_backend_nBECodeParameters e_backend_lBECodeParameters 3 0 "BECodeParameters"
+.a 0 a112
+.o 2 0
+e_backend_lBECodeParameters
+	repl_args 2 2
+.o 3 0
+a112
+.d 3 0
+	jsr ea112
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBECodeParameters
+.o 1 0
+e_backend_nBECodeParameters
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea112
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea112
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBECodeParameters
+.o 0 3 iii
+s112
+	ccall BECodeParameters "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBECodeParameter
+.descexp e_backend_dBECodeParameter e_backend_nBECodeParameter e_backend_lBECodeParameter 3 0 "BECodeParameter"
+.a 0 a111
+.o 2 0
+e_backend_lBECodeParameter
+	repl_args 2 2
+.o 3 0
+a111
+.d 3 0
+	jsr ea111
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBECodeParameter
+.o 1 0
+e_backend_nBECodeParameter
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea111
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea111
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	push_array 0
+	update_a 0 3
+	pop_a 3
+.o 1 2 ii
+e_backend_sBECodeParameter
+.o 1 2 ii
+s111
+	ccall BECodeParameter "Sp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoStrings
+.descexp e_backend_dBENoStrings e_backend_nBENoStrings e_backend_lBENoStrings 1 0 "BENoStrings"
+.o 2 0
+e_backend_lBENoStrings
+	pop_a 1
+.d 1 0
+	jsr ea110
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoStrings
+.o 1 0
+e_backend_nBENoStrings
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea110
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea110
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoStrings
+.o 0 1 i
+s110
+	ccall BENoStrings ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEStrings
+.descexp e_backend_dBEStrings e_backend_nBEStrings e_backend_lBEStrings 3 0 "BEStrings"
+.a 0 a109
+.o 2 0
+e_backend_lBEStrings
+	repl_args 2 2
+.o 3 0
+a109
+.d 3 0
+	jsr ea109
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEStrings
+.o 1 0
+e_backend_nBEStrings
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea109
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea109
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEStrings
+.o 0 3 iii
+s109
+	ccall BEStrings "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEString
+.descexp e_backend_dBEString e_backend_nBEString e_backend_lBEString 2 0 "BEString"
+.a 0 a108
+.o 2 0
+e_backend_lBEString
+	repl_args 1 1
+.o 2 0
+a108
+.d 2 0
+	jsr ea108
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEString
+.o 1 0
+e_backend_nBEString
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea108
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea108
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+.o 1 1 i
+e_backend_sBEString
+.o 1 1 i
+s108
+	ccall BEString "S:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBECodeAlt
+.descexp e_backend_dBECodeAlt e_backend_nBECodeAlt e_backend_lBECodeAlt 5 0 "BECodeAlt"
+.a 0 a107
+.o 2 0
+e_backend_lBECodeAlt
+	repl_args 4 4
+.o 5 0
+a107
+.d 5 0
+	jsr ea107
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 5 e_backend_dBECodeAlt
+.o 1 0
+e_backend_nBECodeAlt
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea107
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 5 0
+ea107
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBECodeAlt
+.o 0 5 iiiii
+s107
+	ccall BECodeAlt "Ippp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEStartFunction
+.descexp e_backend_dBEStartFunction e_backend_nBEStartFunction e_backend_lBEStartFunction 2 0 "BEStartFunction"
+.a 0 a106
+.o 2 0
+e_backend_lBEStartFunction
+	repl_args 1 1
+.o 2 0
+a106
+.d 2 0
+	jsr ea106
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEStartFunction
+.o 1 0
+e_backend_nBEStartFunction
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea106
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea106
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEStartFunction
+.o 0 2 ii
+s106
+	ccall BEStartFunction "I:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareFunction
+.descexp e_backend_dBEDeclareFunction e_backend_nBEDeclareFunction e_backend_lBEDeclareFunction 5 0 "BEDeclareFunction"
+.a 0 a105
+.o 2 0
+e_backend_lBEDeclareFunction
+	repl_args 4 4
+.o 5 0
+a105
+.d 5 0
+	jsr ea105
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 5 e_backend_dBEDeclareFunction
+.o 1 0
+e_backend_nBEDeclareFunction
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea105
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 5 0
+ea105
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	push_array 0
+	update_a 0 5
+	pop_a 5
+.o 1 4 iiii
+e_backend_sBEDeclareFunction
+.o 1 4 iiii
+s105
+	ccall BEDeclareFunction "SIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareType
+.descexp e_backend_dBEDeclareType e_backend_nBEDeclareType e_backend_lBEDeclareType 4 0 "BEDeclareType"
+.a 0 a104
+.o 2 0
+e_backend_lBEDeclareType
+	repl_args 3 3
+.o 4 0
+a104
+.d 4 0
+	jsr ea104
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDeclareType
+.o 1 0
+e_backend_nBEDeclareType
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea104
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea104
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	push_array 2
+	pushI_a 2
+	pushI_a 1
+	update_a 0 4
+	pop_a 4
+.o 1 3 iii
+e_backend_sBEDeclareType
+.o 1 3 iii
+s104
+	ccall BEDeclareType "IIS:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBENumberedTypeVar
+.descexp e_backend_dBENumberedTypeVar e_backend_nBENumberedTypeVar e_backend_lBENumberedTypeVar 3 0 "BENumberedTypeVar"
+.a 0 a103
+.o 2 0
+e_backend_lBENumberedTypeVar
+	repl_args 2 2
+.o 3 0
+a103
+.d 3 0
+	jsr ea103
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENumberedTypeVar
+.o 1 0
+e_backend_nBENumberedTypeVar
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea103
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea103
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	push_array 0
+	update_a 0 3
+	pop_a 3
+.o 1 2 ii
+e_backend_sBENumberedTypeVar
+.o 1 2 ii
+s103
+	ccall BENumberedTypeVar "SI:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeVar
+.descexp e_backend_dBETypeVar e_backend_nBETypeVar e_backend_lBETypeVar 2 0 "BETypeVar"
+.a 0 a102
+.o 2 0
+e_backend_lBETypeVar
+	repl_args 1 1
+.o 2 0
+a102
+.d 2 0
+	jsr ea102
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBETypeVar
+.o 1 0
+e_backend_nBETypeVar
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea102
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea102
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+.o 1 1 i
+e_backend_sBETypeVar
+.o 1 1 i
+s102
+	ccall BETypeVar "S:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDeclareConstructor
+.descexp e_backend_dBEDeclareConstructor e_backend_nBEDeclareConstructor e_backend_lBEDeclareConstructor 4 0 "BEDeclareConstructor"
+.a 0 a101
+.o 2 0
+e_backend_lBEDeclareConstructor
+	repl_args 3 3
+.o 4 0
+a101
+.d 4 0
+	jsr ea101
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDeclareConstructor
+.o 1 0
+e_backend_nBEDeclareConstructor
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea101
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea101
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	push_array 2
+	pushI_a 2
+	pushI_a 1
+	update_a 0 4
+	pop_a 4
+.o 1 3 iii
+e_backend_sBEDeclareConstructor
+.o 1 3 iii
+s101
+	ccall BEDeclareConstructor "IIS:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBENoFields
+.descexp e_backend_dBENoFields e_backend_nBENoFields e_backend_lBENoFields 1 0 "BENoFields"
+.o 2 0
+e_backend_lBENoFields
+	pop_a 1
+.d 1 0
+	jsr ea100
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoFields
+.o 1 0
+e_backend_nBENoFields
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea100
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea100
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoFields
+.o 0 1 i
+s100
+	ccall BENoFields ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEFields
+.descexp e_backend_dBEFields e_backend_nBEFields e_backend_lBEFields 3 0 "BEFields"
+.a 0 a99
+.o 2 0
+e_backend_lBEFields
+	repl_args 2 2
+.o 3 0
+a99
+.d 3 0
+	jsr ea99
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEFields
+.o 1 0
+e_backend_nBEFields
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea99
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea99
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEFields
+.o 0 3 iii
+s99
+	ccall BEFields "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBESetMemberTypeOfField
+.descexp e_backend_dBESetMemberTypeOfField e_backend_nBESetMemberTypeOfField e_backend_lBESetMemberTypeOfField 4 0 "BESetMemberTypeOfField"
+.a 0 a98
+.o 2 0
+e_backend_lBESetMemberTypeOfField
+	repl_args 3 3
+.o 4 0
+a98
+.d 4 0
+	jsr ea98
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBESetMemberTypeOfField
+.o 1 0
+e_backend_nBESetMemberTypeOfField
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea98
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea98
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBESetMemberTypeOfField
+.o 0 4 iiii
+s98
+	ccall BESetMemberTypeOfField "IIp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEField
+.descexp e_backend_dBEField e_backend_nBEField e_backend_lBEField 4 0 "BEField"
+.a 0 a97
+.o 2 0
+e_backend_lBEField
+	repl_args 3 3
+.o 4 0
+a97
+.d 4 0
+	jsr ea97
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEField
+.o 1 0
+e_backend_nBEField
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea97
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea97
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEField
+.o 0 4 iiii
+s97
+	ccall BEField "IIp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDeclareField
+.descexp e_backend_dBEDeclareField e_backend_nBEDeclareField e_backend_lBEDeclareField 4 0 "BEDeclareField"
+.a 0 a96
+.o 2 0
+e_backend_lBEDeclareField
+	repl_args 3 3
+.o 4 0
+a96
+.d 4 0
+	jsr ea96
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDeclareField
+.o 1 0
+e_backend_nBEDeclareField
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea96
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea96
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	push_array 2
+	pushI_a 2
+	pushI_a 1
+	update_a 0 4
+	pop_a 4
+.o 1 3 iii
+e_backend_sBEDeclareField
+.o 1 3 iii
+s96
+	ccall BEDeclareField "IIS:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEConstructor
+.descexp e_backend_dBEConstructor e_backend_nBEConstructor e_backend_lBEConstructor 2 0 "BEConstructor"
+.a 0 a95
+.o 2 0
+e_backend_lBEConstructor
+	repl_args 1 1
+.o 2 0
+a95
+.d 2 0
+	jsr ea95
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEConstructor
+.o 1 0
+e_backend_nBEConstructor
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea95
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea95
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEConstructor
+.o 0 2 ii
+s95
+	ccall BEConstructor "p:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoConstructors
+.descexp e_backend_dBENoConstructors e_backend_nBENoConstructors e_backend_lBENoConstructors 1 0 "BENoConstructors"
+.o 2 0
+e_backend_lBENoConstructors
+	pop_a 1
+.d 1 0
+	jsr ea94
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoConstructors
+.o 1 0
+e_backend_nBENoConstructors
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea94
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea94
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoConstructors
+.o 0 1 i
+s94
+	ccall BENoConstructors ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEConstructors
+.descexp e_backend_dBEConstructors e_backend_nBEConstructors e_backend_lBEConstructors 3 0 "BEConstructors"
+.a 0 a93
+.o 2 0
+e_backend_lBEConstructors
+	repl_args 2 2
+.o 3 0
+a93
+.d 3 0
+	jsr ea93
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEConstructors
+.o 1 0
+e_backend_nBEConstructors
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea93
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea93
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEConstructors
+.o 0 3 iii
+s93
+	ccall BEConstructors "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAbsType
+.descexp e_backend_dBEAbsType e_backend_nBEAbsType e_backend_lBEAbsType 2 0 "BEAbsType"
+.a 0 a92
+.o 2 0
+e_backend_lBEAbsType
+	repl_args 1 1
+.o 2 0
+a92
+.d 2 0
+	jsr ea92
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEAbsType
+.o 1 0
+e_backend_nBEAbsType
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea92
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea92
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEAbsType
+.o 0 2 ii
+s92
+	ccall BEAbsType "p:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBERecordType
+.descexp e_backend_dBERecordType e_backend_nBERecordType e_backend_lBERecordType 6 0 "BERecordType"
+.a 0 a91
+.o 2 0
+e_backend_lBERecordType
+	repl_args 5 5
+.o 6 0
+a91
+.d 6 0
+	jsr ea91
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 6 e_backend_dBERecordType
+.o 1 0
+e_backend_nBERecordType
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea91
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 6 0
+ea91
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 6
+.o 0 6 iiiiii
+e_backend_sBERecordType
+.o 0 6 iiiiii
+s91
+	ccall BERecordType "IppIp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEExtendableAlgebraicType
+.descexp e_backend_dBEExtendableAlgebraicType e_backend_nBEExtendableAlgebraicType e_backend_lBEExtendableAlgebraicType 3 0 "BEExtendableAlgebraicType"
+.a 0 a90
+.o 2 0
+e_backend_lBEExtendableAlgebraicType
+	repl_args 2 2
+.o 3 0
+a90
+.d 3 0
+	jsr ea90
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEExtendableAlgebraicType
+.o 1 0
+e_backend_nBEExtendableAlgebraicType
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea90
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea90
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEExtendableAlgebraicType
+.o 0 3 iii
+s90
+	ccall BEExtendableAlgebraicType "pp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEAlgebraicType
+.descexp e_backend_dBEAlgebraicType e_backend_nBEAlgebraicType e_backend_lBEAlgebraicType 3 0 "BEAlgebraicType"
+.a 0 a89
+.o 2 0
+e_backend_lBEAlgebraicType
+	repl_args 2 2
+.o 3 0
+a89
+.d 3 0
+	jsr ea89
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAlgebraicType
+.o 1 0
+e_backend_nBEAlgebraicType
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea89
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea89
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAlgebraicType
+.o 0 3 iii
+s89
+	ccall BEAlgebraicType "pp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEFlatType
+.descexp e_backend_dBEFlatType e_backend_nBEFlatType e_backend_lBEFlatType 4 0 "BEFlatType"
+.a 0 a88
+.o 2 0
+e_backend_lBEFlatType
+	repl_args 3 3
+.o 4 0
+a88
+.d 4 0
+	jsr ea88
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEFlatType
+.o 1 0
+e_backend_nBEFlatType
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea88
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea88
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEFlatType
+.o 0 4 iiii
+s88
+	ccall BEFlatType "pIp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoTypes
+.descexp e_backend_dBENoTypes e_backend_nBENoTypes e_backend_lBENoTypes 1 0 "BENoTypes"
+.o 2 0
+e_backend_lBENoTypes
+	pop_a 1
+.d 1 0
+	jsr ea87
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoTypes
+.o 1 0
+e_backend_nBENoTypes
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea87
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea87
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoTypes
+.o 0 1 i
+s87
+	ccall BENoTypes ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypes
+.descexp e_backend_dBETypes e_backend_nBETypes e_backend_lBETypes 3 0 "BETypes"
+.a 0 a86
+.o 2 0
+e_backend_lBETypes
+	repl_args 2 2
+.o 3 0
+a86
+.d 3 0
+	jsr ea86
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypes
+.o 1 0
+e_backend_nBETypes
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea86
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea86
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypes
+.o 0 3 iii
+s86
+	ccall BETypes "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBERules
+.descexp e_backend_dBERules e_backend_nBERules e_backend_lBERules 3 0 "BERules"
+.a 0 a85
+.o 2 0
+e_backend_lBERules
+	repl_args 2 2
+.o 3 0
+a85
+.d 3 0
+	jsr ea85
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBERules
+.o 1 0
+e_backend_nBERules
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea85
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea85
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBERules
+.o 0 3 iii
+s85
+	ccall BERules "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoRules
+.descexp e_backend_dBENoRules e_backend_nBENoRules e_backend_lBENoRules 1 0 "BENoRules"
+.o 2 0
+e_backend_lBENoRules
+	pop_a 1
+.d 1 0
+	jsr ea84
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoRules
+.o 1 0
+e_backend_nBENoRules
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea84
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea84
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoRules
+.o 0 1 i
+s84
+	ccall BENoRules ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAdjustArrayFunction
+.descexp e_backend_dBEAdjustArrayFunction e_backend_nBEAdjustArrayFunction e_backend_lBEAdjustArrayFunction 4 0 "BEAdjustArrayFunction"
+.a 0 a83
+.o 2 0
+e_backend_lBEAdjustArrayFunction
+	repl_args 3 3
+.o 4 0
+a83
+.d 4 0
+	jsr ea83
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEAdjustArrayFunction
+.o 1 0
+e_backend_nBEAdjustArrayFunction
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea83
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea83
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEAdjustArrayFunction
+.o 0 4 iiii
+s83
+	ccall BEAdjustArrayFunction "III:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDefineRuleType
+.descexp e_backend_dBEDefineRuleType e_backend_nBEDefineRuleType e_backend_lBEDefineRuleType 4 0 "BEDefineRuleType"
+.a 0 a82
+.o 2 0
+e_backend_lBEDefineRuleType
+	repl_args 3 3
+.o 4 0
+a82
+.d 4 0
+	jsr ea82
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDefineRuleType
+.o 1 0
+e_backend_nBEDefineRuleType
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea82
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea82
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEDefineRuleType
+.o 0 4 iiii
+s82
+	ccall BEDefineRuleType "IIp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareRuleType
+.descexp e_backend_dBEDeclareRuleType e_backend_nBEDeclareRuleType e_backend_lBEDeclareRuleType 4 0 "BEDeclareRuleType"
+.a 0 a81
+.o 2 0
+e_backend_lBEDeclareRuleType
+	repl_args 3 3
+.o 4 0
+a81
+.d 4 0
+	jsr ea81
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDeclareRuleType
+.o 1 0
+e_backend_nBEDeclareRuleType
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea81
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea81
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	push_array 2
+	pushI_a 2
+	pushI_a 1
+	update_a 0 4
+	pop_a 4
+.o 1 3 iii
+e_backend_sBEDeclareRuleType
+.o 1 3 iii
+s81
+	ccall BEDeclareRuleType "IIS:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBERule
+.descexp e_backend_dBERule e_backend_nBERule e_backend_lBERule 5 0 "BERule"
+.a 0 a80
+.o 2 0
+e_backend_lBERule
+	repl_args 4 4
+.o 5 0
+a80
+.d 5 0
+	jsr ea80
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 5 e_backend_dBERule
+.o 1 0
+e_backend_nBERule
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea80
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 5 0
+ea80
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBERule
+.o 0 5 iiiii
+s80
+	ccall BERule "IIpp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEStrictNodeIds
+.descexp e_backend_dBEStrictNodeIds e_backend_nBEStrictNodeIds e_backend_lBEStrictNodeIds 3 0 "BEStrictNodeIds"
+.a 0 a79
+.o 2 0
+e_backend_lBEStrictNodeIds
+	repl_args 2 2
+.o 3 0
+a79
+.d 3 0
+	jsr ea79
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEStrictNodeIds
+.o 1 0
+e_backend_nBEStrictNodeIds
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea79
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea79
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEStrictNodeIds
+.o 0 3 iii
+s79
+	ccall BEStrictNodeIds "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoStrictNodeIds
+.descexp e_backend_dBENoStrictNodeIds e_backend_nBENoStrictNodeIds e_backend_lBENoStrictNodeIds 1 0 "BENoStrictNodeIds"
+.o 2 0
+e_backend_lBENoStrictNodeIds
+	pop_a 1
+.d 1 0
+	jsr ea78
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoStrictNodeIds
+.o 1 0
+e_backend_nBENoStrictNodeIds
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea78
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea78
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoStrictNodeIds
+.o 0 1 i
+s78
+	ccall BENoStrictNodeIds ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEStrictNodeId
+.descexp e_backend_dBEStrictNodeId e_backend_nBEStrictNodeId e_backend_lBEStrictNodeId 2 0 "BEStrictNodeId"
+.a 0 a77
+.o 2 0
+e_backend_lBEStrictNodeId
+	repl_args 1 1
+.o 2 0
+a77
+.d 2 0
+	jsr ea77
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEStrictNodeId
+.o 1 0
+e_backend_nBEStrictNodeId
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea77
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea77
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEStrictNodeId
+.o 0 2 ii
+s77
+	ccall BEStrictNodeId "p:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeDefs
+.descexp e_backend_dBENodeDefs e_backend_nBENodeDefs e_backend_lBENodeDefs 3 0 "BENodeDefs"
+.a 0 a76
+.o 2 0
+e_backend_lBENodeDefs
+	repl_args 2 2
+.o 3 0
+a76
+.d 3 0
+	jsr ea76
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENodeDefs
+.o 1 0
+e_backend_nBENodeDefs
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea76
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea76
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENodeDefs
+.o 0 3 iii
+s76
+	ccall BENodeDefs "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoNodeDefs
+.descexp e_backend_dBENoNodeDefs e_backend_nBENoNodeDefs e_backend_lBENoNodeDefs 1 0 "BENoNodeDefs"
+.o 2 0
+e_backend_lBENoNodeDefs
+	pop_a 1
+.d 1 0
+	jsr ea75
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoNodeDefs
+.o 1 0
+e_backend_nBENoNodeDefs
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea75
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea75
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoNodeDefs
+.o 0 1 i
+s75
+	ccall BENoNodeDefs ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeDef
+.descexp e_backend_dBENodeDef e_backend_nBENodeDef e_backend_lBENodeDef 3 0 "BENodeDef"
+.a 0 a74
+.o 2 0
+e_backend_lBENodeDef
+	repl_args 2 2
+.o 3 0
+a74
+.d 3 0
+	jsr ea74
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENodeDef
+.o 1 0
+e_backend_nBENodeDef
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea74
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea74
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENodeDef
+.o 0 3 iii
+s74
+	ccall BENodeDef "Ip:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEWildCardNodeId
+.descexp e_backend_dBEWildCardNodeId e_backend_nBEWildCardNodeId e_backend_lBEWildCardNodeId 1 0 "BEWildCardNodeId"
+.o 2 0
+e_backend_lBEWildCardNodeId
+	pop_a 1
+.d 1 0
+	jsr ea73
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBEWildCardNodeId
+.o 1 0
+e_backend_nBEWildCardNodeId
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea73
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea73
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEWildCardNodeId
+.o 0 1 i
+s73
+	ccall BEWildCardNodeId ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeId
+.descexp e_backend_dBENodeId e_backend_nBENodeId e_backend_lBENodeId 2 0 "BENodeId"
+.a 0 a72
+.o 2 0
+e_backend_lBENodeId
+	repl_args 1 1
+.o 2 0
+a72
+.d 2 0
+	jsr ea72
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBENodeId
+.o 1 0
+e_backend_nBENodeId
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea72
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea72
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBENodeId
+.o 0 2 ii
+s72
+	ccall BENodeId "I:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDeclareNodeId
+.descexp e_backend_dBEDeclareNodeId e_backend_nBEDeclareNodeId e_backend_lBEDeclareNodeId 4 0 "BEDeclareNodeId"
+.a 0 a71
+.o 2 0
+e_backend_lBEDeclareNodeId
+	repl_args 3 3
+.o 4 0
+a71
+.d 4 0
+	jsr ea71
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDeclareNodeId
+.o 1 0
+e_backend_nBEDeclareNodeId
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea71
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea71
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	push_array 2
+	pushI_a 2
+	pushI_a 1
+	update_a 0 4
+	pop_a 4
+.o 1 3 iii
+e_backend_sBEDeclareNodeId
+.o 1 3 iii
+s71
+	ccall BEDeclareNodeId "IIS:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBENoRuleAlts
+.descexp e_backend_dBENoRuleAlts e_backend_nBENoRuleAlts e_backend_lBENoRuleAlts 1 0 "BENoRuleAlts"
+.o 2 0
+e_backend_lBENoRuleAlts
+	pop_a 1
+.d 1 0
+	jsr ea70
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoRuleAlts
+.o 1 0
+e_backend_nBENoRuleAlts
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea70
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea70
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoRuleAlts
+.o 0 1 i
+s70
+	ccall BENoRuleAlts ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBERuleAlts
+.descexp e_backend_dBERuleAlts e_backend_nBERuleAlts e_backend_lBERuleAlts 3 0 "BERuleAlts"
+.a 0 a69
+.o 2 0
+e_backend_lBERuleAlts
+	repl_args 2 2
+.o 3 0
+a69
+.d 3 0
+	jsr ea69
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBERuleAlts
+.o 1 0
+e_backend_nBERuleAlts
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea69
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea69
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBERuleAlts
+.o 0 3 iii
+s69
+	ccall BERuleAlts "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBERuleAlt
+.descexp e_backend_dBERuleAlt e_backend_nBERuleAlt e_backend_lBERuleAlt 7 0 "BERuleAlt"
+.a 0 a68
+.o 2 0
+e_backend_lBERuleAlt
+	repl_args 6 6
+.o 7 0
+a68
+.d 7 0
+	jsr ea68
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 7 e_backend_dBERuleAlt
+.o 1 0
+e_backend_nBERuleAlt
+	push_node _cycle_in_spine 7
+.d 7 0
+	jsr ea68
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 7 0
+ea68
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 6
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 7
+.o 0 7 iiiiiii
+e_backend_sBERuleAlt
+.o 0 7 iiiiiii
+s68
+	ccall BERuleAlt "Ippppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEArgs
+.descexp e_backend_dBEArgs e_backend_nBEArgs e_backend_lBEArgs 3 0 "BEArgs"
+.a 0 a67
+.o 2 0
+e_backend_lBEArgs
+	repl_args 2 2
+.o 3 0
+a67
+.d 3 0
+	jsr ea67
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEArgs
+.o 1 0
+e_backend_nBEArgs
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea67
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea67
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEArgs
+.o 0 3 iii
+s67
+	ccall BEArgs "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoArgs
+.descexp e_backend_dBENoArgs e_backend_nBENoArgs e_backend_lBENoArgs 1 0 "BENoArgs"
+.o 2 0
+e_backend_lBENoArgs
+	pop_a 1
+.d 1 0
+	jsr ea66
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoArgs
+.o 1 0
+e_backend_nBENoArgs
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea66
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea66
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoArgs
+.o 0 1 i
+s66
+	ccall BENoArgs ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENodeIdNode
+.descexp e_backend_dBENodeIdNode e_backend_nBENodeIdNode e_backend_lBENodeIdNode 3 0 "BENodeIdNode"
+.a 0 a65
+.o 2 0
+e_backend_lBENodeIdNode
+	repl_args 2 2
+.o 3 0
+a65
+.d 3 0
+	jsr ea65
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENodeIdNode
+.o 1 0
+e_backend_nBENodeIdNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea65
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea65
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENodeIdNode
+.o 0 3 iii
+s65
+	ccall BENodeIdNode "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEUpdateNode
+.descexp e_backend_dBEUpdateNode e_backend_nBEUpdateNode e_backend_lBEUpdateNode 2 0 "BEUpdateNode"
+.a 0 a64
+.o 2 0
+e_backend_lBEUpdateNode
+	repl_args 1 1
+.o 2 0
+a64
+.d 2 0
+	jsr ea64
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEUpdateNode
+.o 1 0
+e_backend_nBEUpdateNode
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea64
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea64
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEUpdateNode
+.o 0 2 ii
+s64
+	ccall BEUpdateNode "p:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBESelectorNode
+.descexp e_backend_dBESelectorNode e_backend_nBESelectorNode e_backend_lBESelectorNode 4 0 "BESelectorNode"
+.a 0 a63
+.o 2 0
+e_backend_lBESelectorNode
+	repl_args 3 3
+.o 4 0
+a63
+.d 4 0
+	jsr ea63
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBESelectorNode
+.o 1 0
+e_backend_nBESelectorNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea63
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea63
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBESelectorNode
+.o 0 4 iiii
+s63
+	ccall BESelectorNode "Ipp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDefaultNode
+.descexp e_backend_dBEDefaultNode e_backend_nBEDefaultNode e_backend_lBEDefaultNode 4 0 "BEDefaultNode"
+.a 0 a62
+.o 2 0
+e_backend_lBEDefaultNode
+	repl_args 3 3
+.o 4 0
+a62
+.d 4 0
+	jsr ea62
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEDefaultNode
+.o 1 0
+e_backend_nBEDefaultNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea62
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea62
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEDefaultNode
+.o 0 4 iiii
+s62
+	ccall BEDefaultNode "ppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEPushNode
+.descexp e_backend_dBEPushNode e_backend_nBEPushNode e_backend_lBEPushNode 5 0 "BEPushNode"
+.a 0 a61
+.o 2 0
+e_backend_lBEPushNode
+	repl_args 4 4
+.o 5 0
+a61
+.d 5 0
+	jsr ea61
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 5 e_backend_dBEPushNode
+.o 1 0
+e_backend_nBEPushNode
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea61
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 5 0
+ea61
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBEPushNode
+.o 0 5 iiiii
+s61
+	ccall BEPushNode "Ippp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBELeaveLocalScope
+.descexp e_backend_dBELeaveLocalScope e_backend_nBELeaveLocalScope e_backend_lBELeaveLocalScope 2 0 "BELeaveLocalScope"
+.a 0 a60
+.o 2 0
+e_backend_lBELeaveLocalScope
+	repl_args 1 1
+.o 2 0
+a60
+.d 2 0
+	jsr ea60
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBELeaveLocalScope
+.o 1 0
+e_backend_nBELeaveLocalScope
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea60
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea60
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBELeaveLocalScope
+.o 0 2 ii
+s60
+	ccall BELeaveLocalScope "p:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEEnterLocalScope
+.descexp e_backend_dBEEnterLocalScope e_backend_nBEEnterLocalScope e_backend_lBEEnterLocalScope 1 0 "BEEnterLocalScope"
+.o 2 0
+e_backend_lBEEnterLocalScope
+	pop_a 1
+.d 1 0
+	jsr ea59
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_backend_dBEEnterLocalScope
+.o 1 0
+e_backend_nBEEnterLocalScope
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea59
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea59
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEEnterLocalScope
+.o 0 1 i
+s59
+	ccall BEEnterLocalScope ":V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEOverloadedCaseNode
+.descexp e_backend_dBEOverloadedCaseNode e_backend_nBEOverloadedCaseNode e_backend_lBEOverloadedCaseNode 4 0 "BEOverloadedCaseNode"
+.a 0 a58
+.o 2 0
+e_backend_lBEOverloadedCaseNode
+	repl_args 3 3
+.o 4 0
+a58
+.d 4 0
+	jsr ea58
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEOverloadedCaseNode
+.o 1 0
+e_backend_nBEOverloadedCaseNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea58
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea58
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEOverloadedCaseNode
+.o 0 4 iiii
+s58
+	ccall BEOverloadedCaseNode "ppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBECaseNode
+.descexp e_backend_dBECaseNode e_backend_nBECaseNode e_backend_lBECaseNode 6 0 "BECaseNode"
+.a 0 a57
+.o 2 0
+e_backend_lBECaseNode
+	repl_args 5 5
+.o 6 0
+a57
+.d 6 0
+	jsr ea57
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 6 e_backend_dBECaseNode
+.o 1 0
+e_backend_nBECaseNode
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea57
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 6 0
+ea57
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 6
+.o 0 6 iiiiii
+e_backend_sBECaseNode
+.o 0 6 iiiiii
+s57
+	ccall BECaseNode "Ipppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBESwitchNode
+.descexp e_backend_dBESwitchNode e_backend_nBESwitchNode e_backend_lBESwitchNode 3 0 "BESwitchNode"
+.a 0 a56
+.o 2 0
+e_backend_lBESwitchNode
+	repl_args 2 2
+.o 3 0
+a56
+.d 3 0
+	jsr ea56
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBESwitchNode
+.o 1 0
+e_backend_nBESwitchNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea56
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea56
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBESwitchNode
+.o 0 3 iii
+s56
+	ccall BESwitchNode "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAddNodeIdsRefCounts
+.descexp e_backend_dBEAddNodeIdsRefCounts e_backend_nBEAddNodeIdsRefCounts e_backend_lBEAddNodeIdsRefCounts 4 0 "BEAddNodeIdsRefCounts"
+.a 0 a55
+.o 2 0
+e_backend_lBEAddNodeIdsRefCounts
+	repl_args 3 3
+.o 4 0
+a55
+.d 4 0
+	jsr ea55
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEAddNodeIdsRefCounts
+.o 1 0
+e_backend_nBEAddNodeIdsRefCounts
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea55
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea55
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEAddNodeIdsRefCounts
+.o 0 4 iiii
+s55
+	ccall BEAddNodeIdsRefCounts "Ipp:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBESetNodeDefRefCounts
+.descexp e_backend_dBESetNodeDefRefCounts e_backend_nBESetNodeDefRefCounts e_backend_lBESetNodeDefRefCounts 2 0 "BESetNodeDefRefCounts"
+.a 0 a54
+.o 2 0
+e_backend_lBESetNodeDefRefCounts
+	repl_args 1 1
+.o 2 0
+a54
+.d 2 0
+	jsr ea54
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBESetNodeDefRefCounts
+.o 1 0
+e_backend_nBESetNodeDefRefCounts
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea54
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea54
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBESetNodeDefRefCounts
+.o 0 2 ii
+s54
+	ccall BESetNodeDefRefCounts "p:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEGuardNode
+.descexp e_backend_dBEGuardNode e_backend_nBEGuardNode e_backend_lBEGuardNode 8 0 "BEGuardNode"
+.a 0 a53
+.o 2 0
+e_backend_lBEGuardNode
+	repl_args 7 7
+.o 8 0
+a53
+.d 8 0
+	jsr ea53
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 8 e_backend_dBEGuardNode
+.o 1 0
+e_backend_nBEGuardNode
+	push_node _cycle_in_spine 8
+.d 8 0
+	jsr ea53
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 8 0
+ea53
+	jsr_eval 7
+	jsr_eval 6
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 7
+	pushI_a 6
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 8
+.o 0 8 iiiiiiii
+e_backend_sBEGuardNode
+.o 0 8 iiiiiiii
+s53
+	ccall BEGuardNode "ppppppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEIfNode
+.descexp e_backend_dBEIfNode e_backend_nBEIfNode e_backend_lBEIfNode 4 0 "BEIfNode"
+.a 0 a52
+.o 2 0
+e_backend_lBEIfNode
+	repl_args 3 3
+.o 4 0
+a52
+.d 4 0
+	jsr ea52
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEIfNode
+.o 1 0
+e_backend_nBEIfNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea52
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea52
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEIfNode
+.o 0 4 iiii
+s52
+	ccall BEIfNode "ppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETupleSelectNode
+.descexp e_backend_dBETupleSelectNode e_backend_nBETupleSelectNode e_backend_lBETupleSelectNode 4 0 "BETupleSelectNode"
+.a 0 a51
+.o 2 0
+e_backend_lBETupleSelectNode
+	repl_args 3 3
+.o 4 0
+a51
+.d 4 0
+	jsr ea51
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBETupleSelectNode
+.o 1 0
+e_backend_nBETupleSelectNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea51
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea51
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBETupleSelectNode
+.o 0 4 iiii
+s51
+	ccall BETupleSelectNode "IIp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEMatchNode
+.descexp e_backend_dBEMatchNode e_backend_nBEMatchNode e_backend_lBEMatchNode 4 0 "BEMatchNode"
+.a 0 a50
+.o 2 0
+e_backend_lBEMatchNode
+	repl_args 3 3
+.o 4 0
+a50
+.d 4 0
+	jsr ea50
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBEMatchNode
+.o 1 0
+e_backend_nBEMatchNode
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea50
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea50
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEMatchNode
+.o 0 4 iiii
+s50
+	ccall BEMatchNode "Ipp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENormalNode
+.descexp e_backend_dBENormalNode e_backend_nBENormalNode e_backend_lBENormalNode 3 0 "BENormalNode"
+.a 0 a49
+.o 2 0
+e_backend_lBENormalNode
+	repl_args 2 2
+.o 3 0
+a49
+.d 3 0
+	jsr ea49
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENormalNode
+.o 1 0
+e_backend_nBENormalNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea49
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea49
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENormalNode
+.o 0 3 iii
+s49
+	ccall BENormalNode "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeAlt
+.descexp e_backend_dBETypeAlt e_backend_nBETypeAlt e_backend_lBETypeAlt 4 0 "BETypeAlt"
+.a 0 a48
+.o 2 0
+e_backend_lBETypeAlt
+	repl_args 3 3
+.o 4 0
+a48
+.d 4 0
+	jsr ea48
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBETypeAlt
+.o 1 0
+e_backend_nBETypeAlt
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea48
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea48
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBETypeAlt
+.o 0 4 iiii
+s48
+	ccall BETypeAlt "ppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeArgs
+.descexp e_backend_dBETypeArgs e_backend_nBETypeArgs e_backend_lBETypeArgs 3 0 "BETypeArgs"
+.a 0 a47
+.o 2 0
+e_backend_lBETypeArgs
+	repl_args 2 2
+.o 3 0
+a47
+.d 3 0
+	jsr ea47
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypeArgs
+.o 1 0
+e_backend_nBETypeArgs
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea47
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea47
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypeArgs
+.o 0 3 iii
+s47
+	ccall BETypeArgs "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoTypeArgs
+.descexp e_backend_dBENoTypeArgs e_backend_nBENoTypeArgs e_backend_lBENoTypeArgs 1 0 "BENoTypeArgs"
+.o 2 0
+e_backend_lBENoTypeArgs
+	pop_a 1
+.d 1 0
+	jsr ea46
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoTypeArgs
+.o 1 0
+e_backend_nBENoTypeArgs
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea46
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea46
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoTypeArgs
+.o 0 1 i
+s46
+	ccall BENoTypeArgs ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEUniVarEquationsList
+.descexp e_backend_dBEUniVarEquationsList e_backend_nBEUniVarEquationsList e_backend_lBEUniVarEquationsList 3 0 "BEUniVarEquationsList"
+.a 0 a45
+.o 2 0
+e_backend_lBEUniVarEquationsList
+	repl_args 2 2
+.o 3 0
+a45
+.d 3 0
+	jsr ea45
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEUniVarEquationsList
+.o 1 0
+e_backend_nBEUniVarEquationsList
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea45
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea45
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEUniVarEquationsList
+.o 0 3 iii
+s45
+	ccall BEUniVarEquationsList "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoUniVarEquations
+.descexp e_backend_dBENoUniVarEquations e_backend_nBENoUniVarEquations e_backend_lBENoUniVarEquations 1 0 "BENoUniVarEquations"
+.o 2 0
+e_backend_lBENoUniVarEquations
+	pop_a 1
+.d 1 0
+	jsr ea44
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoUniVarEquations
+.o 1 0
+e_backend_nBENoUniVarEquations
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea44
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea44
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoUniVarEquations
+.o 0 1 i
+s44
+	ccall BENoUniVarEquations ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEUniVarEquation
+.descexp e_backend_dBEUniVarEquation e_backend_nBEUniVarEquation e_backend_lBEUniVarEquation 3 0 "BEUniVarEquation"
+.a 0 a43
+.o 2 0
+e_backend_lBEUniVarEquation
+	repl_args 2 2
+.o 3 0
+a43
+.d 3 0
+	jsr ea43
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEUniVarEquation
+.o 1 0
+e_backend_nBEUniVarEquation
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea43
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea43
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEUniVarEquation
+.o 0 3 iii
+s43
+	ccall BEUniVarEquation "Ip:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAttributeKinds
+.descexp e_backend_dBEAttributeKinds e_backend_nBEAttributeKinds e_backend_lBEAttributeKinds 3 0 "BEAttributeKinds"
+.a 0 a42
+.o 2 0
+e_backend_lBEAttributeKinds
+	repl_args 2 2
+.o 3 0
+a42
+.d 3 0
+	jsr ea42
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAttributeKinds
+.o 1 0
+e_backend_nBEAttributeKinds
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea42
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea42
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAttributeKinds
+.o 0 3 iii
+s42
+	ccall BEAttributeKinds "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoAttributeKinds
+.descexp e_backend_dBENoAttributeKinds e_backend_nBENoAttributeKinds e_backend_lBENoAttributeKinds 1 0 "BENoAttributeKinds"
+.o 2 0
+e_backend_lBENoAttributeKinds
+	pop_a 1
+.d 1 0
+	jsr ea41
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoAttributeKinds
+.o 1 0
+e_backend_nBENoAttributeKinds
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea41
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea41
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoAttributeKinds
+.o 0 1 i
+s41
+	ccall BENoAttributeKinds ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAttributeKind
+.descexp e_backend_dBEAttributeKind e_backend_nBEAttributeKind e_backend_lBEAttributeKind 2 0 "BEAttributeKind"
+.a 0 a40
+.o 2 0
+e_backend_lBEAttributeKind
+	repl_args 1 1
+.o 2 0
+a40
+.d 2 0
+	jsr ea40
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEAttributeKind
+.o 1 0
+e_backend_nBEAttributeKind
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea40
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea40
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEAttributeKind
+.o 0 2 ii
+s40
+	ccall BEAttributeKind "I:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAttributeTypeNode
+.descexp e_backend_dBEAttributeTypeNode e_backend_nBEAttributeTypeNode e_backend_lBEAttributeTypeNode 3 0 "BEAttributeTypeNode"
+.a 0 a39
+.o 2 0
+e_backend_lBEAttributeTypeNode
+	repl_args 2 2
+.o 3 0
+a39
+.d 3 0
+	jsr ea39
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAttributeTypeNode
+.o 1 0
+e_backend_nBEAttributeTypeNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea39
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea39
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAttributeTypeNode
+.o 0 3 iii
+s39
+	ccall BEAttributeTypeNode "Ip:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAddForAllTypeVariables
+.descexp e_backend_dBEAddForAllTypeVariables e_backend_nBEAddForAllTypeVariables e_backend_lBEAddForAllTypeVariables 3 0 "BEAddForAllTypeVariables"
+.a 0 a38
+.o 2 0
+e_backend_lBEAddForAllTypeVariables
+	repl_args 2 2
+.o 3 0
+a38
+.d 3 0
+	jsr ea38
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAddForAllTypeVariables
+.o 1 0
+e_backend_nBEAddForAllTypeVariables
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea38
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea38
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAddForAllTypeVariables
+.o 0 3 iii
+s38
+	ccall BEAddForAllTypeVariables "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAnnotateTypeNode
+.descexp e_backend_dBEAnnotateTypeNode e_backend_nBEAnnotateTypeNode e_backend_lBEAnnotateTypeNode 3 0 "BEAnnotateTypeNode"
+.a 0 a37
+.o 2 0
+e_backend_lBEAnnotateTypeNode
+	repl_args 2 2
+.o 3 0
+a37
+.d 3 0
+	jsr ea37
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAnnotateTypeNode
+.o 1 0
+e_backend_nBEAnnotateTypeNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea37
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea37
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAnnotateTypeNode
+.o 0 3 iii
+s37
+	ccall BEAnnotateTypeNode "Ip:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENormalTypeNode
+.descexp e_backend_dBENormalTypeNode e_backend_nBENormalTypeNode e_backend_lBENormalTypeNode 3 0 "BENormalTypeNode"
+.a 0 a36
+.o 2 0
+e_backend_lBENormalTypeNode
+	repl_args 2 2
+.o 3 0
+a36
+.d 3 0
+	jsr ea36
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENormalTypeNode
+.o 1 0
+e_backend_nBENormalTypeNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea36
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea36
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBENormalTypeNode
+.o 0 3 iii
+s36
+	ccall BENormalTypeNode "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENoTypeVars
+.descexp e_backend_dBENoTypeVars e_backend_nBENoTypeVars e_backend_lBENoTypeVars 1 0 "BENoTypeVars"
+.o 2 0
+e_backend_lBENoTypeVars
+	pop_a 1
+.d 1 0
+	jsr ea35
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBENoTypeVars
+.o 1 0
+e_backend_nBENoTypeVars
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea35
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea35
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBENoTypeVars
+.o 0 1 i
+s35
+	ccall BENoTypeVars ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeVars
+.descexp e_backend_dBETypeVars e_backend_nBETypeVars e_backend_lBETypeVars 3 0 "BETypeVars"
+.a 0 a34
+.o 2 0
+e_backend_lBETypeVars
+	repl_args 2 2
+.o 3 0
+a34
+.d 3 0
+	jsr ea34
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypeVars
+.o 1 0
+e_backend_nBETypeVars
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea34
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea34
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypeVars
+.o 0 3 iii
+s34
+	ccall BETypeVars "pp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeVarListElem
+.descexp e_backend_dBETypeVarListElem e_backend_nBETypeVarListElem e_backend_lBETypeVarListElem 3 0 "BETypeVarListElem"
+.a 0 a33
+.o 2 0
+e_backend_lBETypeVarListElem
+	repl_args 2 2
+.o 3 0
+a33
+.d 3 0
+	jsr ea33
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypeVarListElem
+.o 1 0
+e_backend_nBETypeVarListElem
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea33
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea33
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypeVarListElem
+.o 0 3 iii
+s33
+	ccall BETypeVarListElem "pI:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBENumberedVarTypeNode
+.descexp e_backend_dBENumberedVarTypeNode e_backend_nBENumberedVarTypeNode e_backend_lBENumberedVarTypeNode 3 0 "BENumberedVarTypeNode"
+.a 0 a32
+.o 2 0
+e_backend_lBENumberedVarTypeNode
+	repl_args 2 2
+.o 3 0
+a32
+.d 3 0
+	jsr ea32
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBENumberedVarTypeNode
+.o 1 0
+e_backend_nBENumberedVarTypeNode
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea32
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea32
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	push_array 0
+	update_a 0 3
+	pop_a 3
+.o 1 2 ii
+e_backend_sBENumberedVarTypeNode
+.o 1 2 ii
+s32
+	ccall BENumberedVarTypeNode "SI:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEVarTypeNode
+.descexp e_backend_dBEVarTypeNode e_backend_nBEVarTypeNode e_backend_lBEVarTypeNode 2 0 "BEVarTypeNode"
+.a 0 a31
+.o 2 0
+e_backend_lBEVarTypeNode
+	repl_args 1 1
+.o 2 0
+a31
+.d 2 0
+	jsr ea31
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEVarTypeNode
+.o 1 0
+e_backend_nBEVarTypeNode
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea31
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea31
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+.o 1 1 i
+e_backend_sBEVarTypeNode
+.o 1 1 i
+s31
+	ccall BEVarTypeNode "S:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEBasicSymbol
+.descexp e_backend_dBEBasicSymbol e_backend_nBEBasicSymbol e_backend_lBEBasicSymbol 2 0 "BEBasicSymbol"
+.a 0 a30
+.o 2 0
+e_backend_lBEBasicSymbol
+	repl_args 1 1
+.o 2 0
+a30
+.d 2 0
+	jsr ea30
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEBasicSymbol
+.o 1 0
+e_backend_nBEBasicSymbol
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea30
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea30
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEBasicSymbol
+.o 0 2 ii
+s30
+	ccall BEBasicSymbol "I:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEPredefineTypeSymbol
+.descexp e_backend_dBEPredefineTypeSymbol e_backend_nBEPredefineTypeSymbol e_backend_lBEPredefineTypeSymbol 5 0 "BEPredefineTypeSymbol"
+.a 0 a29
+.o 2 0
+e_backend_lBEPredefineTypeSymbol
+	repl_args 4 4
+.o 5 0
+a29
+.d 5 0
+	jsr ea29
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 5 e_backend_dBEPredefineTypeSymbol
+.o 1 0
+e_backend_nBEPredefineTypeSymbol
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea29
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 5 0
+ea29
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBEPredefineTypeSymbol
+.o 0 5 iiiii
+s29
+	ccall BEPredefineTypeSymbol "IIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEPredefineConstructorSymbol
+.descexp e_backend_dBEPredefineConstructorSymbol e_backend_nBEPredefineConstructorSymbol e_backend_lBEPredefineConstructorSymbol 5 0 "BEPredefineConstructorSymbol"
+.a 0 a28
+.o 2 0
+e_backend_lBEPredefineConstructorSymbol
+	repl_args 4 4
+.o 5 0
+a28
+.d 5 0
+	jsr ea28
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 5 e_backend_dBEPredefineConstructorSymbol
+.o 1 0
+e_backend_nBEPredefineConstructorSymbol
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea28
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 5 0
+ea28
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBEPredefineConstructorSymbol
+.o 0 5 iiiii
+s28
+	ccall BEPredefineConstructorSymbol "IIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEOverloadedPushNode
+.descexp e_backend_dBEOverloadedPushNode e_backend_nBEOverloadedPushNode e_backend_lBEOverloadedPushNode 6 0 "BEOverloadedPushNode"
+.a 0 a27
+.o 2 0
+e_backend_lBEOverloadedPushNode
+	repl_args 5 5
+.o 6 0
+a27
+.d 6 0
+	jsr ea27
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 6 e_backend_dBEOverloadedPushNode
+.o 1 0
+e_backend_nBEOverloadedPushNode
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea27
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 6 0
+ea27
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 6
+.o 0 6 iiiiii
+e_backend_sBEOverloadedPushNode
+.o 0 6 iiiiii
+s27
+	ccall BEOverloadedPushNode "Ipppp:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEOverloadedConsSymbol
+.descexp e_backend_dBEOverloadedConsSymbol e_backend_nBEOverloadedConsSymbol e_backend_lBEOverloadedConsSymbol 5 0 "BEOverloadedConsSymbol"
+.a 0 a26
+.o 2 0
+e_backend_lBEOverloadedConsSymbol
+	repl_args 4 4
+.o 5 0
+a26
+.d 5 0
+	jsr ea26
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 5 e_backend_dBEOverloadedConsSymbol
+.o 1 0
+e_backend_nBEOverloadedConsSymbol
+	push_node _cycle_in_spine 5
+.d 5 0
+	jsr ea26
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 5 0
+ea26
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 5
+.o 0 5 iiiii
+e_backend_sBEOverloadedConsSymbol
+.o 0 5 iiiii
+s26
+	ccall BEOverloadedConsSymbol "IIII:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEAdjustOverloadedNilFunction
+.descexp e_backend_dBEAdjustOverloadedNilFunction e_backend_nBEAdjustOverloadedNilFunction e_backend_lBEAdjustOverloadedNilFunction 3 0 "BEAdjustOverloadedNilFunction"
+.a 0 a25
+.o 2 0
+e_backend_lBEAdjustOverloadedNilFunction
+	repl_args 2 2
+.o 3 0
+a25
+.d 3 0
+	jsr ea25
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAdjustOverloadedNilFunction
+.o 1 0
+e_backend_nBEAdjustOverloadedNilFunction
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea25
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea25
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAdjustOverloadedNilFunction
+.o 0 3 iii
+s25
+	ccall BEAdjustOverloadedNilFunction "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEAdjustUnboxedListDeconsInstance
+.descexp e_backend_dBEAdjustUnboxedListDeconsInstance e_backend_nBEAdjustUnboxedListDeconsInstance e_backend_lBEAdjustUnboxedListDeconsInstance 3 0 "BEAdjustUnboxedListDeconsInstance"
+.a 0 a24
+.o 2 0
+e_backend_lBEAdjustUnboxedListDeconsInstance
+	repl_args 2 2
+.o 3 0
+a24
+.d 3 0
+	jsr ea24
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAdjustUnboxedListDeconsInstance
+.o 1 0
+e_backend_nBEAdjustUnboxedListDeconsInstance
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea24
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea24
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAdjustUnboxedListDeconsInstance
+.o 0 3 iii
+s24
+	ccall BEAdjustUnboxedListDeconsInstance "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEAdjustStrictListConsInstance
+.descexp e_backend_dBEAdjustStrictListConsInstance e_backend_nBEAdjustStrictListConsInstance e_backend_lBEAdjustStrictListConsInstance 3 0 "BEAdjustStrictListConsInstance"
+.a 0 a23
+.o 2 0
+e_backend_lBEAdjustStrictListConsInstance
+	repl_args 2 2
+.o 3 0
+a23
+.d 3 0
+	jsr ea23
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEAdjustStrictListConsInstance
+.o 1 0
+e_backend_nBEAdjustStrictListConsInstance
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea23
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea23
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEAdjustStrictListConsInstance
+.o 0 3 iii
+s23
+	ccall BEAdjustStrictListConsInstance "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEPredefineListTypeSymbol
+.descexp e_backend_dBEPredefineListTypeSymbol e_backend_nBEPredefineListTypeSymbol e_backend_lBEPredefineListTypeSymbol 6 0 "BEPredefineListTypeSymbol"
+.a 0 a22
+.o 2 0
+e_backend_lBEPredefineListTypeSymbol
+	repl_args 5 5
+.o 6 0
+a22
+.d 6 0
+	jsr ea22
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 6 e_backend_dBEPredefineListTypeSymbol
+.o 1 0
+e_backend_nBEPredefineListTypeSymbol
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea22
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 6 0
+ea22
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 6
+.o 0 6 iiiiii
+e_backend_sBEPredefineListTypeSymbol
+.o 0 6 iiiiii
+s22
+	ccall BEPredefineListTypeSymbol "IIIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEPredefineListConstructorSymbol
+.descexp e_backend_dBEPredefineListConstructorSymbol e_backend_nBEPredefineListConstructorSymbol e_backend_lBEPredefineListConstructorSymbol 6 0 "BEPredefineListConstructorSymbol"
+.a 0 a21
+.o 2 0
+e_backend_lBEPredefineListConstructorSymbol
+	repl_args 5 5
+.o 6 0
+a21
+.d 6 0
+	jsr ea21
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 6 e_backend_dBEPredefineListConstructorSymbol
+.o 1 0
+e_backend_nBEPredefineListConstructorSymbol
+	push_node _cycle_in_spine 6
+.d 6 0
+	jsr ea21
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 6 0
+ea21
+	jsr_eval 5
+	jsr_eval 4
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 5
+	pushI_a 4
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 6
+.o 0 6 iiiiii
+e_backend_sBEPredefineListConstructorSymbol
+.o 0 6 iiiiii
+s21
+	ccall BEPredefineListConstructorSymbol "IIIII:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBELiteralSymbol
+.descexp e_backend_dBELiteralSymbol e_backend_nBELiteralSymbol e_backend_lBELiteralSymbol 3 0 "BELiteralSymbol"
+.a 0 a20
+.o 2 0
+e_backend_lBELiteralSymbol
+	repl_args 2 2
+.o 3 0
+a20
+.d 3 0
+	jsr ea20
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBELiteralSymbol
+.o 1 0
+e_backend_nBELiteralSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea20
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea20
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	push_array 1
+	pushI_a 1
+	update_a 0 3
+	pop_a 3
+.o 1 2 ii
+e_backend_sBELiteralSymbol
+.o 1 2 ii
+s20
+	ccall BELiteralSymbol "IS:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEBoolSymbol
+.descexp e_backend_dBEBoolSymbol e_backend_nBEBoolSymbol e_backend_lBEBoolSymbol 2 0 "BEBoolSymbol"
+.a 0 a19
+.o 2 0
+e_backend_lBEBoolSymbol
+	repl_args 1 1
+.o 2 0
+a19
+.d 2 0
+	jsr ea19
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEBoolSymbol
+.o 1 0
+e_backend_nBEBoolSymbol
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea19
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea19
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushB_a 0
+	pop_a 2
+.o 0 2 bi
+e_backend_sBEBoolSymbol
+.o 0 2 bi
+s19
+	ccall BEBoolSymbol "I:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDontCareDefinitionSymbol
+.descexp e_backend_dBEDontCareDefinitionSymbol e_backend_nBEDontCareDefinitionSymbol e_backend_lBEDontCareDefinitionSymbol 1 0 "BEDontCareDefinitionSymbol"
+.o 2 0
+e_backend_lBEDontCareDefinitionSymbol
+	pop_a 1
+.d 1 0
+	jsr ea18
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBEDontCareDefinitionSymbol
+.o 1 0
+e_backend_nBEDontCareDefinitionSymbol
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea18
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea18
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEDontCareDefinitionSymbol
+.o 0 1 i
+s18
+	ccall BEDontCareDefinitionSymbol ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeSymbolNoMark
+.descexp e_backend_dBETypeSymbolNoMark e_backend_nBETypeSymbolNoMark e_backend_lBETypeSymbolNoMark 3 0 "BETypeSymbolNoMark"
+.a 0 a17
+.o 2 0
+e_backend_lBETypeSymbolNoMark
+	repl_args 2 2
+.o 3 0
+a17
+.d 3 0
+	jsr ea17
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypeSymbolNoMark
+.o 1 0
+e_backend_nBETypeSymbolNoMark
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea17
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea17
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypeSymbolNoMark
+.o 0 3 iii
+s17
+	ccall BETypeSymbolNoMark "II:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBETypeSymbol
+.descexp e_backend_dBETypeSymbol e_backend_nBETypeSymbol e_backend_lBETypeSymbol 3 0 "BETypeSymbol"
+.a 0 a16
+.o 2 0
+e_backend_lBETypeSymbol
+	repl_args 2 2
+.o 3 0
+a16
+.d 3 0
+	jsr ea16
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBETypeSymbol
+.o 1 0
+e_backend_nBETypeSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea16
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea16
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBETypeSymbol
+.o 0 3 iii
+s16
+	ccall BETypeSymbol "II:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEFieldSymbol
+.descexp e_backend_dBEFieldSymbol e_backend_nBEFieldSymbol e_backend_lBEFieldSymbol 3 0 "BEFieldSymbol"
+.a 0 a15
+.o 2 0
+e_backend_lBEFieldSymbol
+	repl_args 2 2
+.o 3 0
+a15
+.d 3 0
+	jsr ea15
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEFieldSymbol
+.o 1 0
+e_backend_nBEFieldSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea15
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea15
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEFieldSymbol
+.o 0 3 iii
+s15
+	ccall BEFieldSymbol "II:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEConstructorSymbol
+.descexp e_backend_dBEConstructorSymbol e_backend_nBEConstructorSymbol e_backend_lBEConstructorSymbol 3 0 "BEConstructorSymbol"
+.a 0 a14
+.o 2 0
+e_backend_lBEConstructorSymbol
+	repl_args 2 2
+.o 3 0
+a14
+.d 3 0
+	jsr ea14
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEConstructorSymbol
+.o 1 0
+e_backend_nBEConstructorSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea14
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea14
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEConstructorSymbol
+.o 0 3 iii
+s14
+	ccall BEConstructorSymbol "II:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEFunctionSymbol
+.descexp e_backend_dBEFunctionSymbol e_backend_nBEFunctionSymbol e_backend_lBEFunctionSymbol 3 0 "BEFunctionSymbol"
+.a 0 a13
+.o 2 0
+e_backend_lBEFunctionSymbol
+	repl_args 2 2
+.o 3 0
+a13
+.d 3 0
+	jsr ea13
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 3 e_backend_dBEFunctionSymbol
+.o 1 0
+e_backend_nBEFunctionSymbol
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea13
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 3 0
+ea13
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEFunctionSymbol
+.o 0 3 iii
+s13
+	ccall BEFunctionSymbol "II:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDictionaryUpdateFunSymbol
+.descexp e_backend_dBEDictionaryUpdateFunSymbol e_backend_nBEDictionaryUpdateFunSymbol e_backend_lBEDictionaryUpdateFunSymbol 1 0 "BEDictionaryUpdateFunSymbol"
+.o 2 0
+e_backend_lBEDictionaryUpdateFunSymbol
+	pop_a 1
+.d 1 0
+	jsr ea12
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBEDictionaryUpdateFunSymbol
+.o 1 0
+e_backend_nBEDictionaryUpdateFunSymbol
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea12
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea12
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEDictionaryUpdateFunSymbol
+.o 0 1 i
+s12
+	ccall BEDictionaryUpdateFunSymbol ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEDictionarySelectFunSymbol
+.descexp e_backend_dBEDictionarySelectFunSymbol e_backend_nBEDictionarySelectFunSymbol e_backend_lBEDictionarySelectFunSymbol 1 0 "BEDictionarySelectFunSymbol"
+.o 2 0
+e_backend_lBEDictionarySelectFunSymbol
+	pop_a 1
+.d 1 0
+	jsr ea11
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 1 e_backend_dBEDictionarySelectFunSymbol
+.o 1 0
+e_backend_nBEDictionarySelectFunSymbol
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea11
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 1 0
+ea11
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBEDictionarySelectFunSymbol
+.o 0 1 i
+s11
+	ccall BEDictionarySelectFunSymbol ":p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBESpecialArrayFunctionSymbol
+.descexp e_backend_dBESpecialArrayFunctionSymbol e_backend_nBESpecialArrayFunctionSymbol e_backend_lBESpecialArrayFunctionSymbol 4 0 "BESpecialArrayFunctionSymbol"
+.a 0 a10
+.o 2 0
+e_backend_lBESpecialArrayFunctionSymbol
+	repl_args 3 3
+.o 4 0
+a10
+.d 4 0
+	jsr ea10
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 4 e_backend_dBESpecialArrayFunctionSymbol
+.o 1 0
+e_backend_nBESpecialArrayFunctionSymbol
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea10
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 4 0
+ea10
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBESpecialArrayFunctionSymbol
+.o 0 4 iiii
+s10
+	ccall BESpecialArrayFunctionSymbol "III:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEBindSpecialType
+.descexp e_backend_dBEBindSpecialType e_backend_nBEBindSpecialType e_backend_lBEBindSpecialType 4 0 "BEBindSpecialType"
+.a 0 a9
+.o 2 0
+e_backend_lBEBindSpecialType
+	repl_args 3 3
+.o 4 0
+a9
+.d 4 0
+	jsr ea9
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEBindSpecialType
+.o 1 0
+e_backend_nBEBindSpecialType
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea9
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea9
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEBindSpecialType
+.o 0 4 iiii
+s9
+	ccall BEBindSpecialType "III:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEBindSpecialFunction
+.descexp e_backend_dBEBindSpecialFunction e_backend_nBEBindSpecialFunction e_backend_lBEBindSpecialFunction 4 0 "BEBindSpecialFunction"
+.a 0 a8
+.o 2 0
+e_backend_lBEBindSpecialFunction
+	repl_args 3 3
+.o 4 0
+a8
+.d 4 0
+	jsr ea8
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 4 e_backend_dBEBindSpecialFunction
+.o 1 0
+e_backend_nBEBindSpecialFunction
+	push_node _cycle_in_spine 4
+.d 4 0
+	jsr ea8
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 4 0
+ea8
+	jsr_eval 3
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 3
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 4
+.o 0 4 iiii
+e_backend_sBEBindSpecialFunction
+.o 0 4 iiii
+s8
+	ccall BEBindSpecialFunction "III:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEBindSpecialModule
+.descexp e_backend_dBEBindSpecialModule e_backend_nBEBindSpecialModule e_backend_lBEBindSpecialModule 3 0 "BEBindSpecialModule"
+.a 0 a7
+.o 2 0
+e_backend_lBEBindSpecialModule
+	repl_args 2 2
+.o 3 0
+a7
+.d 3 0
+	jsr ea7
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 3 e_backend_dBEBindSpecialModule
+.o 1 0
+e_backend_nBEBindSpecialModule
+	push_node _cycle_in_spine 3
+.d 3 0
+	jsr ea7
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 3 0
+ea7
+	jsr_eval 2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 2
+	pushI_a 1
+	pushI_a 0
+	pop_a 3
+.o 0 3 iii
+e_backend_sBEBindSpecialModule
+.o 0 3 iii
+s7
+	ccall BEBindSpecialModule "II:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEDeclareModules
+.descexp e_backend_dBEDeclareModules e_backend_nBEDeclareModules e_backend_lBEDeclareModules 2 0 "BEDeclareModules"
+.a 0 a6
+.o 2 0
+e_backend_lBEDeclareModules
+	repl_args 1 1
+.o 2 0
+a6
+.d 2 0
+	jsr ea6
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEDeclareModules
+.o 1 0
+e_backend_nBEDeclareModules
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea6
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea6
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEDeclareModules
+.o 0 2 ii
+s6
+	ccall BEDeclareModules "I:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEArg
+.descexp e_backend_dBEArg e_backend_nBEArg e_backend_lBEArg 2 0 "BEArg"
+.a 0 a5
+.o 2 0
+e_backend_lBEArg
+	repl_args 1 1
+.o 2 0
+a5
+.d 2 0
+	jsr ea5
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEArg
+.o 1 0
+e_backend_nBEArg
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea5
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea5
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	push_array 0
+	update_a 0 2
+	pop_a 2
+.o 1 1 i
+e_backend_sBEArg
+.o 1 1 i
+s5
+	ccall BEArg "S:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEFree
+.descexp e_backend_dBEFree e_backend_nBEFree e_backend_lBEFree 2 0 "BEFree"
+.a 0 a4
+.o 2 0
+e_backend_lBEFree
+	repl_args 1 1
+.o 2 0
+a4
+.d 2 0
+	jsr ea4
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 2 e_backend_dBEFree
+.o 1 0
+e_backend_nBEFree
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea4
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 2 0
+ea4
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEFree
+.o 0 2 ii
+s4
+	ccall BEFree "p:V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBECloseFiles
+.descexp e_backend_dBECloseFiles e_backend_nBECloseFiles e_backend_lBECloseFiles 1 0 "BECloseFiles"
+.o 2 0
+e_backend_lBECloseFiles
+	pop_a 1
+.d 1 0
+	jsr ea3
+.o 0 1 i
+	buildI_b 0
+	pop_b 1
+.d 1 0
+	rtn
+.n 1 e_backend_dBECloseFiles
+.o 1 0
+e_backend_nBECloseFiles
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea3
+.o 0 1 i
+	fillI_b 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.o 1 0
+ea3
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+.o 0 1 i
+e_backend_sBECloseFiles
+.o 0 1 i
+s3
+	ccall BECloseFiles ":V:p"
+
+.d 0 1 i
+	rtn
+.export e_backend_sBEInit
+.descexp e_backend_dBEInit e_backend_nBEInit e_backend_lBEInit 2 0 "BEInit"
+.a 0 a2
+.o 2 0
+e_backend_lBEInit
+	repl_args 1 1
+.o 2 0
+a2
+.d 2 0
+	jsr ea2
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	buildh _Tuple 2
+	pop_b 2
+.d 1 0
+	rtn
+.n 2 e_backend_dBEInit
+.o 1 0
+e_backend_nBEInit
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea2
+.o 0 2 ii
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.o 2 0
+ea2
+	jsr_eval 1
+	jsr_eval 0
+	pushI_a 1
+	pushI_a 0
+	pop_a 2
+.o 0 2 ii
+e_backend_sBEInit
+.o 0 2 ii
+s2
+	ccall BEInit "I:p:p"
+
+.d 0 2 ii
+	rtn
+.export e_backend_sBEGetVersion
+.descexp e_backend_dBEGetVersion e_backend_nBEGetVersion e_backend_lBEGetVersion 0 0 "BEGetVersion"
+.o 1 0
+e_backend_lBEGetVersion
+	halt
+.n 0 e_backend_dBEGetVersion
+.o 1 0
+e_backend_nBEGetVersion
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea1
+.o 0 3 iii
+	buildI_b 2
+	buildI_b 1
+	buildI_b 0
+	fillh _Tuple 3 3
+	pop_b 3
+.d 1 0
+	rtn
+.o 0 0
+ea1
+.o 0 0
+e_backend_sBEGetVersion
+.o 0 0
+s1
+	ccall BEGetVersion ":VIII"
+
+.d 0 3 iii
+	rtn

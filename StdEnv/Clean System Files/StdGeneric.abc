@@ -1,0 +1,1671 @@
+.comp 920 0101110000100
+.start _nostart_
+.depend "StdFunctions"
+.depend "StdFunc"
+.depend "StdBool"
+.depend "StdClass"
+.depend "StdMisc"
+.depend "StdOverloaded"
+.depend "StdInt"
+.depend "StdGeneric"
+.endinfo
+.module m_StdGeneric "StdGeneric"
+.impmod _system
+.implab _cycle_in_spine
+.implab _type_error
+.implab _hnf
+.impdesc e_system_dind
+.implab e_system_nind e_system_eaind
+.impdesc e_system_dif
+.implab e_system_nif e_system_eaif
+.implab e_system_sif
+.impdesc e_system_dAP
+.implab e_system_nAP e_system_eaAP
+.implab e_system_sAP
+.impdesc ARRAY
+.impdesc _Nil
+.impdesc _Cons
+.impdesc _Conss
+.implab n_Conss ea_Conss
+.impdesc _Consts
+.implab n_Consts ea_Consts
+.impdesc _Conssts
+.implab n_Conssts ea_Conssts
+.impdesc _Tuple
+.impdesc d_S.1
+.implab n_S.1 ea_S.1
+.impdesc d_S.2
+.implab n_S.2 ea_S.2
+.impdesc d_S.3
+.implab n_S.3 ea_S.3
+.impdesc d_S.4
+.implab n_S.4 ea_S.4
+.impdesc d_S.5
+.implab n_S.5 ea_S.5
+.impdesc d_S.6
+.implab n_S.6 ea_S.6
+.implab _driver
+.impmod StdFunctions
+.impdesc e_StdFunctions_did
+.impmod StdBool
+.implab e_StdBool_snot
+.impmod StdMisc
+.implab e_StdMisc_sabort
+.impmod StdInt
+.implab e_StdInt_s-;7
+.implab e_StdInt_s/;10
+.implab e_StdInt_s==;16
+.implab e_StdInt_s<;17
+.export e_StdGeneric_rBimap
+.record e_StdGeneric_rBimap aa 2 0 "Bimap"
+.export e_StdGeneric_dBimap.map_to
+.export e_StdGeneric_nBimap.map_to
+.export e_StdGeneric_eaBimap.map_to
+.descs e_StdGeneric_dBimap.map_to e_StdGeneric_nBimap.map_to _ 1 0 "Bimap.map_to"
+.n -4 e_StdGeneric_dBimap.map_to e_StdGeneric_eaBimap.map_to
+.o 1 0
+e_StdGeneric_nBimap.map_to
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaBimap.map_to
+	jsr_eval 0
+	repl_r_args_a 2 0 1 1
+	jmp_eval_upd
+.export e_StdGeneric_dBimap.map_from
+.export e_StdGeneric_nBimap.map_from
+.export e_StdGeneric_eaBimap.map_from
+.descs e_StdGeneric_dBimap.map_from e_StdGeneric_nBimap.map_from _ 2 0 "Bimap.map_from"
+.n -4 e_StdGeneric_dBimap.map_from e_StdGeneric_eaBimap.map_from
+.o 1 0
+e_StdGeneric_nBimap.map_from
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaBimap.map_from
+	jsr_eval 0
+	repl_r_args_a 2 0 2 1
+	jmp_eval_upd
+.export e_StdGeneric_dUNIT
+.desc0 e_StdGeneric_dUNIT 0 "UNIT"
+.export e_StdGeneric_dLEFT
+.desc e_StdGeneric_dLEFT _hnf _add_arg 1 0 "LEFT"
+.export e_StdGeneric_dRIGHT
+.desc e_StdGeneric_dRIGHT _hnf _add_arg 1 0 "RIGHT"
+.export e_StdGeneric_dPAIR
+.desc e_StdGeneric_dPAIR _hnf _add_arg 2 0 "PAIR"
+.export e_StdGeneric_dOBJECT
+.desc e_StdGeneric_dOBJECT _hnf _add_arg 1 0 "OBJECT"
+.export e_StdGeneric_dCONS
+.desc e_StdGeneric_dCONS _hnf _add_arg 1 0 "CONS"
+.export e_StdGeneric_dRECORD
+.desc e_StdGeneric_dRECORD _hnf _add_arg 1 0 "RECORD"
+.export e_StdGeneric_dFIELD
+.desc e_StdGeneric_dFIELD _hnf _add_arg 1 0 "FIELD"
+.export e_StdGeneric_rGenericTypeDefDescriptor
+.record e_StdGeneric_rGenericTypeDefDescriptor aaaa 4 0 "GenericTypeDefDescriptor"
+.export e_StdGeneric_dGenericTypeDefDescriptor.gtd_name
+.export e_StdGeneric_nGenericTypeDefDescriptor.gtd_name
+.descs e_StdGeneric_dGenericTypeDefDescriptor.gtd_name e_StdGeneric_nGenericTypeDefDescriptor.gtd_name _ 1 0 "GenericTypeDefDescriptor.gtd_name"
+.n -4 e_StdGeneric_dGenericTypeDefDescriptor.gtd_name
+.o 1 0
+e_StdGeneric_nGenericTypeDefDescriptor.gtd_name
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericTypeDefDescriptor.gtd_arity
+.export e_StdGeneric_nGenericTypeDefDescriptor.gtd_arity
+.descs e_StdGeneric_dGenericTypeDefDescriptor.gtd_arity e_StdGeneric_nGenericTypeDefDescriptor.gtd_arity _ 3 0 "GenericTypeDefDescriptor.gtd_arity"
+.n -4 e_StdGeneric_dGenericTypeDefDescriptor.gtd_arity
+.o 1 0
+e_StdGeneric_nGenericTypeDefDescriptor.gtd_arity
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 2 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericTypeDefDescriptor.gtd_num_conses
+.export e_StdGeneric_nGenericTypeDefDescriptor.gtd_num_conses
+.descs e_StdGeneric_dGenericTypeDefDescriptor.gtd_num_conses e_StdGeneric_nGenericTypeDefDescriptor.gtd_num_conses _ 4 0 "GenericTypeDefDescriptor.gtd_num_conses"
+.n -4 e_StdGeneric_dGenericTypeDefDescriptor.gtd_num_conses
+.o 1 0
+e_StdGeneric_nGenericTypeDefDescriptor.gtd_num_conses
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 4 0 3 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericTypeDefDescriptor.gtd_conses
+.export e_StdGeneric_nGenericTypeDefDescriptor.gtd_conses
+.export e_StdGeneric_eaGenericTypeDefDescriptor.gtd_conses
+.descs e_StdGeneric_dGenericTypeDefDescriptor.gtd_conses e_StdGeneric_nGenericTypeDefDescriptor.gtd_conses _ 5 0 "GenericTypeDefDescriptor.gtd_conses"
+.n -4 e_StdGeneric_dGenericTypeDefDescriptor.gtd_conses e_StdGeneric_eaGenericTypeDefDescriptor.gtd_conses
+.o 1 0
+e_StdGeneric_nGenericTypeDefDescriptor.gtd_conses
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericTypeDefDescriptor.gtd_conses
+	jsr_eval 0
+	repl_r_args_a 4 0 4 1
+	jmp_eval_upd
+.export e_StdGeneric_rGenericConsDescriptor
+.record e_StdGeneric_rGenericConsDescriptor aaaaaa 6 0 "GenericConsDescriptor"
+.export e_StdGeneric_dGenericConsDescriptor.gcd_name
+.export e_StdGeneric_nGenericConsDescriptor.gcd_name
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_name e_StdGeneric_nGenericConsDescriptor.gcd_name _ 1 0 "GenericConsDescriptor.gcd_name"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_name
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_name
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 6 0 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericConsDescriptor.gcd_arity
+.export e_StdGeneric_nGenericConsDescriptor.gcd_arity
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_arity e_StdGeneric_nGenericConsDescriptor.gcd_arity _ 3 0 "GenericConsDescriptor.gcd_arity"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_arity
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_arity
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 6 0 2 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericConsDescriptor.gcd_prio
+.export e_StdGeneric_nGenericConsDescriptor.gcd_prio
+.export e_StdGeneric_eaGenericConsDescriptor.gcd_prio
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_prio e_StdGeneric_nGenericConsDescriptor.gcd_prio _ 4 0 "GenericConsDescriptor.gcd_prio"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_prio e_StdGeneric_eaGenericConsDescriptor.gcd_prio
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_prio
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericConsDescriptor.gcd_prio
+	jsr_eval 0
+	repl_r_args_a 6 0 3 1
+	jmp_eval_upd
+.export e_StdGeneric_dGenericConsDescriptor.gcd_type_def
+.export e_StdGeneric_nGenericConsDescriptor.gcd_type_def
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_type_def e_StdGeneric_nGenericConsDescriptor.gcd_type_def _ 5 0 "GenericConsDescriptor.gcd_type_def"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_type_def
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_type_def
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 6 0 4 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericConsDescriptor.gcd_type
+.export e_StdGeneric_nGenericConsDescriptor.gcd_type
+.export e_StdGeneric_eaGenericConsDescriptor.gcd_type
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_type e_StdGeneric_nGenericConsDescriptor.gcd_type _ 6 0 "GenericConsDescriptor.gcd_type"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_type e_StdGeneric_eaGenericConsDescriptor.gcd_type
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_type
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericConsDescriptor.gcd_type
+	jsr_eval 0
+	repl_r_args_a 6 0 5 1
+	jmp_eval_upd
+.export e_StdGeneric_dGenericConsDescriptor.gcd_index
+.export e_StdGeneric_nGenericConsDescriptor.gcd_index
+.descs e_StdGeneric_dGenericConsDescriptor.gcd_index e_StdGeneric_nGenericConsDescriptor.gcd_index _ 7 0 "GenericConsDescriptor.gcd_index"
+.n -4 e_StdGeneric_dGenericConsDescriptor.gcd_index
+.o 1 0
+e_StdGeneric_nGenericConsDescriptor.gcd_index
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 6 0 6 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenConsNoPrio
+.desc e_StdGeneric_dGenConsNoPrio _hnf _hnf 0 0 "GenConsNoPrio"
+.export e_StdGeneric_dGenConsPrio
+.desc e_StdGeneric_dGenConsPrio _hnf _add_arg 2 0 "GenConsPrio"
+.export e_StdGeneric_dGenConsAssocNone
+.desc0 e_StdGeneric_dGenConsAssocNone 0 "GenConsAssocNone"
+.export e_StdGeneric_dGenConsAssocLeft
+.desc0 e_StdGeneric_dGenConsAssocLeft 1 "GenConsAssocLeft"
+.export e_StdGeneric_dGenConsAssocRight
+.desc0 e_StdGeneric_dGenConsAssocRight 2 "GenConsAssocRight"
+.export e_StdGeneric_rGenericRecordDescriptor
+.record e_StdGeneric_rGenericRecordDescriptor aaaaa 5 0 "GenericRecordDescriptor"
+.export e_StdGeneric_dGenericRecordDescriptor.grd_name
+.export e_StdGeneric_nGenericRecordDescriptor.grd_name
+.descs e_StdGeneric_dGenericRecordDescriptor.grd_name e_StdGeneric_nGenericRecordDescriptor.grd_name _ 1 0 "GenericRecordDescriptor.grd_name"
+.n -4 e_StdGeneric_dGenericRecordDescriptor.grd_name
+.o 1 0
+e_StdGeneric_nGenericRecordDescriptor.grd_name
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericRecordDescriptor.grd_arity
+.export e_StdGeneric_nGenericRecordDescriptor.grd_arity
+.descs e_StdGeneric_dGenericRecordDescriptor.grd_arity e_StdGeneric_nGenericRecordDescriptor.grd_arity _ 3 0 "GenericRecordDescriptor.grd_arity"
+.n -4 e_StdGeneric_dGenericRecordDescriptor.grd_arity
+.o 1 0
+e_StdGeneric_nGenericRecordDescriptor.grd_arity
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 2 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericRecordDescriptor.grd_type_arity
+.export e_StdGeneric_nGenericRecordDescriptor.grd_type_arity
+.descs e_StdGeneric_dGenericRecordDescriptor.grd_type_arity e_StdGeneric_nGenericRecordDescriptor.grd_type_arity _ 4 0 "GenericRecordDescriptor.grd_type_arity"
+.n -4 e_StdGeneric_dGenericRecordDescriptor.grd_type_arity
+.o 1 0
+e_StdGeneric_nGenericRecordDescriptor.grd_type_arity
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 5 0 3 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericRecordDescriptor.grd_type
+.export e_StdGeneric_nGenericRecordDescriptor.grd_type
+.export e_StdGeneric_eaGenericRecordDescriptor.grd_type
+.descs e_StdGeneric_dGenericRecordDescriptor.grd_type e_StdGeneric_nGenericRecordDescriptor.grd_type _ 5 0 "GenericRecordDescriptor.grd_type"
+.n -4 e_StdGeneric_dGenericRecordDescriptor.grd_type e_StdGeneric_eaGenericRecordDescriptor.grd_type
+.o 1 0
+e_StdGeneric_nGenericRecordDescriptor.grd_type
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericRecordDescriptor.grd_type
+	jsr_eval 0
+	repl_r_args_a 5 0 4 1
+	jmp_eval_upd
+.export e_StdGeneric_dGenericRecordDescriptor.grd_fields
+.export e_StdGeneric_nGenericRecordDescriptor.grd_fields
+.export e_StdGeneric_eaGenericRecordDescriptor.grd_fields
+.descs e_StdGeneric_dGenericRecordDescriptor.grd_fields e_StdGeneric_nGenericRecordDescriptor.grd_fields _ 6 0 "GenericRecordDescriptor.grd_fields"
+.n -4 e_StdGeneric_dGenericRecordDescriptor.grd_fields e_StdGeneric_eaGenericRecordDescriptor.grd_fields
+.o 1 0
+e_StdGeneric_nGenericRecordDescriptor.grd_fields
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericRecordDescriptor.grd_fields
+	jsr_eval 0
+	repl_r_args_a 5 0 5 1
+	jmp_eval_upd
+.export e_StdGeneric_rGenericFieldDescriptor
+.record e_StdGeneric_rGenericFieldDescriptor aaa 3 0 "GenericFieldDescriptor"
+.export e_StdGeneric_dGenericFieldDescriptor.gfd_name
+.export e_StdGeneric_nGenericFieldDescriptor.gfd_name
+.descs e_StdGeneric_dGenericFieldDescriptor.gfd_name e_StdGeneric_nGenericFieldDescriptor.gfd_name _ 1 0 "GenericFieldDescriptor.gfd_name"
+.n -4 e_StdGeneric_dGenericFieldDescriptor.gfd_name
+.o 1 0
+e_StdGeneric_nGenericFieldDescriptor.gfd_name
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 3 0 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericFieldDescriptor.gfd_index
+.export e_StdGeneric_nGenericFieldDescriptor.gfd_index
+.descs e_StdGeneric_dGenericFieldDescriptor.gfd_index e_StdGeneric_nGenericFieldDescriptor.gfd_index _ 3 0 "GenericFieldDescriptor.gfd_index"
+.n -4 e_StdGeneric_dGenericFieldDescriptor.gfd_index
+.o 1 0
+e_StdGeneric_nGenericFieldDescriptor.gfd_index
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 3 0 2 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericFieldDescriptor.gfd_cons
+.export e_StdGeneric_nGenericFieldDescriptor.gfd_cons
+.descs e_StdGeneric_dGenericFieldDescriptor.gfd_cons e_StdGeneric_nGenericFieldDescriptor.gfd_cons _ 4 0 "GenericFieldDescriptor.gfd_cons"
+.n -4 e_StdGeneric_dGenericFieldDescriptor.gfd_cons
+.o 1 0
+e_StdGeneric_nGenericFieldDescriptor.gfd_cons
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 3 0 3 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_eaGenTypeVar
+.descexp e_StdGeneric_dGenTypeVar e_StdGeneric_nGenTypeVar e_StdGeneric_lGenTypeVar 1 0 "GenTypeVar"
+.o 2 0
+e_StdGeneric_lGenTypeVar
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_StdGeneric_eaGenTypeVar
+.n 1 e_StdGeneric_dGenTypeVar e_StdGeneric_eaGenTypeVar
+.o 1 0
+e_StdGeneric_nGenTypeVar
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenTypeVar
+	jsr_eval 0
+	pushI_a 0
+	pop_a 1
+	fill_r e_StdGeneric_kGenTypeVar 0 1 0 0 0
+	pop_b 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenTypeCons
+.desc e_StdGeneric_dGenTypeCons _hnf _add_arg 1 0 "GenTypeCons"
+.export e_StdGeneric_kGenTypeVar
+.record e_StdGeneric_kGenTypeVar di 0 1 "GenTypeVar"
+.export e_StdGeneric_dGenTypeApp
+.desc e_StdGeneric_dGenTypeApp _hnf _add_arg 2 0 "GenTypeApp"
+.export e_StdGeneric_dGenTypeArrow
+.desc e_StdGeneric_dGenTypeArrow _hnf _add_arg 2 0 "GenTypeArrow"
+.export e_StdGeneric_dConsLeft
+.desc0 e_StdGeneric_dConsLeft 0 "ConsLeft"
+.export e_StdGeneric_dConsRight
+.desc0 e_StdGeneric_dConsRight 1 "ConsRight"
+.export e_StdGeneric_rGenericDict
+.record e_StdGeneric_rGenericDict a 1 0 "GenericDict"
+.descexp e_StdGeneric_tGenericDict e_StdGeneric_cGenericDict _hnf 1 1 "GenericDict"
+.n 1 e_StdGeneric_tGenericDict
+.o 1 0
+e_StdGeneric_cGenericDict
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+.impmod StdGeneric
+.impdesc e_StdGeneric_rGenericDict
+	fill_r e_StdGeneric_rGenericDict 1 0 1 0 0
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_dGenericDict.generic_dict
+.export e_StdGeneric_nGenericDict.generic_dict
+.export e_StdGeneric_eaGenericDict.generic_dict
+.descs e_StdGeneric_dGenericDict.generic_dict e_StdGeneric_nGenericDict.generic_dict _ 1 0 "GenericDict.generic_dict"
+.n -4 e_StdGeneric_dGenericDict.generic_dict e_StdGeneric_eaGenericDict.generic_dict
+.o 1 0
+e_StdGeneric_nGenericDict.generic_dict
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eaGenericDict.generic_dict
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.export e_StdGeneric_rGenericDict0
+.record e_StdGeneric_rGenericDict0 a 1 0 "GenericDict0"
+.export e_StdGeneric_dGenericDict0.generic_dict0
+.export e_StdGeneric_nGenericDict0.generic_dict0
+.descs e_StdGeneric_dGenericDict0.generic_dict0 e_StdGeneric_nGenericDict0.generic_dict0 _ 1 0 "GenericDict0.generic_dict0"
+.n -4 e_StdGeneric_dGenericDict0.generic_dict0 _
+.o 1 0
+e_StdGeneric_nGenericDict0.generic_dict0
+	push_node _cycle_in_spine 1
+	jsr_eval 0
+	repl_r_args_a 1 0 1 1
+	jsr_eval 0
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+.record r77 a 1 0 "bimap_s;"
+.record r79 a 1 0 "bimap_ss;"
+.record r81 a 1 0 "bimap_sss;"
+.export e_StdGeneric_sbimap_Bimap;10
+.descexp e_StdGeneric_dbimap_Bimap;10 e_StdGeneric_nbimap_Bimap;10 e_StdGeneric_lbimap_Bimap;10 2 0 "bimap_Bimap;10"
+.a 0 a11
+.o 2 0
+e_StdGeneric_lbimap_Bimap;10
+	repl_args 1 1
+.o 2 0
+a11
+.d 2 0
+	jsr ea11
+.o 2 0
+.impdesc e_StdGeneric_rBimap
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_StdGeneric_dbimap_Bimap;10
+.o 1 0
+e_StdGeneric_nbimap_Bimap;10
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea11
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea11
+.o 2 0
+e_StdGeneric_sbimap_Bimap;10
+.o 2 0
+s11
+	push_a 0
+	push_a 2
+	buildh d34 2
+	push_a 1
+	push_a 3
+	buildh d33 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.desc d34 _hnf l34 3 0 "map_from;33"
+.a 0 a34
+.o 2 0
+l34
+	repl_args 2 2
+.o 3 0
+a34
+.o 3 0
+ea34
+	jsr_eval 2
+	push_r_args 2 2 0
+	update_a 1 4
+	update_a 2 1
+	update_a 3 2
+	update_a 0 3
+	pop_a 1
+	push_a 0
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 2
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 3 n12
+	push_a 2
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 2
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 3 n12
+	update_a 1 5
+	updatepop_a 0 4
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.desc d33 _hnf l33 3 0 "map_to;32"
+.a 0 a33
+.o 2 0
+l33
+	repl_args 2 2
+.o 3 0
+a33
+.o 3 0
+ea33
+	jsr_eval 2
+	push_r_args 2 2 0
+	update_a 1 4
+	update_a 2 1
+	update_a 3 2
+	update_a 0 3
+	pop_a 1
+	push_a 0
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 2
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 3 n12
+	push_a 2
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 2
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 5
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build _ 3 n12
+	update_a 1 5
+	updatepop_a 0 4
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_ARROW;9
+.descexp e_StdGeneric_dbimap_ARROW;9 e_StdGeneric_nbimap_ARROW;9 e_StdGeneric_lbimap_ARROW;9 2 0 "bimap_ARROW;9"
+.a 0 a10
+.o 2 0
+e_StdGeneric_lbimap_ARROW;9
+	repl_args 1 1
+.o 2 0
+a10
+.d 2 0
+	jsr ea10
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_StdGeneric_dbimap_ARROW;9
+.o 1 0
+e_StdGeneric_nbimap_ARROW;9
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea10
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea10
+.o 2 0
+e_StdGeneric_sbimap_ARROW;9
+.o 2 0
+s10
+	push_a 0
+	push_a 2
+	buildh d24 2
+	push_a 1
+	push_a 3
+	buildh d23 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.desc d24 _hnf l24 3 0 "map_from;23"
+.a 3 ea24
+.o 2 0
+l24
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea24
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 0
+	push_r_args 2 2 0
+	update_a 3 5
+	update_a 1 3
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 6 0
+s24
+	push_a 2
+	jsr_eval 0
+	push_a 2
+	jsr_eval 0
+	push_a 6
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	jmp s12
+.desc d23 _hnf l23 3 0 "map_to;22"
+.a 3 ea23
+.o 2 0
+l23
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea23
+	jsr_eval 1
+	jsr_eval 0
+	push_r_args 1 2 0
+	push_r_args 2 2 0
+	update_a 3 5
+	update_a 1 3
+	update_a 2 4
+	update_a 0 2
+	pop_a 2
+.o 6 0
+s23
+	push_a 3
+	jsr_eval 0
+	push_a 1
+	jsr_eval 0
+	push_a 6
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	update_a 2 7
+	update_a 1 6
+	updatepop_a 0 5
+.d 4 0
+	jmp s12
+.export e_StdGeneric_sbimap_FIELD;8
+.descexp e_StdGeneric_dbimap_FIELD;8 e_StdGeneric_nbimap_FIELD;8 e_StdGeneric_lbimap_FIELD;8 1 0 "bimap_FIELD;8"
+.o 2 0
+e_StdGeneric_lbimap_FIELD;8
+	pop_a 1
+.d 1 0
+	jsr ea9
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_StdGeneric_dbimap_FIELD;8
+.o 1 0
+e_StdGeneric_nbimap_FIELD;8
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea9
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea9
+.o 1 0
+e_StdGeneric_sbimap_FIELD;8
+.o 1 0
+s9
+	push_a 0
+	buildh d30 1
+	push_a 1
+	buildh d29 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.desc d30 _hnf l30 2 0 "map_from;29"
+.a 2 ea30
+.o 2 0
+l30
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea30
+	jsr_eval 1
+.o 3 0
+s30
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dFIELD 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.desc d29 _hnf l29 2 0 "map_to;28"
+.a 2 ea29
+.o 2 0
+l29
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea29
+	jsr_eval 1
+.o 3 0
+s29
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dFIELD 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_RECORD;7
+.descexp e_StdGeneric_dbimap_RECORD;7 e_StdGeneric_nbimap_RECORD;7 e_StdGeneric_lbimap_RECORD;7 1 0 "bimap_RECORD;7"
+.o 2 0
+e_StdGeneric_lbimap_RECORD;7
+	pop_a 1
+.d 1 0
+	jsr ea8
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_StdGeneric_dbimap_RECORD;7
+.o 1 0
+e_StdGeneric_nbimap_RECORD;7
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea8
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea8
+.o 1 0
+e_StdGeneric_sbimap_RECORD;7
+.o 1 0
+s8
+	push_a 0
+	buildh d28 1
+	push_a 1
+	buildh d27 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.desc d28 _hnf l28 2 0 "map_from;27"
+.a 2 ea28
+.o 2 0
+l28
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea28
+	jsr_eval 1
+.o 3 0
+s28
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dRECORD 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.desc d27 _hnf l27 2 0 "map_to;26"
+.a 2 ea27
+.o 2 0
+l27
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea27
+	jsr_eval 1
+.o 3 0
+s27
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dRECORD 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_CONS;6
+.descexp e_StdGeneric_dbimap_CONS;6 e_StdGeneric_nbimap_CONS;6 e_StdGeneric_lbimap_CONS;6 1 0 "bimap_CONS;6"
+.o 2 0
+e_StdGeneric_lbimap_CONS;6
+	pop_a 1
+.d 1 0
+	jsr ea7
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_StdGeneric_dbimap_CONS;6
+.o 1 0
+e_StdGeneric_nbimap_CONS;6
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea7
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea7
+.o 1 0
+e_StdGeneric_sbimap_CONS;6
+.o 1 0
+s7
+	push_a 0
+	buildh d26 1
+	push_a 1
+	buildh d25 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.desc d26 _hnf l26 2 0 "map_from;25"
+.a 2 ea26
+.o 2 0
+l26
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea26
+	jsr_eval 1
+.o 3 0
+s26
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dCONS 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.desc d25 _hnf l25 2 0 "map_to;24"
+.a 2 ea25
+.o 2 0
+l25
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea25
+	jsr_eval 1
+.o 3 0
+s25
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dCONS 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_OBJECT;5
+.descexp e_StdGeneric_dbimap_OBJECT;5 e_StdGeneric_nbimap_OBJECT;5 e_StdGeneric_lbimap_OBJECT;5 1 0 "bimap_OBJECT;5"
+.o 2 0
+e_StdGeneric_lbimap_OBJECT;5
+	pop_a 1
+.d 1 0
+	jsr ea6
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 1 e_StdGeneric_dbimap_OBJECT;5
+.o 1 0
+e_StdGeneric_nbimap_OBJECT;5
+	push_node _cycle_in_spine 1
+.d 1 0
+	jsr ea6
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 1 0
+ea6
+.o 1 0
+e_StdGeneric_sbimap_OBJECT;5
+.o 1 0
+s6
+	push_a 0
+	buildh d32 1
+	push_a 1
+	buildh d31 1
+	update_a 1 2
+	updatepop_a 0 1
+.d 2 0
+	rtn
+.desc d32 _hnf l32 2 0 "map_from;31"
+.a 2 ea32
+.o 2 0
+l32
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea32
+	jsr_eval 1
+.o 3 0
+s32
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dOBJECT 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.desc d31 _hnf l31 2 0 "map_to;30"
+.a 2 ea31
+.o 2 0
+l31
+	push_args 0 1 1
+	update_a 2 1
+	create
+	update_a 0 3
+	pop_a 1
+.o 3 0
+ea31
+	jsr_eval 1
+.o 3 0
+s31
+	push_args 1 1 1
+	buildh _Nil 0
+	update_a 0 3
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dOBJECT 1 4
+	pop_a 3
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_EITHER;4
+.descexp e_StdGeneric_dbimap_EITHER;4 e_StdGeneric_nbimap_EITHER;4 e_StdGeneric_lbimap_EITHER;4 2 0 "bimap_EITHER;4"
+.a 0 a5
+.o 2 0
+e_StdGeneric_lbimap_EITHER;4
+	repl_args 1 1
+.o 2 0
+a5
+.d 2 0
+	jsr ea5
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_StdGeneric_dbimap_EITHER;4
+.o 1 0
+e_StdGeneric_nbimap_EITHER;4
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea5
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea5
+.o 2 0
+e_StdGeneric_sbimap_EITHER;4
+.o 2 0
+s5
+	push_a 0
+	push_a 2
+	buildh d22 2
+	push_a 1
+	push_a 3
+	buildh d21 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.desc d22 _hnf l22 3 0 "map_from;21"
+.a 3 ea22
+.o 2 0
+l22
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea22
+	jsr_eval 2
+.o 4 0
+s22
+	eq_desc e_StdGeneric_dLEFT 1 2
+	jmp_true case.1
+	jmp case.2
+case.1
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 2
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dLEFT 1 5
+	pop_a 4
+.d 1 0
+	rtn
+case.2
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dRIGHT 1 5
+	pop_a 4
+.d 1 0
+	rtn
+.desc d21 _hnf l21 3 0 "map_to;20"
+.a 3 ea21
+.o 2 0
+l21
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea21
+	jsr_eval 2
+.o 4 0
+s21
+	eq_desc e_StdGeneric_dLEFT 1 2
+	jmp_true case.3
+	jmp case.4
+case.3
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 2
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dLEFT 1 5
+	pop_a 4
+.d 1 0
+	rtn
+case.4
+	push_args 2 1 1
+	buildh _Nil 0
+	update_a 0 4
+	pop_a 1
+	push_a 1
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 1
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dRIGHT 1 5
+	pop_a 4
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_PAIR;3
+.descexp e_StdGeneric_dbimap_PAIR;3 e_StdGeneric_nbimap_PAIR;3 e_StdGeneric_lbimap_PAIR;3 2 0 "bimap_PAIR;3"
+.a 0 a4
+.o 2 0
+e_StdGeneric_lbimap_PAIR;3
+	repl_args 1 1
+.o 2 0
+a4
+.d 2 0
+	jsr ea4
+.o 2 0
+	build_r e_StdGeneric_rBimap 2 0 0 0
+	updatepop_a 0 2
+.d 1 0
+	rtn
+.n 2 e_StdGeneric_dbimap_PAIR;3
+.o 1 0
+e_StdGeneric_nbimap_PAIR;3
+	push_node _cycle_in_spine 2
+.d 2 0
+	jsr ea4
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 2 0
+ea4
+.o 2 0
+e_StdGeneric_sbimap_PAIR;3
+.o 2 0
+s4
+	push_a 1
+	push_a 1
+	buildh d20 2
+	push_a 2
+	push_a 2
+	buildh d19 2
+	update_a 1 3
+	updatepop_a 0 2
+.d 2 0
+	rtn
+.desc d20 _hnf l20 3 0 "map_from;19"
+.a 3 ea20
+.o 2 0
+l20
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea20
+	jsr_eval 2
+.o 4 0
+s20
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_a 3
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	push_a 3
+	build e_StdGeneric_dBimap.map_from -4 e_StdGeneric_nBimap.map_from
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dPAIR 2 7
+	pop_a 5
+.d 1 0
+	rtn
+.desc d19 _hnf l19 3 0 "map_to;18"
+.a 3 ea19
+.o 2 0
+l19
+	push_args 0 2 2
+	update_a 3 2
+	create
+	update_a 0 4
+	pop_a 1
+.o 4 0
+ea19
+	jsr_eval 2
+.o 4 0
+s19
+	push_args 2 2 2
+	buildh _Nil 0
+	update_a 0 5
+	pop_a 1
+	push_a 3
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	push_a 3
+	build e_StdGeneric_dBimap.map_to -4 e_StdGeneric_nBimap.map_to
+	push_a 2
+	push_a 1
+	update_a 1 2
+	update_a 0 1
+	pop_a 1
+	build e_system_dAP 2 e_system_nAP
+	fillh e_StdGeneric_dPAIR 2 7
+	pop_a 5
+.d 1 0
+	rtn
+.export e_StdGeneric_sbimap_c;2
+.descexp e_StdGeneric_dbimap_c;2 e_StdGeneric_nbimap_c;2 e_StdGeneric_lbimap_c;2 0 0 "bimap_c;2"
+.o 1 0
+e_StdGeneric_lbimap_c;2
+	halt
+.n 0 e_StdGeneric_dbimap_c;2
+.o 1 0
+e_StdGeneric_nbimap_c;2
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea3
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 0 0
+ea3
+.o 0 0
+e_StdGeneric_sbimap_c;2
+.o 0 0
+s3
+	buildh e_StdFunctions_did 0
+	buildh e_StdFunctions_did 0
+.d 2 0
+	rtn
+.n 3 _ ea12
+.o 1 0
+n12
+	push_node _cycle_in_spine 3
+.o 4 0
+ea12
+	jsr_eval 2
+	jsr_eval 0
+.o 4 0
+s12
+	push_a 0
+	eq_desc e_StdFunctions_did 0 0
+	pop_a 1
+
+	jmp_false else.5
+	push_a 2
+	updatepop_a 0 1
+	eq_desc e_StdFunctions_did 0 0
+	pop_a 1
+
+	jmp_false else.6
+	push_a 0
+	jsr_eval 0
+	updatepop_a 0 2
+	pop_a 0
+
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+else.6
+	push_a 1
+	push_a 1
+	buildh d13 2
+	updatepop_a 0 2
+	pop_a 0
+
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+else.5
+	push_a 2
+	eq_desc e_StdFunctions_did 0 0
+	pop_a 1
+
+	jmp_false else.7
+	push_a 1
+	push_a 1
+	buildh d14 2
+	updatepop_a 0 3
+	pop_a 0
+
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+else.7
+	push_a 2
+	push_a 2
+	push_a 2
+	fillh d15 3 6
+	pop_a 3
+.d 1 0
+	rtn
+.desc d15 _hnf l15 4 0 "<lambda>[line:68];15;14"
+.a 0 ea15
+.o 2 0
+l15
+	repl_args 3 3
+.o 4 0
+ea15
+.o 4 0
+s15
+	push_a 3
+	push_a 3
+	build e_system_dAP 2 e_system_nAP
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 5
+	updatepop_a 0 4
+	jmp_ap 1
+.desc d14 _hnf l14 3 0 "<lambda>[line:67];21;13"
+.a 0 ea14
+.o 2 0
+l14
+	repl_args 2 2
+.o 3 0
+ea14
+.o 3 0
+s14
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.desc d13 _hnf l13 3 0 "<lambda>[line:65];21;12"
+.a 0 ea13
+.o 2 0
+l13
+	repl_args 2 2
+.o 3 0
+ea13
+	jsr_eval 0
+.o 3 0
+s13
+	push_a 2
+	push_a 2
+	build e_system_dAP 2 e_system_nAP
+	push_a 1
+	update_a 1 4
+	updatepop_a 0 3
+	jmp_ap 1
+.o 1 0
+s17
+.inline cast;16
+	pop_a 0
+.end
+
+.d 1 0
+	rtn
+.o 1 0
+s16
+.inline is_id;15
+	eq_desc e_StdFunctions_did 0 0
+	pop_a 1
+.end
+
+.d 0 1 b
+	rtn
+.export e_StdGeneric_sgetConsPath
+.export e_StdGeneric_eagetConsPath
+.descexp e_StdGeneric_dgetConsPath e_StdGeneric_ngetConsPath e_StdGeneric_lgetConsPath 1 0 "getConsPath"
+.o 2 0
+e_StdGeneric_lgetConsPath
+	update_a 1 0
+	create
+	update_a 0 2
+	pop_a 1
+.d 2 0
+	jmp e_StdGeneric_eagetConsPath
+.n 1 e_StdGeneric_dgetConsPath e_StdGeneric_eagetConsPath
+.o 1 0
+e_StdGeneric_ngetConsPath
+	push_node _cycle_in_spine 1
+.o 2 0
+e_StdGeneric_eagetConsPath
+	jsr_eval 0
+	repl_r_args 6 0
+.o 7 0
+e_StdGeneric_sgetConsPath
+.o 7 0
+s2
+	jsr_eval 3
+	push_args 3 4 4
+	buildh _Nil 0
+	update_a 0 8
+	pop_a 1
+	update_a 2 3
+	pop_a 3
+	push_a 0
+	jsr_eval 0
+	pushI_a 1
+	pop_a 1
+	push_a 6
+	jsr_eval 0
+	pushI_a 7
+	pop_a 1
+	pop_a 7
+.d 1 2 ii
+	jmp s18
+.o 1 2 ii
+s18
+	pushI 0
+	push_b 2
+	eqI
+	jmp_false else.8
+	buildAC "getConsPath: zero conses\n"
+	pop_b 2
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+else.8
+	push_b 1
+	push_b 1
+	ltI
+	notB
+	jmp_false else.9
+	buildAC "getConsPath: cons index >= number of conses"
+	pop_b 2
+.d 1 0
+	jsr print_string_
+.o 0 0
+	halt
+	fill_a 0 1
+	pop_a 1
+.d 1 0
+	rtn
+else.9
+	pushI 1
+	push_b 2
+	eqI
+	jmp_false else.10
+	fillh _Nil 0 0
+	pop_b 2
+.d 1 0
+	rtn
+else.10
+	pushI 2
+	push_b 2
+	divI
+	push_b 1
+	ltI
+	jmp_false else.11
+	push_b 1
+	push_b 1
+	build_u _ 0 2 n102
+	buildh e_StdGeneric_dConsLeft 0
+	fillh _Cons 2 2
+	pop_b 2
+.d 1 0
+	rtn
+else.11
+	push_b 1
+	push_b 1
+	build_u _ 0 2 n103
+	buildh e_StdGeneric_dConsRight 0
+	fillh _Cons 2 2
+	pop_b 2
+.d 1 0
+	rtn
+.nu 0 2 _ _
+.o 1 0
+n103
+	push_node_u _cycle_in_spine 0 2
+.o 1 2 ii
+ea103
+.o 1 2 ii
+s103
+	pushI 2
+	push_b 2
+	divI
+	push_b 2
+	subI
+	pushI 2
+	push_b 3
+	divI
+	push_b 2
+	subI
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jmp s18
+.nu 0 2 _ _
+.o 1 0
+n102
+	push_node_u _cycle_in_spine 0 2
+.o 1 2 ii
+ea102
+.o 1 2 ii
+s102
+	pushI 2
+	push_b 2
+	divI
+	push_b 1
+	update_b 1 3
+	updatepop_b 0 2
+.d 1 2 ii
+	jmp s18
+.export e_StdGeneric_sbimapId
+.descexp e_StdGeneric_dbimapId e_StdGeneric_nbimapId e_StdGeneric_lbimapId 0 0 "bimapId"
+.o 1 0
+e_StdGeneric_lbimapId
+	halt
+.n 0 e_StdGeneric_dbimapId
+.o 1 0
+e_StdGeneric_nbimapId
+	push_node _cycle_in_spine 0
+.d 0 0
+	jsr ea1
+.o 2 0
+	fill_r e_StdGeneric_rBimap 2 0 2 0 0
+	pop_a 2
+.d 1 0
+	rtn
+.o 0 0
+ea1
+.o 0 0
+e_StdGeneric_sbimapId
+.o 0 0
+s1
+	buildh e_StdFunctions_did 0
+	buildh e_StdFunctions_did 0
+.d 2 0
+	rtn
